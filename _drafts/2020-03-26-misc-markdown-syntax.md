@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-01-01 00:00:00 +0900
+date: 2020-03-26 00:00:00 +0900
 title: '[misc] markdown syntax'
 categories:
   - misc
@@ -62,10 +62,6 @@ tags:
 ###### 헤더6 이쯤 되면 본문보다 작을 수도 있다.
 
 나보다 말야
-
-## embed image
-
-~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
 
 ## HTML 그대로 넣기
 
