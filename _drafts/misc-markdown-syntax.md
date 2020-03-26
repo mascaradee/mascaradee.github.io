@@ -9,6 +9,9 @@ tags:
   - markdown
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 #### 관련 문서
 
 - [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
@@ -20,7 +23,7 @@ tags:
 
 `<p>` 태그로 분리하는 것과 같음.
 
-스페이스바 2개 + 엔터 한 번은
+스페이스바 2개 + 엔터 한 번은  
 `<br>` 태그와 같음.
 
 아니면 그냥 이렇게<br>
@@ -28,7 +31,7 @@ tags:
 
 ## 리스트
 
-리스트:
+리스트:  
 - 하나
 - 둘
 - 셋
@@ -111,8 +114,8 @@ _이탤릭_
 ```
 
 <pre>
-```
-야 너도 pre 태그 쓰면 할 수 이썽
+```  
+야 너도 pre 태그 쓰면 할 수 이썽  
 ```
 </pre>
 
@@ -162,7 +165,7 @@ _이탤릭_
 
 ## 주석: 첨자 활용
 
-> 뿅뿅이라고(closure)<sup>1</sup>라고 일컫는다<sup>2<sup>.
+> 뿅뿅이라고(closure)<sup>1</sup>라고 일컫는다<sub>2<sub>.
 
 - 1: 뿅뿅이다.
 - 2: (역자주) 뿅뿅이란 말이다.
