@@ -38,3 +38,39 @@
  `Markdown Preview` > `Settings` > `Open Preview in Split Pane` 비활성화
 
 ## 지킬 설정
+
+## 지킬 빌드 디버깅 로그
+
+### bundler 실행 시 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
+
+https://github.com/rbenv/rbenv/issues/1138  
+아래처럼 `Gemfile.lock`에 있는 버전을 강제로 지정해서 해결함.
+
+```bash
+$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"
+BUNDLED WITH
+   1.17.3
+
+$ gem install bundler -v '1.17.3'
+```
+
+### on 태그는 빌드 불가
+
+```bash
+      Remote Theme: Using theme yizeng/jekyll-theme-simple-texture
+  Liquid Exception: Liquid error (line 40): comparison of TrueClass with String failed in /_layouts/post.html
+             Error: Liquid error (line 40): comparison of TrueClass with String failed
+             Error: Run jekyll build --trace for more information.
+```
+
+### Error:  No source of timezone data could be found.
+
+윈도우에서 `tzinfo-data` gem 사용 시 발생할 수 있다고 함. `Gemfile` 파일에 아래 추가:
+
+```bash
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+```
+
+###  Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
+
+지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 쉘에서 `chcp 65001` 입력 후 다시 실행한다.
