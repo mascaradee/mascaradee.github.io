@@ -74,3 +74,27 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 ###  Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
 
 지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 쉘에서 `chcp 65001` 입력 후 다시 실행한다.
+
+
+
+---
+
+## package 설치
+
+### Settings(ctrl + , ) 열어 원하는 package 찾기
+
+왼쪽 밑에 `install >  String case(camel type 변환 패키지) 찾아 install`
+
+### keybinding
+
+#### 사용자 keybinng 파일 열기
+
+`keymap.cson` : 사용자 키 매핑 파일로 시스템 키 매핑보다 우선한다.
+
+- `Settings > Keybings > your keymap file` 를 클릭하거나
+
+- `ctrl + shift + p > open your keymap` (혹은 keymap만 검색해도 무방)을 열어 원하는 키로 바인딩한다.
+
+
+#### keybinding 변경
+- `Settings > Keybings > 검색`으로 설치한 package별로  keybinding을 볼수있고 단축키 왼쪽에 복사키가 있으므로 복사 후 사용자 파일에 복붙한 뒤 원하는 키로 변경한다.
