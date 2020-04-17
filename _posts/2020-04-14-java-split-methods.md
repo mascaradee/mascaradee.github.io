@@ -22,6 +22,8 @@ String separator = ",";
 String[] contents = StringUtils.splitByWholeSeparator(content, separator);
 ```
 
+<br>
+
 ## deepToString
 
 ```java

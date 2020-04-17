@@ -28,9 +28,13 @@ System.out.println("현재날짜 SimpleDateFormat(parse) : "+ sdf.parse("2019-01
 
 ```
 
+<br>
+
 ## Calendar
 
 - 추상클래스이므로 getInstance()로 생성
+
+<br>
 
 #### Calendar 상수
 
@@ -76,6 +80,8 @@ System.out.println("현재날짜 Calendar.DAY_OF_MONTH : "+ cal.get(Calendar.DAY
 
 ```
 
+<br>
+
 #### Calendar 내장 메소드
 
 ```java
@@ -102,6 +108,7 @@ System.out.println("cal.setTime(): "+ cal.getTime()); // Tue Jan 01 00:00:00 KST
 
 ```
 
+<br>
 
 #### GregorianCalendar
 

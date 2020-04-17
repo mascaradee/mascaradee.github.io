@@ -15,6 +15,7 @@ tags:
 ## 참고
 [https://ahrang.tistory.com/14](https://ahrang.tistory.com/14)
 
+<br>
 
 ## 문법
 ```sql
@@ -30,11 +31,14 @@ CONNECT BY PRIOR 컬렴명1 = 컬럼명2 AND 조건식 /* 다음에 읽을 자�
 [ORDER SIBLINGS BY 컬럼명, ......]
 ```
 
+<br>
+
 ### CONNECT BY의 실행순서
 1. START WITH 절
 2. CONNECT BY 절
 3. WHERE 절- 단순 필터조건이고 처리범위를 줄이지는 못한다.
 
+<br>
 
 ### 예시
 
@@ -52,6 +56,8 @@ CONNECT BY PRIOR 컬렴명1 = 컬럼명2 AND 조건식 /* 다음에 읽을 자�
 | 20190718A12345 | 785512877 | 785241212 | 17 |
 | 20190718A12345 | **785512878** | _**785241213**_ | 15 |
 
+<br>
+
 ### 쿼리
 ```sql
 SELECT     ORDER_NO, ORDER_DETAIL_NO, JBF_ORDER_DETAIL_NO, ORDER_CLASSIFICATION_CODE
@@ -67,6 +73,8 @@ CONNECT BY PRIOR JBF_ORDER_DETAIL_NO =  ORDER_DETAIL_NO  AND PRIOR ORDER_NO = OR
 -- JBF_ORDER_DETAIL_NO : 상위(어디에서부터 왔는가?)
 -- ORDER_DETAIL_NO  : 하위?
 ```
+
+<br>
 
 #### 결과
 
