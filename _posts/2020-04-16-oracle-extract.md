@@ -23,6 +23,7 @@ SELECT EXTRACT(YEAR FROM SYSDATE) YEAR
      , SYSTIMESTAMP
 FROM DUAL;
 ```
+
 | YEAR | MONTH | DAY | TIMEZONE_HOUR | HOUR |	HOUR2 |	MINUTE | SECOND	   | SYSTIMESTAMP
 | --- | --- | --- | --- | --- |	--- |	--- | ---	   | ---
 | 2019 | 9     | 17	 | 9             | 6	  | 15    | 3	     | 16.996047 | 2019-09-17 오후 3:03:16.996047 +09:00

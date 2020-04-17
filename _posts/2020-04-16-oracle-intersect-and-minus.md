@@ -24,6 +24,8 @@ SELECT FALG FROM TAB2
 ;
 ```
 
+<br>
+
 ## 차집합
 TAB1 - TAB2 이므로 TAB1기준으로 공통된 부분을 제외하고 남은 행을 리턴
 
