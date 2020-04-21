@@ -30,7 +30,7 @@ tags:
 
 <br>
 
-## 학습 참고
+## roadmap 참고
 
 - [http://github.com/kamranahmedse/developer-roadmap](http://github.com/kamranahmedse/developer-roadmap)
 
