@@ -1,18 +1,34 @@
 ---
 layout: post
 date: 2020-04-17
-title: '[javascript] javascript base'
+title: '[javascript] javascript references'
 categories:
   - javascript
 tags:
   - javascript
 ---
 
-## 참고할 사이트
+## 참고 사이트
 
-- [https://ko.javascript.info/](https://ko.javascript.info/)
+- [javascript 기초](https://ko.javascript.info/)
+
+  - [ECMAScript 명세서](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
+
+    - [ECMAScript 신규등록된 부분](https://github.com/tc39/proposals)
+
+  - [javascript 매뉴얼](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+    - 검색팁 `MDN + [원하는 용어]`
+
+  - [마소프로그램?](http://msdn.microsoft.com/)
+
+  - [호환성표 - 브라우저 특정기능 지원여부1](http://caniuse.com)
+  - [호환성표 - 브라우저 특정기능 지원여부1](https://kangax.github.io/compat-table)
+
 
 - [https://poiemaweb.com/coding](https://poiemaweb.com/coding)
+
+
+
 
 <br>
 
