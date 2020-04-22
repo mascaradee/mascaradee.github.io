@@ -8,9 +8,7 @@ tags:
   - data type
 ---
 
-## 수(Number)
-
-### 관련 함수
+## 수(Number) 관련 함수
 
 #### parseInt(파싱할 문자열, 진수)
 
@@ -61,8 +59,20 @@ isFinite(-Infinity); // false
 isFinite(NaN);       // false
 ```
 
+#### BigInt
+자바스크립트 허용 숫자 범위는 -2<sup>53</sup> ~ 2<sup>53</sup> 사이로 16자리 정수인데   
+이것보다 더 큰 숫자가 필요하거나 아주 높은 정밀도 작업이 필요할때 사용  
+정수 리터럴 끝 + `n` 을 붙여 사용  
+일부 브라우저에서만 지원 (Firefox, Chrome)
+```javascript
+let bigInt = 1234567890223456789032345678904234567890n;
+```
 
-## 문자열(Strings)
+
+
+<br>
+
+## 문자열(Strings) 관련 함수
 
 ```javascript
 'hello'.length; // 5
@@ -71,14 +81,17 @@ isFinite(NaN);       // false
 'hello'.toUpperCase(); // "HELLO"
 ````
 
+<br>
 
 ## 널(Null)
 의도적으로 값이 없음을 가리키는 '객체' 타입의 객체인 null
 
+<br>
 
 ## 정의되지 않음(undefined)
 초기화되지 않은 값, 아직 어떤 값도 주어지지 않은(할당되지않은) 변수임을 가리키는 '정의되지 않음' 타입의 객체인 undefined
 
+<br>
 
 ## 불리언(boolean)
 - `false`, `0`, 빈 문자열 (`""`), 수가 아님을 뜻하는 `NaN`, `null`, 와 `undefined`은 모두 `false`
@@ -90,6 +103,7 @@ if(1) { // true이므로 조건 만족하여 아래 수행
 }
 ```
 
+<br>
 
 ## 객체(Objects)
 간단히 이름-값 쌍(name-value pairs)의 모임
