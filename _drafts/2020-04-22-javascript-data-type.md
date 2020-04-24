@@ -23,7 +23,7 @@ tags:
 parseFloat('0.1'); // 0.1
 ```
 
-#### + 연산자를 이용한 파싱
+#### `+`연산자를 이용한 파싱
 
 ```javascript
 + '42' // 42
@@ -31,7 +31,7 @@ parseFloat('0.1'); // 0.1
 + '0x10' // 16 -> 16진수 파싱
 ```
 
-#### 내장함수와 +연산자 차이
+#### 내장함수와 `+`연산자 차이
 
 ```javascript
 parseFloat('10.2abc'); // 10.2 -> 문자열을 숫자로 파싱할 수 없을때까지만 하고 그 결과 리턴
@@ -72,7 +72,26 @@ let bigInt = 1234567890223456789032345678904234567890n;
 
 <br>
 
-## 문자열(Strings) 관련 함수
+## 문자열(Strings)
+큰따옴표 혹은 작은 따옴표 구분없이 둘 중 하나로 묶으면 문자열로 인식  
+
+### 역 따옴표(backtick): \` \`
+역따옴표 안에 `${}`로 변수나 표현식을 넣어주면 해당 부분에 값이 넣어짐.
+
+```javascript
+let name = 'Jamie';
+
+alert(`Welcome, ${name}!`); // Welcome, Jamie!
+
+alert(`일 더하기 일은 ${1+1}`); // 일 더하기 일은 2
+
+alert( `Welcome ${1}` ); // Welcome 1 -> 1이 표현식
+
+alert( `Welcome ${"name"}` ); // Welcome name -> "name" 이 표현식
+
+```
+
+### 문자열(Strings) 관련 함수
 
 ```javascript
 'hello'.length; // 5
@@ -84,12 +103,25 @@ let bigInt = 1234567890223456789032345678904234567890n;
 <br>
 
 ## 널(Null)
-의도적으로 값이 없음을 가리키는 '객체' 타입의 객체인 null
+의도적으로 값이 없음을 가리키는 '객체' 타입의 객체인 null,  
+다른 언어에서는 자바스크립트의 null과는 조금 다른 성격으로 존재하지 않는 것을 가리킬때 쓰임.
+
+```javascript
+let name = null;
+
+alert(name); // null
+```
 
 <br>
 
 ## 정의되지 않음(undefined)
 초기화되지 않은 값, 아직 어떤 값도 주어지지 않은(할당되지않은) 변수임을 가리키는 '정의되지 않음' 타입의 객체인 undefined
+
+```javascript
+let a;
+
+alert(a); // undefined
+```
 
 <br>
 
@@ -101,12 +133,16 @@ let bigInt = 1234567890223456789032345678904234567890n;
 if(1) { // true이므로 조건 만족하여 아래 수행
     // do something
 }
+
+let isLesser = 1 > 2;
+
+alert( isLesser ); // false
 ```
 
 <br>
 
 ## 객체(Objects)
-간단히 이름-값 쌍(name-value pairs)의 모임
+간단히 이름-값 쌍(name-value pairs)의 모임. 한 가지만 표현할 수 있는 원시자료형과 달리 복잡한 개체를 표현할 때 사용.
 
 ```javascript
 // 객체 생성1
@@ -214,7 +250,20 @@ __proto__: Object
 ```
 
 ### 날짜(Date)
-
-
-
 ### 정규식(RegExp)
+
+## 심볼(Symbol)
+
+## typeof 연산자
+인수의 자료형을 반환. 변수의 자료형을 알아낼때 사용
+
+```javascript
+typeof 1; // "number"
+typeof 101010101010101110101010101101010101010n; // "bigint"
+typeof '일'; // "string"
+typeof true; // "boolean"
+typeof undefined; // "undefined"
+typeof null; // "object" -> 실제 객체는 아니지만 호환성을 위해 수정을 하지 않고 남겨놓은 것임.
+typeof Date; // "function" -> 함수는 객체형에 속함
+typeof Symbol("id") // "symbol"
+```
