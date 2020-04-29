@@ -1,52 +1,16 @@
 ---
 layout: post
-date: 2020-04-16 00:00:00 +0900
-title: '[oracle] intersect and minus'
+date: 2020-04-22
+title: '[javascript] variable and constant'
 categories:
-  - oracle
+  - javascript
 tags:
-  - intersect
-  - minus
+  - variable
+  - constant
+  - var
+  - let
+  - const
 ---
-
-## 교집합
-
-```sql
-WITH TAB1 AS (SELECT '10' AS FALG FROM DUAL
-              UNION ALL
-              SELECT '20' AS FALG FROM DUAL)
-, TAB2 AS (SELECT '10' AS FALG FROM DUAL
-           UNION ALL
-           SELECT '30' AS FALG FROM DUAL)
-SELECT FALG FROM TAB1
-INTERSECT
-SELECT FALG FROM TAB2
-;
-```
-
-<br>
-
-## 차집합
-TAB1 - TAB2 이므로 TAB1기준으로 공통된 부분을 제외하고 남은 행을 리턴
-
-```sql
-WITH TAB1 AS (SELECT '10' AS FALG FROM DUAL
-              UNION ALL
-              SELECT '20' AS FALG  FROM DUAL)
-, TAB2 AS (SELECT '10' AS FALG FROM DUAL
-           UNION ALL
-           SELECT '30' AS FALG FROM DUAL)
-SELECT FALG FROM TAB1
-MINUS
-SELECT FALG FROM TAB2
-;
-```
-
-
-## 차집합 예시
-인입값으로 TB_BRAND를 조회해야 하는데 실제로 조회 되지 않는 데이터가 무엇인지 알고 싶을때
-
-```sql
 
 WITH TB_BRAND
 AS (
@@ -83,7 +47,7 @@ FROM   TB_BRAND a
 WHERE  BRAND_NO IN ('1126089', '4975', '1136949', '7361', '5056', '50426', '6124', '8339', '175', '1165316', '1105166', '8340', '5930', '162', '656', '5135', '17249', '33618', '50072', '5227', '5100')
 ;
 
-```
+
 
 |BRAND_NO|
 |---|
