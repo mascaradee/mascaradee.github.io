@@ -27,10 +27,10 @@
 
 1. [Atom](https://atom.io/) 에디터 설치  
 
-2. git 폴더가 생성되면 Atom에서 해당 폴더를 열기
+2. git 폴더가 생성되면 Atom에서 해당 폴더를 열기(New Folder)
 
 3. Atom > `GitHub` 에서 gitHub 로그인 정보를 연결  
-`initialize ~~` 클릭하면 github사이트에서 인증키를 주고 해당 키를 atom에 입력
+`Login` 버튼 클릭하면 github사이트(github.atom.io/login)에서 인증키를 주고 해당 키를 atom에 입력
 
 ### 마크다운 프리뷰 설정
 
