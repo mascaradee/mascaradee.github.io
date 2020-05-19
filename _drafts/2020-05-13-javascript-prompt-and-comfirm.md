@@ -11,6 +11,7 @@ tags:
 
 ## prompt
 title과 default 입력과 함께 확인, 취소 버튼이 있는 모달창이 뜬다.
+파폭, 사파리, 에지 외에는 버전별로 제한이 있다.
 
 `result = prompt(title, [default])`
 
@@ -28,6 +29,7 @@ alert(`넌 ${grade}학년이구나`);
 
 ## comfirm
 모달창에 질문이 출력되고 확인, 취소 버튼으로 true, false 결과를 받는다.
+크롬과 오페라에서는 버전별로 제한이 있다.
 
 `result = comfirm(question)`
 

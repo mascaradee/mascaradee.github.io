@@ -30,6 +30,10 @@
 // alert(Number(false)); // 0
 
 alert(Boolean(0)); // false
+alert(Boolean('')); // false
+alert(Boolean(null)); // false
+alert(Boolean(undefined)); // false
+alert(Boolean(NaN)); // false
 alert(Boolean('0')); // true -> 문자열로 인식
 alert(Boolean(' ')); // true -> 문자열 공백으로 인식
 

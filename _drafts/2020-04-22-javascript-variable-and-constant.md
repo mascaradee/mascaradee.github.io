@@ -47,7 +47,8 @@ console.log(aa); // 'abc'
 ```
 
 ### let
-변수가 선언된 블록에서만 유효함. [브라우저 버전에 따른 제약 있음.](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)
+변수가 선언된 블록에서만 유효함. [브라우저 버전에 따른 제약 있음.](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)  
+실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음
 
 ```javascript
 // 값 지정없이 선언 가능
@@ -72,7 +73,8 @@ console.log(d); // abc
 
 ### const
 고정된 값을 사용할때 사용하고 초기화는 필수이며, 재할당도 불가함.  
-변수가 선언된 블록에서만 유효함. 브라우저 버전에 따른 제약 있음
+변수가 선언된 블록에서만 유효함. 브라우저 버전에 따른 제약 있음.  
+IE는 11이후부터 가능하다고 하나 실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음.
 
 - 일반적인 상수: 값을 예측하지 못하지만 런타임에 계산되는 값
 - 대문자 상수: 실행 전 이미 값을 알고 있고 하드코딩한 값을 사용할때 대문자 상수 이용. 기억하기 용이하고 가독성이 좋고 오타 적다는 장점

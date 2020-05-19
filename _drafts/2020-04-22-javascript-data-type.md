@@ -11,6 +11,7 @@ tags:
 ## 수(Number) 관련 함수
 
 #### parseInt(파싱할 문자열, 진수)
+모든 브라우저 호환, 단 IE는 9 이상부터 가능
 
 ```javascript
  parseInt('010', 10); // 10
@@ -63,7 +64,7 @@ isFinite(NaN);       // false
 자바스크립트 허용 숫자 범위는 -2<sup>53</sup> ~ 2<sup>53</sup> 사이로 16자리 정수인데   
 이것보다 더 큰 숫자가 필요하거나 아주 높은 정밀도 작업이 필요할때 사용  
 정수 리터럴 끝 + `n` 을 붙여 사용  
-일부 브라우저에서만 지원 (Firefox, Chrome)
+일부 브라우저의 일부버전에서만 지원 (Firefox, Chrome, Edge, Opera)
 ```javascript
 let bigInt = 1234567890223456789032345678904234567890n;
 ```
