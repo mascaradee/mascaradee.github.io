@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-05-12
+date: 2020-05-12 00:00:00 +0900
 title: '[oracle] table name search'
 categories:
   - oracle

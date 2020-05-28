@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-04-17
+date: 2020-04-17 00:00:00 +0900
 title: '[javascript] javascript references'
 categories:
   - javascript

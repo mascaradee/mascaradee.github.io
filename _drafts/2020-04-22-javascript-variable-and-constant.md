@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-04-22
+date: 2020-04-22 00:00:00 +0900
 title: '[javascript] variable and constant'
 categories:
   - javascript

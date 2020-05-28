@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-04-22
+date: 2020-05-20 00:00:00 +0900
 title: '[javascript] comparison operator'
 categories:
   - javascript
