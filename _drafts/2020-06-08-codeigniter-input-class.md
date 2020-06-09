@@ -19,13 +19,18 @@ tags:
 입력데이터를 가져오거나 가져온 데이터를 전처리하는 헬퍼함수 제공
 
 php 문법
+
 ```
 $something = isset($_POST['something']) ? $_POST['something'] : NULL;
 ```
 
-codeIgniter
+codeIgniter의 input은 내부 헬버가 입력데이터 존재여부 먼저 확인 후 결과리턴 true/false
+
 ```
 $something = $this->input->post('something');
+// this: controller
+// input: codeIgniter input 클래스
+// post:
 ```
 
 메인 함수
