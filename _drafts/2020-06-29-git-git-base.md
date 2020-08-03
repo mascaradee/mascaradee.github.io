@@ -74,3 +74,8 @@ git reset --hard
 ```
 rm [파일명]
 ```
+
+
+
+### git repository url 조회
+`git config --get remote.origin.url`
