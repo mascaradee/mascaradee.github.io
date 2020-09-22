@@ -9,6 +9,15 @@ tags:
   - shadowing
 ---
 
+## Listening
+- 전체 듣기
+- 딕테이션
+- 전체 듣기
+- 모르는 단어 정리
+- 쉐도잉
+- 영작
+
+
 ## Good Place
 
 ### episod 1
@@ -82,6 +91,9 @@ Sure is. [laughs]
 - (It) sure is (good) : (강조의 의미로) 정말
 Okay, let's take a walk, shall we?
 Oh, did I have a purse? No, I'm dead, right. Okay.
+
+================================================================================
+
 So, this is how it works.
 The Good Place is divided into distinct neighborhoods.
 - distinct : 별개의, 뚜렷한
@@ -148,6 +160,9 @@ Otters holding hands while they sleep.
 You know the way you feel when you see
 a picture of two otters holding hands?
 That's how you're gonna feel every day.
+
+================================================================================
+
 So who is in The Bad Place that would shock me?
 Uh... Well, Mozart, Picasso, Elvis,
 basically every artist ever,
@@ -190,6 +205,9 @@ and you are my soulmate.
 Cool! Bring it in, man.
 - Bring it in : come here
 Now, excuse me. I have other people to attend to.
+
+================================================================================
+
 So where you from, Chidi?
 Well, I was born in Nigeria, raised in Senegal,
 but my work took me all over the place.
@@ -223,6 +241,9 @@ I hate clowns.
 There's been a big mistake.
 I'm not supposed to be here.
 Wait, what?
+
+================================================================================
+
 Are you sure this isn't you?
 Yeah, man, I'm pretty sure I wasn't a death-row lawyer
 who collected clown paintings and rescued orphans.
@@ -282,6 +303,9 @@ I can only play you a brief audio clip of what is happening there right now.
 Okay.
 [woman] The bear has two mouths!
 Well, it doesn't sound awesome.
+
+================================================================================
+
 Does everyone have a huge house except me?
 All right, we need a plan.
 I say we just lie low and hope that they don't notice me.
@@ -327,6 +351,9 @@ that's actually his way of jumping up and down with glee.
 Isn't that right, darling?
 So we'll see you tonight?
 -Great. -Yes.
+
+================================================================================
+
 -[chuckles] -No way.
 My entire house could fit in this room.
 Okay, uh...
@@ -368,6 +395,9 @@ Well, then he said,
 And I said, "But you will live."
 And I know we just met on this bus ten minutes ago, but he seemed nice.
 Oh, forget it. Heading to the bar!
+
+================================================================================
+
 Thank you, thank you.
 You all know that I am the architect of this neighborhood.
 But what you don't know is...
@@ -452,6 +482,9 @@ Argrugande. Ariana Grande.
 I did it.
 Good night. Good night.
 Well, that's terrifying.
+
+================================================================================
+
 That can't be good.
 [Eleanor] Oh, fork.
 -Michael. -Hmm?
