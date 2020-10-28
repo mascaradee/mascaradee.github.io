@@ -46,5 +46,5 @@ answer: What time should we meet tomorrow?
 ### 영작 2
 
 - hey, hold your horses before you buy that bed. you need to buy E0 grade for your health.
-- I'm so tired so I can't decied  what bed is best for us. let's play it by ear.
+- I'm so tired so I can't decide  what bed is best for us. let's play it by ear.
 - I need to the bed out of the blue.
