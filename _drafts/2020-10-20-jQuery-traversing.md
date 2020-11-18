@@ -425,3 +425,31 @@ substring처럼 시작 인덱스 종료 인덱스(종료 인덱스는 생략 가
 $('div').slice(2); // 모든 div를 선택 후, 첫 번째와 두 번째 div는 배열에서 제거한다.  
 $('div').slice(2, 4); // 모든 div를 선택 후, 세 번째와 네 번째 div 외 모든 요소를 배열에서 제거한다.  
 ```
+
+## .map(callback)  
+
+선택한 요소만큼 callback을 실행한다. callback 파라미터는 index와 domElement(document object)이다.   
+각 callback이 반환하는 값을 모아서 새 jQuery 객체를 만든다. callback이 null이나 undefined를 반환하면 빈값으로    
+채우지 않고 생략한다.  
+
+```html
+<fieldset>
+	<input type="text">
+	<input type="text" value="123">
+	<input type="button">
+	<input type="reset" value="리셋1">
+	<button type="reset">리셋2</button>
+	<textarea></textarea>
+</fieldset>
+```
+
+```javascript
+$('input').map(function(idx, ele) {
+	return $(ele).attr('type'); // ['text', 'text', 'button', 'reset']
+});  
+
+$('input').map(function(idx, ele) {
+	var type = $(ele).attr('type');
+	return type == 'text' ? undefined : type;  // ['button', 'reset']
+});  
+```

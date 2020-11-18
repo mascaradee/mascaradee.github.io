@@ -20,5 +20,5 @@ nori-labs에 추가로 remote를 하나 더 추가하고 mas-labs의 origin remo
 
 
 ## 참고
-- 보고 정리할것 
+- 보고 정리할것
 [https://git-scm.com/book/ko/v2](https://git-scm.com/book/ko/v2)
