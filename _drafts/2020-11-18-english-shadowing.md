@@ -16,6 +16,8 @@ tags:
 
 #### 20201118  
 
+##### scene 1
+
 Good afternoon, Eleanor. What can I get you today?  
 [Eleanor] Whoa! Lot of new flavors.  
 Michael felt bad about the sinkhole, so he wanted to give you all a little treat.  
@@ -35,7 +37,8 @@ Can I have some Folded Laundry?
 
 Chidi!  
 You'll never believe it.  
-I was at the frozen yogurt place and I didn't know what I wanted, so I turned to the guy behind me, and I was like, "Why don't you go ahead?" [gasps]  
+I was at the frozen yogurt place and I didn't know what I wanted,  
+so I turned to the guy behind me, and I was like, "Why don't you go ahead?" [gasps]  
 Just like that! "Why don't you go ahead?"  
 [stammers] Okay...  
 Dude, you don't understand!  
@@ -58,7 +61,9 @@ Good person.
 
 ================================================================================
 
-####
+#### 20201120
+
+##### scene 2
 
 So, to sum up, Utilitarianism posits that the correct choice is the one that causes the most good or pleasure, and the least pain and suffering.  
 - to sum up : 요컨대, 요약해서 말하면
@@ -68,10 +73,12 @@ So, to sum up, Utilitarianism posits that the correct choice is the one that cau
 I like this one. It's simple.  
 Ugh... Screw all the other complicated theories, why didn't you start with this one?  
 Ah, but here's the problem.  
-If all that matters is the sum total of "goodness," then you can justify any number of bad actions, like torturing one innocent person to save a hundred, or preemptive war...  
+If all that matters is the sum total of "goodness," then you can justify any number of bad actions, like torturing one innocent person to save a hundred, or preemptive war...
+- preemptive : 선제의, 예방의
 Oh, dude, I get it.  
 It's like, I knew this girl Sheila...  
 She was a black market alligator dealer with a pierced jawbone.  
+- black market : 암시장
 - pierced : 귀에 구멍을 뚫은
 - jawbone : 턱뼈
 
@@ -107,11 +114,14 @@ Sure, I'll do that and, uh...
 We can start another lesson.  
 
 ================================================================================
-####
+
+##### scene 3
 
 -[indistinct chatter]  
 -[Michael] Ah! Tahani.  
 I've been working on my Western Hemisphere brunch banter.  
+- Hemisphere : (지구의) 반구
+- banter : 정감 어린 농담
 Tell me what you think.  
 That New Yorker article was crazy.  
 You haven't seen Hamilton?  
@@ -119,6 +129,7 @@ Hey, did you hear about Stephanie?
 Very well done, Michael.
 Hi, there!  
 We have a Category 55 Emergency Doomsday Crisis.  
+- Doomsday : 최후의 심판일
 A Category 55 Emergency Doomsday Crisis?
 Mmm-hmm.  
 Sorry, what is a Category 55 Emergency Doomsday Crisis?  
@@ -144,6 +155,10 @@ This is the reaction I have when things are incredibly mundane and expected.
 I'm gonna leave now at my regular pace, as I do in most scenarios.  
 
 ================================================================================
+
+####
+
+##### scene 4
 
 Finally! Let's get back to it.  
 Whip out that chalkboard, big boy, show me what you're working with.  
