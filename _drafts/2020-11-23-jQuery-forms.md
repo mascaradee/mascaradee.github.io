@@ -12,21 +12,27 @@ tags:
 - `jQuery` 공식 도움말  
 [https://api.jquery.com](https://api.jquery.com)
 
-- forms
+- forms  
 [https://api.jquery.com/category/forms/](https://api.jquery.com/category/forms/)
 
 # forms  
 
 ## .blur()  
 
-파라미터가 없으면 blur 이벤트를 발생시킨다.(고유기능)  
-파라미터가 있으면 blur 이벤트에 작동할 핸들러를 설정한다. (이벤트 전파)  
+파라미터가 없으면 blur 이벤트를 발생시킨다.  
+파라미터가 있으면 blur 이벤트에 작동할 핸들러를 설정한다.
 
 ```javascript
 // DOM이 모두 생성된 후에 실행
+/*
 $(document).ready(function() {  
 	...  
 }); // 아래와 같음  
+
+$(function(){
+
+});
+*/
 
 $(function() {
 	$('#firstName').on('keyup', function(event) {
@@ -50,103 +56,125 @@ $(function() {
 </div>
 ```
 
+##### 리스너
+
+이벤트가 발생하는지 감시하는 역할
+
+##### 핸들러
+
+이벤트가 발생했을 때 실행할 함수
 
 
+## .change()
 
-### 이벤트 전파
+파라미터가 없으면 change 이벤트를 발생시킨다. 파라미터가 있으면 change 이벤트에 작동할 핸들러를 설정한다.  
 
-모든 이벤트는 이벤트 고유기능과 이벤트 전파기능을 가지고 있다.  
-예를 들어 blur의 경우 커서를 없애는 고유기능을 가지고 있고  
-다른 요소들(상위요소)에게 해당 이벤트가 발생되었음을 전파한다.
-이벤트전파의 흐름은 3가지로 나눌수 있다.
- - 캡처링 단계
- - 타겟 단계
- - 버블링 단계
-
-
-#### 1) 버블링 단계
-
-하위요소에서 이벤트 발생 시 최상단 부모 요소까지 이벤트까지 모두 동작하는 현상으로  
-거의 모든 이벤트에 적용됨. (`focus` 제외)
-
-`me` 요소만 클릭했지만 결과는 `me -> mother -> grandmother`의 이벤트까지 모두 동작한다.
-
-```html
-<body>
-  <div id='grandmother' style='border: 50px solid red;' onclick='alert("grandmother")'>
-    <div id='mother' style='border: 50px solid orange;' onclick='alert("mother")'>
-      <div id='me' style='border: 50px solid yellow;' onclick='alert("me")'></div>
-    </div>
-  </div>
-</body>
+```javascript
+$('#lastName').change(); // $('#lastName').trigger('change'); 같은 결과
 ```
 
-#### 2) 타겟 단계
+```javascript
+function fn2(event) {
+	var $target = $(this);
+	var value = $target.val();
+	$target.val(value.replace(/[^A-Za-z0-9]/gi, '뿅')); // 영어, 숫자가 아니면 대체
+}  // 재사용이 필요할 경우 이렇게 따로 함수를 만든다.
 
-이벤트가 발생한 가장 안쪽의 요소, 실제 이벤트가 시작된 타겟 요소
+// 핸들러 설정 + 이벤트 발생
+$('#lastName').change(fn2).change(); // $('#lastName').on('change', fn2);
+```
+
+`$('#lastName').change(fn2)`는 이벤트가 발생되었을때 실행할 함수를 정의해 놓는 부분이고   
+바로 다음에 오는 `.change()`가 이벤트를 발생시키는 부분이다.  
+
 
 ```HTML
-<html>
-  <style>
-    body * {
-      margin: 10px;
-      border: 1px solid blue;
-    }
-    div * {
-    	border: 1px solid black;
-    }
-  </style>
-  <script src="/static/js/jquery-3.5.1.js"></script>
-  <body>
-    <div id='grandmother' style='background-color:red; height: 100px;' >
-      <div id='mother' style='background-color:orange; height: 60px;' >
-        <div id='me' style='background-color:yellow; height: 20px;' ></div>
-      </div>
-    </div>
-  </body>
-  <script>
-  $(function(){
-    $('#grandmother').on('click', function(event){
-  	  let backgroundColor = event.target.style.backgroundColor
-  	  event.target.style.backgroundColor = 'green';
-      // chrome needs some time to paint yellow
-      setTimeout(() => {
-  	    alert("target = " + event.target.id + ", this=" + this.id);
-  	    event.target.style.backgroundColor = backgroundColor
-      }, 0);
-    });
-  });
-  </script>
-</html>
+<input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="ㅂ1ㅈ2ㄷ3ㄱ4">
 ```
 
-#### 3) 캡처링 단계
-많이 사용되지는 않지만 버블링과 반대 개념으로 하위요소에서 이벤트가 발생했으나  
-최상단 요소의 이벤트부터 동작해서 실제 이벤트가 발생한 요소까지 동작한다.
+## .submit(), .focusin(), .focusout()
 
-`me` 요소만 클릭했지만 결과는 `grandmother -> mother -> me`의 이벤트 순서로 동작한다.
+`.blur()`와 같게 파라미터가 없으면 해당 이벤트를 발생시킨다. 파라미터가 있으면 해당 이벤트에 작동할 핸들러를 설정한다.  
 
+## .select()
+다른 메소드와 거의 같으나, 여기서 `select` 이벤트는 `input`이나 `textarea`에서 텍스트를 드래그했을 때  
+발생하는 이벤트를 말한다.
 
-```html
-<body>
-  <div id='grandmother' style='border: 50px solid red;'>
-    <div id='mother' style='border: 50px solid orange;'>
-      <div id='me' style='border: 50px solid yellow;'></div>
+```javascript
+$('#lastName').select(function() {
+	console.log('hi. you got me');
+});
+```
+```HTML
+<input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="ㅂ1ㅈ2ㄷ3ㄱ4">
+```
+
+## jQuery.param()
+
+배열이나 자바스크립트 객체, 제이쿼리 객체를 직렬화된 표현(URL의 쿼리스트링)의 문자열로 바꾼다.
+
+```javascript
+var myObject = {
+	a : {
+		one : 1,
+		two : 2,
+		three : 3
+	},
+	b : [ 1, 2, 3 ]
+};
+window.recursiveEncoded = $.param(myObject); //a%5Bone%5D=1&a%5Btwo%5D=2&a%5Bthree%5D=3&b%5B%5D=1&b%5B%5D=2&b%5B%5D=3
+window.recursiveDecoded = decodeURIComponent($.param(myObject)); // a[one]=1&a[two]=2&a[three]=3&b[]=1&b[]=2&b[]=3
+```
+
+## .serialize()
+
+지정된 `form` 하위의 입력란들을 `submission`을 위한 인코딩된 문자열로 변환한다.  
+입력란에 해당하는 태그에 `name` 속성이 없을 경우 대상에서 제외한다.
+
+```javascript
+decodeURIComponent($('#myform').serialize()); // firstName=이뿅뿅&lastName=뿅1뿅2뿅3뿅4&email=mascaradee@mail.net&address=서울 어딘가
+```
+```HTML
+<form id="myForm">
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="firstName">First name</label>
+      <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" value="이뿅뿅">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="lastName">Last name</label> <input type="text"
+        class="form-control" id="lastName" name="lastName" placeholder="" value="ㅂ1ㅈ2ㄷ3ㄱ4">
     </div>
   </div>
-</body>
+  <div class="mb-3">
+    <label for="email">Email <span class="text-muted">(Optional)</span></label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" value="mascaradee@mail.net">
+  </div>
+  <div class="mb-3">
+    <label for="address">Address</label>
+    <input type="text" class="form-control" id="address" name="address" placeholder="1234 Main St" value="서울 어딘가">
+  </div>
+  </form>
 ```
+
+## .serializeArray()
+
+지정된 `form` 하위의 입력란들을 `name`과 `value`가 `property`인 객체들의 배열로 변환한다.
+
 ```javascript
-for(let elem of document.querySelectorAll('*')) {
-  elem.addEventListener("click", e => alert('캡처링: ${elem.tagName}: ${elem.id}'), true);
-  elem.addEventListener("click", e => alert('버블링: ${elem.tagName}: ${elem.id}'));
-}
+$('#myForm').serializeArray();
+/*
+(4) [{…}, {…}, {…}, {…}]
+0: {name: "firstName", value: "이뿅뿅"}
+1: {name: "lastName", value: "뿅1뿅2뿅3뿅4"}
+2: {name: "email", value: "mascaradee@mail.net"}
+3: {name: "address", value: "서울 어딘가"}
+length: 4
+__proto__: Array(0)
+*/
 ```
+같은 `form`을 대상으로 `.serialize()`를 사용한 결과와 `.serializeArray() + jQuery.param()`을 사용한 결과는 같다.
 
-#### 이벤트 전파 흐름
-https://onedrive.live.com/embed?cid=6D43ECA37A1182E8&resid=6D43ECA37A1182E8%21174133&authkey=AHra9bVmHKq7620&em=2
-
-#### 참고
-[https://ko.javascript.info/bubbling-and-capturing] (https://ko.javascript.info/bubbling-and-capturing)
-
-[https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/] (https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
+```javascript
+$('#myForm').serialize() === $.param($('#myForm').serializeArray()); // true
+```
