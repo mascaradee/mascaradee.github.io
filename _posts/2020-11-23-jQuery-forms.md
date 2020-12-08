@@ -56,11 +56,11 @@ $(function() {
 </div>
 ```
 
-##### 리스너
+#### 리스너
 
 이벤트가 발생하는지 감시하는 역할
 
-##### 핸들러
+#### 핸들러
 
 이벤트가 발생했을 때 실행할 함수
 
@@ -88,7 +88,7 @@ $('#lastName').change(fn2).change(); // $('#lastName').on('change', fn2);
 바로 다음에 오는 `.change()`가 이벤트를 발생시키는 부분이다.  
 
 
-```HTML
+```html
 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="ㅂ1ㅈ2ㄷ3ㄱ4">
 ```
 
