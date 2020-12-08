@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2020-06-04 00:00:00 +0900
-title: '[mac] mac os base'
+title: '[etc] mac os base'
 categories:
-  - php
+  - etc
 tags:
   - base
 ---

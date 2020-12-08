@@ -11,9 +11,9 @@ tags:
 
 * 참고 사이트 [https://ko.javascript.info/ifelse](https://ko.javascript.info/ifelse)
 
-## 조건부 연산자 if와 ?
+## 조건부 연산자 if와 ? (Ternary operator)
 
-### if문
+### if
 
 `if(조건문) {...}`
 
@@ -30,6 +30,37 @@ if(0){ // 0은 false 이므로 아래 실행문은 실행될 수 없음
 if(1){ // 1은 true이므로 항상 실행
   alert('do something everytime');
 }
+```
+
+### Switch statement
+`if` 조건문이 많아질때, 이넘(`enum`) 값을 확인할때 `if`문 대신 쓰면 가독성에 좋다.  
+
+```js
+const fruit = 'grape';
+switch (fruit) {
+  case 'apple':
+    console.log('good for you in the morming');
+    break;
+  case 'banana':
+    console.log('good instead of breakfast');
+    break;
+  case 'tomato':
+    console.log('good instead of breakfast');
+    break;
+  default:
+    console.log('so so');
+    break;
+}
+```
+
+banana와 같은 내용을 실행하므로 하나로 합쳐 아래와 같이 쓸수 있다.  
+```js
+(...)
+case 'banana':
+case 'tomato':
+  console.log('good instead of breakfast');
+  break;
+(...)
 ```
 
 ### 조건부연산자 `?` = 삼항연산자

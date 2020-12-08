@@ -1,0 +1,289 @@
+---
+layout: post
+date: 2020-12-07 16:00:00 +0900
+title: '[javascript] function'
+categories:
+  - javascript
+tags:
+  - function
+---
+
+- 참고
+[드림코딩 by 엘리](https://www.youtube.com/watch?v=e_lU39U-5bQ&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=5)
+
+## 함수
+
+### 함수 선언식 (Function declaration)
+
+- 하나의 함수에는 한 가지 기능만 넣는 것이 좋다
+- 네이밍은 동사로 시작
+- 함수는 object이다.
+
+`function name (param1, param2) { body ... return; }`
+
+```js
+function printHi() {
+  console.log('Hi');
+}
+printHello();
+
+function log(message) {
+  console.log(message);
+}
+log('anoter Hi')
+```
+
+#### 파라미터
+
+```js
+function changeAge(obj) {
+  obj.age = 10;
+}
+const age = { age: 20 };
+changeAge(age);
+console.lot(age);
+```
+
+#### default function parameter
+
+- 매개변수에 기본값을 설정할 수 있다.  
+- ES6 부터 추가
+- ie는 미지원  
+
+```
+function [name]([param1[ = defaultValue1 ][, ..., paramN[ = defaultValueN ]]]) {
+   statements
+}
+```
+
+```js
+function showMessage(message, from) {
+    console.log(`${message} by ${from}`);
+}
+showMessage('Hi!'); // Hi! by undefined : 2번째 인자를 세팅하지 않으면 스크립트가 자동으로 'undefined'로 리턴해줌
+
+// OLD
+function showMessage1(message, from) { // 2번째 인자의 기본 값을 설정할수 있다.
+  if(from === undefined){
+    from = '모르는 사람';
+  }
+  console.log(`${message} by ${from}`);
+}
+showMessage1('Hi!'); // Hi! by 모르는 사람
+
+// NEW
+function showMessage1(message, from ='모르는 사람') { // 2번째 인자의 기본 값을 설정할수 있다.
+    console.log(`${message} by ${from}`);
+}
+showMessage1('Hi!'); // Hi! by 모르는 사람
+```
+
+#### Rest parameters
+
+- 정해지지 않은 개수의 매개변수를 배열로 전달받는다.
+- ES6 부터 추가
+- ie는 미지원  
+
+```js
+function printAll(...args) {
+    for (let i = 0; i < args.length; i++) {
+        console.log(args[i]);
+    }
+    /*
+    위과 같은 결과
+    1) for... of
+    for (const arg of args) {
+        console.log(arg);
+    }
+    2) forEach()
+    args.forEach((arg) => console.log(arg));
+    */
+}
+printAll('apple', 'banana','mange');
+```
+
+#### function scope
+
+- 블록 기준 유효범위를 가지고 있는데 함수 역시 블록으로 여겨진다.  
+- 블록 안에서는 밖의 요소를 참조할 수 있지만 밖에서는 안의 요소를 참조할 수 없다.
+
+
+#### return a value
+
+```js
+function fn() {
+    console.log('hi');
+    // return undefined; 가 생략되어 있는 것과 같음
+}
+fn();
+
+function add(a, b) {
+   return a + b;
+}
+const result = add(1, 2); // 3 : return a + b에 의해 값이 리턴됨
+```
+
+#### Early return, early exit
+
+조건에 맞지 않는 것은 빨리 종료를 할 수 있게 코딩하는 것이 좋다.  
+
+```js
+//bad
+function update(point) {
+  if(point > 10) {
+    // do something
+  }
+}
+
+// good
+function update(point) {
+  if(point <= 10) {
+    return;
+  }
+  // do  something
+}
+```
+
+### 함수 표현식 (function expression)
+
+변수와 같이 취급된다.  
+- 변수에 할당할 수 있다.
+- 매개변수로 사용 할 수 있다.
+- 함수의 리턴값으로 사용 할 수 있다.
+
+#### 변수에 할당
+
+익명함수는 변수에 할당 할 수 있다.  
+
+```js
+const fn = function () {
+  console.log('I am function');
+};
+fn(); // I am function
+const fn2 = fn; // 또 다른 변수에 할당
+fn2(); // I am function
+```
+
+함수선언식과 함수표현식의 가장 큰 차이는 호이스팅의 여부이다.   
+함수표현식은 호이스팅이 되지 않으므로 함수 호출은 꼭 함수 선언 이후에만 가능하다.
+
+```js
+fn(); // function.js:41 Uncaught ReferenceError: Cannot access 'fn' before initialization
+const fn = function () {
+  console.log('I am function');
+};
+fn(); // I am function : 정상 출력
+```
+
+하지만 함수선언식은 자동으로 호이스팅이 되어 자바스크립트 엔진에 의해 문서의 최상단으로 옮겨지게 되므로(실제 소스는 아니지만)
+함수호출이 가능하다.
+
+```js
+fn3();  // I am hoisting : 정상 출력
+function fn3() {
+  console.log('I am hoisting');
+};
+fn3(); // I am hoisting : 정상 출력
+```
+
+#### 함수 표현식 내의 콜백함수
+
+함수의 매개변수에 또 다른 함수(콜백함수)를 세팅할 수 있다.  
+
+```js
+function createPicture(command, drawLine, drawCircle) {
+    if (command === 'line') {
+        drawLine();
+    } else {
+        drawCircle();
+    }
+}
+const drawLine = function () { // 익명함수
+    console.log('this is a line');
+}
+const drawCircle = function circle () { // 기명함수
+    console.log('this is a circle');
+}
+createPicture('line', drawLine, drawCircle);
+createPicture('circle', drawLine, drawCircle);
+```
+
+#### 화살표 함수표현식 (arrow function expression)
+
+익명함수로 이루어져 있다.  
+ie 미지원
+
+`(매개변수1, 매개변수2, ...) => 실행문`
+
+```js
+// 기존 익명함수
+const sayHello = function () {
+    console.log('hello');
+};
+sayHello();
+
+// Arrow 함수
+// function () : ()
+// {} : =>
+
+// 매개변수가 없는 경우
+const sayHello1 = () => console.log('hello');
+sayHello1();
+
+// 매개변수가 있는 경우
+const saySomething = (something) => console.log(`${something}`);
+saySomething('안녕');
+```
+
+실행문이 복잡한 경우 블록이 필요할때 화살표 함수와 혼용하여 사용가능하지만 꼭 return이 필요함.  
+
+```js
+const showMeMore = (a , b) => {  
+  // do something more
+  return a + b;
+}
+```
+
+#### 즉시 실행 함수 표현 (IIFE, Immediately Invoked Function Expression)
+
+정의 되지마자 즉시 실행한다.  
+
+```
+(function () {})();
+```
+
+```js
+(function () {
+  console.log('immediately show me');
+})();
+```
+
+
+#### Q1. function calculate(command, a, b)  command: add, substract, divide, multiply, remainder, etc
+```js
+function calculate(command, a, b) {
+    let result = 0;
+    switch (command) {
+        case ('add') :
+            return a + b;
+            break;
+        case ('substract') :
+            return a - b;
+            break;
+        case ('divide') :
+            return a / b;
+            break;            
+        case ('multiply') :
+            return a * b;
+            break;
+        case ('remainder') :
+            return a % b;
+            break;
+        default :
+            throw new Error('unknown command');
+            //return 'we can\'t do it';
+            break;
+    }
+}
+console.log(`calculate: ${calculate('add', 1, 3)}`);
+```

@@ -11,6 +11,7 @@ tags:
 ## 수(Number) 관련 함수
 
 #### parseInt(파싱할 문자열, 진수)
+
 모든 브라우저 호환, 단 IE는 9 이상부터 가능
 
 ```javascript
@@ -18,7 +19,9 @@ tags:
  parseInt('010'); // 10 -> 구형 브라우저에서 "0"으로 시작하는 문자열은 8 진수 (기수 8)로 가정되지만, 2013 년 이후에는 그렇지 않다.
 ```
 
-#### parseFloat (파싱할 문자열) :  항상 10진수만
+#### parseFloat (파싱할 문자열)
+
+항상 10진수만  
 
 ```javascript
 parseFloat('0.1'); // 0.1
@@ -61,35 +64,31 @@ isFinite(NaN);       // false
 ```
 
 #### BigInt
+
 자바스크립트 허용 숫자 범위는 -2<sup>53</sup> ~ 2<sup>53</sup> 사이로 16자리 정수인데   
 이것보다 더 큰 숫자가 필요하거나 아주 높은 정밀도 작업이 필요할때 사용  
 정수 리터럴 끝 + `n` 을 붙여 사용  
 일부 브라우저의 일부버전에서만 지원 (Firefox, Chrome, Edge, Opera)
+
 ```javascript
 let bigInt = 1234567890223456789032345678904234567890n;
 ```
 
-
-
-<br>
-
 ## 문자열(Strings)
+
 큰따옴표 혹은 작은 따옴표 구분없이 둘 중 하나로 묶으면 문자열로 인식  
 
 ### 역 따옴표(backtick): \` \`
+
 역따옴표 안에 `${}`로 변수나 표현식을 넣어주면 해당 부분에 값이 넣어짐.
 
 ```javascript
 let name = 'Jamie';
 
 alert(`Welcome, ${name}!`); // Welcome, Jamie!
-
 alert(`일 더하기 일은 ${1+1}`); // 일 더하기 일은 2
-
 alert( `Welcome ${1}` ); // Welcome 1 -> 1이 표현식
-
 alert( `Welcome ${"name"}` ); // Welcome name -> "name" 이 표현식
-
 ```
 
 ### 문자열(Strings) 관련 함수
@@ -101,34 +100,28 @@ alert( `Welcome ${"name"}` ); // Welcome name -> "name" 이 표현식
 'hello'.toUpperCase(); // "HELLO"
 ````
 
-<br>
-
 ## 널(Null)
+
 의도적으로 값이 없음을 가리키는 '객체' 타입의 객체인 null,  
 다른 언어에서는 자바스크립트의 null과는 조금 다른 성격으로 존재하지 않는 것을 가리킬때 쓰임.
 
 ```javascript
 let name = null;
-
 alert(name); // null
 ```
 
-<br>
-
 ## 정의되지 않음(undefined)
+
 초기화되지 않은 값, 아직 어떤 값도 주어지지 않은(할당되지않은) 변수임을 가리키는 '정의되지 않음' 타입의 객체인 undefined
 
 ```javascript
 let a;
-
 alert(a); // undefined
 ```
 
-<br>
-
 ## 불리언(boolean)
-- `false`, `0`, 빈 문자열 (`""`), 수가 아님을 뜻하는 `NaN`, `null`, 와 `undefined`은 모두 `false`
-- 다른 모든 값은 `true`
+`false`, `0`, 빈 문자열 (`""`), 수가 아님을 뜻하는 `NaN`, `null`, 와 `undefined`은 모두 `false`  
+다른 모든 값은 `true`  
 
 ```javascript
 if(1) { // true이므로 조건 만족하여 아래 수행
@@ -136,11 +129,8 @@ if(1) { // true이므로 조건 만족하여 아래 수행
 }
 
 let isLesser = 1 > 2;
-
 alert( isLesser ); // false
 ```
-
-<br>
 
 ## 객체(Objects)
 간단히 이름-값 쌍(name-value pairs)의 모임. 한 가지만 표현할 수 있는 원시자료형과 달리 복잡한 개체를 표현할 때 사용.
@@ -192,8 +182,8 @@ b[100] = "coq";
 > 101
 ```
 
-
 ### 함수(Function)
+first-class function으로 변수할당, 인자, 리턴값으로도 사용할수 있다.  
 
 ```javascript
 function add(x, y){
@@ -218,7 +208,8 @@ function add() {
 }
 > add(2,3,4,5); // 14
 
-/* 다른 표기 방법 */
+다른 표기 방법 (function expression)은 아래와 같다.  함수선언은 hoisting이 되지만 이건 안된다.  
+
 var avg = function() {
     var sum = 0;
     for (var i = 0, j = arguments.length; i < j; i++) {
@@ -247,15 +238,28 @@ Symbol(Symbol.iterator): ƒ values()
 __proto__: Object
 (중략)
 */
-
 ```
 
 ### 날짜(Date)
+
 ### 정규식(RegExp)
 
 ## 심볼(Symbol)
+고유한 식별자가 필요한 경우 사용.  
+
+```javascript
+const sb1 = Symbol('id');
+const sb2 = Symbol('id');
+console.log(sb1 === sb2); // false : 같은 문자열 'id'로 심볼을 만들었으나 고유한 다른 식별자로 인식됨
+
+const gSb1 = Symbol.for('id');
+const gSb2 = Symbol.for('id');
+console.log(gSb1 === gSb2); // true
+console.log(`value: ${sb1.description}, type: ${typeof sb1}`); // value: id, type: symbol
+```
 
 ## typeof 연산자
+
 인수의 자료형을 반환. 변수의 자료형을 알아낼때 사용
 
 ```javascript

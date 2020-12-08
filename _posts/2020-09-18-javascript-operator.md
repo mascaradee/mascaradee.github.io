@@ -134,6 +134,16 @@ true && 1; // true && true -> 우변 값인 1 반환
 true && undefined; // true && false -> 우변 값인 undefined 반환
 ```
 
+논리연산자의 조건 중 복잡한 것은 가장 마지막에 체크하도록 코딩하는 것이 좋다.
+`v1`이 `false`라면 바로 `false`를 반환하므로 불필요하게 복잡한 `fn()`을 체크할 필요가 없다.
+
+```js
+const v1 = '';
+const v2 = true;
+console.log(`&&연산자: ${v1 && v2 && fn()}`); // 아래보다 더 좋은 예시
+console.log(`&&연산자: ${fn() && v1 && v2}`);
+```
+
 #### `||` 연산
 
 좌변, 우변 중 하나마 `true`이면 되므로,  
@@ -427,4 +437,4 @@ console.log(bbb()); // 'hello world!'
 console.log(void bbb()); // undefined
 ```
 
-같은 이름의 void(any) 함수는 매개변수로 아무 값이나 받아도 상관없는 항상 undefined를 반환하는 함수다. 
+같은 이름의 void(any) 함수는 매개변수로 아무 값이나 받아도 상관없는 항상 undefined를 반환하는 함수다.

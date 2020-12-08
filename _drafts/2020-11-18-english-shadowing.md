@@ -157,7 +157,7 @@ I'm gonna leave now at my regular pace, as I do in most scenarios.
 
 ================================================================================
 
-####
+#### 20201126
 
 ##### scene 4
 
@@ -187,6 +187,10 @@ What is wrong?
 
 ================================================================================
 
+#### 20201127
+
+##### scene 5
+
 Jianyu, 2nd.  
 Oh, well done, my love. [sniffles]  
 So where am I?  
@@ -200,6 +204,7 @@ Thank you, Tahani. It's very competent.
 
 I made a bird, as well.  
 I worked in a reflective alloy, holding up a mirror to mankind and its mistreatment of these defenseless animals.  
+- holding up a mirror
 - alloy : 합금
 
 Excellent, Kamilah.  
@@ -218,6 +223,10 @@ My birdie has a hat.
 Yes, well done, Tahani.  
 
 ================================================================================
+
+#### 20201130
+
+##### scene 6
 
 [Eleanor repeatedly] What's wrong?  
 [Chidi] Nothing's wrong.  
@@ -264,6 +273,10 @@ Or we could both just stay here. -[sighs]
 
 ================================================================================
 
+#### 20201202
+
+##### scene 7
+
 [Michael over speakers] We hope you enjoy your eternal stay in The Good Place.  
 Take advantage of our day spa, or Janet... A magical assistant who can get you whatever you want.  
 You mind turning that off? It's been playing on a loop for two days.  
@@ -294,6 +307,10 @@ Somewhere in there. Okay, bye.
 Don't go outside.  
 
 ================================================================================
+
+#### 20201208
+
+##### scene 8
 
 Hello, everyone, and welcome to day three of our brunch siege.  
 - siege : 출입차단, 포위

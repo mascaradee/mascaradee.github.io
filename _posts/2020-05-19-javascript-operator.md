@@ -14,7 +14,7 @@ tags:
 
 ### 단항연산자
 
-피연산자 x 하나만 받는 연산자는 단항연산자라고 한다.  
+피연산자 `x` 하나만 받는 연산자는 단항연산자라고 한다.  
 피연산자(operand)는 인수(argument)라고도 한다.
 
 ```javascript
@@ -25,7 +25,7 @@ alert(x); // -5
 
 ### 이항연산자
 
-피연산자 y, z 2개를 받는 연산자를 이항연산자라고 한다. 보통 수학에서 배우는 사칙연산자와 같다.
+피연산자 `y, z` 2개를 받는 연산자를 이항연산자라고 한다. 보통 수학에서 배우는 사칙연산자와 같다.
 
 ```javascript
 let y = 10, z = 39;
@@ -119,7 +119,7 @@ alert(+first + +last); // 30 + 9 = 39
 * 우선순위 표 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
 | Precedence |         Operator type        | Associativity | Individual operators |
-|:----------:|:----------------------------:|:-------------:|:--------------------:|
+|:-----------|:-----------------------------|:--------------|:---------------------|
 | 21         | Grouping                     | n/a           | ( … )                |
 | 20         | Member Access                | left-to-right | … . …                |
 |            | Computed Member Access       | left-to-right | … [ … ]              |
@@ -281,13 +281,13 @@ alert(counter); // 2
 비트 연사자는 인수를 32비트 정수로 변환하여 이진 연산을 수행  
 일반적인 개발에서 쓰일일은 거의 없지만 암호를 다뤄야 할때는 유용.
 
-* & (비트 AND)
-* | (비트 OR)
-* ^ (비트 XOR)
-* ~ (비트 NOT)
-* << (왼쪽 시프트)
-* >> (오른쪽 시프트)
-* >>> (부호 없는 오른쪽 시프트)
+* `&` (비트 AND)
+* `|` (비트 OR)
+* `^` (비트 XOR)
+* `~` (비트 NOT)
+* `<<` (왼쪽 시프트)
+* `>>` (오른쪽 시프트)
+* `>>>` (부호 없는 오른쪽 시프트)
 
 
 ### 쉼표 연산자
