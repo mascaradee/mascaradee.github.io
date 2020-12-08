@@ -7,6 +7,12 @@ categories:
 tags:
   - function
   - ES6
+  - declaration
+  - expression
+  - arrow function
+  - rest parameter
+  - default parameter
+
 ---
 
 - 참고  
