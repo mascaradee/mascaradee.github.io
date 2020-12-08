@@ -105,7 +105,7 @@ $('#lastName').select(function() {
 	console.log('hi. you got me');
 });
 ```
-```HTML
+```html
 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="ㅂ1ㅈ2ㄷ3ㄱ4">
 ```
 
@@ -134,7 +134,7 @@ window.recursiveDecoded = decodeURIComponent($.param(myObject)); // a[one]=1&a[t
 ```javascript
 decodeURIComponent($('#myform').serialize()); // firstName=이뿅뿅&lastName=뿅1뿅2뿅3뿅4&email=mascaradee@mail.net&address=서울 어딘가
 ```
-```HTML
+```html
 <form id="myForm">
   <div class="row">
     <div class="col-md-6 mb-3">
