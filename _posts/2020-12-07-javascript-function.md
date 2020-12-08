@@ -14,11 +14,11 @@ tags:
 
 # 함수
 
-## 함수 선언식 (Function declaration)
+## 함수 선언 Function declaration
 
 - 하나의 함수에는 한 가지 기능만 넣는 것이 좋다
 - 네이밍은 동사로 시작
-- 함수는 object이다.
+- 함수는 `object`이다.
 
 `function name (param1, param2) { body ... return; }`
 
@@ -34,52 +34,49 @@ function log(message) {
 log('anoter Hi')
 ```
 
-### 파라미터
-
-```js
-function changeAge(obj) {
-  obj.age = 10;
-}
-const age = { age: 20 };
-changeAge(age);
-console.lot(age);
-```
-
-### default function parameter
+### Default function parameter
 
 - 매개변수에 기본값을 설정할 수 있다.  
 - ES6 부터 추가
 - ie는 미지원  
 
-`function [name]([param1[ = defaultValue1 ][, ..., paramN[ = defaultValueN ]]]) { statements }`
+`function 함수명 ( 매개변수1, 매개변수2 = 기본값 ) { }`
+
+함수에 매개변수가 존재하고, 매개변수가 중 기본값이 필요한 경우 `매개변수 = 기본값`의 형태로 표기할수 있다.  
+물론 매개변수 없는 함수도 있으므로 꼭 넣어야 하는 필수 값은 아니다.  
+만약 매개변수가 존재하는데 함수 호출 시, 해당 매개변수를 넘겨주지 않는다면 자바스크립트 엔진은 해다 매개변수의 값을 `undefined`로 세팅해 준다.  
 
 ```js
 function showMessage(message, from) {
     console.log(`${message} by ${from}`);
 }
-showMessage('Hi!'); // Hi! by undefined : 2번째 인자를 세팅하지 않으면 스크립트가 자동으로 'undefined'로 리턴해줌
+showMessage('Hi!'); // Hi! by undefined
 
 // OLD
 function showMessage1(message, from) { // 2번째 인자의 기본 값을 설정할수 있다.
   if(from === undefined){
-    from = '모르는 사람';
+    from = 'Stranger';
   }
   console.log(`${message} by ${from}`);
 }
-showMessage1('Hi!'); // Hi! by 모르는 사람
+showMessage1('Hi!'); // Hi! by Stranger
 
 // NEW
-function showMessage1(message, from ='모르는 사람') { // 2번째 인자의 기본 값을 설정할수 있다.
+function showMessage1(message, from ='Stranger') { // 2번째 인자의 기본 값을 설정할수 있다.
     console.log(`${message} by ${from}`);
 }
-showMessage1('Hi!'); // Hi! by 모르는 사람
+showMessage1('Hi!'); // Hi! by Stranger
 ```
 
-### Rest parameters
+### Rest function parameter
 
 - 정해지지 않은 개수의 매개변수를 배열로 전달받는다.
 - ES6 부터 추가
 - ie는 미지원  
+
+`function 함수명(...변수명) {}`
+
+여러 개의 매개변수를 표기할때 변수명(보통은 args로 표현) 앞에 `...`를 붙이면 배열을 의미한다.    
 
 ```js
 function printAll(...args) {
@@ -96,16 +93,15 @@ function printAll(...args) {
     args.forEach((arg) => console.log(arg));
     */
 }
-printAll('apple', 'banana','mange');
+printAll('apple', 'banana','mango');
 ```
 
-### function scope
+### 함수 유효 범위
 
 - 블록 기준 유효범위를 가지고 있는데 함수 역시 블록으로 여겨진다.  
 - 블록 안에서는 밖의 요소를 참조할 수 있지만 밖에서는 안의 요소를 참조할 수 없다.
 
-
-### return a value
+### 결과 리턴 return
 
 ```js
 function fn() {
@@ -141,9 +137,9 @@ function update(point) {
 }
 ```
 
-## 함수 표현식 (function expression)
+## 함수 표현 Function expression
 
-변수와 같이 취급된다.  
+변수와 같이 취급되어  
 - 변수에 할당할 수 있다.
 - 매개변수로 사용 할 수 있다.
 - 함수의 리턴값으로 사용 할 수 있다.
@@ -205,12 +201,13 @@ createPicture('line', drawLine, drawCircle);
 createPicture('circle', drawLine, drawCircle);
 ```
 
-### 화살표 함수표현식 (arrow function expression)
+### 화살표 함수표현 Arrow function expression
 
 익명함수로 이루어져 있다.  
 ie 미지원
 
 `(매개변수1, 매개변수2, ...) => 실행문`
+기존 익명함수의 `function(매개변수)`는 `(매개변수)`로 `{}`는 `=>`를 의미한다.  
 
 ```js
 // 기존 익명함수
@@ -218,10 +215,6 @@ const sayHello = function () {
     console.log('hello');
 };
 sayHello();
-
-// Arrow 함수
-// function () : ()
-// {} : =>
 
 // 매개변수가 없는 경우
 const sayHello1 = () => console.log('hello');
@@ -241,46 +234,14 @@ const showMeMore = (a , b) => {
 }
 ```
 
-### 즉시 실행 함수 표현 (IIFE, Immediately Invoked Function Expression)
+### 즉시 실행 함수 표현 Immediately Invoked Function Expression, IIFE
 
 정의 되지마자 즉시 실행한다.  
 
-```
-(function () {})();
-```
+`(function() { 실행문 })();`
 
 ```js
 (function () {
   console.log('immediately show me');
 })();
-```
-
-
-#### Q1. function calculate(command, a, b)  command: add, substract, divide, multiply, remainder, etc
-```js
-function calculate(command, a, b) {
-    let result = 0;
-    switch (command) {
-        case ('add') :
-            return a + b;
-            break;
-        case ('substract') :
-            return a - b;
-            break;
-        case ('divide') :
-            return a / b;
-            break;            
-        case ('multiply') :
-            return a * b;
-            break;
-        case ('remainder') :
-            return a % b;
-            break;
-        default :
-            throw new Error('unknown command');
-            //return 'we can\'t do it';
-            break;
-    }
-}
-console.log(`calculate: ${calculate('add', 1, 3)}`);
 ```
