@@ -86,7 +86,7 @@ const user1 = new User('Steve', 'Jobs', -1);
 console.log(user1.age); // 0
 ```
 
-## 필드 (pulic, private)
+## 필드 (public, private)
 
 최근 추가된 부분이라 지원되는 브라우저가 적으므로 참고만 한다.   
 
