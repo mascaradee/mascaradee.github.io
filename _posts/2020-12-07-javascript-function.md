@@ -8,12 +8,12 @@ tags:
   - function
 ---
 
-- 참고
+- 참고  
 [드림코딩 by 엘리](https://www.youtube.com/watch?v=e_lU39U-5bQ&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=5)
 
-## 함수
+# 함수
 
-### 함수 선언식 (Function declaration)
+## 함수 선언식 (Function declaration)
 
 - 하나의 함수에는 한 가지 기능만 넣는 것이 좋다
 - 네이밍은 동사로 시작
@@ -33,7 +33,7 @@ function log(message) {
 log('anoter Hi')
 ```
 
-#### 파라미터
+### 파라미터
 
 ```js
 function changeAge(obj) {
@@ -44,17 +44,13 @@ changeAge(age);
 console.lot(age);
 ```
 
-#### default function parameter
+### default function parameter
 
 - 매개변수에 기본값을 설정할 수 있다.  
 - ES6 부터 추가
 - ie는 미지원  
 
-```
-function [name]([param1[ = defaultValue1 ][, ..., paramN[ = defaultValueN ]]]) {
-   statements
-}
-```
+`function [name]([param1[ = defaultValue1 ][, ..., paramN[ = defaultValueN ]]]) { statements }`
 
 ```js
 function showMessage(message, from) {
@@ -78,7 +74,7 @@ function showMessage1(message, from ='모르는 사람') { // 2번째 인자의 
 showMessage1('Hi!'); // Hi! by 모르는 사람
 ```
 
-#### Rest parameters
+### Rest parameters
 
 - 정해지지 않은 개수의 매개변수를 배열로 전달받는다.
 - ES6 부터 추가
@@ -102,13 +98,13 @@ function printAll(...args) {
 printAll('apple', 'banana','mange');
 ```
 
-#### function scope
+### function scope
 
 - 블록 기준 유효범위를 가지고 있는데 함수 역시 블록으로 여겨진다.  
 - 블록 안에서는 밖의 요소를 참조할 수 있지만 밖에서는 안의 요소를 참조할 수 없다.
 
 
-#### return a value
+### return a value
 
 ```js
 function fn() {
@@ -123,7 +119,7 @@ function add(a, b) {
 const result = add(1, 2); // 3 : return a + b에 의해 값이 리턴됨
 ```
 
-#### Early return, early exit
+### Early return, early exit
 
 조건에 맞지 않는 것은 빨리 종료를 할 수 있게 코딩하는 것이 좋다.  
 
@@ -144,14 +140,14 @@ function update(point) {
 }
 ```
 
-### 함수 표현식 (function expression)
+## 함수 표현식 (function expression)
 
 변수와 같이 취급된다.  
 - 변수에 할당할 수 있다.
 - 매개변수로 사용 할 수 있다.
 - 함수의 리턴값으로 사용 할 수 있다.
 
-#### 변수에 할당
+### 변수에 할당
 
 익명함수는 변수에 할당 할 수 있다.  
 
@@ -186,7 +182,7 @@ function fn3() {
 fn3(); // I am hoisting : 정상 출력
 ```
 
-#### 함수 표현식 내의 콜백함수
+### 함수 표현식 내의 콜백함수
 
 함수의 매개변수에 또 다른 함수(콜백함수)를 세팅할 수 있다.  
 
@@ -208,7 +204,7 @@ createPicture('line', drawLine, drawCircle);
 createPicture('circle', drawLine, drawCircle);
 ```
 
-#### 화살표 함수표현식 (arrow function expression)
+### 화살표 함수표현식 (arrow function expression)
 
 익명함수로 이루어져 있다.  
 ie 미지원
@@ -244,7 +240,7 @@ const showMeMore = (a , b) => {
 }
 ```
 
-#### 즉시 실행 함수 표현 (IIFE, Immediately Invoked Function Expression)
+### 즉시 실행 함수 표현 (IIFE, Immediately Invoked Function Expression)
 
 정의 되지마자 즉시 실행한다.  
 
