@@ -34,7 +34,7 @@ class Person {
     // constructor
     constructor(name, age) {
         // fields
-        this.name = name; //this는 이 클레스를 이용해 새로 생성할 인스턴스를 뜻함
+        this.name = name; //this는 이 클래스를 이용해 새로 생성할 인스턴스를 뜻함
         this.age = age;
     }
     // methods
