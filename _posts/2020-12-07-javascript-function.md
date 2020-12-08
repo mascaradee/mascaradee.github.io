@@ -6,6 +6,7 @@ categories:
   - javascript
 tags:
   - function
+  - ES6
 ---
 
 - 참고  

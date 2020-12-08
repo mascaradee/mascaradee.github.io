@@ -4,6 +4,7 @@ date: 2020-12-08 17:00:00 +0900
 title: '[javascript] class'
 categories:
   - javascript
+  - ES6
 tags:
   - class
 ---
