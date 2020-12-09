@@ -355,6 +355,10 @@ Five million!
 
 ================================================================================
 
+### 20201209
+
+#### scene 9
+
 [Nina] Thank you guys so much.  
 Sorry for the imposition.
 - imposition : 폐, 부담
