@@ -16,3 +16,6 @@ tags:
 - 라인 복사 : <kbd> ctrl + c <kbd> , 블록없으면 라인 복사
 - 라인 위로 옮기기 : <kbd> ctrl + up <kbd>
 - 라인 아래로 옮기기 : <kbd> ctrl + down <kbd>
+
+- 사이드 메뉴바 열고 닫기 토글 : ctrl + k, ctrl + b
+- git 메뉴바 열고 닫기 토글 : ctrl + shifr + 9
