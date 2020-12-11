@@ -85,7 +85,7 @@ for (const property in obj) {
 배열의 각 요소마다 콜백함수를 수행한다.
 
 `forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;`
-- `callbackfn: (value: T, index: number, array: T[]) => void` - 콜백함수 인자로 값, 인덱스, 배열을 세팅할 수 있고 리턴은 `void`
+- `callbackfn: (value: T, index: number, array: T[]) => void` - 콜백함수 매개변수로 값, 인덱스, 배열을 세팅할 수 있고 리턴은 `void`
 - `thisArg?: any` - (옵션) 콜백함수가 참조하는것???
 
 ```js
@@ -109,7 +109,7 @@ fruits.forEach((fruit) => console.log(fruit)); // 화살표함수표현식
 그 배열은 요고가 추가된 상태로 변경이 된다.  
 
 `.push(...items: T[]): number;`
-- `...items: T[]` - '인자1' : 배열 형식의 한 개 요소 혹은 여러 요소를 인자로 사용
+- `...items: T[]` - '매개변수1' : 배열 형식의 한 개 요소 혹은 여러 요소를 매개변수로 사용
 - `: number` : 리턴 형식
 
 ```js
@@ -141,7 +141,7 @@ console.log(fruits); //  ["🍎", "🍌", "🍓"]
 그 배열은 요소가 추가된 상태로 변경이 된다.  
 
 `.unshift(...items: T[]): number;`
-- `...items: T[]` - '인자1' : 배열 형식의 한 개 요소 혹은 여러 요소를 인자로 사용
+- `...items: T[]` - '매개변수1' : 배열 형식의 한 개 요소 혹은 여러 요소를 매개변수로 사용
 - `: number` : 리턴 형식
 
 ```js
@@ -173,9 +173,9 @@ console.log(fruits); // ["🍇", "🍎", "🍌", "🍓"]
 
 `splice(start: number, deleteCount?: number): T[];`  
 `splice(start: number, deleteCount: number, ...items: T[]): T[];`
-- `start: number` - 인자1 : 숫자형식의 시작인덱스
-- `deleteCount?: number` - (옵션) 인자2 : 삭제할 개수, 생략시 시작 인덱스 이후로 모두를 삭제한다.
-- `...items: T[]` - (옵션) 인자3 : 삭제자리를 대체하여 추가할 요소들
+- `start: number` - 매개변수1 : 숫자형식의 시작인덱스
+- `deleteCount?: number` - (옵션) 매개변수2 : 삭제할 개수, 생략시 시작 인덱스 이후로 모두를 삭제한다.
+- `...items: T[]` - (옵션) 매개변수3 : 삭제자리를 대체하여 추가할 요소들
 - `: T[]` - 리턴 형식 : 삭제한 요소를 배열로 리턴한다.
 
 ```js
@@ -185,7 +185,7 @@ let removeItem2 = fruits.splice(1, 1); // 사과 한개만 삭제
 console.log(removeItem2); // ["🍎"]  배열에서 지정한 익덱스를 삭제하고 그 삭제 항목을 배열로 리턴한다.
 // fruits.splice(1); // 사과부터 모두 삭제
 
-fruits.splice(1, 1, '🥝','🍉'); // 세번째 인자로 삭제항목의 자리를 대신해 다른 항목을 추가할 수 있다.
+fruits.splice(1, 1, '🥝','🍉'); // 세번째 매개변수로 삭제항목의 자리를 대신해 다른 항목을 추가할 수 있다.
 console.log(fruits); // ["🍇", "🥝", "🍉", "🍓"]
 ```
 
@@ -197,7 +197,7 @@ console.log(fruits); // ["🍇", "🥝", "🍉", "🍓"]
 
 `concat(...items: ConcatArray<T>[]): T[];`  
 `concat(...items: (T | ConcatArray<T>)[]): T[];`
-- `...items: (T | ConcatArray<T>)[]` - 인자 : 연결할 문자열 혹은 배열
+- `...items: (T | ConcatArray<T>)[]` - 매개변수 : 연결할 문자열 혹은 배열
 -  `: T[]` - 리턴 형식 : 연결된 결과 배열
 
 ```js
@@ -212,11 +212,11 @@ console.log(newFruits1);
 
 #### .indexOf()
 
-지정된 배열 요소의 첫번째 인덱스를 리턴한다. 두번째 인자로 지정된 인덱스부터 끝까지 검색한다.  
+지정된 배열 요소의 첫번째 인덱스를 리턴한다. 두번째 매개변수로 지정된 인덱스부터 끝까지 검색한다.  
 
 `indexOf(searchElement: T, fromIndex?: number): number;`
-- `searchElement: T`- 인자1 : 찾을 요소
-- `fromIndex?: number` - (옵션) 인자2 : 지정한 인덱스이후 부터 요소를 찾는다.  
+- `searchElement: T`- 매개변수1 : 찾을 요소
+- `fromIndex?: number` - (옵션) 매개변수2 : 지정한 인덱스이후 부터 요소를 찾는다.  
 - `: number` - 리턴 형식 : 찾은 인덱스를 리턴한다.  
 
 ```js
@@ -230,26 +230,26 @@ console.log(fruits.indexOf('🍇', 1)); // 4 :
 
 #### .lastIndexOf()
 
-지정된 배열 요소를 끝에서부터 찾아 처음 나오는 인덱스를 리턴한다. 두 번째 인자로 지정된 인덱스부터 거꾸로 검색한다.  
+지정된 배열 요소를 끝에서부터 찾아 처음 나오는 인덱스를 리턴한다. 두 번째 매개변수로 지정된 인덱스부터 거꾸로 검색한다.  
 
 `lastIndexOf(searchElement: T, fromIndex?: number): number;`
-- `searchElement: T`- 인자1 : 찾을 요소
-- `fromIndex?: number` - (옵션) 인자2 : 지정한 인덱스부터 거꾸로 요소를 찾는다.  
+- `searchElement: T`- 매개변수1 : 찾을 요소
+- `fromIndex?: number` - (옵션) 매개변수2 : 지정한 인덱스부터 거꾸로 요소를 찾는다.  
 - `: number` - 리턴 형식 : 찾은 인덱스를 리턴한다.  
 
 ```js
 console.log(fruits); // ["🍇", "🥝", "🍉", "🍓", "🍇"]
 console.log(fruits.lastIndexOf('🍇')); // 4
-console.log(fruits.lastIndexOf('🍇', 3)); // 0 : 두번째 인자로 지정된 인덱스부터 거꾸로 검색
+console.log(fruits.lastIndexOf('🍇', 3)); // 0 : 두번째 매개변수로 지정된 인덱스부터 거꾸로 검색
 ```
 
 #### .includes()
 
-지정된 배열 요소가 있는지 확인 후 true/false 리턴한다. 두 번째 인자로 지정된 인덱스부터 검색한다.  
+지정된 배열 요소가 있는지 확인 후 true/false 리턴한다. 두 번째 매개변수로 지정된 인덱스부터 검색한다.  
 
 `includes(valueToFind[, fromIndex])`
-- `valueToFind` - 인자1 : 찾을 요소
-- `[, fromIndex]` - (옵션) 인자2 : 검색을 시작할 위치
+- `valueToFind` - 매개변수1 : 찾을 요소
+- `[, fromIndex]` - (옵션) 매개변수2 : 검색을 시작할 위치
 
 ```js
 console.log(fruits.includes('🥑')); // false
@@ -260,7 +260,7 @@ console.log(fruits.includes('🥑')); // false
 배열을 문자열로 리턴한다.  
 
 `join(separator?: string): string;`
-- `separator?: string` - (옵션)인자 : 문자열 구분자가 있으면 그것을 이용하고 없으면 ','로 연결된 문자열로 리턴
+- `separator?: string` - (옵션)매개변수 : 문자열 구분자가 있으면 그것을 이용하고 없으면 ','로 연결된 문자열로 리턴
 
 ```js
 const fruits = ['apple', 'banana', 'orange'];
@@ -273,8 +273,8 @@ console.log(fruits.join('^')); // apple^banana^orange
 문자열을 지정된 구분자를 이용해 구분한 후 별도 배열을 만들어 리턴한다.  
 
 `split(separator: string | RegExp, limit?: number): string[];`
-- `separator: string | RegExp` - 인자1 : 문자열 혹은 정규식 구분자
-- `limit?: number` - (옵션) 인자2 : 지정된 개수만큼 리턴한다.
+- `separator: string | RegExp` - 매개변수1 : 문자열 혹은 정규식 구분자
+- `limit?: number` - (옵션) 매개변수2 : 지정된 개수만큼 리턴한다.
 - `: string[]` - 리턴 형식
 
 ```js
@@ -301,8 +301,8 @@ console.log(array); // [ 5, 4, 3, 2, 1] 배열 자체가 reverse 된다.
 기존 배열은 수정되지 않는다.  
 
 `slice(start?: number, end?: number): T[];`
-- `start?: number`  - (옵션) 인자1 : 자르는 시작 인덱스
-- `end?: number` -  (옵션) 인자2 : 자르는 종료 인덱스로 종료인덱스 미포함 전까지를 자른다.
+- `start?: number`  - (옵션) 매개변수1 : 자르는 시작 인덱스
+- `end?: number` -  (옵션) 매개변수2 : 자르는 종료 인덱스로 종료인덱스 미포함 전까지를 자른다.
 - `: T[]` - 리턴 형식
 
 ```js
@@ -317,8 +317,8 @@ console.log(array); // 배열자체 수정은 없다  cf.splice
 배열의 루프를 돌면서 콜백함수 조건에 맞는 요소가 나오면 거기서 루프실행을 멈추고 그 요소를 리턴한다. 맞는 요소가 없으면 `undefined`를 리턴한다.  
 
 `find(callback[, thisArg])`
-- `callback(element, index, array)` - 인자1 : 배열의 각 값에 대해 실행할 함수로 인자로 요소, 인덱스, 배열을 받는다.  
-- `[, thisArg]` - (옵션) 인자2 : 콜백이 호출될때 this로 사용할 객체
+- `callback(element, index, array)` - 매개변수1 : 배열의 각 값에 대해 실행할 함수로 매개변수로 요소, 인덱스, 배열을 받는다.  
+- `[, thisArg]` - (옵션) 매개변수2 : 콜백이 호출될때 this로 사용할 객체
 
 ```js
 class Student {
@@ -348,8 +348,8 @@ console.log(result); // Student {name: "C", age: 30, enrolled: true, score: 90}
 
 `filter(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): T[];`  
 `filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];`  
-- `predicate: (value: T, index: number, array: T[]) => unknown` - 인자1 : 값, 인덱스, 배열을 인자로 받는 함수로 이 조건에 따라 요소를 필터링한다.  
-- `thisArg?: any` - (옵션) 인자2 : 함수를 실행할 때 this로 사용하는 값
+- `predicate: (value: T, index: number, array: T[]) => unknown` - 매개변수1 : 값, 인덱스, 배열을 매개변수로 받는 함수로 이 조건에 따라 요소를 필터링한다.  
+- `thisArg?: any` - (옵션) 매개변수2 : 함수를 실행할 때 this로 사용하는 값
 
 ```js
 // 등록된 학생들은 누구인가?
@@ -369,8 +369,8 @@ console.log(result);
 내가 따로 for문을 만들어서 일일이 돌릴 필요가 없는 그레이트한 메서드임.  
 
 `map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];`
-- `callbackfn: (value: T, index: number, array: T[]) => U` - 인자1 : 콜백함수
-- `thisArg?: any` - (옵션) 인자2 : callback을 실행할 때 this로 사용되는 값.
+- `callbackfn: (value: T, index: number, array: T[]) => U` - 매개변수1 : 콜백함수
+- `thisArg?: any` - (옵션) 매개변수2 : callback을 실행할 때 this로 사용되는 값.
 
 ```js
 // make an array containing only the students' scores
@@ -391,8 +391,8 @@ console.log(result);
 배열의 루프를 돌면서 콜백함수 조건에 맞는 요소가 하나라도 있으면 true, 모두 없으면 false를 리턴한다.  
 
 `some(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean;`
-- `predicate: (value: T, index: number, array: T[]) => unknown `- 인자1 : 콜백함수
-- `thisArg?: any` - (옵션) 인자2 : callback을 실행할 때 this로 사용되는 값.
+- `predicate: (value: T, index: number, array: T[]) => unknown `- 매개변수1 : 콜백함수
+- `thisArg?: any` - (옵션) 매개변수2 : callback을 실행할 때 this로 사용되는 값.
 - `: boolean` - 리턴형식
 
 ```js
@@ -407,8 +407,8 @@ console.log();
 
 `every(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean;`  
 `every<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): this is S[];`
-- `predicate: (value: T, index: number, array: T[]) => unknown` - 인자1 : 콜백함수
-- `thisArg?: any` - (옵션) 인자2 : callback을 실행할 때 this로 사용되는 값.
+- `predicate: (value: T, index: number, array: T[]) => unknown` - 매개변수1 : 콜백함수
+- `thisArg?: any` - (옵션) 매개변수2 : callback을 실행할 때 this로 사용되는 값.
 - `: boolean` - 리턴형식
 
 ```js
@@ -420,11 +420,11 @@ console.log();
 
 #### .reduce()
 
-콜백함수를 실행해서 얻은 값을 계속 누적되어 다른 콜백함수의 인자가 되고 또 누적되는 것을 반복하여 그 값을 리턴한다.  
+콜백함수를 실행해서 얻은 값을 계속 누적되어 다른 콜백함수의 매개변수가 되고 또 누적되는 것을 반복하여 그 값을 리턴한다.  
 
 `reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;`
-- `callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U` - 인자1 : 콜백함수로 이전값, 현재 값, 현재 인덱수, 배열을 인자로 받는다.  
-- `initialValue: U` - 인자2 : 초기값, 이 값이 주어지지 않으면 원하는 값이 나오지 않음
+- `callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U` - 매개변수1 : 콜백함수로 이전값, 현재 값, 현재 인덱수, 배열을 매개변수로 받는다.  
+- `initialValue: U` - 매개변수2 : 초기값, 이 값이 주어지지 않으면 원하는 값이 나오지 않음
 
 ```js
 const result = students.reduce((prev, curr) => {
@@ -457,13 +457,13 @@ console.log(result1 / students.length);
 
 #### .sort()
 
-비교함수 조건에 따라 배열을 정렬한다. 예를 들어 함수의 첫 번째 인자가 두 번째 인자보다 작으면 음수를 리턴하고 같으면 0이나 양수를 리턴하여 정렬에 사용한다.  만약 함수가 생략되면 ASCII 코드값에 의해 오름차순 정렬이 된다.
+비교함수 조건에 따라 배열을 정렬한다. 예를 들어 함수의 첫 번째 매개변수가 두 번째 매개변수보다 작으면 음수를 리턴하고 같으면 0이나 양수를 리턴하여 정렬에 사용한다. 만약 함수가 생략되면 ASCII 코드값에 의해 오름차순 정렬이 된다.
 
 `[11,2,22,1].sort((a, b) => a - b)`
 
 
 `sort(compareFn?: (a: T, b: T) => number): this;`
-- `compareFn?: (a: T, b: T) => number` - (옵션) 인자1 : 비교함수
+- `compareFn?: (a: T, b: T) => number` - (옵션) 매개변수1 : 비교함수
 - `: this` - 리턴 형식
 
 
