@@ -150,6 +150,8 @@ function update(point) {
 - 매개변수로 사용 할 수 있다.
 - 함수의 리턴값으로 사용 할 수 있다.
 
+**※ statement : 정의 혹은 선언된 부분, expression : 연산이 되어 결과값으로 대체 되는 부분**
+
 ### 변수에 할당
 
 익명함수는 변수에 할당 할 수 있다.  
@@ -159,7 +161,7 @@ const fn = function () {
   console.log('I am function');
 };
 fn(); // I am function
-const fn2 = fn; // 또 다른 변수에 할당
+const fn2 = fn; // 또 다른 변수에 할당 (함수 이름만 사용해서 할당, 함수호출과는 구분할것)
 fn2(); // I am function
 ```
 
@@ -203,7 +205,7 @@ const drawLine = function () { // 익명함수
 const drawCircle = function circle () { // 기명함수
     console.log('this is a circle');
 }
-createPicture('line', drawLine, drawCircle);
+createPicture('line', drawLine, drawCircle); // drawLine()은 함수이지만 매개변수로 넘길때는 '()'를 붙이지 않고 이름만 넘긴다. 변수를 넘길때 이름만 넘기는것과 같은 맥락
 createPicture('circle', drawLine, drawCircle);
 ```
 
@@ -213,7 +215,8 @@ createPicture('circle', drawLine, drawCircle);
 ie 미지원
 
 `(매개변수1, 매개변수2, ...) => 실행문`
-기존 익명함수의 `function(매개변수)`는 `(매개변수)`로 `{}`는 `=>`를 의미한다.  
+기존 익명함수의 `function(매개변수)`는 `(매개변수, ...)`로 `{}`는 `=>`를 의미한다.  
+이때 실행문이 한 줄인 경우에는 `return`이 자동으로 붙여서 해석된다.
 
 ```js
 // 기존 익명함수
@@ -231,7 +234,7 @@ const saySomething = (something) => console.log(`${something}`);
 saySomething('안녕');
 ```
 
-실행문이 복잡한 경우 블록이 필요할때 화살표 함수와 혼용하여 사용가능하지만 꼭 return이 필요함.  
+실행문이 복잡한 경우 블록이 필요할때 화살표 함수와 혼용하여 사용가능하지만 2줄 이상의 표현식일경우, 꼭 return을 수동으로 표기해 줘야함.  
 
 ```js
 const showMeMore = (a , b) => {  

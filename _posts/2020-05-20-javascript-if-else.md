@@ -30,6 +30,14 @@ if(0){ // 0은 false 이므로 아래 실행문은 실행될 수 없음
 if(1){ // 1은 true이므로 항상 실행
   alert('do something everytime');
 }
+
+let obj;
+if (obj) {
+  console.log(obj.name);
+}
+
+// 위 if 문은 아래와 같이 한 줄로 표기가 가능한다.
+obj && console.log(obj.name); //  &&연산자는 앞이 true일때만 뒤를 실행한다. 따라서 이렇게 유효성 체크를 하면 된다.  
 ```
 
 ### Switch statement

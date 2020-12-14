@@ -37,7 +37,7 @@ class Person {
         this.name = name; //this는 이 클래스를 이용해 새로 생성할 인스턴스를 뜻함
         this.age = age;
     }
-    // methods
+    // function : 클래스 내에서는 function 키워드를 사용하지 않아도 된다.
     speak() {
         console.log(`${this.name}: hello!`);
     }
