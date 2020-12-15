@@ -20,6 +20,8 @@ tags:
 
 primitive 변수에는 하나의 값만 넣을 수 있다. 추가되는 정보가 많아 질수록 추가해야 하는 변수도 늘어나게 되는데 이것을 개선하고자 object를 사용한다.  
 
+![variable-object](/images/variable-object.jpg)
+
 ## 객체 선언과 프로퍼티 추가 / 삭제
 
 - object literal

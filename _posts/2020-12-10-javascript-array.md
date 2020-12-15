@@ -103,7 +103,7 @@ fruits.forEach((fruit) => console.log(fruit)); // 화살표함수표현식
 - 배열 추가 : .push(), .unshift(), .splice()
 - 배열 삭제 : .pop(), .shift(), .splice()
 
-![array-native-function](array-native-function)
+![array-native-function.jpg](/images/array-native-function.jpg)
 
 #### .push()
 
