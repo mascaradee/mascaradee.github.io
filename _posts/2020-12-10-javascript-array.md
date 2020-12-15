@@ -103,6 +103,8 @@ fruits.forEach((fruit) => console.log(fruit)); // 화살표함수표현식
 - 배열 추가 : .push(), .unshift(), .splice()
 - 배열 삭제 : .pop(), .shift(), .splice()
 
+![array-native-function](array-native-function)
+
 #### .push()
 
 배열의 맨 뒤에 요소를 추가하고 추가 요소를 포함한 길이를 리턴한다.  
