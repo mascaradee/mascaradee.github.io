@@ -10,6 +10,9 @@ tags:
   - GregorianCalendar
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## Date & SimpleDateFormat
 
 ```java

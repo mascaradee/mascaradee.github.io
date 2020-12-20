@@ -8,6 +8,9 @@ tags:
   - callback function
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 콜백 함수
 
 자바스크립트에서 함수는 함수 자체로 객체이며 매개변수로 전달 가능한 특성이 있다.  

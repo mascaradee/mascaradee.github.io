@@ -9,6 +9,9 @@ tags:
   - zen coding
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## Emmet = Zen Coding
 
 ```html

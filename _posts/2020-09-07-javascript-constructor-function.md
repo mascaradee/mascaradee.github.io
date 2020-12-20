@@ -8,6 +8,9 @@ tags:
   - constructor function
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 생성자 함수
 
 인스턴스를 생성하는 함수  

@@ -11,7 +11,16 @@ tags:
   - comment
   - variable
   - data type
+  - literal
+  - operator
+  - if
+  - switch
+  - while
+  - for
 ---
+
+* Kramdown table of contents
+{:toc .toc}
 
 ## 참고
 [Java Language Specification 15 Edition](https://docs.oracle.com/javase/specs/jls/se15/html/index.html)  

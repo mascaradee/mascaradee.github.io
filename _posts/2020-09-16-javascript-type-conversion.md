@@ -8,6 +8,9 @@ tags:
   - type conversion
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 타입 변환
 
 ### 암시적 타입 변환

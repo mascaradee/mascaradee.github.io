@@ -9,7 +9,10 @@ tags:
   - else
 ---
 
-* 참고 사이트 [https://ko.javascript.info/ifelse](https://ko.javascript.info/ifelse)
+* Kramdown table of contents
+{:toc .toc}
+
+## 참고 사이트 [https://ko.javascript.info/ifelse](https://ko.javascript.info/ifelse)
 
 ## 조건부 연산자 if와 ? (Ternary operator)
 

@@ -9,6 +9,9 @@ tags:
   - element
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 요소 생성 방법 1
 
 아래 예제는 아이디가 `article`인 `div`요소 내 마지막에 `button`태그 추가  

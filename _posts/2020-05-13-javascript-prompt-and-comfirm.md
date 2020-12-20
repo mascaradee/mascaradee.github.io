@@ -9,6 +9,9 @@ tags:
   - comfirm
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## prompt
 title과 default 입력과 함께 확인, 취소 버튼이 있는 모달창이 뜬다.
 파폭, 사파리, 에지 외에는 버전별로 제한이 있다.

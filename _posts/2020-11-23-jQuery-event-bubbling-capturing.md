@@ -9,6 +9,9 @@ tags:
   - capturing
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ### 이벤트 전파
 
 모든 이벤트는 이벤트 고유기능과 이벤트 전파기능을 가지고 있다.  

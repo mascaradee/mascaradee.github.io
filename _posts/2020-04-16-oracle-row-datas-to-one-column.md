@@ -10,6 +10,9 @@ tags:
   - array to string
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## WM_CONCAT
 정렬없이 구분자(,)로 합칠수 있음, CLOB 리턴, 하지만 오라클 버전에 따라 CLOB이 되지 않는 경우 있음. 그런데 오라클 버전은 11.2.0.3.0인데 가능하기도 함;
 

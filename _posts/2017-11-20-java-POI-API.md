@@ -8,6 +8,8 @@ tags:
   - POI API
 ---
 
+* Kramdown table of contents
+{:toc .toc}
 
 ## 참고
 - [POI API1](https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_POI)

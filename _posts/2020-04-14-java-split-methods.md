@@ -10,6 +10,9 @@ tags:
   - split to string
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## splitByWholeSeparator
 
 ```java

@@ -8,6 +8,9 @@ tags:
   - extract
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## EXTRACT( A FROM DATE (OR DATETIME))
 
 ```sql

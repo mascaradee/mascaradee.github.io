@@ -12,10 +12,12 @@ tags:
   - arrow function
   - rest parameter
   - default parameter
-
 ---
 
-- 참고  
+* Kramdown table of contents
+{:toc .toc}
+
+## 참고  
 [드림코딩 by 엘리](https://www.youtube.com/watch?v=e_lU39U-5bQ&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=5)
 
 # 함수

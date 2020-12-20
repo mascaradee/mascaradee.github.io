@@ -8,6 +8,9 @@ tags:
   - base
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 맥북 finder 설정
 - 사용자 홈이 보이지 않으므로 finder > 환경설정 > 사이드 항목보기 중 원하는 것을 체크 (난 lava 선택)
 - 파인더 창 아래에 현재 폴더 위치 표 : commend + option(alt) + p

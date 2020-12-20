@@ -12,6 +12,9 @@ tags:
   - boolean
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 형 변환
 
 1. 자동 형 변환

@@ -9,6 +9,9 @@ tags:
   - test
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## vuejs
 
 ### new Instance

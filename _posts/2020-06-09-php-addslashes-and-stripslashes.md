@@ -9,7 +9,7 @@ tags:
   - stripslashes
 ---
 
-* 참고 사이트 [https://www.w3schools.com/php/func_string_addslashes.asp](https://www.w3schools.com/php/func_string_addslashes.asp)
+## 참고 사이트 [https://www.w3schools.com/php/func_string_addslashes.asp](https://www.w3schools.com/php/func_string_addslashes.asp)
 
 
 ## 이스케이프 문자열 만들기

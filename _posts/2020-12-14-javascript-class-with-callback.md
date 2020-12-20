@@ -17,7 +17,11 @@ tags:
 
 ---
 
-- 참고  
+* Kramdown table of contents
+{:toc .toc}
+
+
+## 참고  
 [드림코딩 by 엘리 - class with callback](https://www.youtube.com/watch?v=fU25vI0EOOk&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=18)
 
 ## 클래스와 콜백함수

@@ -9,6 +9,9 @@ tags:
   - getAttribute
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## getParameter
 - GET / POST 방식으로 파라미터 값을 넘기 고, 그 값을 사용할때 쓰는 메소드가 getPara meter이며, 리퀘스트 영역에 있는 메소드이다.  
 - getParameter는 String타입을 반환.  

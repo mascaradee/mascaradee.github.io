@@ -8,6 +8,9 @@ tags:
   - hoisting
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 호이스팅
 호이스팅이란, 정의된 함수나 변수가 유효범위의 최상단으로 끌어올려지는 특성을 말함  
 

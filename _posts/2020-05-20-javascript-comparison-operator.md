@@ -8,7 +8,10 @@ tags:
   - comparison operator
 ---
 
-* 참고 사이트 [https://ko.javascript.info/comparison](https://ko.javascript.info/comparison)
+* Kramdown table of contents
+{:toc .toc}
+
+## 참고 사이트 [https://ko.javascript.info/comparison](https://ko.javascript.info/comparison)
 
 ## 비교연산자
 

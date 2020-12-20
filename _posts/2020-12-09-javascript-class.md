@@ -13,10 +13,13 @@ tags:
   - static
   - inheritance
   - instanceof
-
 ---
 
-- 참고  
+* Kramdown table of contents
+{:toc .toc}
+
+
+## 참고  
 [드림코딩 by 엘리](https://www.youtube.com/watch?v=_DLhUBWsRtw&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=6&t=2s)
 
 ## 클래스

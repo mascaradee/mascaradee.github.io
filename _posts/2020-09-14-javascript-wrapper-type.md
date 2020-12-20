@@ -8,6 +8,9 @@ tags:
   - wrapper type
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 래퍼 타입
 
 아래는 모두 원시형 값이다. 하지만 메서드가 존재하는 이유는 무엇일까?

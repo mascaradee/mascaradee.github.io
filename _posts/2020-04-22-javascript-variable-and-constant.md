@@ -12,6 +12,9 @@ tags:
   - const
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 변수 종류
 
 <br>

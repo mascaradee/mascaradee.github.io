@@ -10,10 +10,12 @@ tags:
   - for...in
   - for...of
   - assign
-
 ---
 
-- 참고  
+* Kramdown table of contents
+{:toc .toc}
+
+## 참고  
 [드림코딩 by 엘리](https://www.youtube.com/watch?v=1Lbr29tzAA8)
 
 # 객체

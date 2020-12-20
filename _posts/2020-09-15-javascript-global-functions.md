@@ -8,6 +8,9 @@ tags:
   - global functions
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 전역 함수
 
 ### eval(), uneval()

@@ -9,7 +9,10 @@ tags:
   - scope
 ---
 
-* 참고 사이트 [https://kitae0522.tistory.com/entry/php01](https://kitae0522.tistory.com/entry/php01)  
+* Kramdown table of contents
+{:toc .toc}
+
+## 참고 사이트 [https://kitae0522.tistory.com/entry/php01](https://kitae0522.tistory.com/entry/php01)  
 [https://www.w3schools.com/php/php_variables.asp](https://www.w3schools.com/php/php_variables.asp)
 
 ## php 변수 유효 범위

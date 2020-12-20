@@ -8,6 +8,9 @@ tags:
   - annotation
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## Spring Framework
 
 스프링 2.5 부터 클래스 패스에 위치한 클래스를 검색하여 특정한 어노테이션이 붙은 클래스를 자동으로 빈으로 등록하는 기능을 제공하고 있다. 이 기능을 사용하면 `XML` 설정파일에 다양한 빈 정보를 추가하지 않고 특정한 클래스를 빈으로 등록할 수 있게 된다.  

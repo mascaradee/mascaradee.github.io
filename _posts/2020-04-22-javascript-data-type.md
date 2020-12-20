@@ -8,6 +8,9 @@ tags:
   - data type
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 수(Number) 관련 함수
 
 #### parseInt(파싱할 문자열, 진수)

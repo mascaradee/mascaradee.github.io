@@ -8,6 +8,9 @@ tags:
   - strict mode
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 참고
 [더 많음 엄격 모드 예시 참고](https://noritersand.github.io/javascript/javascript-%EC%97%84%EA%B2%A9-%EB%AA%A8%EB%93%9C-strict-mode/)
 

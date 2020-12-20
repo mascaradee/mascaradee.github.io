@@ -10,6 +10,9 @@ tags:
   - use strict
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## src 속성
 
 `<script>` 태그는 `src`속성과 내부코드를 동시에 가지지 못함.
