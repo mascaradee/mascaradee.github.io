@@ -26,7 +26,7 @@ tags:
 포맷팅 라이브러리, 숫자, 날짜, 시간을 포맷팅하는 기능과 국제화, 다국어 지원기능을 제공한다.
 
 ```java
-<%@ taglib prefix="fmt" uri="http://java.sun.com/html/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 ```
 
 | Display Name | 	JSTL fmt |

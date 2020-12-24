@@ -33,19 +33,19 @@ tags:
 `<%@ taglib prefix="접두사(Short Name)" uri="URI" %>`
 
 ```java
-<%@ taglib prefix="c" uri="http://java.sun.com/html/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 ```
 
 ## core
 
-가장 많이 사용하는 태그로 변수선언, 조건/제어/반복문 등의 기능을 제공한다. 
+가장 많이 사용하는 태그로 변수선언, 조건/제어/반복문 등의 기능을 제공한다.
 
 | Tag | Library Information |
 |---  |---|
 | Display | Name	JSTL core |
 | Version |	1.1 |
 | Short Name | 	c |
-| URI |	http://java.sun.com/html/jstl/core |
+| URI |	http://java.sun.com/jsp/jstl/core |
 
 
 ### c:catch
