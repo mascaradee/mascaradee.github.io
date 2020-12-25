@@ -1,13 +1,14 @@
 ---
 layout: post
 date: 2020-12-22 16:13:00 +0900
-title: '[java] jstl - core'
+title: '[JSP] JSTL - core'
 categories:
-  - java
+  - jsp
 tags:
-  - Java
+  - java
   - jstl
   - core
+  - jsp
 ---
 
 * Kramdown table of contents
