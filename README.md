@@ -1,4 +1,4 @@
-# 내 아이큐 80, 너도 80, 둘이 합쳐 160
+# SLOW LIFE
 
 #### environments
 
