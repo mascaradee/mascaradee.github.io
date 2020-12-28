@@ -452,7 +452,7 @@ public void testStream7() throws IOException {
 
 ```java
 public void testStream8() {
-	// 아무 요소도 가지지 않는 빈 스트림은 Stream 클래스의 empty() 메소드를 사용하여 생성할 수 있다.
+	// 아무 요소도 가지지 않는 빈 스트림은 Stream 클래스의 empty() 메서드를 사용하여 생성할 수 있다.
 	Stream<Object> stream = Stream.empty();
 	System.out.println(stream.count()); // 0 : 스트림의 요소의 총 개수를 출력함.
 }
@@ -732,11 +732,11 @@ public void testStream21() {
 
 #### collect()
 
-`collect()` 메소드는 인수로 전달되는 `Collectors` 객체에 구현된 방법대로 스트림의 요소를 수집한다.  
-스트림 요소의 수집 용도별 사용할 수 있는 `Collectors` 메소드는 다음과 같다.  
+`collect()` 메서드는 인수로 전달되는 `Collectors` 객체에 구현된 방법대로 스트림의 요소를 수집한다.  
+스트림 요소의 수집 용도별 사용할 수 있는 `Collectors` 메서드는 다음과 같다.  
 
 1. 스트림을 배열이나 컬렉션으로 변환 : `toArray(), toCollection(), toList(), toSet(), toMap()`  
-2. 요소의 통계와 연산 메소드와 같은 동작을 수행 : `counting(), maxBy(), minBy(), summingInt(), averagingInt()` 등  
+2. 요소의 통계와 연산 메서드와 같은 동작을 수행 : `counting(), maxBy(), minBy(), summingInt(), averagingInt()` 등  
 3. 요소의 소모와 같은 동작을 수행 : `reducing(), joining()`  
 4. 요소의 그룹화와 분할 : `groupingBy(), partitioningBy()`  
 
@@ -836,4 +836,132 @@ public void testOptionalClass3() {
 
 ## Joda Time 방식의 새 날짜 API 변경
 
-기존 Calendar 클래스 대신 쓰던 Joda Time 라이브러리를 java.time 패키지로 제공하게 되었다.  
+기존 `Calendar` 클래스 대신 쓰던 `Joda Time` 라이브러리를 `java.time` 패키지로 제공하게 되었다.  
+
+1. `java.time.chrono` : `ISO-8601`에 정의된 표준 달력 이외의 달력 시스템을 사용할 때 필요한 클래스들
+2. `java.time.format` : 날짜와 시간에 대한 데이터를 구문분석하고 형식화하는 데 사용되는 클래스들
+3. `java.time.temporal` : 날짜와 시간에 대한 데이터를 연산하는 데 사용되는 보조 클래스들
+4. `java.time.zone` : 타임 존(`time-zone`)과 관련된 클래스들
+
+### LocalDate & LocalTime
+
+`LocalDate` 클래스는 날짜를 `LocalTime` 클래스는 시간을 표현하는데 사용한다.
+
+#### 날짜와 시간 객체의 생성
+
+- `now()` : 현재 날짜와 시간을 이용해 새로운 객체를 생성
+- `of()` : 전달된 인수로 특정 날짜와 시간을 가지는 새로운 객체를 생성
+
+```java
+public void testLocalDateTimeNow() {
+  LocalDate ld1 = LocalDate.now();
+  LocalDate ld2 = LocalDate.now(Clock.systemDefaultZone());
+  LocalDate ld3 = LocalDate.now(ZoneId.systemDefault());
+  logger.debug("{}", ld1); // 2020-12-28
+  logger.debug("{}", ld2); // 2020-12-28
+  logger.debug("{}", ld3); // 2020-12-28
+
+  LocalTime lt = LocalTime.now();		
+  logger.debug("{}", lt); // 15:14:56.932
+}
+
+public void testLocalDateTimeOf() {
+  LocalDate ld1 = LocalDate.of(1982, 9, 1);
+  LocalTime lt1 = LocalTime.of(12, 11, 22, 100000000);
+  logger.debug("{} {}", ld1, lt1); // 1982-09-01 12:11:22.100
+}
+```
+
+#### 날짜와 시간 객체 접근
+
+- `get()` 메서드로 객체에 접근이 가능하다.   
+
+```java
+public void testLocalDateTimeInstance() {
+  LocalDate ld = LocalDate.now();
+  int year = ld.getYear();
+  Month month = ld.getMonth();
+  int month1 = ld.getMonthValue();
+  int day = ld.getDayOfMonth();		
+  logger.debug("{} {} {} {}", year, month, month1, day); // 2020 DECEMBER 12 28
+
+  LocalTime lt = LocalTime.now();
+  int hour = lt.getHour();
+  int min = lt.getMinute();
+  int sec = lt.getSecond();
+  int nano = lt.getNano();
+  logger.debug("{}:{}:{}.{}", hour, min, sec, nano); // 15:55:9.587000000
+}
+```
+
+#### TemporalField 인터페이스
+
+`TemporalField` 인터페이스는 월(`month-of-year`)과 시(`hour-of-day`)와 같이 날짜와 시간과 관련된 필드를 정의해 놓은 인터페이스이다.
+
+| 열거체 상수 | 	설명 |
+|---|---|
+| ERA |	시대 |
+| YEAR |	연도 |
+| MONTH_OF_YEAR |	월 |
+| DAY_OF_MONTH |	일 |
+| DAY_OF_WEEK |	요일 (월요일:1, 화요일:2, ..., 일요일:7) |
+| AMPM_OF_DAY |	오전/오후 |
+| HOUR_OF_DAY |	시(0~23) |
+| CLOCK_HOUR_OF_DAY |	시(1~24) |
+| HOUR_OF_AMPM |	시(0~11) |
+| CLOCK_HOUR_OF_AMPM |	시(1~12) |
+| MINUTE_OF_HOUR |	분 |
+| SECOND_OF_MINUTE |	초 |
+| DAY_OF_YEAR |	해당 연도의 몇 번째 날 (1~365, 윤년이면 366) |
+| EPOCH_DAY |	EPOCH(1970년 1월 1일)을 기준으로 몇 번째 날 |
+
+
+```java
+public void testLocalDateTimeTemporalField() {
+  LocalDateTime ldt = LocalDateTime.now();
+  int year = ldt.get(ChronoField.YEAR);
+  int month = ldt.get(ChronoField.MONTH_OF_YEAR);
+  int day = ldt.get(ChronoField.DAY_OF_MONTH);
+  long epochDay = ldt.getLong(ChronoField.EPOCH_DAY);
+
+  logger.debug("지금은 {}년 {}월 {}일이고 1970년 1월 1일로부터 {}째 날이다. ", year, month, day, epochDay);
+}
+```
+
+#### 날짜와 시간 객체의 필드값 변경
+
+- `with()` : 전달한 인수대로 변경   
+- `plus(), minus()` : 전달한 인수로 계산을 해서 변경
+
+```java
+public void testLocalDateTimeChange() {
+  LocalDateTime ldt = LocalDateTime.now();
+  logger.debug("오늘은 {}", ldt); //  오늘은 2020-12-28T16:20:52.063
+  LocalDateTime changedD = ldt.withYear(2030);
+  changedD = changedD.withHour(20);
+  logger.debug("바뀐 날짜는 {}", changedD); // 바뀐 날짜는 2030-12-28T20:20:52.063
+
+  changedD = changedD.plusMinutes(20);
+  logger.debug("바뀐 분은 {}", changedD); // 바뀐 분은 2030-12-28T20:40:52.063
+  changedD = changedD.minusSeconds(10);
+  logger.debug("바뀐 초는 {}", changedD); // 바뀐 초는 2030-12-28T20:40:42.063
+}
+```
+
+#### 날짜와 시간 객체의 비교
+
+- `compareTo()` : 날짜와 시간을 비교한다.  
+- `isEqual()` : `equals()` 메서드와는 달리 오직 날짜만을 비교한다.   (`LocalDate` 클래스에서만 제공)  
+- `isBefore()` : 두 개의 날짜와 시간 객체를 비교하여 현재 객체가 명시된 객체보다 앞선 시간인지를 비교한다.    
+- `isAfter()` : 두 개의 날짜와 시간 객체를 비교하여 현재 객체가 명시된 객체보다 늦은 시간인지를 비교한다.   
+
+```java
+public void testLocalDateTimeCompare() {
+  LocalDate ld = LocalDate.now();		
+  LocalDate ld1 = LocalDate.of(1999, 1, 1);
+  logger.debug("{}", ld.compareTo(ld1)); //  21 year 비교?
+  logger.debug("{}", ld.isEqual(ld1)); // false
+  logger.debug("{}", ld.isBefore(ld1)); // false
+  logger.debug("{}", ld.isAfter(ld1)); // true
+}
+```
