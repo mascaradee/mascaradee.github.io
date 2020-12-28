@@ -7,6 +7,12 @@ categories:
 tags:
   - jdk 8
   - java
+  - lamda expression
+  - method reference
+  - default method
+  - stream
+  - optional
+  - joda time
 ---
 
 * Kramdown table of contents
