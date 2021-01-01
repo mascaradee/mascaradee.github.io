@@ -6,206 +6,135 @@ categories:
   - java
 tags:
   - java
-  - primitive
-  - wrapper class
-  - formatting numeric
+  - primitive type
   - byte
   - short
-  - double
-  - float
   - int
   - long
-  - intValue
-  - valueOf
-  - printf
-
+  - double
+  - float
 ---
 
 * Kramdown table of contents
 {:toc .toc}
 
 ## 참고
-
-[https://docs.oracle.com/javase/tutorial/java/index.html](https://docs.oracle.com/javase/tutorial/java/index.html)
+[Language Basics-Variables-Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+[Numbers and Strings](https://docs.oracle.com/javase/tutorial/java/index.html)
 
 ## Primitive
 
+자바에는 8개의 원시 데이터 타입이 있다.
+
 ### 정수형
 
-| 데이터 타입 | 	메모리의 크기 | 표현 가능 범위                                         |                   
-|---          |---             |---                                                     |
-| byte        |	1 byte         | -128 ~ 127                                             |
-| short       |	2 byte         | -32,768 ~ 32,767                                       |
-| int         |	4 byte         | -2,147,483,648~2,147,483,647                           |
-| long        |	8 byte         | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 |
+| 데이터 타입 | 	메모리의 크기 | 표현 가능 범위                                                                              | 비고                                                                                                                   |
+|---          |---             |---                                                                                          | ---                                                                                                                    |
+| byte        |	1 byte (8bit)  | -128 ~ 127                                                                                  | 큰 배열에서 메모리를 절약용으로 사용. int가 제한되는 곳에서도 쓰인다.                                                  |
+| short       |	2 byte (16bit) | -32,768 ~ 32,767                                                                            | 큰 배열에서 메모리를 절약용으로 사용.                                                                                  |
+| int         |	4 byte (32bit) | -2,147,483,648~2,147,483,647  (-2<sup>31</sup> ~ 2<sup>31-1</sup>)                          | Java SE 8 + 에서는 int를 사용하여 최소값이 0이고 최대 값이 2<sup>32-1</sup> 인 부호없는 32 비트 정수를 나타낼 수 있다. |
+| long        |	8 byte (64bit) | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 (-2<sup>63</sup> ~ 2<sup>63-1</sup>) | Java SE 8 + 에서는 long을 사용하여 최소값이 0이고 최대 값이 2<sup>64-1</sup> 인 부호없는 64 비트 long을 나타낼 수 있다.|
+
 
 ### 실수형
 
-| 데이터 타입 | 	메모리의 크기 | 표현 가능 범위                                          |                   
-|---          |---             |---                                                      |
-| float	      | 4byte	         | ±(1.40129846432481707e-45 ~ 3.40282346638528860e+38)    |
-| double	    | 8byte	         | ±(4.94065645841246544e-324d ~ 1.79769313486231570e+308d)|
+| 데이터 타입 | 	메모리의 크기 | 표현 가능 범위                                           | 비고                                                                                                                         |                  
+|---          |---             |---                                                       |---                                                                                                                           |
+| float	      |	4 byte (32bit) | ±(1.40129846432481707e-45 ~ 3.40282346638528860e+38)     | 부동 소수점 숫자의 큰 배열에 메모리 절약용으로 double 대신 float를 사용. 정확한 값을 알수는 없기 때문에 BigDecimal 써야한다. |
+| double	    |	8 byte (64bit) | ±(4.94065645841246544e-324d ~ 1.79769313486231570e+308d) | 10진수 값의 경우 이 데이터 타입이 기본이다. 이 것도 역시 통화 같은 정확한 값을 얻어야 하는 곳에 쓰이면 안된다.               |
 
+
+### 기타
+
+| 데이터 타입 | 	메모리의 크기 | 표현 가능 범위                        | 비고                                            |                  
+|---          |---             |---                                    |---                                              |
+| boolean	    | 1bit           | true / fasle                          | 보통 조건식의 결과로 이 데이터 타입을 사용한다. |
+| char	      |	2 byte (16bit) | '\u0000' (or 0) ~ \uffff' (or 65,535) | 유니코드                                        |
+
+## String
+
+`String`은 원시타입이 아닌 객체이지만 원시타입처럼 선언과 초기화 및 할당을 하여 사용하기도 한다.  
+
+### 원시 타입의 기본값
+
+필드로 선언만 하고 초기화를 하지 않으면 기본으로 컴파일러가 값을 넣는다.  
+단, 로컬변수에는 해당되지 않는다.
+
+| Data    | Type	Default Value (for fields) |
+|---      |---                               |
+| byte    |	0                                |
+| short   |	0                                |
+| int     |	0                                |
+| long    |	0L                               |
+| float   |	0.0f                             |
+| double  |	0.0d                             |
+| char    |	`'\u0000'`                       |
+| String  | (or any object)  	null           |
+| boolean |	false                            |
 
 ```java
+int test;
+public void testInt(){
+  int test1;		
+  System.out.println(test); // 0 -  기본값이 출력된다.
+  System.out.println(test1); // compile-error: The local variable test1 may not have been initialized
+}
+```
+
+### 원시 타입 선언 및 할당
+
+원시타입은 클래스로부터 생성된 객체가 아니므로 `new` 키워드를 통해 생성되지 않는다.  
+리터럴로 값을 할당해 주면 된다.  
+예를 들면, `int i`으로 `int`타입 변수 `i`선언, `= 2474829734;`으로 값을 할당해 주면 된다.
+
+```java
+byte b = 100;
+short s = 10000;
 int i = 2474829734;
-long l = 2474829734L;
-double d = 1.23;
-float f = 1.23F;
+boolean b = true;
+char c = 'a'; // string과 다르게 홑따옴표 안에 넣어야 한다.
 ```
 
-## Wrapper Class
-보통은 숫자로 작업을 할 때, 원시 자료형을 사용한다.
-각 원시 자료형에는 대응하는 래퍼 클래스가 있다. 이 클래스는 객체로 원시 자료형을 감싸고 있다.  
-객체를 써야 하는 곳에 원시 자료형을 사용하면 컴파일러가 알아서 박싱을 하고 그 반대로 원시 자료형을 써야 할 때 객체를 사용하면 역시 컴파일러가 언박싱을 한다.
+### 정수 리터럴
 
-모든 숫자형 래퍼 클래스는 Number 클랙스의 하위에 있다.
-
-- Number
-  - Byte
-  - Integer
-  - Double
-  - Short
-  - Float
-  - Long
-
-하지만 원시 자료형보다 객체를 사용해햐 하는 이유들이 있다.  
-
- 1) 메서드 인수로 객체가 필요할때  e.g. collections of numbers  
- 2) 클래스에서 정의한 상수를 사용하기 위해 e.g. MIN_VALUE, MAX_VALUE  
- 3) 다른 원시 자료형, 문자열, 숫자 시스템간의 값을 변환하기 위해 제공되는 클래스 메서드를 사용하기 위해  e.g. decimal, octal, hexadecimal, binary  
-
-#### Methods Implemented by all Subclasses of Number
-| Method                                |	Description                                                                                                        |
-|---                                    |---                                                                                                                 |
-| byte byteValue()                      | 숫자형객체를 byte 형으로 변환                                                                                      |
-| short shortValue()                    | 숫자형객체를 short 형으로 변환                                                                                     |
-| int intValue()                        | 숫자형객체를 int 형으로 변환                                                                                       |
-| long longValue()                      | 숫자형객체를 long 형으로 변환                                                                                      |
-| float floatValue()                    | 숫자형객체를 float 형으로 변환                                                                                     |
-| double doubleValue()                  | 숫자형객체를 double 형으로 변환                                                                                    |
-| int compareTo(Byte anotherByte)       | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
-| int compareTo(Double anotherDouble)   | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
-| int compareTo(Float anotherFloat)     | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
-| int compareTo(Integer anotherInteger) | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
-| int compareTo(Long anotherLong)       | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
-| int compareTo(Short anotherShort)     | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
-| boolean equals(Object obj)            | 숫자형 객체와 인수가 같은지 비교하여 true/fasle 반환, 인수가 숫자형 객체와 같은 형의 원시타입이라면 true 반환한다. |
+정수 리터럴의 마지막에 `L`을 붙이면 그 값은 `long` 타입이고 그 외에는 `int` 타입니다. `long` 타입은 `int` 타입의 표현 범위를 포함하므로 가능한 일이다.  
+정수 리터럴로 정수 타입의 `byte, short, int, long` 타입도 만들 수 있다. 또한 정수 리터럴은 10진수, 16진수, 바이너리를 표현할 수 있다.
 
 ```java
-public void testObjcetNumberToPrimitiveType() {
-
-  Integer i = new Integer(10);
-
-  byte b = i.byteValue();
-  short s = i.shortValue();
-  int ii = i.intValue();
-  long l = i.longValue();
-  float f = i.floatValue();
-  double d = i.doubleValue();
-
-  int a = i.compareTo(new Integer (11));
-  logger.debug("{}", a); // -1 :음수이면  좌변이 작은거
-
-  logger.debug("{}", i.equals(10)); // false
-}
+int decVal = 26; // The number 26, in decimal
+int hexVal = 0x1a; //  The number 26, in hexadecimal
+int binVal = 0b11010; // The number 26, in binary
+long l = 2474829734L; // 알패벳 L로  long 타입을 명시하여 int와 구분
 ```
 
-#### Conversion Methods, Integer Class
+### 부동 소수점 리터럴
 
-| Method                                      | 	Description |
-|---                                          |---
-| static Integer decode(String s)	            | Decodes a string into an integer. Can accept string representations of decimal, octal, or hexadecimal numbers as input. |
-| static int parseInt(String s)	              | Returns an integer (decimal only). |
-| static int parseInt(String s, int radix)	  | Returns an integer, given a string representation of decimal, binary, octal, or hexadecimal (radix equals 10, 2, 8, or 16  respectively ) numbers as input. |
-| String toString()	                          | Returns a String object representing the value of this Integer. |
-| static String toString(int i)	              | Returns a String object representing the specified integer. |
-| static Integer valueOf(int i)	              | Returns an Integer object holding the value of the specified primitive. |
-| static Integer valueOf(String s)	          | Returns an Integer object holding the value of the specified string representation. |
-| static Integer valueOf(String s, int radix)	| Returns an Integer object holding the integer value of the specified string representation, parsed with the value of radix. | For example, if s = "333" and radix = 8, the method returns the base-ten integer equivalent of the octal number 333.
+부동 소수점 리터럴의 마지막에 `f` 혹은 `F`를 붙이면 `float` 타입이고 `d` 혹은 `D`를 붙이면 `double` 타입인데 보통 `double` 타입은 생략한다.
+```java
+double d1 = 123.4;
+double d2 = 1.234e2; // same value as d1, but in scientific notation
+float f1  = 123.4f;
+```
+
+### 문자와 문자열 리터럴
+
+문자와 문자열리터럴은 유니코드(UTF-16)로 되어 있다. `'\u0108'` 혹은 `"S\u00ED Se\u00F1or"` 처럼 유니코드를 표현해야 한다. 위 예시처럼 문자 리터럴은 홑따옴표, 문자열 리터럴은 겹따옴표로 표현해야 한다.  
+이스케이프 시퀀스를 지원한다.   
+`null` 리터럴도 있는데 원시타입을 제외하고 모든 변수에 할당할 수 있지만 존재 여부 판단외에는 거의 할 일이 없다. 그래서 `null`은 종종 객체를 사용할 수 없음을 나타낼 때 마커로 사용되기도 한다.
+클래스 리터럴이란 것도 있다.
+
+### 숫자 리터럴 언더바(_) 사용
+
+자바 7 이상에서 언더바를 숫자와 숫자리터럴 사이에서 사용할 수 있다. 예를 들어 콤마로 큰 자리 숫자를 구분하는 것처엄 긴 숫자군의 구분을 하기 위해 사용하기도 한다.
+단, 값의 처음 혹은 끝, 부동 소수점 리터럴에서 소수점에 인접,  F 또는 L 접미사 앞, 숫자 문자열이 예상되는 위치에서 사용할 수 없다.
 
 ```java
-public void testConversion() {
-
-  String s = new String("123");
-  int convInt = Integer.parseInt(s);
-  logger.debug("int: {}", convInt); // 123
-  String ss = Integer.toString(convInt);
-  logger.debug("String: {}", ss); // 123
-  Integer bigInt = Integer.valueOf(convInt);
-  logger.debug("Integer: {}", bigInt);
-}
+long creditCardNumber = 1234_5678_9012_3456L;
+long socialSecurityNumber = 999_99_9999L;
+float pi =  3.14_15F;
+long hexBytes = 0xFF_EC_DE_5E;
+long hexWords = 0xCAFE_BABE;
+long maxLong = 0x7fff_ffff_ffff_ffffL;
+byte nybbles = 0b0010_0101;
+long bytes = 0b11010010_01101001_10010100_10010010;
 ```
-
-#### Formatting Numeric Print Output
-
-숫자 타입에 맞게 출력을 하려면 아래와 같이 사용하면 된다.  
-`System.out.format(String format, Object... args)`
-`System.out.printf(String format, Object... args)`
-
-타입에 맞게 출력을 하려면 `%converter` 형태로 `%` 다음에 타입을 가리키는 문자를 넣으주면 된다.
-
-```java
-int i = 461012;
-System.out.format("The value of i is: %d%n", i);
-// %d = decimal integer
-// %n = newline character
-```
-
-| Converter | 	Flag |	Explanation                                                                                                         |
-|---        |---     |---                                                                                                                   |
-| d	        |        |	A decimal integer.                                                                                                  |
-| f	        |        |	A float.                                                                                                            |
-| n	        |        |	A new line character appropriate to the platform running the application. You should always use %n, rather than \n. |
-| tB        | 	     | 	A date & time conversion—locale-specific full name of month.                                                        |
-| td, te    | 	     | 	A date & time conversion—2-digit day of month. td has leading zeroes as needed, te does not.                        |
-| ty, tY    | 	     | 	A date & time conversion—ty = 2-digit year, tY = 4-digit year.                                                      |
-| tl        |        |	A date & time conversion—hour in 12-hour clock.                                                                     |
-| tM        |        |	A date & time conversion—minutes in 2 digits, with leading zeroes as necessary.                                     |
-| tp        |        |	A date & time conversion—locale-specific am/pm (lower case).                                                        |
-| tm        |        |	A date & time conversion—months in 2 digits, with leading zeroes as necessary.                                      |
-| tD        |        |	A date & time conversion—date as %tm%td%ty                                                                          |
-|  	        | 08     |	Eight characters in width, with leading zeroes as necessary.                                                        |
-|  	        | +	     | Includes sign, whether positive or negative.                                                                         |
-|  	        | ,	     | Includes locale-specific grouping characters.                                                                        |
-|  	        | -	     | Left-justified..                                                                                                     |
-|  	        | .3     | Three places after decimal point.                                                                                    |
-|  	        | 10.3	 | Ten characters in width, right justified, with three places after decimal point.                                     |
-
-다른 타입 포맷팅의 자세한 내역은 아래 사이트를 참고 한다.  
-[https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html](https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)
-
-```java
-public void testFormattingNumeric() {
-  // 숫자타입을 포맷팅하기 위해서 `%converter`를 사용한다.
-  // `8%d' =  8자리 정수
-
-    long n = 461012;
-      System.out.format("%d%n", n);      //  -->  "461012"
-      System.out.printf("%d%n", n);      //  -->  "461012"
-
-      System.out.format("%08d%n", n);    //  -->  "00461012"
-      System.out.format("%+8d%n", n);    //  -->  " +461012"
-      System.out.format("%,8d%n", n);    // -->  " 461,012"
-      System.out.format("%+,8d%n%n", n); //  -->  "+461,012"
-
-      double pi = Math.PI;
-
-      System.out.format("%f%n", pi);       // -->  "3.141593"
-      System.out.format("%.3f%n", pi);     // -->  "3.142"
-      System.out.format("%10.3f%n", pi);   // -->  "     3.142"
-      System.out.format("%-10.3f%n", pi);  // -->  "3.142"
-
-      //로케일에 따라 소수점을 콤마로 표현하기도 한다.
-      System.out.format(Locale.FRANCE,"%-10.4f%n%n", pi); // -->  "3,1416"
-
-      Calendar c = Calendar.getInstance();
-      System.out.format("%tB %te, %tY%n", c, c, c); // -->  "May 29, 2006"
-      System.out.format("%tl:%tM %tp%n", c, c, c);  // -->  "2:34 am"
-      System.out.format("%tD%n", c);    // -->  "05/29/06"
-}
-```
-
-이 외에도 세자리마다 점을 찍는 포맷(The DecimalFormat Class, https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html)  
-간단한 수식 (Class Math, https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)  
-난수 (Random Numbers, Math.random()) 등이 있다.  
