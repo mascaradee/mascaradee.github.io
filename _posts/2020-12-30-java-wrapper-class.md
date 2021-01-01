@@ -17,7 +17,7 @@ tags:
 
 ## 참고
 
-[Numbers and Strings](https://docs.oracle.com/javase/tutorial/java/index.html)
+[Java tutorial : Numbers and Strings-The Numbers Classes](https://docs.oracle.com/javase/tutorial/java/data/numberclasses.html)
 
 ## Wrapper Class
 보통은 숫자로 작업을 할 때, 원시 자료형을 사용한다.

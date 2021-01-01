@@ -19,8 +19,8 @@ tags:
 {:toc .toc}
 
 ## 참고
-[Language Basics-Variables-Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
-[Numbers and Strings](https://docs.oracle.com/javase/tutorial/java/index.html)
+[Java tutorial : Language Basics-Variables-Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
+[Java tutorial : Numbers and Strings-Numbers](https://docs.oracle.com/javase/tutorial/java/index.html)
 
 ## Primitive
 

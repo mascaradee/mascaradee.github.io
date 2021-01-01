@@ -17,7 +17,7 @@ tags:
 
 ## 참고
 
-[https://docs.oracle.com/javase/tutorial/java/data/characters.html](https://docs.oracle.com/javase/tutorial/java/data/characters.html)
+[Java tutorial : Numbers and Strings-Characters](https://docs.oracle.com/javase/tutorial/java/data/characters.html)
 
 ## char
 

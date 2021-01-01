@@ -14,7 +14,7 @@ tags:
 
 ## 참고
 
-[https://docs.oracle.com/javase/tutorial/java/data/strings.html](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+[Java tutorial : Numbers and Strings-Strings](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
 
 ## String
 
