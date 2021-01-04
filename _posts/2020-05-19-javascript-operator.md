@@ -506,6 +506,17 @@ false || 'not equal' -> ||연산의 좌변이 false이므로 우변 값 반환
 */
 ```
 
+### `&&`와 `||` 연산자로 null 체크
+
+다음과 같이 객체에 접근하기 전에 null 객체인지, 아닌지를 검사하는데 유용하게 사용될 수 있다.  
+
+```js
+var name = o && o.getName();
+// o 객체가 null이면 오류
+var name = otherName || "default";
+// otherName이 null이면 default 문자열을 name을 부여
+```
+
 ## 비트 연산자
 
 비트 연사자는 인수를 32비트 정수로 변환하여 이진 연산을 수행  

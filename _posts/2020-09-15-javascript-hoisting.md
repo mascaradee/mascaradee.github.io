@@ -30,7 +30,7 @@ function a() {
 }
 a();
 
-// 위 한수는 실제로 아래와 같이 실행
+// 위 함수는 실제로 아래와 같이 실행
 /*
 var scope = 'global';
 function a() {
