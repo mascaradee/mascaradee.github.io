@@ -11,7 +11,10 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## 참고 사이트 [https://ko.javascript.info/comparison](https://ko.javascript.info/comparison)
+## 참고 사이트
+
+[https://ko.javascript.info/comparison](https://ko.javascript.info/comparison)  
+[https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90)
 
 ## 비교연산자
 
@@ -45,6 +48,35 @@ alert(a == b); // 비교연산자는 모든 인수를 숫자형으로 변환하�
 
 ```
 
+### 동등 연산 `==`의 판단 기준
+
+같은 타입, 같은 값을 가지고 있는 두 값은 동등
+문자열과 숫자 비교 시 타입은 문자열은 숫자로 변환되고 그 값이 같으면 동등
+
+```js
+1 == 1; // true
+1 == '1'; // true
+```
+
+두 값 중 하나가 null이고 다른 하나가 `undefined`라면 두 값은 동등  
+
+```js
+null == undefined; // true
+```
+
+boolean 값과 비교시 `true`는 1로 변환, `false`는 0으로 변환 후 비교
+
+```js
+true == '1'; // true :  1 == '1' 비교로 변환된다.
+true == '2'; // false
+```
+
+객체와 숫자 혹은 문자열 비교이면, 객체를 원시 타입으로 변환 후 비교
+
+```js
+[2] == '2'; //true
+```
+
 ### 일치 연산자 `===`
 
 동등 연산자 `==`는 자동형변환으로 0과 false를 구별하지 못하지만 일치 연산자 `===`는 형까지 비교를 하므로 구별할 수 있다.
@@ -53,6 +85,43 @@ alert(a == b); // 비교연산자는 모든 인수를 숫자형으로 변환하�
 alert(0 === false); // false, 피연산자의 형이 다름
 ```
 
+```js
+1 === '1'; // false
+```
+
+두 값 중 하나가 null이고 다른 하나가 `undefined`라면 두 값은 불일치
+
+```js
+null === undefined; // false
+```
+
+NaN 값은 자신을 포함해 다른 어떤 값과도 일치하지 않음
+
+```js
+NaN === NaN; // false
+```
+
+0은 -0은 일치
+
+```js
+0 === -0; // true
+```
+
+모두 같은 객체나 배열 또는 함수를 참조하고 있다면 두 값은 일치하지만,  
+같은 프로토타입에 의해 생성된 2개의 객체는 일치하지 않는다.
+
+```js
+function Fn(){ console.log(1) }
+var a = Fn;
+var a1 = Fn;
+a === a1; // true
+
+var b = new Fn();
+var c = new Fn();
+b === c; // false
+
+({a:1}) === ({a:1}); // false
+```
 
 ### null과 undefined 비교
 
@@ -79,7 +148,6 @@ alert(null >= 0); // true, 0 >= 0 -> 실제 이런 결과를 원하지 않을수
 alert(undefined > 0); // false, NaN > 0
 alert(undefined < 0); // false, NaN < 0
 alert(undefined == 0); // false,  동등연산자는 null이나 undefined는 형변환하지 않으므로 비교 불가
-
 ```
 
 
@@ -93,5 +161,4 @@ alert(undefined == null); // true, 예외로 같은 취급
 alert(undefined === null); // false, 자동형변환 되지 않아 다름
 alert(null == '\n0\n'); // ~true~ -> false , ~숫자형으로 변환 0 == 0~ ->null과 같은 건 undefined만
 alert(null === +'\n0\n'); // false, null === 0
-
 ```
