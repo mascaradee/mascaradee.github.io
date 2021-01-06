@@ -260,7 +260,7 @@ $('section').find(':button')
 
 ## .is()
 
-선택한 요소가 주어진 조건에 맞으면 true, 아니면 false 반환  
+선택한 요소가 주어진 조건에 맞으면 true, 아니면 false 리턴  
 
 ```javascript
 $('input').eq(2).is('[value]');
@@ -432,7 +432,7 @@ $('div').slice(2, 4); // 모든 div를 선택 후, 세 번째와 네 번째 div 
 ## .map(callback)  
 
 선택한 요소만큼 callback을 실행한다. callback 파라미터는 index와 domElement(document object)이다.   
-각 callback이 반환하는 값을 모아서 새 jQuery 객체를 만든다. callback이 null이나 undefined를 반환하면 빈값으로    
+각 callback이 리턴하는 값을 모아서 새 jQuery 객체를 만든다. callback이 null이나 undefined를 리턴하면 빈값으로    
 채우지 않고 생략한다.  
 
 ```html

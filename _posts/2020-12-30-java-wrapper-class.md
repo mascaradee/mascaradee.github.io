@@ -55,7 +55,7 @@ tags:
 | int compareTo(Integer anotherInteger) | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
 | int compareTo(Long anotherLong)       | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
 | int compareTo(Short anotherShort)     | 숫자형객체를 인수와 비교 객체가 크면 양수, 작으면 음수                                                             |
-| boolean equals(Object obj)            | 숫자형 객체와 인수가 같은지 비교하여 true/fasle 반환, 인수가 숫자형 객체와 같은 형의 원시타입이라면 true 반환한다. |
+| boolean equals(Object obj)            | 숫자형 객체와 인수가 같은지 비교하여 true/fasle 리턴, 인수가 숫자형 객체와 같은 형의 원시타입이라면 true 리턴한다. |
 
 ```java
 public void testObjcetNumberToPrimitiveType() {

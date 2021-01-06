@@ -53,8 +53,8 @@ for (Object o : collection)
 ```java
 public interface Iterator<E> {
     boolean hasNext(); // 추가 요소가 있으면 true
-    E next(); // 다음 요소 반환
-    void remove(); //optional - 기본 컬렉션에서 next()에 의해 반환된 마지막 요소를 제거, 꼭 next() 호출당 한 번만 호출된다.
+    E next(); // 다음 요소 리턴
+    void remove(); //optional - 기본 컬렉션에서 next()에 의해 리턴된 마지막 요소를 제거, 꼭 next() 호출당 한 번만 호출된다.
 }
 ```
 `iterator` 대신  `for-each`를 사용할 수는 있지만 `for-each`에서는 `remove`를 사용할 수 없다. 또한 `iterator`만 여러 컬렉션을 병렬도 반복할수 있다.
@@ -72,10 +72,10 @@ static void filter(Collection<?> c) {
 
 대량 작업은 전체 컬렉션에서 수행을 할 수 있지만 대부분의 경우 효율성이 떨어진다.  
 
-- `containsAll()` : 지정한 컬렉션의 모든 요소가 대상 컬렉션에 모두 포함되어 있으면 true 반환한다.  
-- `addAll()` : 지정한 컬렉션의 모든 요소를 대상 컬렉션에 모두 추가하고 추가가 되면 true 반환한다.
-- `removeAll()` : 대상 컬렉션에 지정한 컬렉션의 모든 요소들이 포함되어 있으면 제거한다. 공통 부분을 제거한다. 제거된 게 있으면 true 반환한다.   
-- `retainAll()` : `removeAll()`과 반대로 대상 컬렉션과 지정한 컬렉션이 공통 부분만 빼고 제거한다. 제거된 게 있으면 true 반환한다.   
+- `containsAll()` : 지정한 컬렉션의 모든 요소가 대상 컬렉션에 모두 포함되어 있으면 true 리턴한다.  
+- `addAll()` : 지정한 컬렉션의 모든 요소를 대상 컬렉션에 모두 추가하고 추가가 되면 true 리턴한다.
+- `removeAll()` : 대상 컬렉션에 지정한 컬렉션의 모든 요소들이 포함되어 있으면 제거한다. 공통 부분을 제거한다. 제거된 게 있으면 true 리턴한다.   
+- `retainAll()` : `removeAll()`과 반대로 대상 컬렉션과 지정한 컬렉션이 공통 부분만 빼고 제거한다. 제거된 게 있으면 true 리턴한다.   
 - `clear()` : 컬렉션의 모든 요소를 제거한다.  
 
 ```java  

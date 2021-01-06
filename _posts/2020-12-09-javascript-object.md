@@ -110,7 +110,7 @@ function Person(name, age) {
 
 ## in operator : property existence check
 
-객체 내에 키가 있는지 확인하는 용도로 true/false 반환, 객체 내에 없는 키를 출력하려고 할때는 'undefined'를 반환한다.  
+객체 내에 키가 있는지 확인하는 용도로 true/false 리턴, 객체 내에 없는 키를 출력하려고 할때는 'undefined'를 리턴한다.  
 
 `(키 in 객체)`
 

@@ -92,7 +92,7 @@ $('form:first ').length
 `$('input:reset + button')`  
 
 `input` 중 `reset` 타입의 다름 형제인 `button`을 찾는다.   
-만약 다음에 해당 조건에 맞는 노드가 없다면 반환되지 않는다.  
+만약 다음에 해당 조건에 맞는 노드가 없다면 리턴되지 않는다.  
 `$('input:reset +')`만 써도 됨.  
 
 ```html

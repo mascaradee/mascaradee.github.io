@@ -31,7 +31,7 @@ tags:
 `jQuery( '[ attribute |= "value"] ')`
 
 - `attribute`: 찾으려는 속성
-- `value`: 찾으려는 속성의 값. `value`와 완전히 일치하는 단어로 시작하면 모두 반환  
+- `value`: 찾으려는 속성의 값. `value`와 완전히 일치하는 단어로 시작하면 모두 리턴  
 하이픈으로 이어진 경우도 이에 해당됨.  
 
 ```html
@@ -77,7 +77,7 @@ function testAttrPrefixSelector() {
 
 `jQuery( '[ attribute *= "value"] ')`
 
-- `value`: 찾으려는 속성의 값. 위치에 상관없이 이 값이 포함되어 있으면 모두 반환
+- `value`: 찾으려는 속성의 값. 위치에 상관없이 이 값이 포함되어 있으면 모두 리턴
 
 ```html
 <script>
@@ -101,7 +101,7 @@ function testAttrContainsSelector() {
 `jQuery( '[attribute ~= "value"] ')`
 
 - `value`: 찾으려는 속성의 값.   
-위치에 상관없이 단어가 포함되어 있으면 모두 반환. 여기서 단어는 빈칸으로 구분한 문자를 말한다.  
+위치에 상관없이 단어가 포함되어 있으면 모두 리턴. 여기서 단어는 빈칸으로 구분한 문자를 말한다.  
 하이픈으로 이어진 단어는 대상이 아님.  
 
 ```html
@@ -126,7 +126,7 @@ function testAttrContainsWordSelector() {
 
 `jQuery( '[attribute ^= "value"] ')`
 
-- `value`: 속성의 값이 `value`로 시작하는 태그를 모조리 반환
+- `value`: 속성의 값이 `value`로 시작하는 태그를 모조리 리턴
 
 ```html
 <script>
@@ -150,7 +150,7 @@ function testAttrStartsWithSelector() {
 
 `jQuery( '[attribute $= "value"] ')`
 
-- `value`: 속성의 값이 `value`로 끝나는 태그를 모조리 반환
+- `value`: 속성의 값이 `value`로 끝나는 태그를 모조리 리턴
 
 ```html
 <script>
@@ -174,7 +174,7 @@ function testAttrEndsWithSelector() {
 
 `jQuery( '[attribute != "value"] ')`
 
-- `value`: 속성의 값이 `value`와 일치하지 않으면 모두 반환
+- `value`: 속성의 값이 `value`와 일치하지 않으면 모두 리턴
 
 ```html
 <script>
@@ -198,7 +198,7 @@ function testAttrNotEqualSelector() {
 
 `jQuery( '[attribute = "value"] ')`
 
-- `value`: 속성의 값이 `value`와 일치하면 모두 반환
+- `value`: 속성의 값이 `value`와 일치하면 모두 리턴
 
 ```html
 <script>

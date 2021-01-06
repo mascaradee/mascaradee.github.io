@@ -77,7 +77,7 @@ Assert.assertArrayEquals(strArr1,strArr2);
 
 ### 배열 크기
 
-`.length` 프로퍼티는 배열의 크기를 반환한다. 단지 데이터의 개수가 아닌 초기에 정한 배열의 크기이다. 그리고 메서드가 아님에 주의한다.
+`.length` 프로퍼티는 배열의 크기를 리턴한다. 단지 데이터의 개수가 아닌 초기에 정한 배열의 크기이다. 그리고 메서드가 아님에 주의한다.
 
 ```java
 String[] strArr = { "하나", "둘", "셋" };
@@ -109,8 +109,8 @@ char[] copyTo = java.util.Arrays.copyOfRange(copyFrom, 2, 10);
 Assert.assertEquals("employed", new String(copyTo));
 ```
 
-- `java.util.Arrays.binarySearch()` : 지정한 값을 찾아 인덱스로 반환한다.
-- `java.util.Arrays.equals()` : 2개의 배열이 같은지 여부를 true/false로 반환한다.
+- `java.util.Arrays.binarySearch()` : 지정한 값을 찾아 인덱스로 리턴한다.
+- `java.util.Arrays.equals()` : 2개의 배열이 같은지 여부를 true/false로 리턴한다.
 - `java.util.Arrays.fill()` : 지정한 값으로 배열을 채운다.
 - `java.util.Arrays.sort()` : 순차적으로 오름차순으로 정렬한다.
 - `java.util.Arrays.parallelSort()` : 병렬로 오름차순으로 정렬, 자바 8 이상 사용 가능하고 다중 프로세서일때는 훨씬 빠르다.
@@ -163,7 +163,7 @@ public void testArray2() {
 
 #### 배열의 원하는 요소를 삭제하는 방법 1
 
-`ArrayUtils.remove(array, index)`는 `array`의 원하는 `index`의 요소를 지운 결과를 새로운 객체로 반환한다.  
+`ArrayUtils.remove(array, index)`는 `array`의 원하는 `index`의 요소를 지운 결과를 새로운 객체로 리턴한다.  
 이건 java built in api가 아닌 apach api이다.   
 
 ```java

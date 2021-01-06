@@ -75,7 +75,7 @@ $('.outter')...
 
 ### Element Selector ('element')
 
-찾을 태그를 입력한다. 같은 모든 태그가 반환된다.
+찾을 태그를 입력한다. 같은 모든 태그가 리턴된다.
 
 ```javascript
 $('div')..., $('fieldset')..., ...
@@ -117,7 +117,7 @@ function fn2() {
 
 ### :focus Selector
 
-현재 포커스 상태의 요소를 반환한다. input, button, select, option 등에 포커스를 줄 수 있다.
+현재 포커스 상태의 요소를 리턴한다. input, button, select, option 등에 포커스를 줄 수 있다.
 
 ```html
 <script>
@@ -139,7 +139,7 @@ function fn3() {
 
 ### :header Selector
 
-헤더 태그를 모두 반환(h1, h2, h3, ...), `<header></header>`를 의미하는 것이 아님 주의.  
+헤더 태그를 모두 리턴(h1, h2, h3, ...), `<header></header>`를 의미하는 것이 아님 주의.  
 
 ```html
 <script>
@@ -163,7 +163,7 @@ function fn4() {
 
 ### :not() Selector
 
-셀렉터로 선택한 요소 중 제거할 조건을 입력하면 해당 요소를 제외하고 반환한다.  
+셀렉터로 선택한 요소 중 제거할 조건을 입력하면 해당 요소를 제외하고 리턴한다.  
 `:not()` 셀렉터와 같이 `()`있는 것은 꼭 매개변수가 필요하다.  
 매개변수 `event`는 브라우저에서 넘겨주는데 호출 시 인수명은 `event`로 고정이다.    
 
@@ -188,8 +188,8 @@ function fn5(e) {
 
 ### :first-child selector
 
-한 개 이상의 요소를 반환하되, 각 부모의 첫 번째 자식 모두를 반환한다.  
-참고로 `:first selector` (3.4버전부터 deprecated)는 한 개 요소만 반환이 된다.  
+한 개 이상의 요소를 리턴하되, 각 부모의 첫 번째 자식 모두를 리턴한다.  
+참고로 `:first selector` (3.4버전부터 deprecated)는 한 개 요소만 리턴이 된다.  
 아래 예제를 `:first selector`로 적용하면 첫 번째 `Hello`에만 스타일이 적용된다.
 
 ```html

@@ -21,7 +21,7 @@ import org.apache.commons.lang.StringUtils;
 String content = "1,2,3,4,5";
 String separator = ",";
 
-// splitByWholeSeparator() : content를 separator를 기준으로 나눠 문자열 배열로 반환
+// splitByWholeSeparator() : content를 separator를 기준으로 나눠 문자열 배열로 리턴
 String[] contents = StringUtils.splitByWholeSeparator(content, separator);
 ```
 

@@ -21,7 +21,7 @@ fuction fn (x, y) { /* do somtiong */};
 // x, y를 인자 혹은 매개변수, parameter라고 한다.
 ```
 
-인수 argument
+##  인수 argument
 - 함수를 호출할 때 이 때 사용하게 되는 일련의 값
 
 ```js

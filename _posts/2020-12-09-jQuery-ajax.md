@@ -126,7 +126,7 @@ public class AjaxTestController {
 	@GetMapping(path = "/ajaxtest/getLittleTinyHtml.do")
 	public ModelAndView getLittleTinyHtml(ModelAndView mv) {
 		mv.setViewName("/ajaxtest/littleTinyHtml"); // 별도 jsp 파일 있음
-		return mv; // 반환이 ModelAndView이면 스프링 세팅으로 자동으로 넘어감
+		return mv; // 리턴이 ModelAndView이면 스프링 세팅으로 자동으로 넘어감
 	}
 }
 ```
@@ -368,9 +368,9 @@ $(document).ajaxStop(function(event, jqXHR, ajaxOptions) {
 - `.ajaxStart()`: 통신을 시작한 후에 실행하는 전역 핸들러 등록
 - `.ajaxSuccess()`: 통신이 성공했을 때 실행하는 전역 핸들러 등록
 
-## jQuery XHR 객체의 반환을 이용한 메서드 체이닝
+## jQuery XHR 객체의 리턴을 이용한 메서드 체이닝
 
-`$.ajax()`의 `shorthand` 버전인 `$.get() $.post()` 등도 `jqXHR`을 반환한다.
+`$.ajax()`의 `shorthand` 버전인 `$.get() $.post()` 등도 `jqXHR`을 리턴한다.
 - `jqXHR.done(fn)`: 통신 성공 시 실행
 - `jqXHR.fail(fn)`: 통신 실패 시 실행
 - `jqXHR.always(fn)`: 통신 후 성공/실패 여부 관계없이 실행. 성공했을 때와 실패했을 때의 실제 전달인자가 다르다. 더 이상 사용하지 않는 `complete()`를 대체한다.

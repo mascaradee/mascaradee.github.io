@@ -65,7 +65,7 @@ console.log(false == 0); // true - false는 0으로 치환후 계산
 console.log(true === 1); // false
 ```
 
-증감 연산자(++, --)를 사용할 때 숫자로 변환할 수 없는 값이면 `NaN`을 반환한다.
+증감 연산자(++, --)를 사용할 때 숫자로 변환할 수 없는 값이면 `NaN`을 리턴한다.
 
 ```js
 var a = 'a';

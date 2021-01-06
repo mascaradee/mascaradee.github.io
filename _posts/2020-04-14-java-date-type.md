@@ -104,9 +104,9 @@ cal1.add(Calendar.DAY_OF_MONTH, 7); // 오늘 + 7일 계산
 System.out.println("cal.getTime(); : "+ cal.getTime()); // Tue Jun 04 13:31:15 KST 2019
 
 // 2. getTime(), setTime()
-cal.getTime(); // 현재일시를 data타입으로 반환
+cal.getTime(); // 현재일시를 data타입으로 리턴
 System.out.println("cal.getTime(); : "+ cal.getTime()); // Tue May 21 13:12:39 KST 2019
-cal.setTime(sdf.parse("2019-01-01")); // 원하는 일자로 세팅하여 date타입으로 반환
+cal.setTime(sdf.parse("2019-01-01")); // 원하는 일자로 세팅하여 date타입으로 리턴
 System.out.println("cal.setTime(): "+ cal.getTime()); // Tue Jan 01 00:00:00 KST 2019
 
 ```

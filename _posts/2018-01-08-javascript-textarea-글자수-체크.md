@@ -17,7 +17,7 @@ var byteChecker = {
         return b;
     },
     /**
-     * originaltext의 바이트를 계산해서 limit를 초과할 경우 잘라서 반환
+     * originaltext의 바이트를 계산해서 limit를 초과할 경우 잘라서 리턴
      *
      * @param originaltext 길이 제한할 문자열
      * @param limit 최대 바이트

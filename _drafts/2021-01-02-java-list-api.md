@@ -22,7 +22,7 @@ tags:
 리스트는 순서가 있는 컬렉션이고 중복을 허용하는데 자세히 말하자면 동일한 객체의 주소값을 저장하는 것이다. NULL도 저장할 수 있다. 컬렉션 인터페이스를 상속하여 여러 기능이 있다.  
 
 - 위치 접근 - 인덱스로 조작 할 수 있다.  `get(), set(), add(), addAll(), remove()`
-- 검색 - 지정된 객체를 검색하면 인덱스를 반환한다. `indexOf(), lastIndexOf()`
+- 검색 - 지정된 객체를 검색하면 인덱스를 리턴한다. `indexOf(), lastIndexOf()`
 - 반복 - 목록의 순차 특성을 활용하기 위해서 `Iterator`를 확장한다. `listIterator()`
 - 범위 뷰 - `sublist()` 로 임의 범위 조작을 할수 있다.
 
@@ -36,9 +36,9 @@ tags:
 
 ### 위치 접근과 검색 작업 Positional Access and Search Operations
 
-`get, set, add, remove`: 위치 접근, set, remove는 덮어 쓰거나 제거중인 이전 값을 반환한다.  
-`indexOf, lastIndexOf`: 리스트 상에서 지정된 요소의 첫번째 인덱스 혹은 마지막 인덱스를 반환한다.  
-`addAll` : 정해진 위치에서 모든 요소를 추가한다. 이터레이터에서 반환된 순서대로 추가 된다.
+`get, set, add, remove`: 위치 접근, set, remove는 덮어 쓰거나 제거중인 이전 값을 리턴한다.  
+`indexOf, lastIndexOf`: 리스트 상에서 지정된 요소의 첫번째 인덱스 혹은 마지막 인덱스를 리턴한다.  
+`addAll` : 정해진 위치에서 모든 요소를 추가한다. 이터레이터에서 리턴된 순서대로 추가 된다.
 `swap` : 요소의 순서를 맞바꾼다.  
 
 ### Iterators

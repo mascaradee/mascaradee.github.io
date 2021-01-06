@@ -46,7 +46,7 @@ decodeURIComponent('%2Fa%2Fb%2Fc%3Fq%3D132123%26returnUrl%3D%2Fproduct%2F%EC%82%
 ```
 
 ### isFinite(), isNaN()
-`isFinite()` 함수는 매개변수가 유한값인지 검사하는 함수이다. 유한한 숫자이면 true, 무한한 숫자이거나 숫자가 아니면 false 반환.  
+`isFinite()` 함수는 매개변수가 유한값인지 검사하는 함수이다. 유한한 숫자이면 true, 무한한 숫자이거나 숫자가 아니면 false 리턴.  
 `isNaN()` 함수는 매개변수가 `Not a Number` 인지 검사하는 함수이다. 숫자가 아니면 true, 숫자이면 false.  
 
 ```js

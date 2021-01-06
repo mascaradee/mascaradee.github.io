@@ -48,7 +48,7 @@ $('input').removeClass('affected, second-one'); // 이 경우, second-one만 제
 
 ## .hasClass()  
 
-선택한 요소에 지정한 클래스가 있으면 true, 아니면 false 반환  
+선택한 요소에 지정한 클래스가 있으면 true, 아니면 false 리턴  
 
 ```javascript
 $('input').hasClass('second-one');  
@@ -68,5 +68,5 @@ $('input').toggleClass('second-one');
 
 ```javascript
 $('div').css('display', 'none'); // display 스타일의 값을 none으로 변경  
-$('div').css('display'); // display 스타일의 값을 반환 , 즉, 현재 none 값이므로 none 반환
+$('div').css('display'); // display 스타일의 값을 리턴 , 즉, 현재 none 값이므로 none 리턴
 ```

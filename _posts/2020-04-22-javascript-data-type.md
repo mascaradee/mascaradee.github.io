@@ -263,7 +263,7 @@ console.log(`value: ${sb1.description}, type: ${typeof sb1}`); // value: id, typ
 
 ## typeof 연산자
 
-인수의 자료형을 반환. 변수의 자료형을 알아낼때 사용
+인수의 자료형을 리턴. 변수의 자료형을 알아낼때 사용
 
 ```javascript
 typeof 1; // "number"

@@ -46,7 +46,7 @@ tags:
   	</ul>
   </div>
   <script>
-  var $firstHeader = $('h1:first'); // h1 태그 중 첫번째 요소 반환
+  var $firstHeader = $('h1:first'); // h1 태그 중 첫번째 요소 리턴
   var $phraseInUnorderedList = $('p', 'ul'); // $('ul').find('p') 와 같음. 즉, p태그 중 ul태그 하위에 있는 요소 찾기
   </script>
 </body>
@@ -86,7 +86,7 @@ $phraseInUnorderedList.length; // 0
 ```
 
 ### `jQuery( element )`
-자바스크립트로 얻어낸 DOM을 파라미터로 전달하면 `jQuery` 객체로 만들어 반환하는 메서드  
+자바스크립트로 얻어낸 DOM을 파라미터로 전달하면 `jQuery` 객체로 만들어 리턴하는 메서드  
 
 ```javascript
 var h1 = document.querySelector('h1'); // DOM 가져오기
@@ -114,7 +114,7 @@ $lies.find('p'); // 모든 선택된 li 태그 하위 노드에서 p 탐색
 
 ```javascript
 var $newEle = $('<div>야이뇸아</div>');
-$('div:first').append($newEle); // div 중 첫번째 요소 반환한 후 $newEle를 해당 요소의 끝나기 바로 전에 붙인다. 즉, </div> 바로 앞에
+$('div:first').append($newEle); // div 중 첫번째 요소 리턴한 후 $newEle를 해당 요소의 끝나기 바로 전에 붙인다. 즉, </div> 바로 앞에
 ```
 
 ```HTML

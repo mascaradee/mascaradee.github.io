@@ -68,7 +68,7 @@ public static void main(String[] args) {
 | @version        | 클래스 혹은 인터페이스의 버전     | Class, Interface, Enum                |
 | @since          | 언제부터 시작되었는지             | Class, Interface, Enum, Field, Method |
 | @param          | 매개변수                          | Method                                |
-| @return         | 반환값                            | Method                                |
+| @return         | 리턴값                            | Method                                |
 | @exception      | 예외에 대한 명시                  | Method                                |
 | @throws         | 예외에 대한 명시                  | Method                                |
 | @deprecated     | 더 이상 권장하지 않는 메서드 표기 | Class, Interface, Enum, Field, Method |
@@ -464,7 +464,7 @@ null
 ### 숫자 타입 연산자
 
 - 숫자 연산자 : 정수형 타입의 결과는 `int` 혹은 `long`, 부동 소수점 타입의 결과는 `float` 혹은 `double`
-  - 단항 연산자 : `+, -` (숫자나 문자열 모두 적용 할 수 있는데, 숫자 + 문자열 = 문자열로 결과 반환)
+  - 단항 연산자 : `+, -` (숫자나 문자열 모두 적용 할 수 있는데, 숫자 + 문자열 = 문자열로 결과 리턴)
   - 증식 연산자 : `*, /, %`
   - 증가 연산자 : `++` (전치 혹은 후치)
   - 감소 연산자 : `--` (전치 혹은 후치)
@@ -474,7 +474,7 @@ null
   - 삼항 연산자 : `? :`
   - 숫자형 객체 타입 : `Byte, Short, Integer, Long, Character, Float, Double, Math`
 
-- 비교 연산자 : 결과는 `boolean`타입으로 반환한다.  
+- 비교 연산자 : 결과는 `boolean`타입으로 리턴한다.  
   - 숫자 비교 연산자 : `<, <=, >, >=`
   - 동등 연산자 : `==, !=`
 
@@ -490,7 +490,7 @@ null
 - 논리 연산자 : `&`(2개 피연산자 모두 `true`), `^`(피연산자의 값이 다를때), `|`(2개 피연산자 모두 `false`)
 - and, or연산자 : `&&`, `||`
 - 삼항 연산자 : `? :`
-- 문자열 연결 연산자 : `+` ( `boolean` + 문자열 = 문자열로 결과 반환)
+- 문자열 연결 연산자 : `+` ( `boolean` + 문자열 = 문자열로 결과 리턴)
 
 
 ## 제어문

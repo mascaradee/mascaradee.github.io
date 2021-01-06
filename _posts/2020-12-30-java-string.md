@@ -18,7 +18,7 @@ tags:
 
 ## String
 
-`String`은 객체타입이다. 원시 자료타입처럼 생성할수 있지만 이 경우, 컴파일러가 자동으로 문자열을 값으로 가지는 `String Object`를 생성한다. 또한 문자열은 불변이므로 수정이 불가하고 몇몇 메서드로 문자열이 수정 되는 것처럼 보이는 것은 작업 결과를 새 문자열로 반환하기 때문이다.  
+`String`은 객체타입이다. 원시 자료타입처럼 생성할수 있지만 이 경우, 컴파일러가 자동으로 문자열을 값으로 가지는 `String Object`를 생성한다. 또한 문자열은 불변이므로 수정이 불가하고 몇몇 메서드로 문자열이 수정 되는 것처럼 보이는 것은 작업 결과를 새 문자열로 리턴하기 때문이다.  
 
 ### 인스턴스 생성
 
@@ -40,7 +40,7 @@ logger.debug("{}", helloString);
 
 #### length()
 
-특수문자를 포함한 문자열의 길이를 반환한다.   
+특수문자를 포함한 문자열의 길이를 리턴한다.   
 
 ```java
 String helloString = new String("hello.");
@@ -50,19 +50,19 @@ logger.debug("{}", len);  // 6
 
 #### getChar()
 
-문자열을 char 타입으로 변경해서 반환한다.  
+문자열을 char 타입으로 변경해서 리턴한다.  
 
 ```java
 String helloString = new String("hello.");
 int len = helloString.length();
 char[] helloArray = new char[len];
-helloString.getChars(0, len, helloArray, 0); // char로 반환하는 메서드
+helloString.getChars(0, len, helloArray, 0); // char로 리턴하는 메서드
 logger.debug("{}", helloArray1);  // [h, e, l, l, o, .]
 ```
 
 #### concat()
 
-2개의 문자열을 연결해 주는 메서드로 문자열의 내용을 연결해서 새로운 String에 담아 반환한다.  
+2개의 문자열을 연결해 주는 메서드로 문자열의 내용을 연결해서 새로운 String에 담아 리턴한다.  
 `문자열 + 문자열` 혹은 `문자열 + 리터럴`끼리도 연결이 가능하다.  
 문자열은 보통 `+`연산자를 이용해 연결한다.  
 
@@ -146,7 +146,7 @@ Assert.assertEquals(true, s2 instanceof String);
 
 #### substring()
 
-문자열의 원하는 구간으로 자를 수 있다. 새로운 문자열로 반환한다.  
+문자열의 원하는 구간으로 자를 수 있다. 새로운 문자열로 리턴한다.  
 
 ```
 String substring(시작인덱스, 종료인덱스)
@@ -163,7 +163,7 @@ Assert.assertEquals("육칠", s.substring(6, 8));
 
 #### split()
 
-문자열을 한 자씩 잘라 새로운 문자열 배열로 반환한다.
+문자열을 한 자씩 잘라 새로운 문자열 배열로 리턴한다.
 
 ```
 String[] split(String 구분자)
@@ -196,7 +196,7 @@ for (String a : r2) {
 ```
 #### subSequence()
 
-`substring()`과 반환타입의 차이가 있지만 기능은 동일하다.
+`substring()`과 리턴타입의 차이가 있지만 기능은 동일하다.
 `CharSequence`은 `char` 타입의 값을 읽을 수 있는 시퀀스로 인터페이스이다.  
 
 `CharSequence subSequence(int beginIndex, int endIndex)`
@@ -209,7 +209,7 @@ logger.debug("{}", r1);
 
 #### trim()
 
-문자열의 앞뒤 공백을 제거한 결과를 새로운 문자열로 반환한다. 중간에 끼어 있는 공백은 제거하지 않는다.  
+문자열의 앞뒤 공백을 제거한 결과를 새로운 문자열로 리턴한다. 중간에 끼어 있는 공백은 제거하지 않는다.  
 
 `String trim()`
 
@@ -221,8 +221,8 @@ Assert.assertEquals("영일 이삼사 오 육     칠   팔  구 십", r1);
 
 #### toUpperCase(), toLowerCase()
 
-문자열의 영문자를 대문자로(`toUpperCase()`) 혹은 소문자로(`toLowerCase()`) 로 변경하여 새 문자열로 반환한다.  
-변경이 필요없는 숫자나 특수문자 등은 그대로 반환한다.  
+문자열의 영문자를 대문자로(`toUpperCase()`) 혹은 소문자로(`toLowerCase()`) 로 변경하여 새 문자열로 리턴한다.  
+변경이 필요없는 숫자나 특수문자 등은 그대로 리턴한다.  
 
 ```
 String toLowerCase()
@@ -241,7 +241,7 @@ Assert.assertEquals("hello world1!!", r2);
 
 #### indexOf(), lastIndexOf()
 
-문자열에서 특정 문자나 부분문자열을 찾는데 앞에서부터 탐색을 시작하는 `indexOf()`, 뒤에서부터 시작하는 `lastIndexOf()` 가 있다. 원하는 문자를 발견하면 그 문자가 있는 첫 번째 인덱스를 반환하고 만약 찾는 것이 없다면 -1을 반환한다.   
+문자열에서 특정 문자나 부분문자열을 찾는데 앞에서부터 탐색을 시작하는 `indexOf()`, 뒤에서부터 시작하는 `lastIndexOf()` 가 있다. 원하는 문자를 발견하면 그 문자가 있는 첫 번째 인덱스를 리턴하고 만약 찾는 것이 없다면 -1을 리턴한다.   
 
 ```
 int indexOf(int ch)
@@ -278,7 +278,7 @@ Assert.assertEquals(-1, r6);
 
 #### contains()
 
-원하는 문자열의 포함여부에 따라 `true/false`로 반환한다.  
+원하는 문자열의 포함여부에 따라 `true/false`로 리턴한다.  
 `String`이 `CharSequence`를 구현한 클래스 중 하나이므로 인수로 String 문자열을 넣을 수 있다.   
 
 `boolean contains(CharSequence s)`
@@ -296,7 +296,7 @@ Assert.assertFalse(r2);
 
 #### replace(), replaceAll(), replaceFirst()
 
-문자열을 지정된 다른 문자나 문자열로 대체해서 새로운 `String`객체로 반환한다.  
+문자열을 지정된 다른 문자나 문자열로 대체해서 새로운 `String`객체로 리턴한다.  
 대소문자도 가려서 대체를 하므로 주의.  
 
 `replace()`와 `replaceAll()`은 동일한 결과를 낼 수 있지만 `replaceAll()`의 첫 번째 인수의 정규식을 통해 더 다양한 대체를 할 수 있다는 점이 다르다.  
@@ -335,7 +335,7 @@ Assert.assertEquals("Hello,-Hello, world.", r6);
 
 #### endsWith(), startsWith()
 
-인수 문자열로 끝나는지 혹은 시작되는지 확인하여 `true/false`를 반환한다.
+인수 문자열로 끝나는지 혹은 시작되는지 확인하여 `true/false`를 리턴한다.
 offset 인덱스가 있는 경우, 해당 인덱스 부터 비교를 한다.
 
 ```
@@ -355,7 +355,7 @@ Assert.assertEquals(true, s.startsWith("new", 7)); // 대소문자도 가림
 
 #### compareTo(), compareToIgnoreCase()
 
-`compareTo()` 메서드는 사전순으로 2개의 문자열을 비교한다. 기준문자열이 비교할 문자열보다 크면 양수, 같으면 0, 작으면 음수를 반환한다.  
+`compareTo()` 메서드는 사전순으로 2개의 문자열을 비교한다. 기준문자열이 비교할 문자열보다 크면 양수, 같으면 0, 작으면 음수를 리턴한다.  
 `compareToIgnoreCase()` 메서드는 같은 기능이나 영문자의 대소문자를 구분하지 않고 비교한다.  
 
 ```
@@ -383,8 +383,8 @@ Assert.assertEquals(0, s1.compareToIgnoreCase(s2)); // 대소문자 무시하고
 
 #### equals(), equalsIgnoreCase()
 
-`equals()` 메서드는 문자열끼리 같은지를 비교하여 `true/false`를 반환한다.  
-`equalsIgnoreCase()` 메서드는 같은 기능이나 영문자의 대소문자를 구분하지 않고 같은지 비교하여 결과를 반환한다.  
+`equals()` 메서드는 문자열끼리 같은지를 비교하여 `true/false`를 리턴한다.  
+`equalsIgnoreCase()` 메서드는 같은 기능이나 영문자의 대소문자를 구분하지 않고 같은지 비교하여 결과를 리턴한다.  
 
 ```
 boolean equals(Object anObject)
@@ -405,7 +405,7 @@ Assert.assertEquals(true, s1.equalsIgnoreCase(s2));
 기준 문자열의 경우 `toffset` 인덱스에서 시작하고 비교할 문자열의 경우 `ooffset`에서 시작한다. 비교할 문자열의 길이가 `len`이다.  
 `boolean ignoreCase`를 추가하여 `true`일 경우 대소문자 무시를 한다.
 
-`matches()` 메서드는 문자열이 인수의 정규식과 일치하는지 여부로 `true/false`를 반환한다.
+`matches()` 메서드는 문자열이 인수의 정규식과 일치하는지 여부로 `true/false`를 리턴한다.
 
 ```
 boolean regionMatches(int toffset, String other, int ooffset, int len)
@@ -613,6 +613,6 @@ Assert.assertEquals("~다간 다 이일요일 이 ~다간 다", sb.toString());
 
 #### toString()
 
-문자열을 `String`으로 반환한다.  보통 `StringBuilder`는 `String` 처럼 출력을 하지만 내부전긍로 `문자열.toString()`을 호출한다.
+문자열을 `String`으로 리턴한다.  보통 `StringBuilder`는 `String` 처럼 출력을 하지만 내부전긍로 `문자열.toString()`을 호출한다.
 
 `String toString()`

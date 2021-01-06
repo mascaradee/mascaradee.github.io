@@ -44,7 +44,7 @@ tags:
 
 - 람다 표현식이란 익명 클래스를 하나의 식으로 표현한 것이다.  
 - 메서드의 매개변수로 전달이 될 수 있다.
-- 메서드의 결과값으로 반환이 될 수도 있다.
+- 메서드의 결과값으로 리턴이 될 수도 있다.
 - 람다 표현식은 기존의 불필요한 코드를 줄여주고 가독성을 높이는데 목적이 있다.  
 
 보통 자바 메서드는 아래와 같은데  
@@ -77,7 +77,7 @@ new Object((num1, num2) -> num1 + num2);
 
 - 매개변수의 타입을 추론할 수 있는 경우, 타입 생략 가능
 - 매개변수가 하나인 경우에는 괄호 `()` 생략 가능
-- 함수의 몸체가 하나의 표현식(`expression`)으로만 이루어진 경우에는 중괄호 `{}` 생략 가능하고 자바 런타임이 표현식을 평가하고 그 결과값을 반환한다.
+- 함수의 몸체가 하나의 표현식(`expression`)으로만 이루어진 경우에는 중괄호 `{}` 생략 가능하고 자바 런타임이 표현식을 평가하고 그 결과값을 리턴한다.
 - 함수의 몸체가 하나의 return문(`statement block`)으로만 이루어진 경우에는 중괄호 `{}` 생략 불가능
 - void 메서드는 `{}`가 필요없다.
 
@@ -174,7 +174,7 @@ TODO
 
 ### 생성자 참조
 
-단순히 객체를 생성하고 반환하는 람다 표현식은 생성자 참조로 변환할 수 있다.  
+단순히 객체를 생성하고 리턴하는 람다 표현식은 생성자 참조로 변환할 수 있다.  
 
 ```java
 // 람다 표현식
@@ -264,8 +264,8 @@ public void testDefaultMethod() {
 컬렉션(`Set, List, Map, SortedSet, SortedMap, HashSet, TreeSet, ArrayList, LinkedList, Vector, Collections, Arrays, AbstractCollection`)을 스트림으로 생성한다.   
 
 리스트는 컬렉션인터페이스를 상속하여 컬렉션의  `stream()`, `parallelStream()`을 사용할 수 있다.   
-`stream()`은 데이터를 순차적으로 스트림으로 생성하여 반환한다.  
-`parallelStream()`은 내부의 `thread` 가 데이터의 개수만큼 생성되어 병렬적으로 동시에 결과를 반환하는데 실행할 때마다 그 결과의 순서는 `thread`의 속도에 따라 바뀌게 된다.
+`stream()`은 데이터를 순차적으로 스트림으로 생성하여 리턴한다.  
+`parallelStream()`은 내부의 `thread` 가 데이터의 개수만큼 생성되어 병렬적으로 동시에 결과를 리턴하는데 실행할 때마다 그 결과의 순서는 `thread`의 속도에 따라 바뀌게 된다.
 
 ```java
 public void testStream1() {
@@ -327,7 +327,7 @@ public void testStream2() {
 
 #### 가변 매개변수
 
-가변 매개변수를 `Stream.of()`를 이용해 스트림으로 반환한다
+가변 매개변수를 `Stream.of()`를 이용해 스트림으로 리턴한다
 매개변수의 타입에 관계없이 그 데이터로 스트림을 생성한다.  
 
 ```
@@ -477,7 +477,7 @@ public void testStream8() {
 
 #### filter()
 
-조건에 맞는 요소만으로 재구성한 스트림을 반환한다. 조건에는 람다 표현식을 사용할 수 있다.  
+조건에 맞는 요소만으로 재구성한 스트림을 리턴한다. 조건에는 람다 표현식을 사용할 수 있다.  
 
 `IntStream filter(IntPredicate predicate);`
 
@@ -496,7 +496,7 @@ public void testStream9() {
 
 #### distinct()
 
-중복요소가 있으면 제거한 스트림을 반환한다. 내부적으로 `Object`클래스의 `equals()`를 사용하여 요소의 중복을 비교한다.  
+중복요소가 있으면 제거한 스트림을 리턴한다. 내부적으로 `Object`클래스의 `equals()`를 사용하여 요소의 중복을 비교한다.  
 
 `distinct()`
 
@@ -509,10 +509,10 @@ public void testStream10() {
 
 #### map()
 
-스트림 요소를 주어진 함수의 조건에 맞춰 스트림을 재구성해서 반환한다.  
+스트림 요소를 주어진 함수의 조건에 맞춰 스트림을 재구성해서 리턴한다.  
 `filter()`와 `map()`은 둘다 주어진 함수의 조건에 맞춰 스트림을 재구성하지만  
 `filter()`는 주어진 조건에 맞지 않는 요소는 버리고 스트림을 구성한다. 조건의 결과가 `true/false`가 되어야 한다.  
-`map()`은 버리는 요소 없이 모든 요소에 조건을 적용하여 요소의 값이 변형이 있을 지 모르지만 모두 반환한다.   
+`map()`은 버리는 요소 없이 모든 요소에 조건을 적용하여 요소의 값이 변형이 있을 지 모르지만 모두 리턴한다.   
 
 ```
 IntStream map(IntUnaryOperator mapper);
@@ -533,7 +533,7 @@ public void testStream11() {
 
 #### flatMap()
 
-해당 스트림의 요소가 배열일 경우, 배열의 각 요소를 주어진 함수에 인수로 전달하여, 그 반환값으로 이루어진 새로운 스트림을 반환한다.
+해당 스트림의 요소가 배열일 경우, 배열의 각 요소를 주어진 함수에 인수로 전달하여, 그 리턴값으로 이루어진 새로운 스트림을 리턴한다.
 
 ```
 IntStream flatMap(IntFunction<? extends IntStream> mapper);
@@ -633,7 +633,7 @@ Mapped value: 16
 
 #### forEach()
 
-스크림의 각 요소를 소모하여 명시된 동작을 수행한다. 반환 타입이 void이므로 보통 스트림의 모든 요소를 출력하는 용도로 사용한다.  
+스크림의 각 요소를 소모하여 명시된 동작을 수행한다. 리턴 타입이 void이므로 보통 스트림의 모든 요소를 출력하는 용도로 사용한다.  
 
 ```java
 public void testStream16() {
@@ -643,7 +643,7 @@ public void testStream16() {
 #### reduce()
 
 첫 번째와 두 번째 요소를 가지고 연산을 하고, 그 결과와 세번째 요소를 가지고 다시 연산을 수행하여 모든 요소들을 소모한다.  
-초기값이 주어진 경우, 초기값과 스트림의 첫 번째 요소와 연산, 그 결과와 두 번째 연산을 수행, 반복하여 모든 요소들을 소모한다. 하지만 초기값이 주어진 경우, 모든 연산이 끝나고 난 후 결과값은 String이다 연산의 결과가 없더라도 초기값은 반환을 해야 하기 때문이다. 초기값이 없는 경우는 Optional<T>로 결과값이 반환되는 것을 확인할 수 있다.
+초기값이 주어진 경우, 초기값과 스트림의 첫 번째 요소와 연산, 그 결과와 두 번째 연산을 수행, 반복하여 모든 요소들을 소모한다. 하지만 초기값이 주어진 경우, 모든 연산이 끝나고 난 후 결과값은 String이다 연산의 결과가 없더라도 초기값은 리턴을 해야 하기 때문이다. 초기값이 없는 경우는 Optional<T>로 결과값이 리턴되는 것을 확인할 수 있다.
 
 ```java
 public void testStream17() {
@@ -658,8 +658,8 @@ public void testStream17() {
 ```
 #### findFirst(), findAny()
 
-`findFirst()`는 스트림의 첫 번째 요소를 참조하는 Optional 객체를 반환한다.   
-`findAny()`는 스트림 요소 중 하나를 참조하는 Optional 객체를 반환한다.   
+`findFirst()`는 스트림의 첫 번째 요소를 참조하는 Optional 객체를 리턴한다.   
+`findAny()`는 스트림 요소 중 하나를 참조하는 Optional 객체를 리턴한다.   
 하지만 병렬 스트림이 아닌 경우에는 둘 다 첫 번째 요소를 참조하므로 변별력은 없다.  확실히 하려면 병렬 스트림에서 첫 번째 요소를 얻고 싶다면 `findFirst()`를 써야 한다.  
 
 ```java
@@ -688,9 +688,9 @@ public void testStream18( ) {
 
 #### anyMatch(), allMatch(), noneMatch()
 
-`anyMatch()` : 해당 스트림의 일부 요소가 특정 조건을 만족할 경우에 `true`를 반환한다.  
-`allMatch()` : 해당 스트림의 모든 요소가 특정 조건을 만족할 경우에 `true`를 반환한다.  
-`noneMatch()` : 해당 스트림의 모든 요소가 특정 조건을 만족하지 않을 경우에 `true`를 반환한다.  
+`anyMatch()` : 해당 스트림의 일부 요소가 특정 조건을 만족할 경우에 `true`를 리턴한다.  
+`allMatch()` : 해당 스트림의 모든 요소가 특정 조건을 만족할 경우에 `true`를 리턴한다.  
+`noneMatch()` : 해당 스트림의 모든 요소가 특정 조건을 만족하지 않을 경우에 `true`를 리턴한다.  
 
 ```java
 public void testStream19() {
@@ -706,7 +706,7 @@ public void testStream19() {
 
 #### count(), max(), min()
 
-`count()`: 해당 스트림의 요소의 총 개수를 long 타입의 값으로 반환한다.   
+`count()`: 해당 스트림의 요소의 총 개수를 long 타입의 값으로 리턴한다.   
 `max()`, `min()`: 해당 스트림의 요소 중에서 가장 큰 값과 가장 작은 값을 가지는 요소를 참조하는 Optional 객체를 얻을 수 있다.  
 
 ```java
@@ -717,14 +717,14 @@ public void testStream20() {
 
   logger.debug("{}", stream1.count()); // 4
   logger.debug("{}", stream2.max()); // OptionalInt[4]
-  logger.debug("{}", stream3.min().getAsInt()); // 1 , getAsInt() : OptionalInt에 값이 존재하면 그 값을 반환
+  logger.debug("{}", stream3.min().getAsInt()); // 1 , getAsInt() : OptionalInt에 값이 존재하면 그 값을 리턴
 }
 ```
 
 #### sum(), average()
 
-`sum()` : 모든 요소의 합을 해당 스트림의 타입에 맞춰 기본 타입(`int, long, double`)으로 반환한다.  
-`average()` : 모든 요소의 평균을 해당 스트림의 타입에 맞춰 기본 타입으로 래핑된 `Optional`객체로 반환한다.  
+`sum()` : 모든 요소의 합을 해당 스트림의 타입에 맞춰 기본 타입(`int, long, double`)으로 리턴한다.  
+`average()` : 모든 요소의 평균을 해당 스트림의 타입에 맞춰 기본 타입으로 래핑된 `Optional`객체로 리턴한다.  
 
 ```java
 public void testStream21() {
@@ -768,7 +768,7 @@ TODO
 ### Optional 객체의 생성
 
 `of()` : `Optional` 객체를 생성할 수 있지만 `null`은 허용하지 않는다. (`NullPointerException`)  
-`ofNullable()` : `Optional` 객체를 생성할 수 있고 `null`도 허용한다. 따라 `null`이 될 가능성이 있으면 이걸 이용해 객체를 생성하는게 좋다. 만약 `null`이 있는 경우, 비어있는 `Optional` 객체를 반환한다.
+`ofNullable()` : `Optional` 객체를 생성할 수 있고 `null`도 허용한다. 따라 `null`이 될 가능성이 있으면 이걸 이용해 객체를 생성하는게 좋다. 만약 `null`이 있는 경우, 비어있는 `Optional` 객체를 리턴한다.
 
 ```java
 public void testOptionalClass() {
@@ -783,9 +783,9 @@ public void testOptionalClass() {
 ### Optional 객체 접근
 
 `get()` : Optional 객체의 저장된 값에 접근할 수 있다.   
-`orElse()` : 저장된 값이 존재하면 그 값을 반환하고, 값이 존재하지 않으면 인수로 전달된 값을 반환한다.  
-`orElseGet()` : 저장된 값이 존재하면 그 값을 반환하고, 값이 존재하지 않으면 인수로 전달된 람다 표현식의 결괏값을 반환한다.  
-`orElseThrow()` : 저장된 값이 존재하면 그 값을 반환하고, 값이 존재하지 않으면 인수로 전달된 예외를 발생환한다.  
+`orElse()` : 저장된 값이 존재하면 그 값을 리턴하고, 값이 존재하지 않으면 인수로 전달된 값을 리턴한다.  
+`orElseGet()` : 저장된 값이 존재하면 그 값을 리턴하고, 값이 존재하지 않으면 인수로 전달된 람다 표현식의 결괏값을 리턴한다.  
+`orElseThrow()` : 저장된 값이 존재하면 그 값을 리턴하고, 값이 존재하지 않으면 인수로 전달된 예외를 발생환한다.  
 
 ```java
 public void testOptionalClass1() {
@@ -825,7 +825,7 @@ public void testOptionalClass2() {
 #### 기본 타입의 Optional 클래스
 
 `IntStream` 클래스와 같이 기본 타입 스트림을 위한 별도의 `Optional` 클래스를 제공하고 있다.  
-반환 타입이 `Optional<T>` 타입이 아니라 해당 기본 타입이라는 사실만 제외하면 거의 모든 면에서 비슷하다.  
+리턴 타입이 `Optional<T>` 타입이 아니라 해당 기본 타입이라는 사실만 제외하면 거의 모든 면에서 비슷하다.  
 
 - `OptionalInt` 클래스
 - `OptionalLong` 클래스
