@@ -125,7 +125,17 @@ Imstatic.text; // Thread[main,5,main]
 }
 ```
 
+```java
+class Imstatic {
+
+	public final String str;
+	{
+		str = "a" + Integer.valueOf(10).toString();
+	}
+}
+```
+
 #### final
 
 `final` 키워드를 붙이면 하위클래스에서 재정의 할 수 없다. 변경해서는 안되는 곳에 이 키워드를 붙여 최종으로 만든다.
-변수, 메서드, 클래스에 모두 적용할 수 있다. 
+변수, 메서드, 클래스에 모두 적용할 수 있다.
