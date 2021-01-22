@@ -20,6 +20,7 @@ tags:
 - ctrl + F8 : persfectives 탭 이동
 - ctrl + F7 : views 탭 이동
 - ctrl + F6 : editor 탭 이동
+- alt + F5: Maven Update
 
 
 ## Tips
