@@ -1,58 +1,21 @@
 ---
 layout: post
 date: 2021-01-17 15:35:00 +0900
-title: '[java] spring'
+title: '[spring] 스프링MVC xml 세팅 Spring WEB MVC setting by xml'
 categories:
-  - java
-tags:
   - spring
+tags:
+  - spring mvc
+  - xml
 ---
 
 * Kramdown table of contents
 {:toc .toc}
 
 ## 참고
-[https://spring.io/projects/spring-framework](https://spring.io/projects/spring-framework)  
-[Spring MVC](https://docs.spring.io/spring-framework/docs/5.2.12.RELEASE/spring-framework-reference/web.html#spring-web)
+[Spring WEB MVC setting by xml](https://www.youtube.com/watch?v=ou3CmpuPOm8&list=PLSBIrFmNg2JYzeFJQ9WhEHCOZy2KT4HGb&index=8)
 
-### Git 설정
-
-Git 레파지토리를 만든 후 로컬로 클론한다.  
-레파지토리를 먼저 만들게 되면 `upstream` 설정을 따로 하지 않아도 되므로 편하다.  
-
-`git clone https://github.com/mascaradee/Apple.git`
-
-이클립스 `git perspective`에서 레파지토리 설정 후 로컬 레파지토리 `import` 하여 프로젝트까지 만든다.
-
-### 폼파일에 추가
-
- ```
-<!-- spring -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-webmvc</artifactId>
-    <version>${org.springframework-version}</version>
-</dependency>
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-context-support</artifactId>
-    <version>${org.springframework-version}</version>
-</dependency>
-```
-
-### 구성파일
-
-WebAppInitializer.java
-WebConfig.java
-RootConfig.java
-
-
-
----------------------
-
-## Spring Web MVC by 소프트캠퍼스
-
-### pom.xml 설정
+## pom.xml 설정
 
 기본적으로 필요한 라이브러리만 추가한다. 최소한 `servlet, jsp, jstl, spring-webmvc` 4개는 필요하다.  
 추라고 필요한 라이브러리는 여기서 찾아서 추가 할 수 있다. [https://mvnrepository.com/](https://mvnrepository.com/)  
@@ -126,6 +89,9 @@ RootConfig.java
 	</dependencies>
 </project>
 ```
+
+
+## xml 설정파일
 
 ### DispatcherServlet 설정 변경
 
@@ -219,7 +185,7 @@ Bean들을 정의하는 파일
 
 ### 필터 설정
 
-파라미터에 한글이 있는 경우, 한글이 깨지지 않도록 인코딩 설정을 해 준다.
+파라미터에 한글이 있는 경우, 한글이 깨지지 않도록 인코딩 설정을 해 준다.  
 
 `/프로젝트/WebContent/WEB-INF/web.xml`
 
@@ -284,7 +250,7 @@ Bean들을 정의하는 파일
 
 ```
 
-정적파일(이미지, 사운드, 동영상, JS, CSS 등등) 경로를 세팅한다. /WebContent/resources/image 경로에 이미지를 모아놓기로 했다면 아래와 같이 세팅하면 된다. 
+정적파일(이미지, 사운드, 동영상, JS, CSS 등등) 경로를 세팅한다. /WebContent/resources/image 경로에 이미지를 모아놓기로 했다면 아래와 같이 세팅하면 된다.
 
 `/WebContent/WEB-INF/config/servlet-context.xml`
 
