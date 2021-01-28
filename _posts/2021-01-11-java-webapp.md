@@ -82,6 +82,7 @@ URL 매핑: 접근 가능한 url 패턴 정의, 아래 예시는 패턴이 지�
 ```
 
 시작페이지 설정: 연결되 서블릿이나 페이지가 없을 경우 아래 기본 페이지로 연결된다.  
+
 ```
 <welcome-file-list>
     <welcome-file>index.html</welcome-file>
