@@ -69,7 +69,7 @@ Aborting
 git reset --hard
 ```
 
-`error: The following untracked working tree files would be overwritten by merge:`
+`error: The following untracked working tree files would be overwritten by merge:`  
 => 해결책: 내 로컬 파일 삭제, 한번도 add 되지 않은 파일은 git이 추적할수 없어 생기는 문제 내 로컬 파일을 지워서 맞춘다.
 ```
 rm [파일명]
