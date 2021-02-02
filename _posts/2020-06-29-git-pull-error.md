@@ -1,11 +1,11 @@
 ---
 layout: post
 date: 2020-06-29 00:00:00 +0900
-title: '[git] git base'
+title: '[git] pull error'
 categories:
   - git
 tags:
-  - git
+  - pull error
 ---
 
 ## git pull 에러
@@ -74,8 +74,3 @@ git reset --hard
 ```
 rm [파일명]
 ```
-
-
-
-### git repository url 조회
-`git config --get remote.origin.url`
