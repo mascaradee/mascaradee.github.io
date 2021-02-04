@@ -19,3 +19,8 @@ tags:
 
 - 사이드 메뉴바 열고 닫기 토글 : ctrl + k, ctrl + b
 - git 메뉴바 열고 닫기 토글 : ctrl + shifr + 9
+
+
+## 아톰 설정 파일 동기화
+
+[참고](https://sanghaklee.tistory.com/42)
