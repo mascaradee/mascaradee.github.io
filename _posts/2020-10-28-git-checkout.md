@@ -23,4 +23,10 @@ git checkout -b [로컬브랜치명] --track [origin/브랜치명]
 
 ## 브랜치 이름 변경
 
+내 브랜치 이름 바꾸기. 다른 브랜치로 바꿨다가 변경할 필요 없이 바로 변경 가능
+
 `git branch -m [NAME_FROM] [NAME_TO]`
+
+```
+ git branch -m hotfix/qwe hotfix/3574306-lavax
+```
