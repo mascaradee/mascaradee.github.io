@@ -20,3 +20,16 @@ tags:
 ```git
 git checkout -b feature/event/12345 origin/feature/event/12345
 ```
+
+
+## upstream
+
+마스터 혹은 다른 브랜치에서 개별 브랜치를 따왔을때 upstream은 그대로 마스터 혹은 그 브랜치일 때 업스트림을 바꿔줄때 사용한다.
+
+`git push --set-upstream origin [로컬브랜치명]`
+
+```git
+git push --set-upstream origin feature/event/12345
+```
+
+## gc

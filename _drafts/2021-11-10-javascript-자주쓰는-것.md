@@ -15,8 +15,10 @@ tags:
 
 ## `$`, `jQuery`
 
+jQuery 객체화
+
 ```js
-$('input[id="no"]:hidden').val()
+$('input[id="masc"]:hidden').val()
 ```
 
 ## 객체초기화 방법
@@ -75,3 +77,12 @@ obj1.property5._f1();
 ## 브라우저 렌더링 과정 참고
 
 [https://developers.google.com/web/fundamentals/performance/critical-rendering-path?hl=ko](https://developers.google.com/web/fundamentals/performance/critical-rendering-path?hl=ko)
+
+
+## 네임스페이스
+
+자바스크립트 그룹?
+
+`$.namespace()`
+
+`initialize`
