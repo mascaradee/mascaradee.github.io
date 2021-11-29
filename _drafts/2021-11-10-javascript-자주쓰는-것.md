@@ -21,7 +21,7 @@ jQuery 객체화
 $('input[id="masc"]:hidden').val()
 ```
 
-## 객체초기화 방법
+## 객체초기화 방법 
 
 ### new Object()
 
