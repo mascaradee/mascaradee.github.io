@@ -87,20 +87,6 @@ obj1.property5._f1();
 
 `initialize`
 
-
----
-layout: post
-date: 2021-11-10 16:00:00 +0900
-title: '[javascript] javascript-group'
-categories:
-  - javascript
-tags:
-  -
----
-
-* Kramdown table of contents
-{:toc .toc}
-
 # TODO 예시 들어서 정리 필요
 
 ## URL의 search param을 객체로 반환하기
