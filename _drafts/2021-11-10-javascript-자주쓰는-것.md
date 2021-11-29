@@ -297,3 +297,195 @@ issueCoupon: function (cpnNo, callback, checkType) {
   }
 }
 ```
+
+
+## siblings()
+
+```js
+$(target).addClass('on').siblings().removeClass('on');
+```
+
+## not()
+
+```js
+$('tbody#dropZone tr').not('[id]').remove(); // 영역 초기화
+```
+
+## clone()
+
+```html
+<table summay="내역">
+<thead>
+  <tr>
+    <th>일자</th>
+    <th>내용</th>
+  </tr>
+</thead>
+<tbody id="drop">
+  <tr style="display: none" id="copyMe">
+    <td>08.20</td>
+    <td>쿠폰</td>
+  </tr>
+  <tr style="display: none" id="noHistoryRow">
+    <td colspan="2" class="no">이력이 없습니다.</td>
+  </tr>
+</tbody>
+</table>
+```
+
+```js
+var stDtime = new Date(ele.stDtime);
+var $row = $('tr#copyMe').clone();
+$row.find('td').eq(0).text((stDtime.getMonth() + 1).lpad(2, '0') + '.' + (stDtime.getDate()).lpad(2, '0'));
+$row.find('td').eq(1).text(ele.nm);
+$row.removeAttr('id').show();
+$row.appendTo($('tbody#dropZone'));
+```
+
+
+## location.href
+
+```js
+location.href = _baseUrl + 'event/getEvent.do?evtNo=' + $('input[id="evtNo"]:hidden').val();
+```
+
+
+## reduce()
+
+```js
+var max = result.reduce(function(a, b) {  return Math.max(a, b); } );
+```
+
+
+## data()
+
+```js
+$('#spclGds' + id).addClass('open').find('a').data('openL', true); // 시간컬러 처리
+
+linkGoods: function (target, goodsNo) {
+  if ($(target).data('openL')) {
+    console.log(goodsNo);
+  }
+}
+```
+
+## removeClass()
+
+```js
+$('#dlyGds').removeClass('day01 day02 day03 day04 day05 day06 day07'); // 여러 클래스 한번에 없애기
+```
+
+
+## 동적변수 사용예시
+
+```js
+getGoodsStock: function (brEvtNo, brMasterGoodsNo, brCd, sldotCnt) {
+  function callback(json) {
+    var brandCode = 'brandCode' + brCd;
+    if (typeof mayflies2108p._0809onlineSale[brandCode] === 'undefined') {
+      mayflies2108p._0809onlineSale[brandCode] = 0; // 동적변수 초기화
+    }
+    if (json.ret > 0) {
+      return;
+    }
+    ++mayflies2108p._0809onlineSale[brandCode];
+    if (mayflies2108p._0809onlineSale[brandCode] >= sldotCnt) {
+      $('[id='+ brCd +']').addClass('soldOut'); // $('[id=]') 형태이면 해당 아이디 가진 것 모두 선택
+    }
+  }
+  mayflyQueen.getEventGiftGoodsStock(brEvtNo, brMasterGoodsNo, callback);
+}
+```
+
+## append()
+
+영역 순서를 바꿀때 사용하는 예시
+
+```html
+<div class="swiper-wrapper" id="papafrndBrnd">
+  <div class="swiper-slide" id="childfrndBrnd1">
+    <div class="imgBox">
+      <img src="//abc.png" />
+    </div>
+  </div>
+  <div class="swiper-slide" id="childfrndBrnd2">
+    <div class="imgBox">
+      <img src="//abc.png" />
+    </div>
+  </div>
+  <div class="swiper-slide" id="childfrndBrnd3">
+    <div class="imgBox">
+      <img src="//abc.png" />
+    </div>
+  </div>
+  <div class="swiper-slide" id="childfrndBrnd4">
+    <div class="imgBox">
+      <img src="//abc.png" />
+    </div>
+  </div>
+</div>
+```
+
+```js
+switch (dateIndex) {
+  case 2:
+    $('#papafrndBrnd').append($('#childfrndBrnd1'));
+    break;
+  case 3:
+    $('#papafrndBrnd').append($('#childfrndBrnd1, #childfrndBrnd2'));
+    break;
+  case 4:
+    $('#papafrndBrnd').append($('#childfrndBrnd1, #childfrndBrnd2, #childfrndBrnd3'));
+    break;
+  default:
+    break;
+}
+```
+
+
+## 시간 비교
+```js
+getTimeGrp: function () {
+  var timeSequence = ['01', '02','03']];
+  var now = new Date().getNow();
+  var present = '';
+
+  var ref1 = new Date();
+  ref1.setFullYear(now.getFullYear()); ref1.setMonth(now.getMonth()); ref1.setDate(now.getDate());
+  ref1.setHours(timeSequence[0]); ref1.setMinutes(0); ref1.setSeconds(0); ref1.setMilliseconds(0);
+  var ref2 = new Date();
+  ref2.setFullYear(now.getFullYear()); ref2.setMonth(now.getMonth()); ref2.setDate(now.getDate());
+  ref2.setHours(timeSequence[1]); ref2.setMinutes(0); ref2.setSeconds(0); ref2.setMilliseconds(0);
+  var ref3 = new Date();
+  ref3.setFullYear(now.getFullYear()); ref3.setMonth(now.getMonth()); ref3.setDate(now.getDate());
+  ref3.setHours(timeSequence[2]); ref3.setMinutes(0); ref3.setSeconds(0); ref3.setMilliseconds(0);
+  var ref4 = new Date();
+  ref4.setFullYear(now.getFullYear()); ref4.setMonth(now.getMonth()); ref4.setDate(now.getDate() + 1);
+  ref4.setHours(timeSequence[0]); ref4.setMinutes(0); ref4.setSeconds(0); ref4.setMilliseconds(0);
+
+  if (ref1.getTime() <= now.getTime() && now.getTime() < ref2.getTime()) {
+    present = timeSequence[0];
+  } else if(ref2.getTime() <= now.getTime() && now.getTime() < ref3.getTime()){
+    present = timeSequence[1];
+  } else if(ref3.getTime() <= now.getTime() && now.getTime() < ref4.getTime()){
+    present = timeSequence[2];
+  } else {
+    console.log('시간대를 확인하세요')
+  }
+  return present;
+}
+```
+
+
+## 한글 체크
+
+```js
+// 한글 체크
+isValidKorean: function (data){
+  // 유니코드 중 AC00부터 D7A3 값인지 검사
+ var format = /^[\uac00-\ud7a3]*$/g;
+ if (data.search(format) == -1)
+   return false;
+ return true; //올바른 포맷 형식
+}
+```
