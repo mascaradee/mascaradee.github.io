@@ -90,6 +90,20 @@ Pi = 1 ; // 재할당 시 에러발생 Uncaught TypeError: Assignment to constan
 const MY_BIRTHDAY = "2020.04.22"
 ```
 
+하지만 오브젝트나 배열을 const로 선언하면 수정이나 추가가 가능하다.
+
+```javascript
+const obj = {};
+obj.a = 1;
+obj.b = 'heloo';
+console.log(obj); // {a: 1, b: 'heloo'} - 실제 타입을 혼용해서 쓰는것은 비추
+
+const arr = [1,2,3,4];
+arr[0] = 100;
+console.log(arr); // [100, 2, 3, 4]
+
+```
+
 ## 변수 명명 규칙
 
 - 오직 문자와 숫자, 그리고 기호 `$`와 `_`만 들어갈 수 있음. 단, 첫 글자는 숫자가 될 수 없음.  
