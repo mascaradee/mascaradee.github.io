@@ -1,13 +1,18 @@
 ---
 layout: post
 date: 2022-03-11 08:06:00 +0900
-title: '[java] json to java'
+title: '[java] json으로 데이터 전달'
 categories:
   - java
 tags:
   - vo
   - json
   - ajax
+  - ObjectMapper
+  - jackson
+  - list
+  - RequestBody
+  - RequestParam
 ---
 
 * Kramdown table of contents
@@ -117,7 +122,7 @@ function save(){
 리스트를 `json`타입으로 전환하여 서버로 전달하면 스프링 내부에서 자동으로 문자열을 파싱하여 자바의 데이터타입으로 맞춰준다. (HttpMessageConverters 역할인듯)
 따라서 아래 예시는 `List<Map<String, Object>>` 형태로 받았지만 `List<MyVO>`와 같이 별도 `VO`를 정의하여 지정해 주어도 된다.
 하지만 화면에서 리스트로 요청했는데 컨트롤러에서 `String`과 같은 타입으로 받으면 당연히 안된다.
-서로 호환이 되는 타입으로 일치 시켜야 한다. 
+서로 호환이 되는 타입으로 일치 시켜야 한다.
 
 ```java
 
