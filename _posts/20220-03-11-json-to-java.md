@@ -21,8 +21,8 @@ tags:
 
 ## java List to jason
 
-자바에서 값을 화면으로 넘길때는 `ModelAndView` 객체에 담아 넘기면 된다.
-특히, 리스트를 넘기고자하면 `json` 형식으로 `String` 타입으로 변경해서 넘겨야 하는데,
+자바에서 값을 화면으로 전달할 때는 `ModelAndView` 객체에 담아 넘길 수 있다.
+특히, 리스트는 `json` 형식으로 만든 `String` 타입으로 변경해서 넘길 수 있는데,
 `jackson`의 `ObjectMapper`를 이용하면 쉽게 `String`타입으로 변경할 수 있다.
 참고로 `jackson`은 자바 객체를 쉽게 `json`으로 변경해 주는 라이브러리라고 생각하면 된다.
 
