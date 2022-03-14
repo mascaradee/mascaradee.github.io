@@ -1,11 +1,11 @@
 ---
 layout: post
 date: 2022-02-22 07:59:00 +0900
-title: '[mybatis] basic'
+title: '[mybatis] 매퍼설정'
 categories:
   - mybatis
 tags:
-  - mybatis  -
+  - mybatis
 ---
 
 * Kramdown table of contents
@@ -46,9 +46,7 @@ tags:
 
 ### properties
 
-db 접속 정보 설정파일
-
-`egovframework/egovProps/config.properties`
+db 접속 정보 설정파일 `config.properties`
 
 ```
 xxx.mysql.DriverClassName=net.sf.log4jdbc.DriverSpy
@@ -57,9 +55,7 @@ xxx.mysql.UserName = ourdb
 xxx.mysql.Password = 1234!
 ```
 
-별도 properties 파일에 설정되어 있는 db 접속 정보값으로 대체하여 사용 할 수 있다.
-
-`egovframework/spring/context-datasource.xml`
+별도 properties 파일에 설정되어 있는 db 접속 정보값으로 대체하여 사용 할 수 있다. `context-datasource.xml`
 
 ```
 <bean id="xxx.dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
@@ -70,9 +66,7 @@ xxx.mysql.Password = 1234!
 </bean>
 ```
 
-sql 매핑 설정
-
-`egovframework/spring/context-mapper.xml`
+sql 매핑 설정 `context-mapper.xml`
 
 ```
 <bean id="xxx.sqlSession" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -209,8 +203,3 @@ properties 엘리먼트의 클래스패스 자원이나 url 속성으로 부터 
 
 여러 개의 스키마의 DBMS 제품을 사용하거나 개발, 테스트, 리얼환경을 위한 별도 설정을 할 수 있다.
 중요한 점은 데이터베이스별로 하나의 SqlSessionFactory를 사용할 수 있다는 점이다.
-
-
-```
-C:/Users/migno/.m2/repository/org/mybatis/mybatis/3.4.6/mybatis-3.4.6-sources.jar!/org/apache/ibatis/session/SqlSessionFactoryBuilder.java:50
-```
