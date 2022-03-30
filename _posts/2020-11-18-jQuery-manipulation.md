@@ -27,7 +27,7 @@ tags:
 
 ### 변경 전  
 
-```HTML
+```html
 <div id="father">
 	<article id="me"></article>
 </div>
@@ -40,7 +40,7 @@ tags:
 ```javascript
 $('#father').after('<div id="uncle-sam"></div>');
 ```
-```HTML
+```html
 <div id="father">
 	<article id="me"></article>
 </div>
@@ -53,7 +53,7 @@ $('#father').after('<div id="uncle-sam"></div>');
 $('#father').after($('article#me'));
 $('article#me').insertAfter('#father'); // 윗 줄과 같은 결과
 ```
-```HTML
+```html
 <div id="father"></div>
 <article id="me"></article>
 <div id="uncle-sam"></div>
@@ -65,7 +65,7 @@ $('article#me').insertAfter('#father'); // 윗 줄과 같은 결과
 
 ### 변경 전  
 
-```HTML
+```html
 <div id="father">
 	<article id="me"></article>
 </div>
@@ -79,7 +79,7 @@ $('article#me').insertAfter('#father'); // 윗 줄과 같은 결과
 ```javascript
 $('#father').append('<div id="주워온아이"></div>');
 ```
-```HTML
+```html
 <div id="father">
 	<article id="me"></article>
 	<div id="주워온아이"></div>
@@ -93,7 +93,7 @@ $('#father').append('<div id="주워온아이"></div>');
 $('#father').append($('#imNext'));
 $('#imNext').appendTo('#father');  // 윗 줄과 같은 결과
 ```
-```HTML
+```html
 <div id="father">
 	<article id="me"></article>
 	<div id="주워온아이"></div>
@@ -123,7 +123,7 @@ $( '<h2>New heading</h2>' ).replaceAll( '#father' );
 
 파라미터 없이 쓰일 경우 선택한 요소 하위의 모든 텍스트 노드를 더해 리턴한다.  
 
-```HTML
+```html
 <section id="for-text">
 	안녕
 	<div id="hello">하시
@@ -150,7 +150,7 @@ $('#for-text').text();
 $('#for-text').text('신동엽');  
 
 ```
-```HTML
+```html
 <section id="for-text">신동엽</section>
 ```
 
@@ -181,7 +181,7 @@ $('section').eq(0).html();
 ```javascript
 $('section').eq(0).html('<p>헬로워얼드</p>');  
 ```
-```HTML
+```html
 <section style="position: relative;"><p>헬로워얼드</p></section>
 ```
 
@@ -192,7 +192,7 @@ $('section').eq(0).html('<p>헬로워얼드</p>');
 ```javascript
 $( '#father' ).wrap( "<div id='grandmother'></div>" );  
 ```
-```HTML
+```html
 <div id='grandmother'>
 	<div id="father">
 		<article id="me"></article>
@@ -208,7 +208,7 @@ $( '#father' ).wrap( "<div id='grandmother'></div>" );
 $( '.abc' ).wrapAll( '<div class="new" />');  
 ```
 
-```HTML
+```html
 <div class="new">
 	<div class="align-center abc" id="grandgrandfather">
 		<div class="abc" id="grandfather">
@@ -227,7 +227,7 @@ $( '.abc' ).wrapAll( '<div class="new" />');
 ```javascript
 $( '.abc' ).wrapInner( '<div class="new" />');    
 ```
-```HTML
+```html
 <div class="align-center abc" id="grandgrandfather">
 	<div class="new">
 		<div class="abc" id="grandfather">

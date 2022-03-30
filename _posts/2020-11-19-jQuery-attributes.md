@@ -24,7 +24,7 @@ tags:
 
 파라미터가 없을땐 특정 속성의 값을 가져온다. 파라미터가 있으면 특정 속성의 값을 주어진 값으로 변경한다.  
 
-```HTML
+```html
 <div class="abc" id="grandfather">
   <div id="father">
     <article id="me" data-howareyou="fine-thankyouandrew?"></article>
@@ -48,7 +48,7 @@ $('#me').attr('data-howareyou', 'fine-thank-you');
 
 결과로 `data-howareyou` 속성의 값이 변경된것을 확인할 수 있다.
 
-```HTML
+```html
 <div class="abc" id="grandfather">
   <div id="father">
     <article id="me" data-howareyou="fine-thank-you?"></article>
@@ -62,7 +62,7 @@ $('#me').attr('data-howareyou', 'fine-thank-you');
 `.attr(속성명, '')`처럼 파라미터에 ''를 지정하면 속성값만 제거 되고 속성 자체는 제거하지 못하기 때문에 해당 경우 이 메서드를 사용해야 한다.  
 참고로 `.attr(속성명, null)`인 경우에는 속성 자체를 제거할 수 있다.
 
-```HTML
+```html
 <input type="text" disabled>
 ```
 
@@ -74,7 +74,7 @@ $('input:disabled').attr('disabled', null); // 윗 라인과 같은 기능
 
 결과
 
-```HTML
+```html
 <input type="text">
 ```
 
