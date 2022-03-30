@@ -26,9 +26,9 @@ tags:
 
 2) 상대적, 절대적 경로  
 
-절대적 경로는 `/root nodt/directory/subdirectory/file` 과 같이 항상 `root node`가 먼저 나오고 모든 거치는 디렉토리가 다 나오는 것을 말한다. 반면 상대적 경로는 원하는 파일에 접근하기 위해 다른 경로와 조합이 필요하다. `subdirectory/file`과 같이 일부정보만 있으므로 더 많은 추가 정보가 필요하다.  
+절대적 경로는 `/root node/directory/subdirectory/file` 과 같이 항상 `root node`가 먼저 나오고 모든 거치는 디렉토리가 다 나오는 것을 말한다. 반면 상대적 경로는 원하는 파일에 접근하기 위해 다른 경로와 조합이 필요하다. `/subdirectory/file`과 같이 일부정보만 있으므로 더 많은 추가 정보가 필요하다.  
 
-3) 심볼릭 링크 Symbolic Links  
+3) 심볼릭 링크 `Symbolic Links `
 
 심볼릭 링크는 겉으로 보기엔 그냥 파일명이지만 다는 경로에 있는 파일을 참조하는 특수한 파일이다. 다른 파일과 동일하게 일거나 쓸 수 있다. `resolving a link`라는 문구는 심볼릭 링크가 가리키는 실제 파일의 위치을 의미한다. 심볼릭 링크를 잘못 사용하게 되면 순환참조가 발생하게 되므로 주의 해야 한다.  
 
@@ -163,7 +163,7 @@ Assert.assertTrue(p.startsWith(b));
 Assert.assertTrue(p.endsWith(e));
 ```
 
-또한 Path 클래스에서는 `Iterable`인터페이스를 구현하여 `iterator`는 `path` 인스턴스의 요소를 반복하여 리턴해 준다.  
+또한 `Path` 클래스에서는 `Iterable`인터페이스를 구현하여 `iterator`는 `path` 인스턴스의 요소를 반복하여 리턴해 준다.  
 
 ```java
 Path p = Paths.get("C:/dev/test-files/input.txt");
@@ -172,7 +172,7 @@ for (Path name : p) {
 }
 ```
 
-Path 클래스에서는 `Comparable`인터페이스를 구현하여 `compareTo()`를 사용하여 사전순서대로 비교를 하여 정렬하는데 사용할 수 있다.
+`Path` 클래스에서는 `Comparable`인터페이스를 구현하여 `compareTo()`를 사용하여 사전순서대로 비교를 하여 정렬하는데 사용할 수 있다.
 
 ```java
 Path p = Paths.get("C:/a");
@@ -190,7 +190,7 @@ logger.debug("{}", p1.compareTo(p)); // 1 : p1이 사전순으로 더 뒤
 1) 시스템 리소스 닫기  
 
 스트림이나 채널과 같은 자원을 사용하는데 사용 후에는 리소스 낭비 및 성능에 부정적인 영향을 피하기 위해서 닫는 단계가 필요하다.  
-파일 I/O를 사용하면서 파일이 없거나, 접근이 불가하거나 기능 지원을 하지 않는 등 예상치 못한 오류가 발생할 수 있다. 이런 모든 오류는 `IOException`을 던진다. `try-catch`문은 컴파일러가 더 이상 필요하지 않을 때 리소스를 닫는 코드를 자동으로 생성하는 장점이 있어 예외를 잡을 때 사용하는 방법 중 가장 좋다.  
+파일 `I/O`를 사용하면서 파일이 없거나, 접근이 불가하거나 기능 지원을 하지 않는 등 예상치 못한 오류가 발생할 수 있다. 이런 모든 오류는 `IOException`을 던진다. `try-catch`문은 컴파일러가 더 이상 필요하지 않을 때 리소스를 닫는 코드를 자동으로 생성하는 장점이 있어 예외를 잡을 때 사용하는 방법 중 가장 좋다.  
 `try`블록 파일 I/O 메서드를 넣고 `catch`블록에서 모든 예외를 잡을 수 있으면 `finally`블록에서는 리소스를 닫는 코드를 넣으면 된다.  
 
  `IOException`은 `FileSystemException`을 확장하는데 그 클래스에는 유요한 메서드들이 있다.  

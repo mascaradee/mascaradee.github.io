@@ -24,7 +24,7 @@ tags:
 
 - 웹 서버 `Web Server`: 클라이언트, 보통 브라우저의 `HTTP` 요청에 따라 웹 서버는 `HTML, CSS, JavaScript` 등의 정적컨텐츠를 제공, `WAS`에 클라이언트 동적컨텐츠 요청을 전달하고 받은 응답을 다시 클라이언트에 제공하는 중개 역할을 한다. 아파치가 웹 서버다.
 
-- 웹 어플리케이션 서버 `Web Application Server,Web App Server, WAS`: 웹 서버로부터 동적컨텐츠 요청을 수행하기 위해 `DB`에 접근하거나 비지니스 로직을 처리한 후 응답을 하는 서버다. 톰캣이 웹 어플리케이션 서버 즉, `WAS`의 한 종류이다. `WAS`는 웹 서버와 웹 컨테이너로 구성되어 있는데 웹 컨테이너는 `JSP, Servlet`을 실행시킬 수 있는 구동환경을 제공한다.
+- 웹 어플리케이션 서버 `Web Application Server, Web App Server, WAS`: 웹 서버로부터 동적컨텐츠 요청을 수행하기 위해 `DB`에 접근하거나 비지니스 로직을 처리한 후 응답을 하는 서버다. 톰캣이 웹 어플리케이션 서버 즉, `WAS`의 한 종류이다. `WAS`는 웹 서버와 웹 컨테이너로 구성되어 있는데 웹 컨테이너는 `JSP, Servlet`을 실행시킬 수 있는 구동환경을 제공한다.
 
 ![Web Server vs. WAS](/images/web-server-WAS.jpg)
 
@@ -65,7 +65,7 @@ tags:
 
 서블릿 정의: 서블릿 이름 지정 및 실제 클래스 경로를 지정한다.  
 
-```
+```xml
 <servlet>
     <servlet-name>MyDispatcher</servlet-name>
     <servlet-class>MyDispatcher</servlet-class>
@@ -74,7 +74,7 @@ tags:
 
 URL 매핑: 접근 가능한 url 패턴 정의, 아래 예시는 패턴이 지정되지 않았으므로 바로 접근 가능하다.  
 
-```
+```xml
 <servlet-mapping>
     <servlet-name>MyDispatcher</servlet-name>
     <url-pattern></url-pattern>
@@ -83,7 +83,7 @@ URL 매핑: 접근 가능한 url 패턴 정의, 아래 예시는 패턴이 지�
 
 시작페이지 설정: 연결되 서블릿이나 페이지가 없을 경우 아래 기본 페이지로 연결된다.  
 
-```
+```xml
 <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>

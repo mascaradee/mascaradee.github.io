@@ -1,24 +1,27 @@
 ---
 layout: post
 date: 2021-01-17 15:35:00 +0900
-title: '[spring] 스프링MVC xml 세팅 Spring WEB MVC setting by xml'
+title: '[spring] 스프링MVC xml 세팅'
 categories:
   - spring
 tags:
-  - spring mvc
+  - spring
+  - mvc
+  - web
   - xml
+  - setting
 ---
 
 * Kramdown table of contents
 {:toc .toc}
 
 ## 참고
-[Spring WEB MVC setting by xml](https://www.youtube.com/watch?v=ou3CmpuPOm8&list=PLSBIrFmNg2JYzeFJQ9WhEHCOZy2KT4HGb&index=8)
+[Spring WEB MVC setting by xml 영상 참고](https://www.youtube.com/watch?v=ou3CmpuPOm8&list=PLSBIrFmNg2JYzeFJQ9WhEHCOZy2KT4HGb&index=8)
 
 ## pom.xml 설정
 
 기본적으로 필요한 라이브러리만 추가한다. 최소한 `servlet, jsp, jstl, spring-webmvc` 4개는 필요하다.  
-추라고 필요한 라이브러리는 여기서 찾아서 추가 할 수 있다. [https://mvnrepository.com/](https://mvnrepository.com/)  
+추라고 필요한 라이브러리는 [여기](https://mvnrepository.com/)서 찾아서 추가 할 수 있다.  
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -145,8 +148,8 @@ tags:
 
 ### ServletContext 설정
 
-spring mvc 관련 웹 애플리케이션 설정을 하는 파일이다. 개발자들이 개별적으로 만들어 쓰는 bean 설정과 별도로 분리하기 위함이다.  
-서블릿의 init-param으로 ServletContext 경로를 설정해 준다.  
+`spring mvc` 관련 웹 애플리케이션 설정을 하는 파일이다. 개발자들이 개별적으로 만들어 쓰는 `bean` 설정과 별도로 분리하기 위함이다.  
+서블릿의 `init-param`으로 `ServletContext` 경로를 설정해 준다.  
 
 `/프로젝트/WebContent/WEB-INF/web.xml`
 
@@ -165,7 +168,7 @@ spring mvc 관련 웹 애플리케이션 설정을 하는 파일이다. 개발�
 
 ###  RootContext 설정
 
-Bean들을 정의하는 파일
+`Bean`들을 정의하는 파일
 
 `/프로젝트/WebContent/WEB-INF/web.xml`
 
@@ -237,7 +240,7 @@ Bean들을 정의하는 파일
 </beans:beans>
 ```
 
-반복되는 jsp 경로를 생략할 수 있도록 지정한다. jsp 파일을 /WEB-INF/views 아래에 위치시킨다면 아래와 같이 세팅하면 된다.  
+반복되는 `jsp` 경로를 생략할 수 있도록 지정한다. `jsp` 파일을 `/WEB-INF/views` 아래에 위치시킨다면 아래와 같이 세팅하면 된다.  
 
 `/WebContent/WEB-INF/config/servlet-context.xml`
 
@@ -250,7 +253,7 @@ Bean들을 정의하는 파일
 
 ```
 
-정적파일(이미지, 사운드, 동영상, JS, CSS 등등) 경로를 세팅한다. /WebContent/resources/image 경로에 이미지를 모아놓기로 했다면 아래와 같이 세팅하면 된다.
+정적파일(이미지, 사운드, 동영상, `JS`, `CSS` 등등) 경로를 세팅한다. `/WebContent/resources/image` 경로에 이미지를 모아놓기로 했다면 아래와 같이 세팅하면 된다.
 
 `/WebContent/WEB-INF/config/servlet-context.xml`
 

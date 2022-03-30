@@ -12,8 +12,8 @@ tags:
 {:toc .toc}
 
 ## 참고
-[https://maven.apache.org/pom.html#What_is_the_POM](https://maven.apache.org/pom.html#What_is_the_POM)  
-[https://mvnrepository.com/](https://mvnrepository.com/)
+[pom 파일은 무엇인가?](https://maven.apache.org/pom.html#What_is_the_POM)  
+[메이븐 레파지토리](https://mvnrepository.com/)
 
 
 ## 메이븐 Maven
@@ -41,7 +41,7 @@ tags:
 
 `POM(Project Object Model)`은 메이븐 설정파일로 메이븐 프로젝트의 빌드 과정에 사용되는 플러그인 설정, 빌드 라이프 사이클, 구성 파일뿐만 아니라 관련된 개발자와 이들이 수행하는 역할, 결함 추적 시스템, 조직 및 라이선스, 프로젝트가있는 URL, 프로젝트 의존성(`dependency`) 등의 내용을 포함하고 있다. `pom.xml`이 수정될 때마다 자동으로 메이븐 서버에 접속해서 업데이트가 되거나 `프로젝트 우클릭 > Maven > update project` 로 수동으로 업데이트를 해 준다.  
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -121,7 +121,7 @@ tags:
 
 아래는 메이븐 프로젝트를 위해 최소한으로 있어야 하는 부분으로 `modelVersion`은 `POM` 모델 버전으로 현재는 4.0.0만 지원되고 필수항목이다. `groupId, artifactId, version` 는 메이븐 프로젝트를 식별하는 정보로 필수요소다. 단, `groupId, version`은 부모로부터 상속된 경우는 명시할 필요는 없이 생략이 가능하다.  
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -143,7 +143,7 @@ tags:
 
 아래 예시에서 `${encoding}`와 같이 `${속성}` 형태로 `POM`파일 내 어디서나 값에 접근할 수 있는 공통적으로 사용할 설정값 정보다. 태그명은 사용자가 지정한다. 필수항목은 아니다.  
 
-```
+```xml
 <properties>
     <encoding>UTF-8</encoding>
     <java-version>1.8</java-version>
@@ -158,7 +158,7 @@ tags:
 
 프로젝트 디렉토리 구조를 선언하고 플러그인을 관리한다.  
 
-```
+```xml
 <build>
     <finalName>Apple</finalName>
     <plugins>
@@ -203,7 +203,7 @@ tags:
 메이븐은 의존관계가 생길 때마다 먼저 로컬 라이브러리에서 찾아보고 없을 경우 리모트 저장소에서 다운받는데 기본적으로 메이븐 `central` 리모트 저장소를 이용한다.  
 추가로 다른 저장소에서 다운 받아야 할 것이 있다면 `repositories`에 명시하면 된다.  
 
-```
+```xml
 <repositories>
     <repository>
         <id>Datanucleus</id>
@@ -220,7 +220,7 @@ tags:
 
 필요한 라이브러리를 추가하거나 의존관계에 있는 라이브러리를 모아 놓은 목록으로 필수항목이다. 만약 추가된 라이브러리가 또 다른 라이브러리와 의존관계라면 그 라이브러리까지도 메이븐이 자동으로 다운받고 연결시켜 준다. 이런 기능을 '의존성 전이'라고 한다.  
 
-```
+```xml
 <!-- 라이브러리 -->
 <dependencies>
     <!-- unit test -->
