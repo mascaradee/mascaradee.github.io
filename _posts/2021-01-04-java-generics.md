@@ -15,7 +15,7 @@ tags:
 
 [Java tutorial : Generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html)  
 [Java tutorial : extra-Generics](https://docs.oracle.com/javase/tutorial/extra/generics/index.html)  
-[생활코디 - 제네릭](https://opentutorials.org/course/1223/6237)
+[생활코딩 - 제네릭](https://opentutorials.org/course/1223/6237)
 
 ## 제네릭을 사용해야 하는 이유?
 
