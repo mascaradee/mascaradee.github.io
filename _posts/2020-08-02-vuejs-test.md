@@ -15,13 +15,14 @@ tags:
 ## vuejs
 
 ### new Instance
+
 ```
 var app = new Vue(); // new Instance
 ```
 
-### new Instance with option ({})
-```html
+### new Instance with option `({})`
 
+```html
 <div id = "app">
   <h1>{{ product }}</h1>
 </div>
