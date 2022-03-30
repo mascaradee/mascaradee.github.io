@@ -44,7 +44,7 @@ tags:
 
 이벤트가 발생한 가장 안쪽의 요소, 실제 이벤트가 시작된 타겟 요소
 
-```HTML
+```html
 <html>
   <style>
     body * {
