@@ -45,38 +45,36 @@ tags:
 이벤트가 발생한 가장 안쪽의 요소, 실제 이벤트가 시작된 타겟 요소
 
 ```html
-<html>
-  <style>
-    body * {
-      margin: 10px;
-      border: 1px solid blue;
-    }
-    div * {
-    	border: 1px solid black;
-    }
-  </style>
-  <script src="/static/js/jquery-3.5.1.js"></script>
-  <body>
-    <div id='grandmother' style='background-color:red; height: 100px;' >
-      <div id='mother' style='background-color:orange; height: 60px;' >
-        <div id='me' style='background-color:yellow; height: 20px;' ></div>
-      </div>
+<style>
+  body * {
+    margin: 10px;
+    border: 1px solid blue;
+  }
+  div * {
+  	border: 1px solid black;
+  }
+</style>
+<script src="/static/js/jquery-3.5.1.js"></script>
+<body>
+  <div id='grandmother' style='background-color:red; height: 100px;' >
+    <div id='mother' style='background-color:orange; height: 60px;' >
+      <div id='me' style='background-color:yellow; height: 20px;' ></div>
     </div>
-  </body>
-  <script>
-  $(function(){
-    $('#grandmother').on('click', function(event){
-  	  let backgroundColor = event.target.style.backgroundColor
-  	  event.target.style.backgroundColor = 'green';
-      // chrome needs some time to paint yellow
-      setTimeout(() => {
-  	    alert("target = " + event.target.id + ", this=" + this.id);
-  	    event.target.style.backgroundColor = backgroundColor
-      }, 0);
-    });
+  </div>
+</body>
+<script>
+$(function(){
+  $('#grandmother').on('click', function(event){
+	  let backgroundColor = event.target.style.backgroundColor
+	  event.target.style.backgroundColor = 'green';
+    // chrome needs some time to paint yellow
+    setTimeout(() => {
+	    alert("target = " + event.target.id + ", this=" + this.id);
+	    event.target.style.backgroundColor = backgroundColor
+    }, 0);
   });
-  </script>
-</html>
+});
+</script>
 ```
 
 #### 3) 캡처링 단계
