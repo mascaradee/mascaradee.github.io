@@ -8,7 +8,7 @@ tags:
   - searchParam
   - url
   - request
-  - @RequestParam
+  - RequestParam
   - spring
 ---
 
