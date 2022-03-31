@@ -19,7 +19,7 @@ tags:
 {:toc .toc}
 
 
-## java List to jason
+## java List to json
 
 자바에서 값을 화면으로 전달할 때는 `ModelAndView` 객체에 담아 넘길 수 있다.
 특히, 리스트는 `json` 형식으로 만든 `String` 타입으로 변경해서 넘길 수 있는데,
@@ -58,7 +58,7 @@ public class IndexController {
 </script>
 ```
 
-## jason to java List
+## json to java List
 
 ### form 태그 데이터 + button 태그 이벤트
 
