@@ -32,7 +32,7 @@ var app = new Vue(); // new Instance
 var app = new Vue({
   el: '#app', // id = app인 요소
   data :{
-      product: 'Socks' // {{}}  표현식 안에 들어가는 데이터로 값이 변하는대로 바로 적용이 됨. ->  vuejs 기능인가?
+      product: 'Socks' // {{something}}  표현식 안에 들어가는 데이터로 값이 변하는대로 바로 적용이 됨. ->  vuejs 기능인가?
   }
 });
 ```
