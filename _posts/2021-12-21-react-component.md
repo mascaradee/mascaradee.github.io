@@ -15,8 +15,10 @@ tags:
 
 ## JSX 규칙 1
 
-하나의 요소만 return에 들어갈 수 있다. 아래는 <h1>과 <p>태그 2개의 요소로 되어 있다.
-```
+하나의 요소만 `return`에 들어갈 수 있다. 아래는 `<h1>`과 `<p>`태그 2개의 요소로 되어 있다.
+
+
+```js
 Module build failed (from ./node_modules/babel-loader/lib/index.js):
 SyntaxError: C:\dev\reactjs\mulberry\src\routes\Detail.js: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>? (4:4)
 
@@ -29,8 +31,9 @@ SyntaxError: C:\dev\reactjs\mulberry\src\routes\Detail.js: Adjacent JSX elements
   7 | export default Detail;
 ```
 
-실제 리액트로 렌더링이 되면 아래와 같이 return이 2번 생성되어 버리기 때문이다.
-```
+실제 리액트로 렌더링이 되면 아래와 같이 `return`이 2번 생성되어 버리기 때문이다.
+
+```js
 return React.createElement(
     'h1',
     null,
@@ -46,7 +49,7 @@ return React.createElement(
 따라서 오류없이 노출하려면 아래와 같이 하나의 요소인것처럼 한 번 감싸야 한다.
 그 안에 자식은 얼마든지 존재해도 된다.
 
-```
+```js
 return (
   <>
     <h1>Detail</h1>
