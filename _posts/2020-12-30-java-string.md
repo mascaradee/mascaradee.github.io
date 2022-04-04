@@ -567,7 +567,7 @@ Assert.assertEquals("안녕하시오!321", sb.toString());
 
 문자열 혹은 문자를 삭제한다.   
 
-```
+```java
 StringBuilder delete(int start, int end)
 StringBuilder deleteCharAt(int index)
 ```
@@ -585,7 +585,7 @@ Assert.assertEquals("안녕오", sb.toString());
 
 인수로 들어온 문자 혹은 문자열을 대체한다.  
 
-```
+```java
 StringBuilder replace(int start, int end, String s)
 void setCharAt(int index, char c)
 ```
