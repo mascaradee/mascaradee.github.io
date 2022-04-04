@@ -13,9 +13,18 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## src 속성
+## src
 
-`<script>` 태그는 `src`속성과 내부코드를 동시에 가지지 못함.
+`<script>` 태그는 `src`속성과 내부코드를 동시에 가지지 못한다.
+
+```js
+<script src="file.js">
+  alert(1); // the content is ignored, because src is set
+</script>
+```
+
+`src` 속성에는 참조하는 파일의 경로를 써 주면 된다. 절대경로 혹은 상대경로(현재 폴더 기준이라면 `./`로 표기)를 쓸 수 있다. `url`도 가능하다.  
+html와 스크립트를 별도 파일로 만들면, 브라우저가 스크립트를 브라우저 캐시에 다운로드하여 저장한다. 이 말은 같은 스크립트를 호출하는 곳이 있다면 새로 다운하는 대신 캐시로부터 받아 쓰므로 트래픽도 줄고 페이지를 더 빠르게 만들어준다는 것을 의미한다.   
 
 ## 세미콜론
 
