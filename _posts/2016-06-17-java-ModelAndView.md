@@ -29,11 +29,11 @@ public ModelAndView inquireNoticeList(ModelAndView mv){
 
 즉, `@RequestMapping("/bo/inquireNoticeList.do")`와 같은 `/bo/inquireNoticeList.jsp`를 찾아 화면에 출력한다.  
 
-그러므로  `url`과 컨트롤럴의 메소드명은 일치시키는게 관리하기 편하다.  
+그러므로  `url`과 컨트롤러의 메소드명은 일치시키는게 관리하기 편하다.  
 
 또 한 가지 알고 있어야 할 것은 스프링은 파라미터로 입력된 값은 별도로 `new`생성자를 이용하지 않아도 바로 이용할수 있다.  
 
-위 예시에서 `ModelAndView mv` 를  `new ModelAndView();` 로 새로 인스턴스를 생성하지 않아도 리턴값으로 사용하는 것을 확인 할수 있다.    
+위 예시에서 `ModelAndView mv`를  `new ModelAndView();` 로 새로 인스턴스를 생성하지 않아도 리턴값으로 사용하는 것을 확인 할수 있다.    
 
 ```java
 @RequestMapping(value = "/bo/usr/inqUsrLg.do")
@@ -46,9 +46,7 @@ public ModelAndView inqUsrLg(HttpSession session, ModelAndView mv, UsrLgVO input
         session.setAttribute("loginVO", loginVO);
         // view로 넘기는 방법
         // mv.setViewName("redirect:/경로);
-        // mv.setViewName("redirect:/"); // location.href = http://localhost:8080
-        // mv.setViewName("redirect:"); // location.href = http://localhost:8080/bo/usr
-        mv.setViewName("redirect:/bo/usr/hm.do"); // location.href = http://localhost:8080
+        mv.setViewName("redirect:/bo/usr/hm.do");
 
         // ModelAndView에 object를 추가해서 넘기는 방법
         // mv.addObject("object명", object);

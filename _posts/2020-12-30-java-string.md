@@ -50,7 +50,7 @@ logger.debug("{}", len);  // 6
 
 #### getChar()
 
-문자열을 char 타입으로 변경해서 리턴한다.  
+문자열을 `char` 타입으로 변경해서 리턴한다.  
 
 ```java
 String helloString = new String("hello.");
@@ -62,7 +62,7 @@ logger.debug("{}", helloArray1);  // [h, e, l, l, o, .]
 
 #### concat()
 
-2개의 문자열을 연결해 주는 메서드로 문자열의 내용을 연결해서 새로운 String에 담아 리턴한다.  
+2개의 문자열을 연결해 주는 메서드로 문자열의 내용을 연결해서 새로운 `String`에 담아 리턴한다.  
 `문자열 + 문자열` 혹은 `문자열 + 리터럴`끼리도 연결이 가능하다.  
 문자열은 보통 `+`연산자를 이용해 연결한다.  
 
@@ -224,7 +224,7 @@ Assert.assertEquals("영일 이삼사 오 육     칠   팔  구 십", r1);
 문자열의 영문자를 대문자로(`toUpperCase()`) 혹은 소문자로(`toLowerCase()`) 로 변경하여 새 문자열로 리턴한다.  
 변경이 필요없는 숫자나 특수문자 등은 그대로 리턴한다.  
 
-```
+```java
 String toLowerCase()
 String toUpperCase()
 ```
@@ -243,7 +243,7 @@ Assert.assertEquals("hello world1!!", r2);
 
 문자열에서 특정 문자나 부분문자열을 찾는데 앞에서부터 탐색을 시작하는 `indexOf()`, 뒤에서부터 시작하는 `lastIndexOf()` 가 있다. 원하는 문자를 발견하면 그 문자가 있는 첫 번째 인덱스를 리턴하고 만약 찾는 것이 없다면 -1을 리턴한다.   
 
-```
+```java
 int indexOf(int ch)
 int lastIndexOf(int ch)
 int indexOf(int ch, int fromIndex)
@@ -301,7 +301,7 @@ Assert.assertFalse(r2);
 
 `replace()`와 `replaceAll()`은 동일한 결과를 낼 수 있지만 `replaceAll()`의 첫 번째 인수의 정규식을 통해 더 다양한 대체를 할 수 있다는 점이 다르다.  
 
-```
+```java
 String replace(char oldChar, char newChar)
 String replace(CharSequence target, CharSequence replacement)
 String replaceAll(String regex, String replacement)
@@ -338,7 +338,7 @@ Assert.assertEquals("Hello,-Hello, world.", r6);
 인수 문자열로 끝나는지 혹은 시작되는지 확인하여 `true/false`를 리턴한다.
 offset 인덱스가 있는 경우, 해당 인덱스 부터 비교를 한다.
 
-```
+```java
 boolean endsWith(String suffix)
 boolean startsWith(String prefix)
 boolean startsWith(String prefix, int offset)
@@ -358,7 +358,7 @@ Assert.assertEquals(true, s.startsWith("new", 7)); // 대소문자도 가림
 `compareTo()` 메서드는 사전순으로 2개의 문자열을 비교한다. 기준문자열이 비교할 문자열보다 크면 양수, 같으면 0, 작으면 음수를 리턴한다.  
 `compareToIgnoreCase()` 메서드는 같은 기능이나 영문자의 대소문자를 구분하지 않고 비교한다.  
 
-```
+```java
 int compareTo(String anotherString)
 int compareToIgnoreCase(String str)
 ```
@@ -386,7 +386,7 @@ Assert.assertEquals(0, s1.compareToIgnoreCase(s2)); // 대소문자 무시하고
 `equals()` 메서드는 문자열끼리 같은지를 비교하여 `true/false`를 리턴한다.  
 `equalsIgnoreCase()` 메서드는 같은 기능이나 영문자의 대소문자를 구분하지 않고 같은지 비교하여 결과를 리턴한다.  
 
-```
+```java
 boolean equals(Object anObject)
 boolean equalsIgnoreCase(String anotherString)
 ```
@@ -407,7 +407,7 @@ Assert.assertEquals(true, s1.equalsIgnoreCase(s2));
 
 `matches()` 메서드는 문자열이 인수의 정규식과 일치하는지 여부로 `true/false`를 리턴한다.
 
-```
+```java
 boolean regionMatches(int toffset, String other, int ooffset, int len)
 boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)
 boolean matches(String regex)
@@ -457,7 +457,7 @@ Assert.assertEquals(true, s.matches("[0-9]* begins"));
 인수로 들어오는 `CharSequence`, `String`의 값에 따라 초기화를 하고 거기에 16 크기의 공간을 추가하여 생성한다.
 혹은 `capacity`의 값(`int`)을 인수로 받아 그 숫자 크기대로 비어있는 `capacity`를 만든다.  
 
-```
+```java
 StringBuilder()
 StringBuilder(CharSequence cs)
 StringBuilder(String s)
@@ -493,7 +493,7 @@ logger.debug("{}", sb2.capacity()); // 1 - 기본 16이 아닌 인수로 넘어�
 `ensureCapacity()` 메서드는 `StringBuilder`가 생성될 때 가지는 `capacity`보다 큰 것이 인수로 들어오면 `capacity`의 크기를 늘려버린다.
 `append(), insert(), setLength()` 등의 메서드로 길이늘려 기존 `capacity`보다 더 커지면 `capacity`는 자동으로 크기를 늘린다.
 
-```
+```java
 void setLength(int newLength)
 void ensureCapacity(int minCapacity)
 ```
@@ -524,7 +524,7 @@ logger.debug("{}", sb.capacity()); // 34 - 기본보다 큰 최소크기가 인�
 
 문자열에 인수의 내용을 `String`으로 변환하여 추가한다.  
 
-```
+```java
 StringBuilder append(boolean b)
 StringBuilder append(char c)
 StringBuilder append(char[] str)
@@ -539,7 +539,7 @@ StringBuilder append(String s)
 
 `String`으로 변환된 두 번째 인수의 내용을 `offset` 인덱스의 앞에 추가한다. 즉, 지정한 인덱스 자리에 들어가란 말과 같다.
 
-```
+```java
 StringBuilder insert(int offset, boolean b)
 StringBuilder insert(int offset, char c)
 StringBuilder insert(int offset, char[] str)
