@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2021-12-21 16:23:00 +0900
-title: '[reactJS] JSX elements must be wrapped'
+title: '[react] JSX elements must be wrapped'
 categories:
-  - reactJS
+  - react
 tags:
   - JSX
   - JSX fragment

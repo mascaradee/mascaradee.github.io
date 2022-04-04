@@ -16,7 +16,7 @@ tags:
 [메이븐 레파지토리](https://mvnrepository.com/)
 
 
-## 메이븐 `Maven`
+## 메이븐 Maven
 
 메이븐은 빌드, 패키지, 테스트, 리포트, 배포관리를 쉽게 하기 위해 사용한다. 특히 빌드관리와 의존성 관계에 있는 라이브러리를 쉽게 사용할 수 있는 장점이 있다.
 
@@ -25,7 +25,7 @@ tags:
 
 `.settings, .classpath, .projet` 파일은 이클립스 설정파일인데 메이븐 프로젝트일 경우에는 `pom.xml`을 바탕으로 구성한다.  
 
-### 폼파일 라이브러리 추가 `add dependency`
+### 폼파일 라이브러리 추가 add dependency
 
 `spring mvc maven`와 `oracle ojdbc6 maven`을  검색하면 `repository` 항목이 나오는데 각 `Central`과 `Datanucleus`로 서로 다른 서버에서 제공된다. 스프링처럼 메이븐이 제공하는 공식사이트 `Central`에 해당 라이브러리가 올라가 있으면 `pom.xml`파일에 굳이 추가로 `<repository></repository> `설정을 하지 않아도 자동으로 설정된다. 하지만 `ojdbc6` 처럼 별도 서버에 있는 라이브러리인 경우 원격 저장소를 설정해 주어야만 해당 라이브러리를 가져다 쓸 수 있다.  
 
@@ -37,7 +37,7 @@ tags:
 
 `%userprofile%\.m2` 폴더  
 
-## 폼파일 `pom.xml`
+## 폼파일 pom.xml
 
 `POM(Project Object Model)`은 메이븐 설정파일로 메이븐 프로젝트의 빌드 과정에 사용되는 플러그인 설정, 빌드 라이프 사이클, 구성 파일뿐만 아니라 관련된 개발자와 이들이 수행하는 역할, 결함 추적 시스템, 조직 및 라이선스, 프로젝트가있는 URL, 프로젝트 의존성(`dependency`) 등의 내용을 포함하고 있다. `pom.xml`이 수정될 때마다 자동으로 메이븐 서버에 접속해서 업데이트가 되거나 `프로젝트 우클릭 > Maven > update project` 로 수동으로 업데이트를 해 준다.  
 
@@ -117,7 +117,7 @@ tags:
 </project>
 ```
 
-### 프로젝트 설정 `project`
+### 프로젝트 설정 project
 
 아래는 메이븐 프로젝트를 위해 최소한으로 있어야 하는 부분으로 `modelVersion`은 `POM` 모델 버전으로 현재는 4.0.0만 지원되고 필수항목이다. `groupId, artifactId, version` 는 메이븐 프로젝트를 식별하는 정보로 필수요소다. 단, `groupId, version`은 부모로부터 상속된 경우는 명시할 필요는 없이 생략이 가능하다.  
 
@@ -139,7 +139,7 @@ tags:
     - 참고: `jar (Java Archive)`와 `war (Web Application Archive)` 모두 자바의 압축 파일의 종류이며 어플리케이션을 쉽게 배포하고 동작시킬 수 있도록 있도록 관련 파일(리소스, 속성파일 등)들을 패키징한다.  
 
 
-### 프로퍼티 설정 `properties`
+### 프로퍼티 설정 properties
 
 아래 예시에서 `${encoding}`와 같이 `${속성}` 형태로 `POM`파일 내 어디서나 값에 접근할 수 있는 공통적으로 사용할 설정값 정보다. 태그명은 사용자가 지정한다. 필수항목은 아니다.  
 
@@ -198,7 +198,7 @@ tags:
             - `warSourceDirectory`: `war` 패키징할 웹자원 경로  
             - `webXml`: `web.xml` 파일 경로  
 
-### `repositories`
+### 레파지토리 repositories
 
 메이븐은 의존관계가 생길 때마다 먼저 로컬 라이브러리에서 찾아보고 없을 경우 리모트 저장소에서 다운받는데 기본적으로 메이븐 `central` 리모트 저장소를 이용한다.  
 추가로 다른 저장소에서 다운 받아야 할 것이 있다면 `repositories`에 명시하면 된다.  
@@ -216,7 +216,7 @@ tags:
     - `url`: 서버 주소
 
 
-### `dependencies`
+### 의존성 dependencies
 
 필요한 라이브러리를 추가하거나 의존관계에 있는 라이브러리를 모아 놓은 목록으로 필수항목이다. 만약 추가된 라이브러리가 또 다른 라이브러리와 의존관계라면 그 라이브러리까지도 메이븐이 자동으로 다운받고 연결시켜 준다. 이런 기능을 '의존성 전이'라고 한다.  
 
