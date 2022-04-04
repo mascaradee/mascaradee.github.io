@@ -20,11 +20,12 @@ tags:
 [Java tutorial : Numbers and Strings-The Numbers Classes](https://docs.oracle.com/javase/tutorial/java/data/numberclasses.html)
 
 ## Wrapper Class
+
 보통은 숫자로 작업을 할 때, 원시 자료형을 사용한다.
 각 원시 자료형에는 대응하는 래퍼 클래스가 있다. 이 클래스는 객체로 원시 자료형을 감싸고 있다.  
 객체를 써야 하는 곳에 원시 자료형을 사용하면 컴파일러가 알아서 박싱을 하고 그 반대로 원시 자료형을 써야 할 때 객체를 사용하면 역시 컴파일러가 언박싱을 한다.
 
-모든 숫자형 래퍼 클래스는 Number 클랙스의 하위에 있다.
+모든 숫자형 래퍼 클래스는 `Number` 클랙스의 하위에 있다.
 
 - Number
   - Byte
@@ -36,11 +37,12 @@ tags:
 
 하지만 원시 자료형보다 객체를 사용해햐 하는 이유들이 있다.  
 
- 1) 메서드 인수로 객체가 필요할때  e.g. collections of numbers  
- 2) 클래스에서 정의한 상수를 사용하기 위해 e.g. MIN_VALUE, MAX_VALUE  
- 3) 다른 원시 자료형, 문자열, 숫자 시스템간의 값을 변환하기 위해 제공되는 클래스 메서드를 사용하기 위해  e.g. decimal, octal, hexadecimal, binary  
+ 1) 메서드 인수로 객체가 필요할때  `e.g. collections of numbers`
+ 2) 클래스에서 정의한 상수를 사용하기 위해 `e.g. MIN_VALUE, MAX_VALUE`  
+ 3) 다른 원시 자료형, 문자열, 숫자 시스템간의 값을 변환하기 위해 제공되는 클래스 메서드를 사용하기 위해  `e.g. decimal, octal, hexadecimal, binary`  
 
 #### Methods Implemented by all Subclasses of Number
+
 | Method                                |	Description                                                                                                        |
 |---                                    |---                                                                                                                 |
 | byte byteValue()                      | 숫자형객체를 byte 형으로 변환                                                                                      |
@@ -171,6 +173,6 @@ public void testFormattingNumeric() {
 }
 ```
 
-이 외에도 세자리마다 점을 찍는 포맷(The DecimalFormat Class, https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html)  
-간단한 수식 (Class Math, https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)  
-난수 (Random Numbers, Math.random()) 등이 있다.  
+이 외에도 세자리마다 점을 찍는 포맷([`The DecimalFormat Class`](The DecimalFormat Class))  
+간단한 수식 ([Class Math](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html))  
+난수 (`Random Numbers`, `Math.random()`) 등이 있다.  

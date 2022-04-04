@@ -32,6 +32,7 @@ public class UsrLgController {
     private UsrLgService usrLgService;
 
     // forword: http://localhost:8080/bo/mgr/lg.do
+
  // /WEP-INF 이하는클라이언트에서 .jsp 파일명으로 바로 접근하수 없으므로 화면에 우회적으로 접근할수 있도록 forword 설정한다.
     // ModelAndView는 매핑된 url 과 동일한 이름의 .jsp를 찾아간다. (/WEB-INF/view/bo/mgr/lg.jsp)
     @RequestMapping(value = "/bo/mgr/lg.do")
@@ -62,9 +63,9 @@ public class UsrLgController {
         if(loginVO != null){
             session.setAttribute("loginVO", loginVO);
 
-//            mv.setViewName("redirect:/"); // location.href = http://localhost:8080
-//            mv.setViewName("redirect:"); // location.href = http://localhost:8080/bo/login
-            mv.setViewName("redirect:/bo/mgr/hm.do"); // location.href = http://localhost:8080
+//            mv.setViewName("redirect:/"); // location.href = <http://localhost:8080>
+//            mv.setViewName("redirect:"); // location.href = <http://localhost:8080/bo/login>
+            mv.setViewName("redirect:/bo/mgr/hm.do"); // location.href = <http://localhost:8080>
 
 //            mv.addObject("inputVO", inputVO); // req.setAttribute("inputVO", inputVO);
         } else {
@@ -93,5 +94,7 @@ public class UsrLgController {
         System.out.println(responseObject.toString());
         return responseObject.toJSONString();
     }
+
  }
+
 ```

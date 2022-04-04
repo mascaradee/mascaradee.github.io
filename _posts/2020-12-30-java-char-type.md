@@ -21,7 +21,7 @@ tags:
 
 ## char
 
-문자 타입에도 Character 클래스라는 래퍼 클래스가 존재한다. 역시 컴파일러가 char를 Character클래스로 혹은 그 반대로 박싱, 언박싱을 한다.
+문자 타입에도 `Character`클래스라는 래퍼 클래스가 존재한다. 역시 컴파일러가 `char`를 `Character`클래스로 혹은 그 반대로 박싱, 언박싱을 한다.
 
 **자바에서는 문자는 홑따옴표, 문자열은 쌍따옴표로 구분을 한다.**  
 
@@ -40,7 +40,7 @@ public void testCharacter() {
 
 ## Character 클래스
 
-char타입의 래퍼 클래스인 Character 클래스에는 유용한 메서드들이 있다.  
+`char`타입의 래퍼 클래스인 `Character`클래스에는 유용한 메서드들이 있다.  
 자세한 건 https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html 참고하길   
 
 ```java
