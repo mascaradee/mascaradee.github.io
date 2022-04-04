@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-12-30 10:58:00 +0900
-title: '[java] Primitive type'
+title: '[java] 원시타입 Primitive type'
 categories:
   - java
 tags:
@@ -22,7 +22,7 @@ tags:
 [Java tutorial : Language Basics-Variables-Primitive Data Types](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 [Java tutorial : Numbers and Strings-Numbers](https://docs.oracle.com/javase/tutorial/java/index.html)
 
-## Primitive
+## 원시타입 Primitive
 
 자바에는 8개의 원시 데이터 타입이 있다.
 
@@ -51,7 +51,7 @@ tags:
 | boolean	    | 1bit           | true / fasle                          | 보통 조건식의 결과로 이 데이터 타입을 사용한다. |
 | char	      |	2 byte (16bit) | '\u0000' (or 0) ~ \uffff' (or 65,535) | 유니코드                                        |
 
-## String
+## 문자열 String
 
 `String`은 원시타입이 아닌 객체이지만 원시타입처럼 선언과 초기화 및 할당을 하여 사용하기도 한다.  
 
