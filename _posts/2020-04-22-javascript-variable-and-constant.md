@@ -20,6 +20,7 @@ tags:
 <br>
 
 ### var (old version)
+
 어디에서나 유효하지만 함수 안에서 선언이 된 경우에만 함수블록 내로 제한  
 hoisting 문제로 ES6이후부터는 `let` 으로 대체
 
@@ -36,7 +37,7 @@ for (var b = 0; b < 3; b++){
 	console.log(b); // 0 ~ 2
 }
 console.log(b); // 3 - for문 밖에 있지만 유효
-consoel.log(aa); //abc
+console.log(aa); //abc
 
 function fn(){
 	var ccc = 7;
@@ -51,12 +52,17 @@ console.log(aa); // 'abc'
 ```
 
 ### let
-변수가 선언된 블록에서만 유효함. [브라우저 버전에 따른 제약 있음.](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)  
-실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음
+
+변수가 선언된 `블록`에서만 유효함.  
+[브라우저 버전에 따른 제약 있음.](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)   
+실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음  
 
 ```javascript
 // 값 지정없이 선언 가능
 let c;
+
+// 한번에 선언 가능하지만 가독성이 좋지는 않다.
+let z, y, x;
 
 // 값 변경 가능
 let d = 'abc';
@@ -76,6 +82,7 @@ console.log(d); // abc
 ```
 
 ### const
+
 고정된 값을 사용할때 사용하고 초기화는 필수이며, 재할당도 불가함.  
 변수가 선언된 블록에서만 유효함. 브라우저 버전에 따른 제약 있음.  
 IE는 11이후부터 가능하다고 하나 실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음.
@@ -90,18 +97,21 @@ Pi = 1 ; // 재할당 시 에러발생 Uncaught TypeError: Assignment to constan
 const MY_BIRTHDAY = "2020.04.22"
 ```
 
-하지만 오브젝트나 배열을 const로 선언하면 수정이나 추가가 가능하다.
+오브젝트나 배열을 const로 선언하면 값은 수정이나 추가가 가능하지만 재할당은 불가능하다.
 
 ```javascript
 const obj = {};
+
+obj = {}; //  TypeError: Assignment to constant variable.
+
 obj.a = 1;
+obj.a = 2;
 obj.b = 'heloo';
-console.log(obj); // {a: 1, b: 'heloo'} - 실제 타입을 혼용해서 쓰는것은 비추
+console.log(obj); // {a: 2, b: 'heloo'} - 실제 타입을 혼용해서 쓰는것은 비추
 
 const arr = [1,2,3,4];
 arr[0] = 100;
 console.log(arr); // [100, 2, 3, 4]
-
 ```
 
 ## 변수 명명 규칙

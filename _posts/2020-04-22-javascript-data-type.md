@@ -47,6 +47,9 @@ parseFloat('10.2abc'); // 10.2 -> 문자열을 숫자로 파싱할 수 없을때
 
 #### NaN
 
+숫자가 아님을 나타내는 타입으로 연산을 할 수 없는 경우에 반환되고, `NaN`와 덧붙여지면 모두 `NaN`으로 반환된다.
+하지만 `NaN ** 0`는 예외로 1로 반환이 된다.
+
 ```javascript
 parseInt('hello', 10); // NaN (Not a Number)
 NaN + 5; // NaN (Not a Number)
@@ -105,8 +108,9 @@ alert( `Welcome ${"name"}` ); // Welcome name -> "name" 이 표현식
 
 ## 널(Null)
 
-의도적으로 값이 없음을 가리키는 '객체' 타입의 객체인 null,  
-다른 언어에서는 자바스크립트의 null과는 조금 다른 성격으로 존재하지 않는 것을 가리킬때 쓰임.
+의도적으로 값이 없음을 가리키는 특별한 값이다. `typeof`로 타입을 체크했을 때 `Object`로 나오지만 실제 객체는 아니다.
+초창기 자바스크립트의 잔재라고 생각하면 된다.     
+다른 언어에서는 자바스크립트의 null과는 조금 다른 성격으로 존재하지 않는 것을 참조, 가리킬때 쓰임.
 
 ```javascript
 let name = null;
@@ -248,7 +252,7 @@ __proto__: Object
 ### 정규식(RegExp)
 
 ## 심볼(Symbol)
-고유한 식별자가 필요한 경우 사용.  
+객체를 위한 고유한 식별자가 필요한 경우 사용.  
 
 ```javascript
 const sb1 = Symbol('id');
@@ -271,7 +275,7 @@ typeof 101010101010101110101010101101010101010n; // "bigint"
 typeof '일'; // "string"
 typeof true; // "boolean"
 typeof undefined; // "undefined"
-typeof null; // "object" -> 실제 객체는 아니지만 호환성을 위해 수정을 하지 않고 남겨놓은 것임.
+typeof null; // "object" -> 실제 객체는 아니지만 호환성을 위해 수정을 하지 않고 남겨놓은 것임
 typeof Date; // "function" -> 함수는 객체형에 속함
 typeof Symbol("id") // "symbol"
 ```

@@ -108,14 +108,14 @@ Object(123); // new Number(123)과 같다.
 
 |                   |    String   | Number | Boolean |         Object        |
 |:-----------------:|:-----------:|:------:|:-------:|:---------------------:|
-| undefined         | "undefined" | NaN    | false   | TypeError             |
-| null              | "null"      | 0      | false   | TypeError             |
+| undefined         | "undefined" | **NaN**| false   | TypeError             |
+| null              | "null"      | **0**  | false   | TypeError             |
 | true              | "true"      | 1      |         | new Boolean(true)     |
 | false             | "false"     | 0      |         | new Boolean(false)    |
 | "" (empty string) |             | 0      | false   | new String("")        |
 | "1.2"             |             | 1.2    | true    | new String("1.2")     |
 | "one"             |             | NaN    | true    | new String("one")     |
-| " "               |             | 0      | true    | new String(" ")       |
+| " "               |             | 0      | **true**| new String(" ")       |
 | 123               | "123"       |        | true    | new Number(123)       |
 | -1                | "-1"        |        | true    | new Number(-1)        |
 | 0                 | "0"         |        | false   | new Number(0)         |

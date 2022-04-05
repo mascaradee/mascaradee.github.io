@@ -51,7 +51,7 @@ alert( z - y ); // 29
 alert( 10 % 3 ); // 1 -> 10/3은 몫 3, 나머지 1인데 %는 나머지를 리턴한다.
 ```
 
-### 거듭제곱 연산자 `**`
+### 거듭제곱 연산자, 지수화 연산자 `**`
 
 ```javascript
 alert( 2 ** 10); // 1024 -> 2*2*2*2*2*2*2*2*2*2
@@ -124,23 +124,23 @@ alert(+first + +last); // 30 + 9 = 39
 
 |순위|연산자이름|기호|
 |---|---|---|
-|17|단항덧셈|`+`|
-|13|(이항)덧셈|`+`|
+|15|단항덧셈|`+`|
+|12|(이항)덧셈|`+`|
 
 * 우선순위 표 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 
 | Precedence |         Operator type        | Associativity | Individual operators |
 |:-----------|:-----------------------------|:--------------|:---------------------|
-| 21         | Grouping                     | n/a           | ( … )                |
-| 20         | Member Access                | left-to-right | … . …                |
+| 19         | Grouping                     | n/a           | ( … )                |
+| 18         | Member Access                | left-to-right | … . …                |
 |            | Computed Member Access       | left-to-right | … [ … ]              |
 |            | new (with argument list)     | n/a           | new … ( … )          |
 |            | Function Call                | left-to-right | … ( … )              |
 |            | Optional chaining            | left-to-right | ?.                   |
-| 19         | new (without argument list)  | right-to-left | new …                |
-| 18         | Postfix Increment            | n/a           | … ++                 |
+| 17         | new (without argument list)  | right-to-left | new …                |
+| 16         | Postfix Increment            | n/a           | … ++                 |
 |            | Postfix Decrement            |               | … --                 |
-| 17         | Logical NOT                  | right-to-left | ! …                  |
+| 15         | Logical NOT                  | right-to-left | ! …                  |
 |            | Bitwise NOT                  |               | ~ …                  |
 |            | Unary Plus                   |               | + …                  |
 |            | Unary Negation               |               | - …                  |
@@ -150,33 +150,33 @@ alert(+first + +last); // 30 + 9 = 39
 |            | void                         |               | void …               |
 |            | delete                       |               | delete …             |
 |            | await                        |               | await …              |
-| 16         | Exponentiation               | right-to-left | … ** …               |
-| 15         | Multiplication               | left-to-right | … * …                |
+| 14         | Exponentiation               | right-to-left | … ** …               |
+| 13         | Multiplication               | left-to-right | … * …                |
 |            | Division                     |               | … / …                |
 |            | Remainder                    |               | … % …                |
-| 14         | Addition                     | left-to-right | … + …                |
+| 12         | Addition                     | left-to-right | … + …                |
 |            | Subtraction                  |               | … - …                |
-| 13         | Bitwise Left Shift           | left-to-right | … << …               |
+| 11         | Bitwise Left Shift           | left-to-right | … << …               |
 |            | Bitwise Right Shift          |               | … >> …               |
 |            | Bitwise Unsigned Right Shift |               | … >>> …              |
-| 12         | Less Than                    | left-to-right | … < …                |
+| 10         | Less Than                    | left-to-right | … < …                |
 |            | Less Than Or Equal           |               | … <= …               |
 |            | Greater Than                 |               | … > …                |
 |            | Greater Than Or Equal        |               | … >= …               |
 |            | in                           |               | … in …               |
 |            | instanceof                   |               | … instanceof …       |
-| 11         | Equality                     | left-to-right | … == …               |
+| 9          | Equality                     | left-to-right | … == …               |
 |            | Inequality                   |               | … != …               |
 |            | Strict Equality              |               | … === …              |
 |            | Strict Inequality            |               | … !== …              |
-| 10         | Bitwise AND                  | left-to-right | … & …                |
-| 9          | Bitwise XOR                  | left-to-right | … ^ …                |
-| 8          | Bitwise OR                   | left-to-right | … \| …               |
-| 7          | Nullish coalescing operator  | left-to-right | … ?? …               |
-| 6          | Logical AND                  | left-to-right | … && …               |
-| 5          | Logical OR                   | left-to-right | … \|\| …             |
-| 4          | Conditional                  | right-to-left | … ? … : …            |
-| 3          | Assignment                   | right-to-left | … = …                |
+| 8          | Bitwise AND                  | left-to-right | … & …                |
+| 7          | Bitwise XOR                  | left-to-right | … ^ …                |
+| 6          | Bitwise OR                   | left-to-right | … \| …               |
+| 5          | Logical AND                  | left-to-right | … && …               |
+| 4          | Logical OR                   | left-to-right | … \|\| …             |
+|            | Nullish coalescing operator  | left-to-right | … ?? …               |
+| 3          | Conditional                  | right-to-left | … ? … : …            |
+| 2          | Assignment                   | right-to-left | … = …                |
 |            |                              |               | … += …               |
 |            |                              |               | … -= …               |
 |            |                              |               | … **= …              |
@@ -189,7 +189,7 @@ alert(+first + +last); // 30 + 9 = 39
 |            |                              |               | … &= …               |
 |            |                              |               | … ^= …               |
 |            |                              |               | … \|= …              |
-| 2          | yield                        | right-to-left | yield …              |
+|            | yield                        | right-to-left | yield …              |
 |            | yield*                       |               | yield* …             |
 | 1          | Comma / Sequence             | left-to-right | … , …                |
 
@@ -269,9 +269,9 @@ alert(counter); // 1
 ```
 
 * 후위형, 전위형
-+1 혹은 -1로 증가/감소처리는 후위형이든 전위형이든 동일하게 처리한다.
-후위형: `counter++;` - 변수에 값이 할당이 되면 증가/감소 전의 기존 값을 리턴  
-전위형: `++counter;` - 변수에 값이 할당이 되면 증가/감소 후의 새로운 값을 리턴
++1 혹은 -1로 증가/감소처리는 후위형이든 전위형이든 동일하게 처리한다.  
+후위형: `counter++;` - 변수에 값이 할당이 되면 증가/감소 전의 **기존 값**을 리턴   
+전위형: `++counter;` - 변수에 값이 할당이 되면 증가/감소 후의 **새로운 값**을 리턴
 
 ```javascript
 let counter = 1;
