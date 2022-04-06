@@ -33,7 +33,7 @@ tags:
   <input type="text" id="firstName">
 </div>
 ```
-```javascript
+```js
 // DOM이 모두 생성된 후에 실행
 /*
 $(document).ready(function() {  
@@ -70,13 +70,13 @@ $(function() {
 ```html
 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="ㅂ1ㅈ2ㄷ3ㄱ4">
 ```
-```javascript
+```js
 $('#lastName').change(); // $('#lastName').trigger('change'); 같은 결과
 ```
 
 `$('#lastName').change(fn2)`는 이벤트가 발생되었을때 실행할 함수를 설정해 놓는 부분이고 바로 다음에 오는 `.change()`가 이벤트를 발생시키는 부분이다.  
 
-```javascript
+```js
 function fn2(event) {
 	var $target = $(this);
 	var value = $target.val();
@@ -95,7 +95,7 @@ $('#lastName').change(fn2).change(); // $('#lastName').on('change', fn2);
 ```html
 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="" value="ㅂ1ㅈ2ㄷ3ㄱ4">
 ```
-```javascript
+```js
 $('#lastName').select(function() {
   console.log('hi. you got me');
 });
@@ -105,7 +105,7 @@ $('#lastName').select(function() {
 
 배열이나 자바스크립트 객체, 제이쿼리 객체를 직렬화된 표현(URL의 쿼리스트링)의 문자열로 바꾼다.
 
-```javascript
+```js
 var myObject = {
   a : {
     one : 1,
@@ -145,7 +145,7 @@ window.recursiveDecoded = decodeURIComponent($.param(myObject)); // a[one]=1&a[t
   </div>
 </form>
 ```
-```javascript
+```js
 decodeURIComponent($('#myform').serialize()); // firstName=이뿅뿅&lastName=뿅1뿅2뿅3뿅4&email=mascaradee@mail.net&address=서울 어딘가
 ```
 
@@ -153,7 +153,7 @@ decodeURIComponent($('#myform').serialize()); // firstName=이뿅뿅&lastName=�
 
 지정된 `form` 하위의 입력란들을 `name`과 `value`가 `property`인 객체들의 배열로 변환한다.
 
-```javascript
+```js
 $('#myForm').serializeArray();
 /*
 (4) [{…}, {…}, {…}, {…}]
@@ -167,6 +167,6 @@ __proto__: Array(0)
 ```
 같은 `form`을 대상으로 `.serialize()`를 사용한 결과와 `.serializeArray() + jQuery.param()`을 사용한 결과는 같다.
 
-```javascript
+```js
 $('#myForm').serialize() === $.param($('#myForm').serializeArray()); // true
 ```

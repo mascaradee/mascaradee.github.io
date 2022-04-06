@@ -31,7 +31,7 @@ tags:
 	border: 3px solid red;
 }
 ```
-```javascript
+```js
 $('input').addClass('affected');  
 $('input').addClass('affected, second-one, third-one');  
 ```
@@ -40,7 +40,7 @@ $('input').addClass('affected, second-one, third-one');
 
 선택한 요소에 특정 클래스를 삭제한다.  
 
-```javascript
+```js
 $('input').removeClass('affected');  
 $('input').removeClass('affected, second-one, third-one');  
 $('input').removeClass('affected, second-one'); // 이 경우, second-one만 제거되는데?  
@@ -50,7 +50,7 @@ $('input').removeClass('affected, second-one'); // 이 경우, second-one만 제
 
 선택한 요소에 지정한 클래스가 있으면 true, 아니면 false 리턴  
 
-```javascript
+```js
 $('input').hasClass('second-one');  
 ```
 
@@ -58,7 +58,7 @@ $('input').hasClass('second-one');
 
 선택한 요소에 지정한 클래스를 토글한다. 클래스가 없으면 추가하고 있으면 지운다.  
 
-```javascript
+```js
 $('input').toggleClass('second-one');  
 ```
 
@@ -66,7 +66,7 @@ $('input').toggleClass('second-one');
 
 선택한 요소의 스타일을 변경한다. 혹은 선택한 요소의 특정 스타일을 가져온다.  
 
-```javascript
+```js
 $('div').css('display', 'none'); // display 스타일의 값을 none으로 변경  
 $('div').css('display'); // display 스타일의 값을 리턴 , 즉, 현재 none 값이므로 none 리턴
 ```

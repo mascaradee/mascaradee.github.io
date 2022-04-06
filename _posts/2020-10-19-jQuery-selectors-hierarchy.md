@@ -74,7 +74,7 @@ tags:
 </section> <br>
 ```
 
-```javascript
+```js
 $('form:first input[type=button]').length
 // 1
 // <input type="button">
@@ -108,7 +108,7 @@ $('form:first ').length
   </form>		
 </section> <br>
 ```
-```javascript
+```js
 $('input:reset + button').length
 // 0 -> 같은 레벨인지는 상관없이 바로 다음 노드를 찾는데 바로 다음은 <div>임
 // jQuery.fn.init [prevObject: jQuery.fn.init(1)]
@@ -138,7 +138,7 @@ $('input:reset +')
   </form>		
 </section> <br>
 ```
-```javascript
+```js
 $('input[value=123] ~ textarea').length
 // 1
 $('input[value=123] ~')

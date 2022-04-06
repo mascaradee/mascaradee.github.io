@@ -49,7 +49,7 @@ tags:
 </section> <br>
 ```  
 
-```javascript
+```js
 $('input:button').add('input:checkbox').add('select').length; // 3
 // id = 3, 4, 5의 요소가 선택되고 객체배열에 추가된다.
 ```
@@ -69,7 +69,7 @@ $('input:button').add('input:checkbox').add('select').length; // 3
 	</fieldset>
 </section> <br>
 ```  
-```javascript
+```js
 $('input:button').next(); // id = 2가 선택
 $('input:button').next().addBack(); // id = 2인 요소와 그 바로 앞인  id=1(처음 선택된)요소도 객체배열에 추가된다.
 ```
@@ -99,7 +99,7 @@ $('div.align-center:first').children('section');
   </section> <br>
 </div>
 ```  
-```javascript
+```js
 $('div.align-center:first').children(); // div 내부의 모든 자손 요소 선택 - h1, section, form...
 $('div.align-center:first').children('section'); // div 내부의 section 요소들만 선택
 ```
@@ -120,7 +120,7 @@ $('div.align-center:first').children('section'); // div 내부의 section 요소
 	</div>
 </div>
 ```  
-```javascript
+```js
 $('#me').closest('.abc'); // grandfather 선택
 ```
 
@@ -140,7 +140,7 @@ $('#me').closest('.abc'); // grandfather 선택
   </section> <br>
 </div>
 ```  
-```javascript
+```js
 $('h1').contents(); // traversing
 $('h1').text(); // 보통은 위보다는 이렇게 사용한다.
 ```
@@ -171,7 +171,7 @@ $('h1').text(); // 보통은 위보다는 이렇게 사용한다.
   </section> <br>
 </div>
 ```  
-```javascript
+```js
 var $section = $('section');  
 $section.each(function(idx, ele) { // section의 개수(length)만큼 돌면서
 	console.log('idx:', idx);  
@@ -216,7 +216,7 @@ $section.each(function(idx, ele) { // section의 개수(length)만큼 돌면서
   <br>
 </div>
 ```  
-```javascript
+```js
 $('section').eq(1); // section 중 2번째 요소(인덱스 1) 선택
 $('section').eq(1).next(); // 다음 요소 선택. 즉, <br> 선택
 $('section').eq(1).next().next(); //  그 다음 요소 선택. 즉, 세번째 <section>
@@ -235,7 +235,7 @@ $('section').eq(1).next().next().end().end(); // <br> 이전인  두 번째 <sec
 
 선택한 요소들에 조건을 대입해 걸러내는 메서드. 조건은 셀렉터 작성법과 완전히 같다.  
 
-```javascript
+```js
 var $inpts = $('input');
 var $bttns = $ele.filter(':button');
 ```
@@ -246,7 +246,7 @@ var $bttns = $ele.filter(':button');
 `filter`를 사용할 수 있는데 장점은 문자열을 조금 덜 쓴다는 점 정도이다.
 아래와 같이 쓰면 문자열이 조금 더 많아져 코드 해석이 조금 더 어려워진다라는...
 
-```javascript
+```js
 var $inptBttns = $('input:button');
 ```
 
@@ -254,7 +254,7 @@ var $inptBttns = $('input:button');
 
 선택한 요소들의 하위 요소(자손)에서 지정한 요소를 선택한다.  
 
-```javascript
+```js
 $('section').find(':button')
 ```
 
@@ -262,7 +262,7 @@ $('section').find(':button')
 
 선택한 요소가 주어진 조건에 맞으면 true, 아니면 false 리턴  
 
-```javascript
+```js
 $('input').eq(2).is('[value]');
 
 var trueOrNot = $('input').is(function(idx, ele) {
@@ -277,7 +277,7 @@ var trueOrNot = $('input').is(function(idx, ele) {
 
 선택한 요소 중 주어진 조건에 맞는 요소를 자손으로 포함하고 있는 요소만 남김.  
 
-```javascript
+```js
 $('section').has('select')  
 ```
 
@@ -289,7 +289,7 @@ $('section').has('select')
 
 선택한 요소 다음(혹은 이전)의 모든 요소를 선택하거나 조건에 맞는 요소만 선택. 단, 형제 레벨의 요소만.  
 
-```javascript
+```js
 $('#grandfather').nextAll()  
 $('#grandfather').nextAll('section')  
 ```
@@ -298,7 +298,7 @@ $('#grandfather').nextAll('section')
 
 선택한 요소 다음(혹은 이전) 요소부터, 주어진 조건의 요소 전까지 선택한다.  
 
-```javascript
+```js
 $('#grandfather').nextUntil('section:last')  
 ```
 
@@ -329,7 +329,7 @@ $('#grandfather').nextUntil('section:last')
 </section> <br>
 ```
 
-```javascript
+```js
 $('input:reset').offsetParent(); // <section>태그 부분이 선택된다.
 ```
 
@@ -352,7 +352,7 @@ $('input:reset').offsetParent(); // <section>태그 부분이 선택된다.
 </section> <br>
 ```
 
-```javascript
+```js
 $('input:reset').parent(); // <fieldset>태그 부분이 선택된다.
 ```
 
@@ -381,7 +381,7 @@ $('input:reset').parent(); // <fieldset>태그 부분이 선택된다.
 	</form>		
 </section> <br>
 ```
-```javascript
+```js
 $('input:reset').parents(); // <section>태그 부분이 선택된다. <div>는 <section>의 형제
 ```
 
@@ -412,7 +412,7 @@ $('input:reset').parents(); // <section>태그 부분이 선택된다. <div>는 
 <br>
 
 ```
-```javascript
+```js
 $('input:reset').parentsUntil('form'); // <fieldset>태그 부분이 선택된다.
 ```
 
@@ -424,7 +424,7 @@ $('input:reset').parentsUntil('form'); // <fieldset>태그 부분이 선택된�
 
 substring처럼 시작 인덱스 종료 인덱스(종료 인덱스는 생략 가능)를 지정하여 선택한 요소 배열을 잘라내는 메서드.  
 
-```javascript
+```js
 $('div').slice(2); // 모든 div를 선택 후, 첫 번째와 두 번째 div는 배열에서 제거한다.  
 $('div').slice(2, 4); // 모든 div를 선택 후, 세 번째와 네 번째 div 외 모든 요소를 배열에서 제거한다.  
 ```
@@ -446,7 +446,7 @@ $('div').slice(2, 4); // 모든 div를 선택 후, 세 번째와 네 번째 div 
 </fieldset>
 ```
 
-```javascript
+```js
 $('input').map(function(idx, ele) {
 	return $(ele).attr('type'); // ['text', 'text', 'button', 'reset']
 });  

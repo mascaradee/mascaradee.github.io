@@ -9,7 +9,7 @@ tags:
   - textarea
 ---
 
-```javascript
+```js
 var byteChecker = {
     getBytes: function(s) {
         var b, i, c;
@@ -38,7 +38,7 @@ var byteChecker = {
 <textarea onchange="$(this).val(byteChecker.getLimitedText($(this).val(), 60));">
 ```
 
-```javascript
+```js
 $(document).ready(function () {
 	$('textarea[name=deliveryRequestMessage]').on('paste', function() {   
 		var element = this;

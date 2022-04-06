@@ -12,6 +12,10 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+## 참고
+
+[https://javascript.info/alert-prompt-confirm](https://javascript.info/alert-prompt-confirm)
+
 ## prompt
 
 `title`과 `default` 입력과 함께 확인, 취소 버튼이 있는 모달창이 뜬다.
@@ -23,7 +27,7 @@ tags:
 * `default(optional)`: 입력필드의 초기값으로 사용자가 변경할수 있음. IE에서는 이 항목이 없으면 `undefined`로 출력이 되므로 `''`로 넣어주는 게 낫다.
 * `result`: 사용자가 입력한 값 혹은 `null`
 
-```javascript
+```js
 let grade = prompt("몇 학년이니?", "1");
 alert(`넌 ${grade}학년이구나`);
 ```
@@ -41,7 +45,7 @@ alert(`넌 ${grade}학년이구나`);
 * `question`: 모달창에 보여지는 질문
 * `result`: `true or false`
 
-```javascript
+```js
 let isMom = confirm("저장하시겠습니까?")
 alert(isMom);
 ```

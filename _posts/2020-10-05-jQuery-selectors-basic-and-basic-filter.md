@@ -69,7 +69,7 @@ function fn1() {
 
 `.`과 클래스 속성의 값을 적는다. 해당 클래스가 부여된 모든 요소를 찾는다.  
 
-```javascript
+```js
 $('.outter')...
 ```
 
@@ -77,13 +77,13 @@ $('.outter')...
 
 찾을 태그를 입력한다. 같은 모든 태그가 리턴된다.
 
-```javascript
+```js
 $('div')..., $('fieldset')..., ...
 ```
 
 ### ID Selector ('#id')
 
-```javascript
+```js
  $('#my-id')...
 ```
 

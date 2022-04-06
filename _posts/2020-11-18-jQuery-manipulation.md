@@ -37,7 +37,7 @@ tags:
 
 새 요소를 추가하는 방식으로 `father`의 형제로 `uncle-sam`이 추가됨
 
-```javascript
+```js
 $('#father').after('<div id="uncle-sam"></div>');
 ```
 ```html
@@ -49,7 +49,7 @@ $('#father').after('<div id="uncle-sam"></div>');
 
 기존 요소의 위치를 변경하는 방식으로 `father`의 자식이던 `me`가 `father`와 형제레벨로 이동한다.
 
-```javascript
+```js
 $('#father').after($('article#me'));
 $('article#me').insertAfter('#father'); // 윗 줄과 같은 결과
 ```
@@ -76,7 +76,7 @@ $('article#me').insertAfter('#father'); // 윗 줄과 같은 결과
 
 새 요소를 추가하는 방식  
 
-```javascript
+```js
 $('#father').append('<div id="주워온아이"></div>');
 ```
 ```html
@@ -89,7 +89,7 @@ $('#father').append('<div id="주워온아이"></div>');
 
 기존 요소의 위치를 변경하는 방식  
 
-```javascript
+```js
 $('#father').append($('#imNext'));
 $('#imNext').appendTo('#father');  // 윗 줄과 같은 결과
 ```
@@ -105,7 +105,7 @@ $('#imNext').appendTo('#father');  // 윗 줄과 같은 결과
 
 선택한 요소를 삭제한다.  자식요소도 포함하염 삭제한다.  
 
-```javascript
+```js
 $('div').remove()  
 ```
 
@@ -114,7 +114,7 @@ $('div').remove()
 선택한 요소를 주어진 태그로 대체하며 원래 있던 요소는 삭제한다.  
 .replaceAll()은 replace의 대상과 피대상을 반대로 적용하는 메서드다.
 
-```javascript
+```js
 $( '#father' ).replaceWith( '<h2>New heading</h2>' );
 $( '<h2>New heading</h2>' ).replaceAll( '#father' );  
 ```
@@ -131,7 +131,7 @@ $( '<h2>New heading</h2>' ).replaceAll( '#father' );
 	</div>
 </section>
 ```
-```javascript
+```js
 $('#for-text').text();  
 
 // 결과
@@ -146,7 +146,7 @@ $('#for-text').text();
 파라미터가 있으면 선택한 요소의 내부에 주어진 문자열을 텍스트 노드로 만들어 대체한다.   
 이 경우 기존에 있던 태그가 사라진다.
 
-```javascript
+```js
 $('#for-text').text('신동엽');  
 
 ```
@@ -158,7 +158,7 @@ $('#for-text').text('신동엽');
 
 파라미터 없이 쓰일 경우 선택한 요소 하위의 모든 요소를 HTML 형식의 텍스트로 리턴한다.  
 
-```javascript
+```js
 $('section').eq(0).html();  
 
 // 결과
@@ -178,7 +178,7 @@ $('section').eq(0).html();
 
 파라미터가 있으면 선택한 요소의 내부를 주어진 HTML로 대체한다.  
 
-```javascript
+```js
 $('section').eq(0).html('<p>헬로워얼드</p>');  
 ```
 ```html
@@ -189,7 +189,7 @@ $('section').eq(0).html('<p>헬로워얼드</p>');
 
 선택한 요소를 주어진 태그로 각각 감싼다. `.append()`나 `.prepend()`와 반대로 부모를 추가하는 메서드.  
 
-```javascript
+```js
 $( '#father' ).wrap( "<div id='grandmother'></div>" );  
 ```
 ```html
@@ -204,7 +204,7 @@ $( '#father' ).wrap( "<div id='grandmother'></div>" );
 
 선택한 요소를 주어진 태그로 감싼다. `.wrap()`과 차이점은 선택한 요소가 여러개일 때 모두 묶어서 하나의 부모만 추가한다는 것이다.
 
-```javascript
+```js
 $( '.abc' ).wrapAll( '<div class="new" />');  
 ```
 
@@ -224,7 +224,7 @@ $( '.abc' ).wrapAll( '<div class="new" />');
 
 선택한 요소의 모든 자식을 주어진 태그로 감싼다.  
 
-```javascript
+```js
 $( '.abc' ).wrapInner( '<div class="new" />');    
 ```
 ```html
@@ -245,6 +245,6 @@ $( '.abc' ).wrapInner( '<div class="new" />');
 
 선택한 요소를 감싸고 있는 태그, 즉 부모를 삭제한다.  
 
-```javascript
+```js
 $('form').unwrap();  
 ```

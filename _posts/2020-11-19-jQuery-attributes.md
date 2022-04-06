@@ -34,7 +34,7 @@ tags:
 
 속성의 값을 출력  
 
-```javascript
+```js
 $('#me').attr('data-howareyou');
 
 // 출력결과: "fine-thankyouandrew?"
@@ -42,7 +42,7 @@ $('#me').attr('data-howareyou');
 
 파라미터 값으로 변경  
 
-```javascript
+```js
 $('#me').attr('data-howareyou', 'fine-thank-you');  
 ```
 
@@ -66,7 +66,7 @@ $('#me').attr('data-howareyou', 'fine-thank-you');
 <input type="text" disabled>
 ```
 
-```javascript
+```js
 $('input:disabled').removeAttr('disabled'); // 속성 제거
 $('input:disabled').attr('disabled', null); // 윗 라인과 같은 기능
 //$('input:disabled').attr('disabled', ''); // 아무 반응이 없음
@@ -82,7 +82,7 @@ $('input:disabled').attr('disabled', null); // 윗 라인과 같은 기능
 
 파라미터가 없을땐 특정 프로퍼티의 값을 가져온다. 파라미터가 있으면 특정 프로퍼티의 값을 주어진 값으로 변경한다.  
 
-```javascript
+```js
 $('input:disabled').prop('disabled'); // true  
 $('input:disabled').prop('disabled', false);  // 결과는 removeAttr과 같음, 참고로 disabled는 속성이나 프로퍼티임.
 ```
@@ -91,7 +91,7 @@ $('input:disabled').prop('disabled', false);  // 결과는 removeAttr과 같음,
 
 선택한 요소의 특정 프로퍼티를 제거한다.  
 
-```javascript
+```js
 $('input:disabled').prop('aatestProp', 1234);
 // console 창에서 확인 가능
 // jQuery.fn.init [input, prevObject: jQuery.fn.init(1)]
@@ -116,7 +116,7 @@ $('input:disabled').removeProp('aatestProp');
 <input type="reset" value="리셋1">
 ```
 
-```javascript
+```js
 $('input:reset').val(); // 리셋1  
 $('input:reset').val('리이셋1');
 ```

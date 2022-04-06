@@ -93,7 +93,7 @@ $(function(){
   </div>
 </body>
 ```
-```javascript
+```js
 for(let elem of document.querySelectorAll('*')) {
   elem.addEventListener("click", e => alert('캡처링: ${elem.tagName}: ${elem.id}'), true);
   elem.addEventListener("click", e => alert('버블링: ${elem.tagName}: ${elem.id}'));

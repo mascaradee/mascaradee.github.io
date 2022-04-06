@@ -15,6 +15,10 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+## 참고
+
+[https://javascript.info/variables](https://javascript.info/variables)
+
 ## 변수 종류
 
 <br>
@@ -24,7 +28,7 @@ tags:
 어디에서나 유효하지만 함수 안에서 선언이 된 경우에만 함수블록 내로 제한  
 hoisting 문제로 ES6이후부터는 `let` 으로 대체
 
-```javascript
+```js
 // 값 지정없이 선언 가능
 var a;
 console.log(a); // undefined
@@ -57,7 +61,7 @@ console.log(aa); // 'abc'
 [브라우저 버전에 따른 제약 있음.](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)   
 실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음  
 
-```javascript
+```js
 // 값 지정없이 선언 가능
 let c;
 
@@ -90,7 +94,7 @@ IE는 11이후부터 가능하다고 하나 실제 IE 11(11.836.18362.0)에서 �
 - 일반적인 상수: 값을 예측하지 못하지만 런타임에 계산되는 값
 - 대문자 상수: 실행 전 이미 값을 알고 있고 하드코딩한 값을 사용할때 대문자 상수 이용. 기억하기 용이하고 가독성이 좋고 오타 적다는 장점
 
-```javascript
+```js
 const pi = 3.14;
 Pi = 1 ; // 재할당 시 에러발생 Uncaught TypeError: Assignment to constant variable.
 
@@ -99,7 +103,7 @@ const MY_BIRTHDAY = "2020.04.22"
 
 오브젝트나 배열을 const로 선언하면 값은 수정이나 추가가 가능하지만 재할당은 불가능하다.
 
-```javascript
+```js
 const obj = {};
 
 obj = {}; //  TypeError: Assignment to constant variable.

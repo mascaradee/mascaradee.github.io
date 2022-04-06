@@ -90,7 +90,7 @@ $phraseInUnorderedList.length; // 0
 ### `jQuery( element )`
 자바스크립트로 얻어낸 `DOM`을 파라미터로 전달하면 `jQuery` 객체로 만들어 리턴하는 메서드  
 
-```javascript
+```js
 var h1 = document.querySelector('h1'); // DOM 가져오기
 var $h1 = $(h1); // H1 DOM을 jQuery 객체로 변환
 console.log($h1[0] === h1); // true - 배열의 형태로 DOM을 가지고 있다.
@@ -101,7 +101,7 @@ $h1.find('div'); // H1 하위 노드에서 div 탐색
 바로 위 메서드과 크게 다르지 않고 단지 `DOM`을 배열 형식으로 던지면  
 `jQuery` 객체도 내부의 배열에 해당 요소를 담아서 되돌려줌
 
-```javascript
+```js
 var lies = document.querySelectorAll('li');
 console.log(lies.length); // 3
 var $lies = $(lies);
@@ -114,7 +114,7 @@ $lies.find('p'); // 모든 선택된 li 태그 하위 노드에서 p 탐색
 - `html`: 생성할 `DOM`을 의미하는 태그 형식의 문자열
 - `ownerDocument`: `DOM`을 소유할 문서 객체. `document` 객체가 여러개일 경우는 거의 없으므로 안쓴다고 보면 된다.
 
-```javascript
+```js
 var $newEle = $('<div>야이뇸아</div>');
 $('div:first').append($newEle); // div 중 첫번째 요소 리턴한 후 $newEle를 해당 요소의 끝나기 바로 전에 붙인다. 즉, </div> 바로 앞에
 ```
@@ -139,7 +139,7 @@ $('div:first').append($newEle); // div 중 첫번째 요소 리턴한 후 $newEl
 - `attributes`: 새로 만들어질 요소의 속성, 이벤트, 메서드를 정의  
 이 방식의 경우 html은 태그 바디에 어떤한 텍스트도 있어선 안된다.
 
-```javascript
+```js
 var $newEle2 = $('<button></button>', {
 	'text': '누질러요',
 	'class': 'hoho',

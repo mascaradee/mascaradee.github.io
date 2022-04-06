@@ -12,8 +12,13 @@ tags:
 {:toc .toc}
 
 ## 참고 사이트
-[https://ko.javascript.info/operators](https://ko.javascript.info/operators)  
+
 [https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90)
+
+[https://javascript.info/operators](https://javascript.info/operators)
+[https://javascript.info/comparison](https://javascript.info/comparison)  
+[https://javascript.info/logical-operators](https://javascript.info/logical-operators)
+
 
 ## 연산자
 
@@ -36,7 +41,7 @@ tags:
 
 피연산자 `y, z` 2개를 받는 연산자를 이항연산자라고 한다. 보통 수학에서 배우는 사칙연산자와 같다.
 
-```javascript
+```js
 let y = 10, z = 39;
 alert( z - y ); // 29
 ```
@@ -47,17 +52,17 @@ alert( z - y ); // 29
 
 `/`는 몫을 리턴하지만 `%`는 나머지를 리턴한다.
 
-```javascript
+```js
 alert( 10 % 3 ); // 1 -> 10/3은 몫 3, 나머지 1인데 %는 나머지를 리턴한다.
 ```
 
 ### 거듭제곱 연산자, 지수화 연산자 `**`
 
-```javascript
+```js
 alert( 2 ** 10); // 1024 -> 2*2*2*2*2*2*2*2*2*2
 ```
 
-```javascript
+```js
 alert( 4 ** (1/2)); // 2 -> 4는 2의 제곱근
 alert( 8 ** (1/3)); // 2 -> 8은 2의 세제곱근
 ```
@@ -70,20 +75,20 @@ alert( 8 ** (1/3)); // 2 -> 8은 2의 세제곱근
 - 숫자 + 문자열 = 문자열  
 문자열이 섞이면 무조건 문자열로 리턴된다.
 
-```javascript
+```js
 let s = "my" + "javascript";
 alert(s); // myjavascript
 ```
 
-```javascript
+```js
 alert( '3' + 9 ); // 39
 alert( 3 + '9' ); // 39
 alert( 2 + 1 + '9') // 39 -> 왼쪽부터 순차적으로 진행되므로 2+1 = 3 후에 30 + '9'
 ```
 
-* 그에 비해 다른 사칙연사자들은 인수를 모두 숫자형으로 변환시켜 계산을 한다.
+* 그에 비해 다른 사칙연산자들은 인수를 모두 숫자형으로 변환시켜 계산을 한다.
 
-```javascript
+```js
 alert('10' - 2); // 8
 alert('10' / '2'); // 5
 ```
@@ -93,7 +98,7 @@ alert('10' / '2'); // 5
 `+` + 숫자  = 그대로 숫자
 `+` + 그 외  = 숫자로 변환
 
-```javascript
+```js
 let x = 1;
 alert(+x); // 1
 
@@ -105,14 +110,14 @@ alert(+''); // 0 -> Number('')와 같은 결과
 ```
 
 * 이항연산자 `+`
-```javascript
+```js
 let first = '3';
 let last = '9';
 alert(first + last); // 39 -> 이항연산자 +는 문자열 연결
 ```
 
 * 단항 & 이항연산자 `+`
-```javascript
+```js
 first = '30';
 last = '9';
 alert(+first + +last); // 30 + 9 = 39
@@ -198,7 +203,7 @@ alert(+first + +last); // 30 + 9 = 39
 
 우선순위가 낮은 편이다.
 
-```javascript
+```js
 let a = 20 * 2 - 1 // 1) `*` 2) `-` 3) `=`
 alert(x); // 39
 ```
@@ -207,7 +212,7 @@ alert(x); // 39
 
 아래와 같이 `=`의 할당 속성을 이용해서 수행이 가능하지만 가독성도 좋지 않도 명확성이 떨어지므로 비추.
 
-```javascript
+```js
 let a = 1;
 let b = 2;
 let c = 3 - ( a = b + 1); // 1) b+1, 2) a = b + 1, 3) 3 - (a = b + 1), 4) c = 3 - (a = b + 1)
@@ -217,7 +222,7 @@ alert(c); // 0
 
 ### 할당 연산자 체이닝
 
-```javascript
+```js
 let a, b, c;
 a = b = c = 2 + 2; // 1) 2+2, 2) c=2+2, 3) b=c, 4) a=b
 alert(a);// 4
@@ -229,7 +234,7 @@ alert(c);// 4
 
 아래가 더 가독성이 좋음
 
-```javascript
+```js
 c = 2 + 2;
 b = c;
 a = b;
@@ -237,7 +242,7 @@ a = b;
 
 ### 복합 할당 연산자
 
-```javascript
+```js
 let n = 15;
 n *= 2; // 15 * 2 = 30를 한 후 n에 할당 -> n = n * 2
 n += 9; // 30 + 9 = 39를 한 후 n에 할당 -> n = n + 9
@@ -248,7 +253,7 @@ alert(n); // 39
 
 복합 할당 연산자의 우선순위는 할당연산자의 순위와 같이 낮다.
 
-```javascript
+```js
 let n = 2;
 n *= 3 + 5;
 alert (n); // 2 * ( 3 + 5) = 16 -> n *= 8이 먼저
@@ -256,7 +261,7 @@ alert (n); // 2 * ( 3 + 5) = 16 -> n *= 8이 먼저
 
 ### 증가/감소 연산자
 
-```javascript
+```js
 let counter = 2;
 counter++; // counter = counter + 1;
 alert(counter); // 3
@@ -273,7 +278,7 @@ alert(counter); // 1
 후위형: `counter++;` - 변수에 값이 할당이 되면 증가/감소 전의 **기존 값**을 리턴   
 전위형: `++counter;` - 변수에 값이 할당이 되면 증가/감소 후의 **새로운 값**을 리턴
 
-```javascript
+```js
 let counter = 1;
 let a = ++counter;
 alert(a); // 2
@@ -292,14 +297,14 @@ alert(counter); // 2
 ## 비교연산자
 
 `<`, `>`, `<=`, `>=`, `==`, `!=`  
-불린형을 리턴  
+`boolean`형을 리턴  
 
 ### 문자열 비교
 
 유니코드값에 따라 크고 작음을 판단. 일반적인 사전순으로 문자열을 비교하는 것과 같으나 자바스크립트는 대소문자도 구분하여 비교.  
 소문자가 더 값이 큼.
 
-```javascript
+```js
 alert('Z' > 'z'); // false
 ```
 
@@ -307,7 +312,7 @@ alert('Z' > 'z'); // false
 
 사칙연산자와 마찬가지로 비교연산자 역시 인수를 숫자형으로 자동변환하여 비교한다.
 
-```javascript
+```js
 alert('39' < 40 ); // true
 alert(true == 1); // true
 
@@ -324,20 +329,33 @@ alert(a == b); // 비교연산자는 모든 인수를 숫자형으로 변환하�
 ### 동등 연산 `==`의 판단 기준
 
 같은 타입, 같은 값을 가지고 있는 두 값은 동등
-문자열과 숫자 비교 시 타입은 문자열은 숫자로 변환되고 그 값이 같으면 동등
+문자열과 숫자 비교 시 타입은 문자열은 숫자로 변환되고 그 값이 같으면 동등.  
 
 ```js
 1 == 1; // true
 1 == '1'; // true
 ```
 
-두 값 중 하나가 null이고 다른 하나가 `undefined`라면 두 값은 동등  
+두 값 중 하나가 `null`이고 다른 하나가 `undefined`라면 두 값은 동등  
 
 ```js
 null == undefined; // true
 ```
 
-boolean 값과 비교시 `true`는 1로 변환, `false`는 0으로 변환 후 비교
+`null`은 동등비교시 다른 비교연산과는 달리 숫자로 변환되지 않는다.  따라서
+`null`과 `undefined` 자체 동등 비교 결과는 참이지만 다른 모든 값들과 비교하면 모두 `false` 결과를 얻게 된다.  
+
+```js
+null == 0; // false
+```
+
+`undefined`는 비교연산 시 `NaN`로 변환되고, 동등비교에서는 다른 어떤 값과도 같지 않기 때문에 모두 `false`다.
+
+```js
+undefined == 0; // false
+```
+
+`boolean` 값과 비교시 `true`는 1로 변환, `false`는 0으로 변환 후 비교
 
 ```js
 true == '1'; // true :  1 == '1' 비교로 변환된다.
@@ -352,9 +370,9 @@ true == '2'; // false
 
 ### 일치 연산자 `===`
 
-동등 연산자 `==`는 자동형변환으로 0과 false를 구별하지 못하지만 일치 연산자 `===`는 형까지 비교를 하므로 구별할 수 있다.
+동등 연산자 `==`는 자동형변환으로 0과 `false`를 구별하지 못하지만 일치 연산자 `===`는 형까지 비교를 하므로 구별할 수 있다.
 
-```javascript
+```js
 alert(0 === false); // false, 피연산자의 형이 다름
 ```
 
@@ -362,13 +380,13 @@ alert(0 === false); // false, 피연산자의 형이 다름
 1 === '1'; // false
 ```
 
-두 값 중 하나가 null이고 다른 하나가 `undefined`라면 두 값은 불일치
+두 값 중 하나가 `null`이고 다른 하나가 `undefined`라면 두 값은 불일치
 
 ```js
 null === undefined; // false
 ```
 
-NaN 값은 자신을 포함해 다른 어떤 값과도 일치하지 않음
+`NaN` 값은 자신을 포함해 다른 어떤 값과도 일치하지 않음
 
 ```js
 NaN === NaN; // false
@@ -398,34 +416,35 @@ b === c; // false
 
 ### null과 undefined 비교
 
-일치 연산자 `===`를 제외하고 비교연산자는 null이나 undefined이 피연산자로 올 경우 원하지 않는 결과가 나올수 있으므로  
-주의해야한다. 따라서 변수가 null이나 undefined가 될 가능성이 있다고 판단되면 따로 처리하는 코드가 필요하다.
+일치 연산자 `===`를 제외하고 비교연산자는 `null`이나 `undefined`이 피연산자로 올 경우 원하지 않는 결과가 나올수 있으므로  
+주의해야한다. 따라서 변수가 `null`이나 `undefined`가 될 가능성이 있다고 판단되면 따로 처리하는 코드가 필요하다.
 
-```javascript
+```js
 alert(null === undefined); // false, 형이 다름
 alert(null == undefined); // true, 예외 규칙임
 alert(null < undefined); // false, null은 0, undefined는 NaN
 ```
 
-* null vs 0
+* `null` vs 0
 
-```javascript
+```js
 alert(null > 0); // false, 0 > 0 이므로
 alert(null == 0); // false, 동등연산자는 null이나 undefined는 형변환하지 않으므로 비교 불가
 alert(null >= 0); // true, 0 >= 0 -> 실제 이런 결과를 원하지 않을수도 있으므로 주의해야함.
 ```
 
-* 비교 불가능한 undefined
+* 비교 불가능한 `undefined`
 
-```javascript
+```js
 alert(undefined > 0); // false, NaN > 0
 alert(undefined < 0); // false, NaN < 0
 alert(undefined == 0); // false,  동등연산자는 null이나 undefined는 형변환하지 않으므로 비교 불가
 ```
 
+
 ## 논리 연산자
 
-피연산자가 boolean이 아닐 때 피연산자를 boolean으로 변환하여 비교하며,  
+피연산자가 `boolean`이 아닐 때 피연산자를 `boolean`으로 변환하여 비교하며,  
 리턴시엔 변환되기 전의 원래 값을 리턴한다.  
 
 ```js
@@ -433,8 +452,8 @@ undefined && 1; // false && true로 변환 후 비교, undefined 리턴
 true && '123'; // true && true로 변환 후 비교, '123' 리턴
 ```
 
-다른 연산자처럼 피연산자를 평가(evaluate)하는 과정을 거치는데,  
-함수의 경우 실행 후 리턴된 값을 boolean으로 변환하여 판단한다.  
+다른 연산자처럼 피연산자를 `평가(evaluate)`하는 과정을 거치는데,  
+함수의 경우 실행 후 리턴된 값을 `boolean`으로 변환하여 판단한다.  
 따라서 연산자에 따라 함수가 둘 다 실행될 수도 있고 좌변의 함수만 실행될 수도 있다.  
 
 ```js
@@ -442,10 +461,9 @@ alert(1) && alert(2); // alert(1)만 실행
 alert(1) || alert(2); // 둘 다 실행
 ```
 
-### `&&` 연산
+### `&&`, AND 연산
 
-좌변, 우변 모두 `true`여야 하는데,  
-좌변이 `false`일 때는 우변을 검사할 필요 없어 좌변 값을 리턴
+좌변, 우변 모두 `true`여야 하는데, 좌변이 `false`일 때는 우변을 검사할 필요 없어 좌변 값을 리턴한다. 즉, `false`를 만나면 검사 종료
 
 ```js
 undefined && 1; // false && 1로 변환하여 검사하지만 좌변이 false이므로 좌변의 값인 undefined가 리턴
@@ -468,10 +486,9 @@ console.log(`&&연산자: ${v1 && v2 && fn()}`); // 아래보다 더 좋은 예�
 console.log(`&&연산자: ${fn() && v1 && v2}`);
 ```
 
-### `||` 연산
+### `||`, OR 연산
 
-좌변, 우변 중 하나마 `true`이면 되므로,  
-좌변이 `true`일 때는 우변을 검사할 필요 없이 좌변 값을 리턴
+좌변, 우변 중 하나만 `true`이면 되므로, 좌변이 `true`일 때는 우변을 검사할 필요 없이 좌변 값을 리턴한다. 당연히 `true`가 없을때는 끝까지 검사 후 마지막 값을 리턴한다.
 
 ```js
 1 || false; // true || false -> 좌변 값인 1 리턴
@@ -481,6 +498,17 @@ console.log(`&&연산자: ${fn() && v1 && v2}`);
 
 ```js
 0 || null; // false || false -> 우변 값인 null 리턴
+```
+
+`alert()`은 `undefined`가 리턴된다.
+
+```js
+alert( alert(1) || 2 || alert(3) );
+/*
+alert()은 boolean값을 리턴하지 않고 undefined가 리턴되므로 alert(1)를 검사한 후 false로 판단,
+다음 값을 검사하고 2는 true이므로 2 그대로 리턴, 그것이 바깥 alert()의 값으로 들어가게 되어 결국 알럿 1, 2가 리턴된다.
+*/
+
 ```
 
 ### `&&`와 `||`로 만드는 삼항 연산자
@@ -508,7 +536,7 @@ false || 'not equal' -> ||연산의 좌변이 false이므로 우변 값 리턴
 
 ### `&&`와 `||` 연산자로 null 체크
 
-다음과 같이 객체에 접근하기 전에 null 객체인지, 아닌지를 검사하는데 유용하게 사용될 수 있다.  
+다음과 같이 객체에 접근하기 전에 `null` 객체인지, 아닌지를 검사하는데 유용하게 사용될 수 있다.  
 
 ```js
 var name = o && o.getName();
@@ -516,6 +544,26 @@ var name = o && o.getName();
 var name = otherName || "default";
 // otherName이 null이면 default 문자열을 name을 부여
 ```
+
+### `!`, NOT 연산자
+
+`boolean`값을 반대 값으로 변환한다. `&&`나 `||`보다 우선순위가 높다.
+
+```js
+alert( !true ); // false
+alert( !0 ); // true
+```
+
+`!!`형태로도 쓰이기도 하는데 이건 반대값을 다시 반대로 반환하기 때문에 결국 원래 `boolean` 평가값과 같고 `Boolean()`함수를 실행한것과 같다.
+
+```js
+alert( !!"non-empty string" ); // true
+alert( !!null ); // false
+
+alert( Boolean("non-empty string") ); // true
+alert( Boolean(null) ); // false
+```
+
 
 ## 비트 연산자
 
@@ -545,7 +593,7 @@ var name = otherName || "default";
 
 10진수 10 = 2진수 1010
 10진수 11 = 2진수 1011
-둘을 AND 연산한 결과는 1010
+둘을 `AND` 연산한 결과는 1010
 
 ```js
 10 & 11; // 10
@@ -562,7 +610,7 @@ var name = otherName || "default";
 
 10진수 10 = 2진수 1010
 10진수 11 = 2진수 1011
-둘을 OR 연산하여 결과는 1011
+둘을 `OR` 연산하여 결과는 1011
 
 ```js
 10 | 11; // 11
@@ -579,7 +627,7 @@ var name = otherName || "default";
 
 10진수 10은 2진수 1010
 10진수 11은 2진수 1011
-XOR 결과          0001
+`XOR` 결과          0001
 
 
 ```js
@@ -629,7 +677,7 @@ XOR 결과          0001
 
 ### 우측 시프트 연산자 `>>`
 
-`>>` 는 우변의 숫자 n만큼 2의 n제곱을 나누어 준다.
+`>>` 는 우변의 숫자 `n`만큼 2의 `n`제곱을 나누어 준다.
 
 ```js
 10 >> 1; // 5  ->  10 / (2의 1제곱)
@@ -677,6 +725,7 @@ XOR 결과          0001
 
 
 ### unsigned 우측 시프트 연산자 `>>>`
+
 양수의 경우 `>>` 와 같다. 음수의 경우만 `>>` 와 다른데, 부호 비트를 무시하고 전체를 시프트하기 때문에  
 가령 -10(1000000000...1010)을 우측으로 한 번 시프트하면 **2147483643(0100000000...101)**가 된다.  
 
@@ -687,14 +736,14 @@ XOR 결과          0001
 
 ## 삼항 연산자 `? :`
 
-조건 연산자 또는 선택 연산자. TRUE 혹은 FALSE에 해당하는 값을 리턴한다.
+조건 연산자 또는 선택 연산자. `TRUE` 혹은 `FALSE`에 해당하는 값을 리턴한다.
 
 ## 쉼표 연산자
 
 거의 쓰이지 않으나 코드를 짧게 쓰일 목적으로 가끔 사용  
 , 가 포함되어 있는 모든 표현식은 평가는 되지만 마지막 표현식의 결과만 리턴
 
-```javascript
+```js
 let a = (1 + 2, 3 + 4);
 alert(a); // `()` 안이 먼저 연산, 그 안의 1+2=3, 3+4=7 표현식중 마지막 3+4=7만 리턴, 3은 무시
 
@@ -702,7 +751,7 @@ a = 1 + 2, 3 + 4
 alert(a); // a = 3, 7로 `+`가 먼저 연산되어  a = 3, 7, `,`보다 `=`의 우선순위가 높아  a=3 리턴되고 7은 무시
 ```
 
-```javascript
+```js
 for(a = 1, b = 3, c = a * b; a < 10; a++){
  // c = a * b만 리턴?
 }
@@ -711,9 +760,9 @@ for(a = 1, b = 3, c = a * b; a < 10; a++){
 ## 단항연산자
 
 피연산자 `x` 하나만 받는 연산자는 단항연산자라고 한다.  
-피연산자(operand)는 인수(argument)라고도 한다.
+피연산자`(operand)`는 인수`(argument)`라고도 한다.
 
-```javascript
+```js
 let x = 5;
 x = -x;
 alert(x); // -5
@@ -732,7 +781,7 @@ delete fn.word; // true
 console.log(fn.word); // undefined
 ```
 
-객체의 프로퍼티만 삭제가 가능하므로, var 키워드로 정의된 변수나 함수 선언문으로 정의된 함수, 함수 매개변수는 삭제할 수 없다.  
+객체의 프로퍼티만 삭제가 가능하므로, `var` 키워드로 정의된 변수나 함수 선언문으로 정의된 함수, 함수 매개변수는 삭제할 수 없다.  
 
 ```js
 var aaa;
@@ -747,6 +796,7 @@ console.log(delete fn); // false
 
 연산자 다음에오는 변수, 함수, 객체 또는 표현식의 타입을 리턴한다.
 
+```js
 typeof "John"                     // "string"
 typeof 3.14                       // "number"
 typeof NaN                        // "number"
@@ -757,11 +807,11 @@ typeof new Date()                 // "object"
 typeof function() {}              // "function"
 typeof myCar                      // "undefined" (if myCar is not declared)
 typeof null                       // "object"
-
+```
 
 ### void
 
-피연산자를 실행하되 무조건 undefined를 리턴하는 연산자.
+피연산자를 실행하되 무조건 `undefined`를 리턴하는 연산자.
 
 ```js
 function bbb() {
@@ -771,7 +821,7 @@ console.log(bbb()); // 'hello world!'
 console.log(void bbb()); // undefined
 ```
 
-같은 이름의 void(any) 함수는 매개변수로 아무 값이나 받아도 상관없는 항상 undefined를 리턴하는 함수다.
+같은 이름의 `void(any)` 함수는 매개변수로 아무 값이나 받아도 상관없는 항상 `undefined`를 리턴하는 함수다.
 
 
 ## 관계 연산자
@@ -795,7 +845,7 @@ for (var ele in obj) {
 	console.log(obj[ele]); // 1, 2
 }
 ```
-단, 이 경우 해당 객체의 프로퍼티 중 객체가 소유한 프로퍼티(own properties)만 가져온다.
+단, 이 경우 해당 객체의 프로퍼티 중 객체가 소유한 프로퍼티`(own properties)`만 가져온다.
 즉, 프로포타입으로부터 상속받은 프로퍼티는 무시한다.
 
 ```js
@@ -816,9 +866,31 @@ var noob = new Newbie();
 noob instanceof Newbie; // true
 ```
 
+## Nullish coalescing operator, `??`
+
+피연산자 중 `null`이나 `undefined`가 아닌 값을 리턴한다. 즉, 검사 중 결과값이 정의된 값을 찾아 리턴한다.
+
+```js
+let user;
+alert(user ?? "Anonymous"); // Anonymous - user는 정의되지 않았으므로 정의여부를 확인할때 써도 유용할듯
+```
+
+`||` 연산자와 쓰임이 비슷해 보이나 `||`연산자는 `false, 0, null, undefined, ''`를 모두 `falsy`로 취급하므로 각각의 구분을 할 수가 없다.
+즉, `null/undefined`만 걸러내고 싶은 경우 `??`연산자를 사용할 수 있다.
+
+
+```js
+let height = 0;
+
+alert(height || 100); // 0 || 100의 비교로 0은 falsy이므로 truthly인 100을 리턴
+alert(height ?? 100); // height는 0으로 정의가 되어 있으므로 리턴
+```
+
+연산 우선순위는 낮은 편으로 필요하면 `()`로 묶어 우선순위를 높여야 한다. 최근에 추가된 연산자로 제공되지 않는 브라우저가 있을 수 있고 `&&`나 `||` 연산자와 혼용해서 쓸 때는 `()`로 우선순위를 지정해 주어야 한다.
+
 ##### 연습문제
 
-```javascript
+```js
 '' + 1 + 0 // 1 -> 10 --> ''이 `+` 로 엮일때는 문자열로 인식
 '' - 1 + 0 // -1 --> `-`는 숫자만 받으므로 ''를 0으로 인식
 true + false // 1
@@ -838,7 +910,8 @@ undefined + 1 // NaN
 
 
 * 결과가 12가 아닌 3이 되도록 수정하라
-```javascript
+
+```js
 let a = prompt('First number?', 1);
 let b = prompt('Second number?', 2);
 // alert(a + b); // 12
