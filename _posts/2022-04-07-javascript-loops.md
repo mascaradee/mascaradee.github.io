@@ -8,6 +8,9 @@ tags:
   - loops
   - while
   - for
+  - break
+  - continue
+  - label
 ---
 
 * Kramdown table of contents
