@@ -65,14 +65,14 @@ console.log(false == 0); // true - false는 0으로 치환후 계산
 console.log(true === 1); // false
 ```
 
-증감 연산자(++, --)를 사용할 때 숫자로 변환할 수 없는 값이면 `NaN`을 리턴한다.
+증감 연산자`(++, --)`를 사용할 때 숫자로 변환할 수 없는 값이면 `NaN`을 리턴한다.
 
 ```js
 var a = 'a';
 console.log(a++); // NaN
 ```
 
-객체는 모두 true다. 심지어 아무것도 없어도
+객체는 모두 `true`다. 심지어 아무것도 없어도
 
 ```js
 console.log(Boolean([])); // true
@@ -91,6 +91,7 @@ console.log(!!1); // 이 코드의 원래 의도는  Boolean(1) 요것이다.
 
 
 ### 명시적 타입 변환
+
 명시적으로 타입을 변환 시킬 때에는 `Boolean(), String(), Number(), Object()`을 이용하면 된다.
 
 ```js

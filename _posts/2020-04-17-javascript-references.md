@@ -28,6 +28,17 @@ tags:
 - [https://poiemaweb.com/coding](https://poiemaweb.com/coding)
 
 
+- [제이쿼리](https://api.jquery.com/)
+
+- [리액트](https://reactjs.org/)
+
+- [리액트 네이티브](https://reactnative.dev/)
+
+- [nodejs](https://nodejs.org/en/)
+
+- [ECMA2023](https://tc39.es/ecma262/)
+
+
 
 
 <br>
@@ -40,7 +51,7 @@ tags:
 - javascript : Dom, event, ajax
 - http
 - git
-- mpm : package management
+- npm : package management
 - 프레임워크: SPA, jQuery
 - TDD(Test Driven Developnment)
 

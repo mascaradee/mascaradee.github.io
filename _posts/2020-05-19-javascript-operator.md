@@ -259,7 +259,7 @@ n *= 3 + 5;
 alert (n); // 2 * ( 3 + 5) = 16 -> n *= 8이 먼저
 ```
 
-### 증가/감소 연산자
+### 증가/감소 연산자 `++`, `--`
 
 ```js
 let counter = 2;
@@ -461,7 +461,7 @@ alert(1) && alert(2); // alert(1)만 실행
 alert(1) || alert(2); // 둘 다 실행
 ```
 
-### `&&`, AND 연산
+### AND 연산 `&&`
 
 좌변, 우변 모두 `true`여야 하는데, 좌변이 `false`일 때는 우변을 검사할 필요 없어 좌변 값을 리턴한다. 즉, `false`를 만나면 검사 종료
 
@@ -486,7 +486,7 @@ console.log(`&&연산자: ${v1 && v2 && fn()}`); // 아래보다 더 좋은 예�
 console.log(`&&연산자: ${fn() && v1 && v2}`);
 ```
 
-### `||`, OR 연산
+### OR 연산 `||`
 
 좌변, 우변 중 하나만 `true`이면 되므로, 좌변이 `true`일 때는 우변을 검사할 필요 없이 좌변 값을 리턴한다. 당연히 `true`가 없을때는 끝까지 검사 후 마지막 값을 리턴한다.
 
@@ -545,7 +545,7 @@ var name = otherName || "default";
 // otherName이 null이면 default 문자열을 name을 부여
 ```
 
-### `!`, NOT 연산자
+### NOT 연산자 `!`
 
 `boolean`값을 반대 값으로 변환한다. `&&`나 `||`보다 우선순위가 높다.
 
@@ -738,6 +738,31 @@ alert( Boolean(null) ); // false
 
 조건 연산자 또는 선택 연산자. `TRUE` 혹은 `FALSE`에 해당하는 값을 리턴한다.
 
+```
+조건식 ? 조건이 참일때 표현식 혹은 값 : 조건이 거짓일때 표현식 혹은 값
+```
+
+```js
+let i = 1;
+let rs = (i = 0) ? '값 없음' : '값 있음'; // 값
+console.log(rs);
+
+(i = 0) ? alert('값 없음') : alert('값 있음'); // 표현식
+```
+
+삼항연산자는 표현식과 값을 사용할 수 있지만 `break`나 `continue` 같은 문법구문과는 함께 사용 할 수 없다.
+
+```js
+(i = 0) ? alert(i) : continue; // SyntaxError: Unexpected token 'continue'
+
+// 아래와 같이 사용은 가능
+if (i = 0) {
+  alert(i);
+} else {
+  continue;
+}
+```
+
 ## 쉼표 연산자
 
 거의 쓰이지 않으나 코드를 짧게 쓰일 목적으로 가끔 사용  
@@ -866,7 +891,7 @@ var noob = new Newbie();
 noob instanceof Newbie; // true
 ```
 
-## Nullish coalescing operator, `??`
+## Null 병합 연산자, Nullish coalescing operator `??`
 
 피연산자 중 `null`이나 `undefined`가 아닌 값을 리턴한다. 즉, 검사 중 결과값이 정의된 값을 찾아 리턴한다.
 
