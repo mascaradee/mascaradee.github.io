@@ -110,4 +110,89 @@ showCount(); // unknown
 ```
 
 
-### 반환값 return value
+### 리턴값
+
+함수 내부에서 `return [값]`을 만나면 수행을 멈추고 호출한 곳으로 결과를 리턴한다.
+
+```js
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert( result ); // 3
+```
+
+값이 없이 `return` 만 있는 경우는 함수 수행만 중단된다.
+
+```js
+let age = false;
+function showMovie(age) {
+  if ( !age ) {
+    return; // 이 시점에 showMovie() 함수가 종료되므로 다음 alert()은 실행되지 않는다.
+  }
+  alert( "Showing you the movie" );
+}
+```
+
+함수 바디에 내용이 없거나 `return`만 있는 경우 해당 함수는 `undefined`이다.
+
+```js
+function doNothing() { /* empty */ }
+alert( doNothing() === undefined ); // true
+
+function doNothing1() {
+  return;
+}
+alert( doNothing1() === undefined ); // true
+```
+
+자바스크립트는 `return` 다음에 세미콜론이 있다고 추정하기 때문에 `return`과 값 사이를 줄바꿈하면 동작하지 않는다. 값이 줄바꿈이 필요하면 괄호로 묶는 것은 허용된다.
+
+
+### 함수 네이밍
+
+함수명은 동사로 짓는다. 간결하게 해당 함수의 기능을 나타내게 지어야 한다.
+많이 쓰는 접두사는 아래와 같다.
+
+- show
+- get
+- calc
+- create
+- check
+
+함수마다 하나의 동작을 하도록 생성하는 것이 좋다. `getAge`라는 함수명이 있다면 이 함수에서는 나이를 얻는 동작만 해야 한다. 리턴받은 나이를 `alert()`등으로 노출을 하는 동작은 같이 있으면 좋지 않다.  
+함수 자체로 동작의 설명할 수 있도록 생성해야 한다.
+
+아래는 소수(1과 자기 자신으로만 나눠지는 수)를 구하는 예시이다. 소수를 구하는 동작과 구해진 소수를 `alert()`으로 노출하는 동작이 섞여 있다.
+
+```js
+function showPrimes(n) {
+  nextPrime: for (let i = 2; i < n; i++) {
+    for (let j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+    alert( i ); // a prime
+  }
+}
+```
+
+아래와 같이 또 다른 함수를 만드는 것이 더 좋은 예시이다.
+
+```js
+function showPrimes(n) {
+
+  for (let i = 2; i < n; i++) {
+    if (!isPrime(i)) continue;
+
+    alert(i);  // a prime
+  }
+}
+
+function isPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if ( n % i == 0) return false;
+  }
+  return true;
+}
+```
