@@ -16,7 +16,7 @@ tags:
 자바스크립트에서 함수는 함수 자체로 객체이며 매개변수로 전달 가능한 특성이 있다.  
 그래서 자바스크립트의 함수는 1급 함수라고 한다.  
 콜백 함수란 콜리가 주어진 일을 끝낸 후 콜러를 다시 호출하는 것을 개념적인 표현이다.  
-흔하 들어지는 예로 비동기 함수 setTimeout()가 있다.  
+흔하 들어지는 예로 비동기 함수 `setTimeout()`가 있다.  
 
 ```js
 function callback() {
@@ -28,7 +28,7 @@ setTimeout(callback, 2000);
 console.log("i'm off."); // 출력순서 2
 ```
 
-setTimeout을 동기적 작동 방식으로 구현하면
+`setTimeout`을 동기적 작동 방식으로 구현하면
 
 ```js
 function giveMeCallback(callme, mills) {
