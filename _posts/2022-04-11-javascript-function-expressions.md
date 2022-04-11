@@ -12,6 +12,9 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+## 참고
+[함수 표현식](https://javascript.info/function-expressions)
+
 ## 함수표현식
 
 함수를 정의하는 방법 중 선언식과 표현식이 있다. 선언식은 기존에 알던 방식이고 표현식은 변수에 함수를 할당하는 형태라고 보면 된다.
