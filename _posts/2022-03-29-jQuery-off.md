@@ -6,7 +6,6 @@ categories:
   - javascript
 tags:
   - jQuery
-  - off
   - bubble
   - event
   - method
