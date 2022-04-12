@@ -17,7 +17,8 @@ tags:
 
 ## 함수 functions
 
-동일한 기능의 중복코드를 방지하기 위한 방법
+동일한 기능의 중복코드를 방지하기 위한 방법.
+함수정의식은 중괄호에 의해 구분이 되므로 세미콜론은 생략 가능 하지만 함수표현식은 세미콜론이 필요.
 
 ```
 function name(parameter1, parameter2, ... parameterN) {

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-05-19 00:00:00 +0900
+date: 2020-05-19 10:00:00 +0900
 title: '[javascript] operator'
 categories:
   - javascript
@@ -941,4 +941,12 @@ let a = prompt('First number?', 1);
 let b = prompt('Second number?', 2);
 // alert(a + b); // 12
 alert(+a + +b); // 3
+```
+
+
+## 버림 연산자 `~~`
+
+```js
+let v = Math.floor(3.14); // 3
+let o = ~~3.14; // 3
 ```
