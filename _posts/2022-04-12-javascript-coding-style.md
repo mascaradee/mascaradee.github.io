@@ -170,4 +170,37 @@ function pow(x, n) {
 }
 ```
 
-###
+### 함수 위치
+
+함수선언문의 위치는 호출부와 상관없이 먼저 나오든 나중에 나오든 상관이 없다.(어차피 자바스크립트 엔진이 코드를 해석하기에 앞서 변수선언, 함수선언문 등을 먼저 생성해 놓기 때문이다.)  
+하지만 함수명만으로 함수가 어떤 일을 수행하는지 짐작이 된다면 호출부를 먼저 쓰는 것이 좋다. 굳이 함수를 분석하지 않아도 흐름을 이해할 수 있기 때문이다.
+
+```js
+// the code which uses the functions
+let elem = createElement();
+setHandler(elem);
+walkAround();
+
+// --- helper functions ---
+function createElement() {
+  ...
+}
+
+function setHandler(elem) {
+  ...
+}
+
+function walkAround() {
+  ...
+}
+```
+
+### 스타일 가이드 참고 사이트
+
+[Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html)
+[Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)
+[Idiomatic.JS](https://github.com/rwaldron/idiomatic.js)
+[StandardJS](https://standardjs.com/)
+
+
+### 서식 자동완성 툴 Linters

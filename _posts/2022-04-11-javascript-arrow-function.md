@@ -27,7 +27,7 @@ let func = (arg1, arg2, ..., argN) => expression;
 함수표현식으로는 아래와 같이 표현할 수 있다.
 
 ```
-let func = function(arg1, arg2, ..., argN) { expression }
+let func = function(arg1, arg2, ..., argN) { expression };
 ```
 
 만약 인수가 하나밖에 없다면 괄호도 생략 가능하다.

@@ -42,7 +42,6 @@ console.log(getFriutsPrice('grape')) // 10000
 아래처럼
 
 ```js
-
 const getFriutsPrice = (name) => {
 
   const fruitsMap = {

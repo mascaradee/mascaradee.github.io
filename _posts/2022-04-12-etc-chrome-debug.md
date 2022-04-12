@@ -14,5 +14,5 @@ tags:
 
 ## 참고
 
-[크롬 개발자도구 가이드](https://developer.chrome.com/docs/devtools/)
+[크롬 개발자도구 가이드](https://developer.chrome.com/docs/devtools/)  
 [크롬 개발자도구 디버깅 가이드](https://javascript.info/debugging-chrome)
