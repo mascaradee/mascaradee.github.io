@@ -34,8 +34,9 @@ tags:
 - 실시간 서버 : `LIVE SERVER`
 - `html`에서 먼저 클래스 정의한 다음 `css` 파일에서 자동 완성 가능 : `html to css autocompletion`
 - 포맷터 : `Prettier`
-    - 세팅    
-      1) `Editor`: `Format On Save` - 파일 저장 시 포맷체크
-      2) `Prettier`: `Tab Width` - 탭키 = 스페이스 2로(소스 길어지면 가독성 떨어지므로 )
-      3) `JavaScript> Preferences`: `Quote Style - Single`로 변경
-      4) `TypeScript> Preferences`: `Quote Style - Single`로 변경
+
+- 세팅    
+  1) `Editor`: `Format On Save` - 파일 저장 시 포맷체크
+  2) `Prettier`: `Tab Width` - 탭키 = 스페이스 2로(소스 길어지면 가독성 떨어지므로 )
+  3) `JavaScript> Preferences`: `Quote Style - Single`로 변경
+  4) `TypeScript> Preferences`: `Quote Style - Single`로 변경
