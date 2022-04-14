@@ -59,6 +59,149 @@ describe("pow", function() {
 
 - [모카](https://mochajs.org/)는 `describe`와 `it` 같은 테스트를 위한 함수를 제공해 주는 프레임웍이다.
 - [차이](https://www.chaijs.com/)는 여러 종류의`assertions`을 제공해 주는 라이브러리다.
-- [사이논](https://sinonjs.org/)은 함수를 감시하고 내장 함수를 사용할 수 있게 해 주는 라이브러리다.
+- [사이논](https://sinonjs.org/)은 함수를 감시하고 내장 함수를 사용할 수 있게 해 주는 라이브러리다.  
+- [카르마](https://karma-runner.github.io/latest/index.html)는 여기서는 미사용
 
 이 라이브러리는 브라우저와 서버사이드 모두 테스트가 가능하다.
+
+
+## 실제 활용 예시
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- add mocha css, to show results -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- add mocha framework code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // minimal setup
+  </script>
+  <!-- add chai -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+  <script>
+    // chai has a lot of stuff, let's make assert global
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+
+  <script>
+    function pow(x, n) {
+      /* function code is to be written, empty now */
+    }
+  </script>
+
+  <!-- the script with tests (describe, it...) -->
+  <!-- <script src="test.js"></script> -->
+  <script>
+    // 외부파일 임포트가 되지 않아 아래와 같이 사용함.
+    describe("pow", function () {
+      it("raises to n-th power", function () {
+        assert.equal(pow(2, 3), 8);
+      });
+    });
+  </script>
+
+  <!-- the element with id="mocha" will contain test results -->
+  <div id="mocha"></div>
+
+  <!-- run tests! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>
+```
+
+위 코딩을 실행하면 아래와 같은 화면을 볼수 있다.
+
+[모카테스트 초기화면](/images/mocha-test-init.png)
+
+현재는 함수는 코드가 없이 비어 있고 `return`이 없으면 `undefined`를 반환하기 때문에 8과 같지 않아 에러가 나온다.
+
+### 초기 구현
+
+이제 `pow`함수를 수정해 테스트를 통과하게 해 보자.
+
+```js
+function pow(x, n) {
+  return 8; // :) we cheat!
+}
+```
+[모카테스트 초기구현 결과](/images/mocha-test-initial-implementation.png)
+
+### 사양 개선
+
+위에서는 하드코딩으로 억지로 테스트를 통과하게 만든 것이다. 이제 다른 테스트케이스를 추가해서 테스트해 보자.
+
+```js
+describe("pow", function () {
+  it("raises to n-th power", function () {
+    assert.equal(pow(2, 3), 8);
+    assert.equal(pow(3, 4), 81); // 2. 추가 테스트케이스를 작성한다.
+  });
+});
+```
+
+첫번째 `assert.equal`은 통과했지만 무조건 8을 리턴하게 되어 있어 두번째는 실패하게 된다.  
+하지만 위 코드로는 어떤 것이 실패했는지 구분할 수 없다.  
+`assert`문은 에러가 나면 바로 `it`블록이 종료된다. 위 케이스와는 다르지만 첫번째 `assert`문이 실패하면 두번째는 영영 실행되지 않는 상황이 발생할 수도 있다.
+
+[모카테스트 추가케이스 결과](/images/mocha-test-second-test.png)
+
+따라서 테스트 케이스를 나누어 `it`블록에 하나씩 배정하면 테스트 결과를 각각 얻을 수 있어 더 유용하다.
+
+```js
+describe("pow", function () {
+  it("2 raised to power 3 is 8", function () {
+    assert.equal(pow(2, 3), 8);
+  });
+  it("3 raised to power 4 is 81", function () {
+    assert.equal(pow(3, 4), 81);
+  });
+});
+```
+
+[모카테스트 케이스당 하나의 테스트 결과](/images/mocha-test-one-for-one.png)
+
+### 구현 개선
+
+이제 2번째 케이스도 통과할 수 있도록 함수를 수정해 보자.
+
+```js
+function pow(x, n) {
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+```
+
+[모카테스트 구현 개선 결과](/images/mocha-test-improving-implementation.png)
+
+반복문을 이용해서 테스트 케이스를 더 많이 만들어 보자.
+
+```js
+describe("pow", function() {
+
+  function makeTest(x) {
+    let expected = x * x * x;
+    it(`${x} in the power 3 is ${expected}`, function() {
+      assert.equal(pow(x, 3), expected);
+    });
+  }
+
+  for (let x = 1; x <= 5; x++) {
+    makeTest(x);
+  }
+
+});
+```
+[모카테스트 테스트 개선 결과](/images/mocha-test-improving-test.png)
