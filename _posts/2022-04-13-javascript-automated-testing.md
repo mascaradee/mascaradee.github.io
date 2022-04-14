@@ -30,7 +30,7 @@ tags:
 
 `x`의 `n`제곱값을 구하는 `pow(x, n)`함수를 만들어 보자. `n`은 0보다 큰 정수이다. 물로 `**`연산자를 이용하면 쉽게 만들 수 있지만 여기선 개발하는 과정에 집중해 보자.  
 
-함수를 만들기 전에 어떤 기능을 하는지와 구체적인 예시가 들어 있는 `사양(specification, spec)`을 적어본다.
+함수를 만들기 전에 어떤 기능을 하는지와 구체적인 예시가 들어 있는 `사양(specification, spec)`을 적어본다. 사양은 테스트 케이스라고 봐두 무방할 듯.
 
 ```js
 describe("pow", function() {
@@ -119,7 +119,7 @@ describe("pow", function() {
 
 위 코딩을 실행하면 아래와 같은 화면을 볼수 있다.
 
-[모카테스트 초기화면](/images/mocha-test-init.png)
+![모카테스트 초기화면](/images/mocha-test-init.png)
 
 현재는 함수는 코드가 없이 비어 있고 `return`이 없으면 `undefined`를 반환하기 때문에 8과 같지 않아 에러가 나온다.
 
@@ -132,7 +132,7 @@ function pow(x, n) {
   return 8; // :) we cheat!
 }
 ```
-[모카테스트 초기구현 결과](/images/mocha-test-initial-implementation.png)
+![모카테스트 초기구현 결과](/images/mocha-test-initial-implementation.png)
 
 ### 사양 개선
 
@@ -151,7 +151,7 @@ describe("pow", function () {
 하지만 위 코드로는 어떤 것이 실패했는지 구분할 수 없다.  
 `assert`문은 에러가 나면 바로 `it`블록이 종료된다. 위 케이스와는 다르지만 첫번째 `assert`문이 실패하면 두번째는 영영 실행되지 않는 상황이 발생할 수도 있다.
 
-[모카테스트 추가케이스 결과](/images/mocha-test-second-test.png)
+![모카테스트 추가케이스 결과](/images/mocha-test-second-test.png)
 
 따라서 테스트 케이스를 나누어 `it`블록에 하나씩 배정하면 테스트 결과를 각각 얻을 수 있어 더 유용하다.
 
@@ -166,7 +166,7 @@ describe("pow", function () {
 });
 ```
 
-[모카테스트 케이스당 하나의 테스트 결과](/images/mocha-test-one-for-one.png)
+![모카테스트 케이스당 하나의 테스트 결과](/images/mocha-test-one-for-one.png)
 
 ### 구현 개선
 
@@ -184,7 +184,7 @@ function pow(x, n) {
 }
 ```
 
-[모카테스트 구현 개선 결과](/images/mocha-test-improving-implementation.png)
+![모카테스트 구현 개선 결과](/images/mocha-test-improving-implementation.png)
 
 반복문을 이용해서 테스트 케이스를 더 많이 만들어 보자.
 
@@ -204,4 +204,166 @@ describe("pow", function() {
 
 });
 ```
-[모카테스트 테스트 개선 결과](/images/mocha-test-improving-test.png)
+![모카테스트 테스트 개선 결과](/images/mocha-test-improving-test.png)
+
+### 테스트별 그룹화
+
+연관있는 코드를 묶어 그룹을 지을수 있다. 다른 테스트케이스에서는 해당 코드를 참조하지 않게 된다.  
+
+`describe("raises x to power 3", function() {})` 부분을 추가하여 서브 그룹을 만들 수 있다.  
+
+```js
+describe("pow", function() {
+
+  describe("raises x to power 3", function() {
+
+    function makeTest(x) {
+      let expected = x * x * x;
+      it(`${x} in the power 3 is ${expected}`, function() {
+        assert.equal(pow(x, 3), expected);
+      });
+    }
+
+    for (let x = 1; x <= 5; x++) {
+      makeTest(x);
+    }
+
+  });
+
+  // ... more tests to follow here, both describe and it can be added
+});
+```
+
+입력 숫자의 4제곱값을 구하는 테스트 케이스를 만든다면 아래와 같이 추가하면 될듯... 근데 이렇게 하는게...?
+
+
+```js
+describe("pow", function() {
+
+  describe("raises x to power 3", function() {
+
+    function makeTest(x) {
+      let expected = x * x * x;
+      it(`${x} in the power 3 is ${expected}`, function() {
+        assert.equal(pow(x, 3), expected);
+      });
+    }
+
+    for (let x = 1; x <= 5; x++) {
+      makeTest(x);
+    }
+
+  });
+
+  describe("raises x to power 4", function() {
+
+    function makeTest(x) {
+      let expected = x * x * x * x;
+      it(`${x} in the power 4 is ${expected}`, function() {
+        assert.equal(pow(x, 4), expected);
+      });
+    }
+
+    for (let x = 1; x <= 5; x++) {
+      makeTest(x);
+    }
+
+  });
+
+});
+```
+
+![모카테스트 테스트케이스 그룹화](/images/mocha-test-improving-test2.png)
+
+#### 전후 처리
+
+[테스트 케이스 전후 처리 샘플](https://plnkr.co/edit/dzTS0YboAN3Wqke4?p=preview&preview)
+
+### 사양 확장
+
+`pow(x, n)` 함수의 `n`은 정수로 제한이 되어 있다. 그 조건을 충족하지 않는 예외 케이스를 추가해 보자.
+
+```js
+describe("pow", function() {
+
+  // ...
+
+  it("for negative n the result is NaN", function() {
+    assert.isNaN(pow(2, -1));
+  });
+
+  it.("for non-integer n the result is NaN", function() {
+    assert.isNaN(pow(2, 1.5));
+  });
+
+});
+```
+
+![모카테스트 예외케이스 추가 결과](/images/mocha-test-improving-test3.png)
+
+함수에 예외 케이스를 통과할 수 있는 조건을 추가해 보자
+
+```js
+function pow(x, n) {
+  if (n < 0) return NaN;
+  if (Math.round(n) != n) return NaN;
+
+  let result = 1;
+
+  for (let i = 0; i < n; i++) {
+    result *= x;
+  }
+
+  return result;
+}
+```
+![모카테스트 예외조건 수정 결과](/images/mocha-test-improving-implementation2.png)
+
+
+추가로 `it.only`를 쓰면 해당 테스트만 진행이 된다. 
+
+```js
+describe("Raises x to power n", function() {
+  it("5 in the power of 1 equals 5", function() {
+    assert.equal(pow(5, 1), 5);
+  });
+
+  // Mocha will run only this block
+  it.only("5 in the power of 2 equals 25", function() {
+    assert.equal(pow(5, 2), 25);
+  });
+
+  it("5 in the power of 3 equals 125", function() {
+    assert.equal(pow(5, 3), 125);
+  });
+});
+```
+
+
+### assertions
+
+```
+assert.isNaN - it checks for NaN.
+assert.equal(value1, value2) – checks the equality value1 == value2.
+assert.strictEqual(value1, value2) – checks the strict equality value1 === value2.
+assert.notEqual, assert.notStrictEqual – inverse checks to the ones above.
+assert.isTrue(value) – checks that value === true
+assert.isFalse(value) – checks that value === false
+```
+
+
+## 요약
+
+`BDD`는 `spec`을 먼저 작성한후 구현체를 만든다.
+
+`spec`은 3가지로 사용된다.
+
+1. 테스트: 코드가 정확히 작동하는 것을 보장해 준다.
+2. 문서: `describe`와 `it`의 제목만으로도 함수가 어떤 기능을 하는지 알수 있다.
+3. 예시: 예시를 통해 함수를 어떻게 사용할 수 있는지 보여준다.
+
+`spec`을 통해서 함수를 개선하고 변경하면서 잘 작동하게 만들 수 있다. 여로 곳에서 쓰이는 함수를 수정해야 할 때, 수정 후 그 함수를 사용하는 모든 곳에서 잘 작동하는지 수동으로 일일이 체크할 수 없기 때문에 더욱 중요한 방법이다.   
+
+테스트 없다면 사용자가 버그를 만날 수도 있고 혹은 오류의 책임이 무겁다면 프로그램 수정을 제대로 하지 않을 가능성도 생기게 된다.    
+
+잘 만든 테스트 코드가 더 나은 구조를 만들 수 있다. 자동 테스트 코드는 수정이나 개선이 더 쉽고, 테스트 코드를 만들기 위해서는 함수의 정의가 명확히 할 수밖에 없다. 이것이 좋은 구조의 시작이다.
