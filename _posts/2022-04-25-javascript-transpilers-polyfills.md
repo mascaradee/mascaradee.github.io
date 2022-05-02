@@ -47,7 +47,7 @@ height = (height !== undefined && height !== null) ? height : 100
 Math.trunc(1.23); // 1
 ```
 
- `Math`는 여러 내장 함수를 가지고 있었지만 `trunc()`는 최근에 추가되었고 이렇게 업데이트되거나 추가되는 함수의 스크립트를 폴리필이라고 한다. 아래가 그것으로 격차를 "채우고" 누락된 구현을 추가한다. 
+ `Math`는 여러 내장 함수를 가지고 있었지만 `trunc()`는 최근에 추가되었고 이렇게 업데이트되거나 추가되는 함수의 스크립트를 폴리필이라고 한다. 아래가 그것으로 격차를 "채우고" 누락된 구현을 추가한다.
 
  ```js
  if (!Math.trunc) { // if no such function
@@ -57,6 +57,38 @@ Math.trunc(1.23); // 1
     // they are covered later in the tutorial
     return number < 0 ? Math.ceil(number) : Math.floor(number);
   };
+}
+```
+
+실제 내가 사용했던 예시로 `document.ready()`보다도 더 먼저 읽혀야 한다. `html` 최상단에 위치하도록 한다. `polyfill`의 상세코드는 `mdn`사이트에서 참고할 수 있다.
+
+[padStart polyfill 참고](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+
+```html
+<head>
+<script type="text/javascript" src="/js/apolo/base/polyfill.js"></script>
+</head>
+```
+
+```js
+/**
+ * 폴리필. IE 등의 브라우저에 없는 함수가 있으면 만든다.
+ */
+// https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+if (!String.prototype.padStart) {
+    String.prototype.padStart = function padStart(targetLength, padString) {
+        targetLength = targetLength >> 0;
+        padString = String(typeof padString !== 'undefined' ? padString : ' ');
+        if (this.length > targetLength) {
+            return String(this);
+        } else {
+            targetLength = targetLength - this.length;
+            if (targetLength > padString.length) {
+                padString += padString.repeat(targetLength / padString.length);
+            }
+            return padString.slice(0, targetLength) + String(this);
+        }
+    };
 }
 ```
 
