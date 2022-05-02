@@ -3,9 +3,10 @@ layout: post
 date: 2022-04-25 09:51:00 +0900
 title: '[javascript] 트랜스파일러와 폴리필 transpilers and polyfills'
 categories:
-  -
+  - javascript
 tags:
-  -
+  - transpilers
+  - polyfills
 ---
 
 * Kramdown table of contents
@@ -66,7 +67,7 @@ Math.trunc(1.23); // 1
 
 ```html
 <head>
-<script type="text/javascript" src="/js/apolo/base/polyfill.js"></script>
+<script type="text/javascript" src="/js/polyfill.js"></script>
 </head>
 ```
 
