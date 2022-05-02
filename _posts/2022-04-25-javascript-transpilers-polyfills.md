@@ -60,7 +60,7 @@ Math.trunc(1.23); // 1
 }
 ```
 
-실제 내가 사용했던 예시로 `document.ready()`보다도 더 먼저 읽혀야 한다. `html` 최상단에 위치하도록 한다. `polyfill`의 상세코드는 `mdn`사이트에서 참고할 수 있다.
+실제 내가 사용했던 예시로 `polyfill`코드는 `document.ready()`보다도 더 먼저 읽혀야 한다. `html` 최상단에 위치하도록 한다. `polyfill`의 상세코드는 `mdn`사이트에서 참고할 수 있다.
 
 [padStart polyfill 참고](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
 
