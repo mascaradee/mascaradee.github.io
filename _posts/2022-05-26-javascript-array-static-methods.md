@@ -19,5 +19,12 @@ tags:
 
 ## .from()
 
+배열로 변환 가능한 것 또는 반복가능한 객체를 배열로 바꿔준다.
+
 `Array.from(arrayLike)`
-`Array.from(arrayLike, function())`
+`Array.from(arrayLike, function(){})`
+
+```js
+let arrLike = 'abc';
+Array.from(arrLike); // [a, b, c]
+```
