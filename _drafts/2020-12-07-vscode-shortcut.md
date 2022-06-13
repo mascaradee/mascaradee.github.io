@@ -34,6 +34,8 @@ tags:
 - 실시간 서버 : `LIVE SERVER`
 - `html`에서 먼저 클래스 정의한 다음 `css` 파일에서 자동 완성 가능 : `html to css autocompletion`
 - 포맷터 : `Prettier`
+- Numbering: 멀티캐럿으로 일련번호 넣을 수 있음 
+  - [Numbering](https://marketplace.visualstudio.com/items?itemName=faressoft.numbering)
 
 - 세팅    
   1) `Editor`: `Format On Save` - 파일 저장 시 포맷체크
