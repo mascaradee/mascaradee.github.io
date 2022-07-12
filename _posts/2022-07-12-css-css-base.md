@@ -40,27 +40,27 @@ selector {
 
 블록,인라인 요소의 속성을 무시하고 수동으로 블록, 인라인 속성으로 변경 할 수 있는 property.
 
-- inline: 설정된 사이즈와 상관없이 컨텐츠를 인라인으로 만든다. 
-- inline-block: 컨텐츠와 상관없이 설정된 사이즈에 맞춰 블록이 생기지만 해당 블록이 일렬로 생성된다.
-- block: 설정된 사이즈에 맞춰 한 줄에 하나의 블록이 생긴다.
+- `inline`: 설정된 사이즈와 상관없이 컨텐츠를 인라인으로 만든다. 
+- `inline-block`: 컨텐츠와 상관없이 설정된 사이즈에 맞춰 블록이 생기지만 해당 블록이 일렬로 생성된다.
+- `block`: 설정된 사이즈에 맞춰 한 줄에 하나의 블록이 생긴다.
 
 
 ## position
 
 블록의 위치를 조정한다. 
 
-- static: 기본설정, 태그순서대로 그대로 보여준다. 
-- relative: 내 위치기준에서 주어진 위치로 변경한다.
-- absolute: 나를 감싸고 있는 박스 기준에서 주어진 위치로 변경한다. 
-- fixed: window page 기준에서 주어진 위치로 변경한다. 
-- sticky: 스크롤이 되어도 위치 변경이 이루어 지지 않는다. 
+- `static`: 기본설정, 태그순서대로 그대로 보여준다. 
+- `relative`: 내 위치기준에서 주어진 위치로 변경한다.
+- `absolute`: 나를 감싸고 있는 박스 기준에서 주어진 위치로 변경한다. 
+- `fixed`: window page 기준에서 주어진 위치로 변경한다. 
+- `sticky`: 스크롤이 되어도 위치 변경이 이루어 지지 않는다. 
 
 
 ## float
 
 이미지와 텍스트의 배열을 조정한다. 
 
-- left, right, center
+- `left, right, center`
 
 
 # flex box
@@ -69,13 +69,13 @@ selector {
 
 ## container에 적용할 수 있는 property
 
-- display
-- flex-direction
-- flex-wrap
-- flex-flow
-- justify-content
-- align-items
-- align-content
+- `display`
+- `flex-direction`
+- `flex-wrap`
+- `flex-flow`
+- `justify-content`
+- `align-items`
+- `align-content`
 
 
 `display: flex;`   
@@ -96,8 +96,8 @@ flex box 사용알림
 
 줄바꿈을 하겠다. 
 
-- nowrap
-- wrap 
+- `nowrap`
+- `wrap` 
 
 `flex-flow: row nowrap`  
 
@@ -108,12 +108,12 @@ flex box 사용알림
 
 중심축에서 아이템의 정렬은 그대로 유지한채 배치만 변경한다. 
 
-- flex-start
-- flex-end
-- center
-- space-around
-- space-evenly
-- space-between
+- `flex-start`
+- `flex-end`
+- `center`
+- `space-around`
+- `space-evenly`
+- `space-between`
 
 
 
@@ -121,8 +121,8 @@ flex box 사용알림
 
 반대축에서 아이템의 정렬을 정한다. 
 
-- center
-- baseline
+- `center`
+- `baseline`
 
 
 `align-content`
@@ -133,11 +133,11 @@ flex box 사용알림
 
 ## item에 적용할 수 있는 property
 
-- order
-- flex-grow
-- flex-shrink
-- flex
-- align-self
+- `order`
+- `flex-grow`
+- `flex-shrink`
+- `flex`
+- `align-self`
 
 
 `order: 1`  
