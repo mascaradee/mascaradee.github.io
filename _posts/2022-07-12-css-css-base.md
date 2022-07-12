@@ -14,10 +14,10 @@ tags:
 # CSS
 
 ## 참고
-[CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
-[CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
-[CSS properties reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)
-[flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+[CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)  
+[CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)  
+[CSS properties reference](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Properties_Reference)  
+[flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)  
 
 ## selectors
 
