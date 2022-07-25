@@ -15,7 +15,10 @@ tags:
 
 ## 참고 
 
-[padStart](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+- [padStart](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+- [padEnd](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padEnd)
+- [repeat](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)
+
 
 ## 문자열에 특정길이만큼 원하는 문자 덧붙이기
 
