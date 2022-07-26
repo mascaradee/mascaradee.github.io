@@ -1,12 +1,13 @@
 ---
 layout: post
 date: 2022-07-26 19:05:00 +0900
-title: '[javascript] localeCompare 문자열 비교'
+title: '[javascript] localeCompare 문자열 비교하고 정렬까지'
 categories:
   - javascript
 tags:
   - javascript
   - localeCompare
+  - sort
 ---
 
 * Kramdown table of contents
@@ -35,7 +36,7 @@ let number = referenceStr.localeCompare(compareString, locales, options)
 - `number`:  `referenceStr`이 `compareString`보다 크면 1, 작으면 -1, 같으면 0으로 반환된다.
 
 
-```js
+```js'
 'a'.localeCompare('z'); // -1
 'ä'.localeCompare('a', 'de', { sensitivity: 'base' }); // 0 , 독일어
 'ä'.localeCompare('a', 'sv', { sensitivity: 'base' }); // 1 , 스웨덴어
