@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2022-08-10 19:05:00 +0900
-title: '[javascript] d day까지 남은 날은?'
+date: 2022-08-10 00:00:00 +0900
+title: '[javascript] d-day까지 남은 날은?'
 categories:
   - javascript
 tags:
