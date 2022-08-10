@@ -3,9 +3,10 @@ layout: post
 date: 2022-07-29 19:05:00 +0900
 title: '[javascript] Gauss 가우스 합산, 등차수열의 합공식'
 categories:
-  -
+  - javascript
 tags:
-  -
+  - gauss
+  - summation
 ---
 
 * Kramdown table of contents
