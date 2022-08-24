@@ -36,6 +36,8 @@ tags:
 - 포맷터 : `Prettier`
 - Numbering: 멀티캐럿으로 일련번호 넣을 수 있음 `ctrl+shif+alt+n`
   - [Numbering](https://marketplace.visualstudio.com/items?itemName=faressoft.numbering)
+- vim: vscode 내에서 vi 명령어를 사용할 수 있음.
+
 
 - 세팅    
   1) `Editor`: `Format On Save` - 파일 저장 시 포맷체크
