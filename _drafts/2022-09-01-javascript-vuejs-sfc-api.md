@@ -1,0 +1,124 @@
+---
+layout: post
+date: 2022-09-01 10:05:00 +0900
+title: '[javascript] vue 포맷과 API방식'
+categories:
+  - javascript
+tags:
+  - vuejs
+  - sfc
+  - optionsAPI
+  - compositionAPI
+
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+## 참조
+
+[Vue 포맷과 API방식](https://vuejs.org/guide/introduction.html#api-styles)
+
+## Vuejs 포맷
+
+### SFC Single-File-Component 
+
+`SFC(Single-File-Component)`포맷을 사용한다. 빌드툴을 사용가능한 `Vue` 프로젝트에서  `.vue`라는 파일명으로 만들어지고 형태는 `html`과 유사하다.
+
+`<script>`, `<template>`, `<style>` 로 구분되어 각 로직, 돔, 스타일로 구분하여 작성할 수 있다.
+
+```html
+<script>
+  export default {
+    data() { },
+    method: { },
+    mounted() { }
+  }
+</script>
+
+<template>
+  <h1>Make me dynamic!</h1>
+</template>
+
+<style>
+</style>
+```
+
+
+물론 `html` 내에 `vue`를 임포트하여 사용할 수도 있다. 
+
+```html
+<script type="module">
+import { createApp } from 'vue'
+
+createApp({
+  // component options
+  // declare some reactive state here.
+}).mount('#app')
+</script>
+
+<div id="app">
+  <h1>Make me dynamic!</h1>
+</div>
+
+<style>
+</style>
+```
+
+
+## API 방식
+
+`Options API` 방식과  `Composiotn API`방식 2가지로 사용할 수 있다. `Options API`방식은 `Composiotn API`로부터 구현된 것으로 `Composiotn API`는 `Options API`보다 덜 형식적이고 좀 더 자유롭게 사용할 수 있다. 보통은 복잡하고 큰 프로젝트에서 사용하는 듯.
+
+### Options API 방식
+
+`data, methods, mounted` 컴포넌트 옵션객체를 직접 이용해서 컴포넌트 로직을 정의한다. 
+
+```html
+<script>
+  export default {
+    // data()메소드에서 리턴된 프로퍼티 = this 로 반응 상태다.
+    data() {
+      return {
+        count: 0
+      }
+    },
+    // 이벤트리스너로 사용할수 있다.
+    method: {
+      increment() {
+        this.count++
+      }
+    },
+    // 컴포넌트가 마운트되면 호출된다.
+    mounted() {
+      console.log(`The initial count is ${this.count}`)
+    }
+  }
+</script>
+<template>
+  <button @click="increment">Count is: {{ count }}</button>
+</template>
+```
+
+### Composition API 방식
+
+`import`된 `API 함수`를 이용해서 컴포넌트 로직을 정의한다. 전형적으로 `<scitpt setup>`을 이용한다. `setup` 속성으로 미리 정의 된 `imports, top-level변수, 함수`를 사용할 수 있게 된다. 
+
+```html
+<script setup>
+  import { ref, onMounted } from 'vue'
+
+  const count = ref(0)
+
+  function increment() {
+    count.value++
+  }
+
+  onMounted(() => {
+    console.log(`The initial count is ${this.count}`)
+  })
+</script>
+<template>
+  <button @click="increment">Count is: {{ count }}</button>
+</template>
+```
