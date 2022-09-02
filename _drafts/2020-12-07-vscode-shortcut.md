@@ -26,7 +26,7 @@ tags:
 
 - 색상, 테마 : `Material theme`
 - 아이콘 이쁘게 : `Material icon theme`
-- 괄호끼리 색깔로 연결 : `bracket pair colorizer`
+- 괄호끼리 색깔로 연결 : `bracket pair colorizer` -> vscode 내장으로 변경
 - 들여쓰기별로 색깔 : `Indent-rainbow`
 - `html`에서 앞에 태그를 변경하면 짝궁 `end` 태그도 같이 바뀜 : `Auto rename tag`
 - `ctrl + 원하는 css`를 누름 정의된 `css` 파일로 찾아감 : `CSS PEEK`
