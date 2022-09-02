@@ -13,7 +13,7 @@ tags:
 
 ## 참조
 
-[Vue 기초 튜토리얼](https://vuejs.org/tutorial/#step-3)
+[Vue 기초 튜토리얼](https://vuejs.org/tutorial/#step-3)  
 
 
 
