@@ -32,4 +32,19 @@ git checkout -b feature/event/12345 origin/feature/event/12345
 git push --set-upstream origin feature/event/12345
 ```
 
-## gc
+## config
+
+git 설정으로 명령어에 따라 `--list` 전체 설정, `--local` 현재 저장소 설정을, `--global` 현재 로그인한 사용자의 설정으로 저장소별 별도 설정이 없으며 모두 이 설정을 따른다.
+
+```git
+git config --list
+git config -l --local
+git config -l --global
+```
+
+사용자의 이름, 이메일 설정 
+
+```git
+git config --global user.name "이름"
+git config --global user.email "이메일"
+```
