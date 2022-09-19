@@ -1,12 +1,11 @@
 ---
 layout: post
 date: 2022-09-01 10:05:00 +0900
-title: '[javascript] vue 포맷과 API방식'
+title: '[javascript] Vue API방식'
 categories:
   - javascript
 tags:
   - vuejs
-  - sfc
   - optionsAPI
   - compositionAPI
 
@@ -18,52 +17,6 @@ tags:
 ## 참조
 
 [Vue 포맷과 API방식](https://vuejs.org/guide/introduction.html#api-styles)
-
-## Vuejs 포맷
-
-### SFC Single-File-Component 
-
-`SFC(Single-File-Component)`포맷을 사용한다. 빌드툴을 사용가능한 `Vue` 프로젝트에서  `.vue`라는 파일명으로 만들어지고 형태는 `html`과 유사하다.
-
-`<script>`, `<template>`, `<style>` 로 구분되어 각 로직, 돔, 스타일로 구분하여 작성할 수 있다.
-
-```html
-<script>
-  export default {
-    data() { },
-    method: { },
-    mounted() { }
-  }
-</script>
-
-<template>
-  <h1>Make me dynamic!</h1>
-</template>
-
-<style>
-</style>
-```
-
-
-물론 `html` 내에 `vue`를 임포트하여 사용할 수도 있다. 
-
-```html
-<script type="module">
-import { createApp } from 'vue'
-
-createApp({
-  // component options
-  // declare some reactive state here.
-}).mount('#app')
-</script>
-
-<div id="app">
-  <h1>Make me dynamic!</h1>
-</div>
-
-<style>
-</style>
-```
 
 
 ## API 방식
