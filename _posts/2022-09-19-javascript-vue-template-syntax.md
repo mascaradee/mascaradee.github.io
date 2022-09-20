@@ -10,6 +10,8 @@ tags:
   - mustache
   - v-html
   - v-bind
+  - v-if
+  - v-on
 ---
 
 * Kramdown table of contents
