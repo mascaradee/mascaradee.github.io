@@ -140,7 +140,7 @@ v-bind:class
 여러 개의 속성은 `v-bind`에 객체를 바인딩하여 사용한다. 
 
 
-```script
+```
 data() {
   return {
     objectOfAttrs: {
