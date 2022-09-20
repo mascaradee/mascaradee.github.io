@@ -29,7 +29,7 @@ tags:
 `vue`의 특징인 `반응성(reactivity)`이 적용되어 데이터가 변경되면 `DOM`에 실시간 렌더링이 된다. 
 
 
-# 문자열 바인딩
+## 문자열 바인딩
 
 ```
 {% raw %}
@@ -78,7 +78,7 @@ tags:
 ```
 
 
-# 속성 바인딩
+## 속성 바인딩
 
 `v-`지시어는 `vue`가 제공하는 특별한 속성으로 값이 변하면 역시 DOM에 실시간 렌더링이 된다. 이것을 이용해 `HTML`속성, `HTML`태그, 이벤트 등을 바인딩 할 수 있다. 
 
@@ -118,7 +118,7 @@ v-bind:class
 </div>
 ```
 
-# Boolean 속성 바인딩
+## Boolean 속성 바인딩
 
 `:disabled=참/거짓을 가지는 프로퍼티명`
 
@@ -135,7 +135,7 @@ v-bind:class
 </template>
 ```
 
-# 멀티 속성 바인딩
+## 멀티 속성 바인딩
 
 여러 개의 속성은 `v-bind`에 객체를 바인딩하여 사용한다. 
 
@@ -156,12 +156,12 @@ data() {
 ```
 
 
-# HTML 바인딩
+## HTML 바인딩
 
 
 `v-html=프로퍼티명`
 
-`Mustache`는 문자열로만 해석이 되기 때문에 `HTML`을 문법을 그대고 전달하고 싶으면 `v-html`를 사용한다. 
+`Mustache`는 문자열로만 해석이 되기 때문에 `HTML`을 그대로 전달하고 싶으면 `v-html`를 사용한다. 
 
 ```html
 <script>
@@ -187,7 +187,7 @@ Using v-html directive: <span style="color: red">This should be red.</span>
 
 ---
 
-# 자바스크립트 표현식 바인딩
+## 자바스크립트 표현식 바인딩
 
 `{% raw %}{{ 자바스크립트 표현식 }}{% endraw %} 혹은 v-bind="자바스크립트 표현식"`
 
@@ -208,7 +208,7 @@ Using v-html directive: <span style="color: red">This should be red.</span>
 단, 표현식에 한한다. 선언문이나 정의식은 적용되지 않는다.  
 
 
-# 함수 바인딩
+## 함수 바인딩
 
 컴포넌트에 정의한 함수 역시 `{{ }}`와 `v-bind` 내에서 호출 할 수 있다.
 
@@ -319,6 +319,7 @@ as explained in the "Dynamic Argument Value Constraints" and "Dynamic Argument S
 <form @submit.prevent="onSubmit">...</form>
 ```
 
+---
 
 # directive syntax
 
