@@ -28,9 +28,8 @@ tags:
 `<temlplate />`은 `HTML`처럼 보이지만 실제로는 `vue`의 구성요소이다. 다만 `HTML`문법을 이용해서 작성하고 브라우저의 `HTML`파서에 의해 컴파일 된다. 
 `vue`의 특징인 `반응성(reactivity)`이 적용되어 데이터가 변경되면 `DOM`에 실시간 렌더링이 된다. 
 
----
 
-## 문자열 바인딩
+# 문자열 바인딩
 
 ```
 {% raw %}
@@ -78,44 +77,10 @@ tags:
 </div>
 ```
 
----
 
-## v-지시어
+# 속성 바인딩
 
-`v-`지시어는 `vue`가 제공하는 특별한 속성으로 값이 변하면 역시 DOM에 실시간 렌더링이 된다. 
-
-
-### HTML 바인딩
-
-`v-html=프로퍼티명`
-
-`Mustache`는 문자열로만 해석이 되기 때문에 `HTML`을 문법을 그대고 전달하고 싶으면 `v-html`를 사용한다. 
-
-```html
-<script>
-  const rawHtml = ref('<span style="color: red">This should be red.</span>');
-</script>
-<template>
-  <p>Using text interpolation: {% raw %}{{ rawHtml }}{% endraw %}</p>
-  <p>Using v-html directive: <span v-html="rawHtml"></span></p>
-</template>
-```
-
-결과는 아래처럼 `Mustache`는 `HTML`을 넘겨도 그대로 문자열로 바인딩이 되지만 `v-html` 지시어를 사용하면 `HTML`문법에 맞춰 파싱이 된 후 대체된다.  
-
-```
-Using text interpolation: <span style="color: red">This should be red.</span>
-``` 
-
-파싱 결과는 아래와 `<span>`의 텍스트가 빨간색으로 변경되어 적용된다.  
-
-Using v-html directive: <span style="color: red">This should be red.</span>  
-
-하지만 XSS취약성으로 쉽게 연결되기 때문에 `v-html`은 믿을 수 있는 컨텐츠일때만 사용해야 한다. 되도록 사용 안하는것이 좋을 듯 함
-
----
-
-### 속성 바인딩
+`v-`지시어는 `vue`가 제공하는 특별한 속성으로 값이 변하면 역시 DOM에 실시간 렌더링이 된다. 이것을 이용해 `HTML`속성, `HTML`태그, 이벤트 등을 바인딩 할 수 있다. 
 
 `v-bind:HTML속성=프로퍼티명`  
 `:HTML속성=프로퍼티명`
@@ -153,7 +118,7 @@ v-bind:class
 </div>
 ```
 
-### Boolean 속성 바인딩
+# Boolean 속성 바인딩
 
 `:disabled=참/거짓을 가지는 프로퍼티명`
 
@@ -170,7 +135,7 @@ v-bind:class
 </template>
 ```
 
-### 멀티 속성 바인딩
+# 멀티 속성 바인딩
 
 여러 개의 속성은 `v-bind`에 객체를 바인딩하여 사용한다. 
 
@@ -190,10 +155,39 @@ data() {
 <div v-bind="objectOfAttrs"></div>
 ```
 
+
+# HTML 바인딩
+
+
+`v-html=프로퍼티명`
+
+`Mustache`는 문자열로만 해석이 되기 때문에 `HTML`을 문법을 그대고 전달하고 싶으면 `v-html`를 사용한다. 
+
+```html
+<script>
+  const rawHtml = ref('<span style="color: red">This should be red.</span>');
+</script>
+<template>
+  <p>Using text interpolation: {% raw %}{{ rawHtml }}{% endraw %}</p>
+  <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+</template>
+```
+
+결과는 아래처럼 `Mustache`는 `HTML`을 넘겨도 그대로 문자열로 바인딩이 되지만 `v-html` 지시어를 사용하면 `HTML`문법에 맞춰 파싱이 된 후 대체된다.  
+
+```
+Using text interpolation: <span style="color: red">This should be red.</span>
+``` 
+
+파싱 결과는 아래와 `<span>`의 텍스트가 빨간색으로 변경되어 적용된다.  
+
+Using v-html directive: <span style="color: red">This should be red.</span>  
+
+하지만 XSS취약성으로 쉽게 연결되기 때문에 `v-html`은 믿을 수 있는 컨텐츠일때만 사용해야 한다. 되도록 사용 안하는것이 좋을 듯 함
+
 ---
 
-
-### 자바스크립트 표현식 바인딩
+# 자바스크립트 표현식 바인딩
 
 `{% raw %}{{ 자바스크립트 표현식 }}{% endraw %} 혹은 v-bind="자바스크립트 표현식"`
 
@@ -214,7 +208,7 @@ data() {
 단, 표현식에 한한다. 선언문이나 정의식은 적용되지 않는다.  
 
 
-### 함수 바인딩
+# 함수 바인딩
 
 컴포넌트에 정의한 함수 역시 `{{ }}`와 `v-bind` 내에서 호출 할 수 있다.
 
@@ -232,12 +226,12 @@ data() {
 
 ---
 
-## 지시어
+# 지시어 종류
 
 `vue`가 제공하는 내장 지시어들이 있다. `v-html`, `v-bind`가 그 예시들로 값의 변경될 때 DOM에 바로 적용이 된다. 
 
 
-### v-if
+## v-if
 
 `v-if=프로퍼티명`  
 
@@ -250,7 +244,7 @@ data() {
 <p v-if="seen">Now you see me</p>
 ```
 
-### v-bind
+## v-bind
 
 `v-bind:HTML속성=프로퍼티명`
 `:HTML속성=프로퍼티명`  
@@ -258,7 +252,7 @@ data() {
 `HTML` 속성을 연결하기 위해 사용한다. 
 
 
-### v-on
+## v-on
 
 `v-on:이벤트종류=프로퍼티명`  
 `@이벤트종류=프로퍼티명`  
@@ -274,7 +268,7 @@ data() {
 
 ```
 
-### 동적 속성 바인딩
+## 동적 속성 바인딩
 
 `attributeName`의 값은 아래 예시에서는 `href`가 되겠지만 그 부분에 자바스크립트 표현식을 이용해 다른 속성을 정의 할 수도 있다. 
 
@@ -299,7 +293,7 @@ as explained in the "Dynamic Argument Value Constraints" and "Dynamic Argument S
 
 ```
 
-#### 동적 속성 제약
+## 동적 속성 제약
 
 - `null` 값이면 바인딩이 자동으로 제거되지만 다른 문자열이 아닌 값은 경고가 뜬다. 
 - 동적속성바인딩에 공백이나 따옴표는 허용되지 않는다. `'foo'`가 아닌 `foo`로만 써야 한다. 
@@ -315,7 +309,7 @@ as explained in the "Dynamic Argument Value Constraints" and "Dynamic Argument S
   ```
 
 
-### 제어자 (Modifiers)
+## 제어자 (Modifiers)
 
 제어자는 .(점)뒤에 쓰는 특별한 접미사다. `.prevnet` 제어자는 `event.preventDefault()`를 호출하는 것을 의미한다. 
 
@@ -326,6 +320,6 @@ as explained in the "Dynamic Argument Value Constraints" and "Dynamic Argument S
 ```
 
 
-### directive syntax
+# directive syntax
 
 ![directive syntax](/images/vue-directive-syntax.png)
