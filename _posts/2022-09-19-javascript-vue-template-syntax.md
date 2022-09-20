@@ -38,7 +38,7 @@ tags:
 {% endraw %}
 ```  
 
-`{{ }} (Mustache)`로 프로퍼티를 문자열로 바인딩한다. `{{}}`내부는 자바스크립트 영역이라고 봐도 무방하다.
+`{% raw %}{{ }} (Mustache) {% endraw %}`로 프로퍼티를 문자열로 바인딩한다. `{% raw %} {{}} {% endraw %}`내부는 자바스크립트 영역이라고 봐도 무방하다.
 
 아래 예시에서 `data()`에 `title`프로퍼티가 선언되어 있으면 해당 값이 렌더링 되는 것을 볼 수 있다. 
 
@@ -66,7 +66,7 @@ tags:
 
 ```html
 <div id="app">
-  <h1>{{ title }}</h1>
+  <h1>{% raw %}{{ title }}{% endraw %}</h1>
 </div>
 ```
 
@@ -89,19 +89,19 @@ tags:
 
 `v-html=프로퍼티명`
 
-`{{ }}`는 문자열로만 해석이 되기 때문에 `HTML`을 문법을 그대고 전달하고 싶으면 `v-html`를 사용한다. 
+`Mustache`는 문자열로만 해석이 되기 때문에 `HTML`을 문법을 그대고 전달하고 싶으면 `v-html`를 사용한다. 
 
 ```html
 <script>
   const rawHtml = ref('<span style="color: red">This should be red.</span>');
 </script>
 <template>
-  <p>Using text interpolation: {{ rawHtml }}</p>
+  <p>Using text interpolation: {% raw %}{{ rawHtml }}{% endraw %}</p>
   <p>Using v-html directive: <span v-html="rawHtml"></span></p>
 </template>
 ```
 
-결과는 아래처럼 `{{ }}`는 `HTML`을 넘겨도 그대로 문자열로 바인딩이 되지만 `v-html` 지시어를 사용하면 `HTML`문법에 맞춰 파싱이 된 후 대체된다.  
+결과는 아래처럼 `Mustache`는 `HTML`을 넘겨도 그대로 문자열로 바인딩이 되지만 `v-html` 지시어를 사용하면 `HTML`문법에 맞춰 파싱이 된 후 대체된다.  
 
 ```
 Using text interpolation: <span style="color: red">This should be red.</span>
@@ -120,7 +120,7 @@ Using v-html directive: <span style="color: red">This should be red.</span>
 `v-bind:HTML속성=프로퍼티명`  
 `:HTML속성=프로퍼티명`
 
-`{{ }}`는 문자열로만 해석이 되기 때문에 `HTML속성`을 사용하기 위해서 아래와 같이 `v-bind` 지시어와 함께 `HTML속성`을 사용한다. 
+`Mustache`는 문자열로만 해석이 되기 때문에 `HTML속성`을 사용하기 위해서 아래와 같이 `v-bind` 지시어와 함께 `HTML속성`을 사용한다. 
 바인딩 된 값이 `null`이나 `undefined`이면 무시된다. 
 
 ```
@@ -141,7 +141,7 @@ v-bind:class
 
 ```html
 <div id="app">
-  <h1 v-bind:id="bindedId" v-bind:class="bindedClass">{{ title }}</h1>
+  <h1 v-bind:id="bindedId" v-bind:class="bindedClass">{% raw %}{{ title }}{% endraw %}</h1>
 </div>
 ```
 
@@ -195,11 +195,12 @@ data() {
 
 ### 자바스크립트 표현식 바인딩
 
-`{{ 자바스크립트 표현식 }} 혹은 v-bind="자바스크립트 표현식"`
+`{% raw %}{{ 자바스크립트 표현식 }}{% endraw %} 혹은 v-bind="자바스크립트 표현식"`
 
 `Mustache`와 `v-bind`에 자바스크립트 표현식도 적용할 수 있다. 현재 컴포넌트 인스턴스의 데이터 유효범위 내에서 자바스크립트 표현식은 평가된다. 
 
 ```
+{% raw %}
 {{ number + 1 }}
 
 {{ ok ? 'YES' : 'NO' }}
@@ -207,6 +208,7 @@ data() {
 {{ message.split('').reverse().join('') }}
 
 <div :id="`list-${id}`"></div>
+{% endraw %}
 ```
 
 단, 표현식에 한한다. 선언문이나 정의식은 적용되지 않는다.  
@@ -217,8 +219,11 @@ data() {
 컴포넌트에 정의한 함수 역시 `{{ }}`와 `v-bind` 내에서 호출 할 수 있다.
 
 ```html
+
 <span :title="toTitleDate(date)">
+  {% raw %}
   {{ formatDate(date) }}
+  {% endraw %}
 </span>
 ```
 
