@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-09-15 09:05:00 +0900
-title: '[javascript] vue tutorial'
+title: '[javascript] vue base todo'
 categories:
   - javascript
 tags:
@@ -36,7 +36,7 @@ tags:
 `v-model:`
 
 원래 `:value="text" @input="onInput"`과 같이 쓰는 텍스트 바인딩과 이벤트 바인딩을 한 방에 해결하는 방법
-inputm checkboxed, radio buttons, select dropdowns 까지 적용할 수 있다. 
+input, checkbox, radio buttons, select dropdowns의 값 변경을 감지하여 DOM에 자동 적용할 수 있다. 
 요소의 value 속성을 변경한다.
 
 ## 조건절
