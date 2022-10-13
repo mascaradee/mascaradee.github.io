@@ -32,7 +32,7 @@ nested exception is org.apache.ibatis.exceptions.PersistenceException:
 ### 해결
 
 
-해결은 아래처럼, 자바 문자열 비교와 같이 해결하면 된다. `""(쌍따옴표)`는 문자열, `''(홑따옴표)`는 `char`를 의미한다.
+해결은 아래처럼, 자바 문자열 비교와 같이 해결하면 된다. `""(쌍따옴표)`는 문자열, `''(홑따옴표)`는 `CHAR`를 의미한다.
 
 ```xml
  <if test='confirmYn != null and confirmYn.equals("Y")'>
