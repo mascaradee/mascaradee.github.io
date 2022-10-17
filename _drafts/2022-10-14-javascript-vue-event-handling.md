@@ -19,9 +19,139 @@ tags:
 
 ## 이벤트 리스닝
 
-- `v-on:이벤트종류="핸들러(콜백함수 혹은 콜백함수명)"`
-- `@이벤트종류="핸들러(콜백함수 혹은 콜백함수명)"`
+### 인라인 핸들러
+
+- `v-on:이벤트종류="핸들러함수"`
+- `@이벤트종류="핸들러함수"`
+
+
+### 메소드 핸들러
+
+- `v-on:이벤트종류="핸들러함수명"`
+- `@이벤트종류="핸들러함수명"`
 
 
 ## 인라인 핸들러
 
+HTML에 직접 간단한 이벤트를 작성한다. `onclick`과 같다고 보면 된다. 핸들러 함수 자리에 함수를 직접 쓰거나 다른 곳에 정의되어 있는 함수를 바로 호출해서 사용한다. 
+
+```js
+data() {
+  return {
+    count: 0
+  }
+  methods: {
+    say(message) {
+      alert(message);
+    }
+  }
+}
+```
+
+```html
+<button @click="count++">Add 1</button>
+<p>Count is: {{ count }}</p>
+<button @click="say('hello')">Say hello</button>
+```
+
+인라인 핸들러에서 이벤트 객체를 사용하는 방법은 2가지다. 
+
+- $event 변수 사용
+- 화살표 함수 사용
+
+```js
+methods: {
+  warn(message, event) {
+    // now we have access to the native event
+    if (event) {
+      event.preventDefault()
+    }
+    alert(message)
+  }
+}
+````
+
+```html
+<!-- $event 변수 사용 -->
+<button @click="warn('Form cannot be submitted yet.', $event)">
+  Submit
+</button>
+
+<!-- 화살표함수 사용 -->
+<button @click="(event) => warn('Form cannot be submitted yet.', event)">
+  Submit
+</button>
+```
+
+
+## 메소드 핸들러
+
+복잡하고 많은 로직이 들어간 이벤트 핸들러로 인라인 핸들러로 해결할 수 없는 경우에 사용한다. v-on을 이용해 함수명이나 컴포넌트 메소드의 경로를 함께 써준다. 
+
+```js
+data() {
+  return {
+    name: 'Vue.js'
+  }
+},
+methods: {
+  greet(event) {
+    // `this`는 현재 활성화된 인스튼스를 가리킨다. 여기서는 date()라고 생각해도 무방
+    alert(`Hello ${this.name}!`);
+    // `event` 는 네이티브 DOM 이벤트
+    if (event) {
+      alert(event.target.tagName); // BUTTON
+    }
+  }
+}
+```
+
+```html
+<!-- `greet`는 위에서 정의된 함수명 -->
+<button @click="greet">Greet</button>
+```
+
+메소드 속성은 자동으로 트리거된 네이티브 DOM이벤트 객체를 받는다. 
+
+
+## 이벤트 제어자 (Event Modifiers)
+
+`.stop,.prevent,.self,.capture,.once,.passive`와 같이 점과 함께 접미사를 사용하면 자바스크립에서 제공하는 아래와 같은 기능을 사용할 수 있다. 
+
+- `.stop`: event.stopPropagation(), 캡처 및 버블링 단계에서 현재 이벤트의 추가 전파를 방지한다. 
+- `.prevent`: event.preventDefault(), 기본 html 동작을 중단한다. (e.g. form태그의 submit)
+- `.self`: 
+- `.capture`: 
+- `.once`: 
+- `.passive`: 
+
+```html
+<!-- click이벤트의 버블링 방지 -->
+<a @click.stop="doThis"></a>
+
+<!-- submit 이벤트의 새로고침 방지 -->
+<form @submit.prevent="onSubmit"></form>
+
+<!-- 제어자는 체인으로 사용 가능하다. -->
+<a @click.stop.prevent="doThat"></a>
+
+<!-- 핸들러 없이 제어자만 사용가능 -->
+<form @submit.prevent></form>
+
+<!-- event.target이 요소 자체인 경우만 트리거 핸들러로 사용 -->
+<!-- i.e. not from a child element -->
+<div @click.self="doThat">...</div>
+
+<!-- 자식요소의 이벤트가 실행되기 전에 이 요소의 이벤트를 먼저 실행될 수 있도록 캡처 -->
+<div @click.capture="doThis">...</div>
+
+<!-- 최대 한 번만 이벤트 실행 -->
+<a @click.once="doThis"></a>
+
+<!-- the scroll event's default behavior (scrolling) will happen -->
+<!-- immediately, instead of waiting for `onScroll` to complete  -->
+<!-- in case it contains `event.preventDefault()`                -->
+<div @scroll.passive="onScroll">...</div>
+```
+
+제어자의 순서에 따라 적용도 달라지게 되므로 유의. `@click.prevent.self` 는 클릭 기본액션이 자신과 자손들에게까지 방지된다. 반면에 `@click.self.prevent`는 오직 클릭의 기본액션만 자신에게 적용된다. 
