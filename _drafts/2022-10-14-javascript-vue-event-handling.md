@@ -129,7 +129,7 @@ methods: {
 <!-- click이벤트의 버블링 방지 -->
 <a @click.stop="doThis"></a>
 
-<!-- submit 이벤트의 새로고침 방지 -->
+<!-- submit 이벤트의 기본 기능인 새로고침 방지 -->
 <form @submit.prevent="onSubmit"></form>
 
 <!-- 제어자는 체인으로 사용 가능하다. -->
@@ -148,10 +148,63 @@ methods: {
 <!-- 최대 한 번만 이벤트 실행 -->
 <a @click.once="doThis"></a>
 
-<!-- the scroll event's default behavior (scrolling) will happen -->
-<!-- immediately, instead of waiting for `onScroll` to complete  -->
-<!-- in case it contains `event.preventDefault()`                -->
+<!-- passive = true는  스크롤을 위해 preventDefault()를 호출하지 않고 바로 스크롤 기능을 수행하겠다라는 의미 .passive 수정자는 일반적으로 모바일 장치의 성능을 개선하기 위해 터치 이벤트 리스너와 함께 사용된다. -->
 <div @scroll.passive="onScroll">...</div>
 ```
 
 제어자의 순서에 따라 적용도 달라지게 되므로 유의. `@click.prevent.self` 는 클릭 기본액션이 자신과 자손들에게까지 방지된다. 반면에 `@click.self.prevent`는 오직 클릭의 기본액션만 자신에게 적용된다. 
+
+
+.passive와 .prevent는 같이 사용할 필요가 없다. .passsive 내부에 이미 .prevnet를 쓰지 않겠다는 의도가 있기 때문
+
+
+## 키 제어자(Key Modifiers)
+
+v-on, @으로 키 이벤트도 지정할 수 있다.   
+
+엔터키가 들어온 경우에만 submit을 콜한다. 
+
+```js
+<input @keyup.enter="submit" />
+````
+
+KeyboardEvent.key로 알아낼 수 있는 키 이름을 케밥형식으로 사용할 수 있다.   
+
+- `.page-down`
+- `.enter`
+- `.tab`
+- `.delete (captures both "Delete" and "Backspace" keys)`
+- `.esc`
+- `.space`
+- `.up`
+- `.down`
+- `.left`
+- `.right`
+
+- `.ctrl`
+- `.alt`
+- `.shift`
+- `.meta`: 윈도우키
+
+
+## .exact Modifier
+
+오로지 해당 제어자만 혹은 제어자와 체인으로 연결된 시스템키가 눌렸을때만 이벤트가 트리거 된다. 
+
+```js
+<!-- this will fire even if Alt or Shift is also pressed -->
+<button @click.ctrl="onClick">A</button>
+
+<!-- this will only fire when Ctrl and no other keys are pressed -->
+<button @click.ctrl.exact="onCtrlClick">A</button>
+
+<!-- this will only fire when no system modifiers are pressed -->
+<button @click.exact="onClick">A</button>
+```
+
+
+## 마우스버튼 제어자 (Mouse Button Modifiers)
+
+- `.left`
+- `.right`
+- `.middle`
