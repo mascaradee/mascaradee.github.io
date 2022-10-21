@@ -28,26 +28,27 @@ tags:
 - 로컬 환경변수에 GOOGLE_APPLICATION_CREDENTIALS 시스템변수를 추가하고 서비스계정 키가 들어 있는 json파일의 경로를 값을 지정한다. 
   ![로컬 환경변수 설정](/images/goodle-translation-servie-key-regist.png)
 
-- 인텔리제이 POM.XML 파일에 구글 클라우드 번역 클라이언트 라이브러리 추가 후 다운로드 
+- 인텔리제이 `pom.xml` 파일에 구글 클라우드 번역 클라이언트 라이브러리 추가 후 다운로드 
 
   ```XML
+    <dependency>
+       <groupId>com.google.cloud</groupId>
+       <artifactId>google-cloud-translate</artifactId>
+    </dependency>
+
     <dependencyManagement>
-    <dependencies>
-      <!--구글 번역 API start -->
-      <dependency>
-               <groupId>com.google.cloud</groupId>
-               <artifactId>libraries-bom</artifactId>
-               <version>26.1.3</version>
-               <type>pom</type>
-               <scope>import</scope>
-            </dependency>
-            <dependency>
-               <groupId>com.google.cloud</groupId>
-               <artifactId>google-cloud-translate</artifactId>
-            </dependency>
-      <!--구글 번역 API end -->
-    </dependencies>
-  </dependencyManagement>
+      <dependencies>
+        <!--구글 번역 API start -->
+        <dependency>
+           <groupId>com.google.cloud</groupId>
+           <artifactId>libraries-bom</artifactId>
+           <version>26.1.3</version>
+           <type>pom</type>
+           <scope>import</scope>
+        </dependency>
+        <!--구글 번역 API end -->
+      </dependencies>
+    </dependencyManagement>
   ```
   ![메이븐 다운로드](/images/maven-download.png)  
 
