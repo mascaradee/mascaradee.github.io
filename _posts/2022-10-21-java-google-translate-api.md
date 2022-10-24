@@ -24,7 +24,7 @@ tags:
 ## 설정
 
 - 구글 클라우드 프로젝트 생성 및 서비스 계정을 만든다.
-- 프로젝트ID와 서비스계정 키(json 파일)이 필요하다.
+- 프로젝트ID와 서비스계정 키(json 파일)이 필요하다. 구글 설정 가이드를 따라가면 만들 수 있다. 
 - 로컬 환경변수에 GOOGLE_APPLICATION_CREDENTIALS 시스템변수를 추가하고 서비스계정 키가 들어 있는 json파일의 경로를 값을 지정한다. 
   ![로컬 환경변수 설정](/images/goodle-translation-servie-key-regist.png)
 
@@ -73,15 +73,15 @@ controller.java
 
 ```java
 @RestController
-@RequestMapping("/display/translation")
+@RequestMapping("/translation")
 public class TranslationController {
 
   @Autowired
-  private TranslationSelector selector;
+  private TranslationService service;
 
-  @GetMapping("/read-translation")
-  public Object readTranslation(String lang, String sourceText) throws IOException {
-    return selector.readTranslation(lang, sourceText);
+  @GetMapping("/translation")
+  public Object getTranslation(String lang, String sourceText) throws IOException {
+    return service.getTranslation(lang, sourceText);
   }
 }
 ```
@@ -89,14 +89,13 @@ public class TranslationController {
 service.java
 
 ```java
-  public Object readTranslation(String lang, String sourceText) throws IOException {
+  public Object getTranslation(String lang, String sourceText) throws IOException {
 
     TranslateText translateText = new TranslateText();
 
     String targetText = translateText.translateText(lang, sourceText); // 구글 번역 API 호출
     Map<String, String> translation = new TranslationResult();
-    translation.put("source", sourceText);
-    translation.put("target", targetText);
+    translation.put("targetText", targetText);
 
     return translation;
   }
