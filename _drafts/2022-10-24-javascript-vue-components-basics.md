@@ -153,3 +153,135 @@ export default {
 ```
 
 ### 이벤트 수신하기
+
+자식컴포넌트는 이벤트를 발생시켜서 부모컴포넌트와 통신을 할 수 있다.   
+`@이벤트종류="$emit(함수명)"의 형식으로 자식컴포넌트에서 이벤트를 발생시켜 함수를 호출한다. 클릭 할 때 마다 `enlarge-text` 함수를 호출한다. 
+
+
+```js
+<!-- BlogPost.vue, omitting <script> -->
+<template>
+  <div class="blog-post">
+    <h4>{{ title }}</h4>
+    <button @click="$emit('enlarge-text')">Enlarge text</button>
+  </div>
+</template>
+```
+
+부모는 호출된 함수가 정의되어 있고 자식이 이벤트를 발생요청을 하면 해당 함수를 실행한다. `@enlarge-text="postFontSize += 0.1"`가 실행되어 자식컴포넌트의 버튼이 클릭될때마다 글자 크기가 커지게 된다. 당연하게도 자식 컴포넌트의 글자크기만 변경이 된다. 
+
+```js
+data() {
+  return {
+    posts: [
+      /* ... */
+    ],
+    postFontSize: 1
+  }
+}
+
+<div :style="{ fontSize: postFontSize + 'em' }">
+  <BlogPost
+    v-for="post in posts"
+    :key="post.id"
+    :title="post.title"
+    @enlarge-text="postFontSize += 0.1"
+   />
+</div>
+```
+
+### 슬롯으로 컨텐츠 전달
+
+props를 통해 자바스크립트 값을 전달할 수 있는 것처럼 `slot`을 통해  template 자체도 전달을 할 수 있다. `<AlertBox>`템플릿을 통째로 `<slot />`위치에 전달해 렌더링 할 수 있다. 
+
+```html
+<AlertBox>
+  Something bad happened.
+</AlertBox>
+```
+
+```js
+<template>
+  <div class="alert-box">
+    <strong>This is an Error for Demo Purposes</strong>
+    <slot />
+  </div>
+</template>
+
+<style scoped>
+.alert-box {
+  /* ... */
+}
+</style>
+```
+
+### 동적 컴포넌트 사용 속성, `:is`
+
+탭화면처럼 컴포넌트를 동적으로 변경해야 하는 경우가 있다. `:is`를 사용하면 컴포넌트의 동적 사용이 가능해진다.
+
+`currentTab` 값이 변경이 되면 컴포넌트가 변경된다.   
+
+`<component :is=컴포넌트명 혹은 실제 임포트된 컴포넌트 객체></component>`  
+
+```js
+<component :is="currentTab"></component>
+``` 
+
+`:is`로 여러개 컴포넌트가 변경되면 비사용되는 컴포넌트는 unmounted가 되는데 `<KeepAlive>`컴포넌트로 강제로 살아있는? 상태로 유지할 수 있다.
+
+
+### DOM 템플릿 파싱 시 주의사항
+
+아래 주의 사항은 DOM에 직접 템플릿을 작성하는 경우에만 해당한다.   
+
+#### 대소문자 변환 유의
+
+HTML 태그와 속성은 대소문자를 구분하지 않으므로 브라우저는 대문자는 모두 소문자로 변환한다.  
+그말인즉슨, DOM 템플릿을 사용할 때   
+- 파스칼케이스 컴포넌트명과 
+- 카멜케이스 prop명 또는 `v-on` 이벤트명은   
+HTML에서느 모두 케밥케이스로 변환된다는 말이다.  
+
+```js
+// camelCase in JavaScript
+const BlogPost = {
+  props: ['postTitle'],
+  emits: ['updatePost'],
+  template: `
+    <h3>{{ postTitle }}</h3>
+  `
+}
+```
+
+```html
+<!-- kebab-case in HTML -->
+<blog-post post-title="hello!" @update-post="onUpdatePost"></blog-post>
+```
+
+#### 셀프 클로징 태그 생략 불가
+
+뷰는 `/>`를 모두 클로징이라고 인식하지만 DOM 템플릿은 클로징 태그를 꼭 작성해야 한다. HTML 스펙상 `<input>`, `<img>`과 같은 일부를 제외하고는 클로징 태그를 생략할 수 없다. 
+
+```html
+<my-component></my-component>
+```
+
+
+#### 요소 배치 제한
+
+`<ul> - <li>`, `<ol> - <li>`, `<table> - <tr>`, `<select> - <option>` 처럼 HTML 요소 중 짝궁처럼 같이 써야 하는 하취요소들이 있다.  
+`<table>`은 `<tr>`태그를 찾지만 아래와 같이 컴포넌트를 사용하게 되면 오류가 발생할 수도 있다. 
+
+```html
+<table>
+  <blog-post-row></blog-post-row>
+</table>
+```
+
+이럴 때는 `:is`를 사용하면 해결된다. 만약 네이티스 HTML요소에 `is` 값을 사용하려면 꼭 `vue:` 프리픽스로 뷰 컴포넌틍임을 알려줘야 한다. 
+
+```html
+<table>
+  <tr is="vue:blog-post-row"></tr>
+</table>
+```
