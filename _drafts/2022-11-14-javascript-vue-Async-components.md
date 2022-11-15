@@ -19,9 +19,12 @@ tags:
 
 ## 기본 사용법
 
-큰 앱에서는 앱을 작은 덩어리로 나뉘어 서버에서 필요할때 해당 컴포넌트를 로드할 필요가 있다.  `defineAsyncComponent`함수를 이용해 이것이 가능하다.   
+### 뷰 함수 이용
 
-`defineAsyncComponent`는 리턴값으로 2개의 인자를 가지고 있는 프로미스를 받는다. resolve와 reject는 콜백함수로 서버실행 후 resolve함수가 실행된다. 물론 오류가 났을 경우는 reject함수가 실행되고.   
+`defineAsyncComponent`함수는 큰 앱을 작은 덩어리로 나누어 필요한 경우마다 서버통신을 하게 해준다.    
+
+`defineAsyncComponent`함수는 프로미스를 반환해 주는데 그것은 성공했을때 resolve 콜백을, 실패했을때 reject 콜백을 호출하도록 되어 있다. 
+
 
 ```js
 import { defineAsyncComponent } from 'vue'
@@ -35,8 +38,9 @@ const AsyncComp = defineAsyncComponent(() => {
 // ... use `AsyncComp` like a normal component
 ```
 
+### ES module dynamic import 이용
 
-아래는 ES모듈의 dynamic import를 이용한 방법으로 동일하게 프로미스는 리턴받고 Vite와 webpack에서 아래 문법도 허용해준다. 그래서 SFC에서도 import를 사용할 수 있다.  
+대부분 이 방식을 이용하게 될 거고, 역시 프로미스를 반환한다. Vite와 webpack에서 아래 문법도 허용해준다. 그래서 SFC에서도 import를 사용할 수 있다.  
 
 ```js
 import { defineAsyncComponent } from 'vue'
