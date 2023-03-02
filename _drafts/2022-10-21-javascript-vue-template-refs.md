@@ -40,6 +40,42 @@ export default {
 </template>
 ```
 
+
+composition API 방식의 `setup()` 메소드 사용은 아래와 같이 
+
+```js
+<script>
+export default {
+
+  setup() {
+    const input = ref(null)
+
+    onMounted(() => {
+      input.value.focus()
+    })
+  
+    return{
+      input
+    }
+  }
+}
+</script>
+```
+
+혹은 
+
+```js
+<script setup>
+const input = ref(null)
+
+onMounted(() => {
+  input.value.focus()
+})
+</script>
+```
+
+
+
 ## v-for에서 참조
 
 `ref`가 `v-for`내에서 사용되면 결과값은 연관있는 요소가 포함되어 배열이 된다. 다면 순서는 보장할 수 없고 v3.2.25상위 버전에서만 사용 가능
