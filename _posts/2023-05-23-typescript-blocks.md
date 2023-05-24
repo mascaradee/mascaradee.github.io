@@ -65,10 +65,12 @@ class Blockchain {
     this.blocks.push(newBlock);
   }
   public getBlocks() {
-    //return this.blocks; // !! 이걸 받아서 누구나 블록을 생성할 수 있음 
-    return [...this.blocks]; // this.blocks을 주는게 아닌 인스턴스를 리턴하므로 this.blocks에는 영향력을 미칠 수 없다. 
+    //return this.blocks; // !! 이걸 받아서 누구나 블록을 생성할 수 있음. 보안이슈!!
+    return [...this.blocks]; // 전재구문은 this.blocks을 주는게 아닌 인스턴스를 리턴하므로 this.blocks에는 영향력을 미칠 수 없다. 
   }
 }
+
+
 
 const blockchain = new Blockchain();
 
