@@ -163,7 +163,7 @@ function hello(name:string|number){
 }
 ```
 
-#### 타입 수정 불가
+### 타입 수정 불가
 
 `readonly`를 붙이면 해당 타입은 수정이 불가능한 상태가 된다. 
 
@@ -171,6 +171,7 @@ function hello(name:string|number){
 const names : readonly string[] = ['mignon', 'whale']
 names.push() // error
 ```
+
 
 ## 함수 타입 명시
 

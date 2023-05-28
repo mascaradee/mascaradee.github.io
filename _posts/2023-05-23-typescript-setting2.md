@@ -27,7 +27,7 @@ console.log('hi')
 ```json
  "scripts": {
     "build": "tsc",
-    "start": "node build/index.js"
+    "start": "node build/index.js" // node환경에서 수동 빌드
   },
 ```
 
@@ -56,9 +56,9 @@ PS C:\typechain> npm i -D ts-node
 
 ```json
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node src/index",
-    "start": "node build/index.js"
+    "build": "tsc",  
+    "start": "node build/index.js",
+    "dev": "ts-node src/index"  // node환경에서 자동빌드
   },
 ```
 
