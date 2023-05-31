@@ -27,13 +27,13 @@ PS C:> mkdir typechain
 PS C:typechain> code typechain
 ```
 
-- 터미널을 열고 노드 프로젝트를 만든다.   
+- 터미널을 열고  package.json 파일을 생성한다.
 
 ```
 PS C:typechain> npm init -y
 ```
 
-- package.json 수정 
+- 위 명령어로 생성된 package.json 수정 
 ```json
   "main": "index.js", // 삭제 
   "scripts": {
@@ -81,7 +81,7 @@ const hello = () => 'hi';
   },
 ```
 
-- 터미널에서 제대로 컴파일 되는지 확인한다. 
+- 터미널에서 제대로 컴파일 되는지 확인한다. `node_module` 폴더가 생기면서 타입스크립트가 실행된다. 
 
 ```
 PS C:typechain> npm run build
