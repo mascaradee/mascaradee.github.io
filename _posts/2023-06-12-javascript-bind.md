@@ -65,14 +65,14 @@ newUpdate('1', {newContent: 'updated'});
 let newUpdate = update.bind(this, '1');
 newUpdate({newChecked: true});
 newUpdate({newContent: 'updated'});
-// 위 예시와 동이 결과
+// 위 예시와 동일 결과
 ```
 
 
 ## More
 
-[`apply()`](_posts/2023-06-12-javascript-apply.md)
-[`call()`](_posts/2023-06-12-javascript-call.md)
+[`apply()`](https://mascaradee.github.io/javascript/javascript-apply)
+[`call()`](https://mascaradee.github.io/javascript/javascript-call.md)
 
 
 
