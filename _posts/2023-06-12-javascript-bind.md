@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2023-06-12 10:00:00 +0900
-title: '[javascript] bind-apply-call'
+title: '[javascript] bind'
 categories:
   - javascript
 tags:
@@ -71,10 +71,8 @@ newUpdate({newContent: 'updated'});
 
 ## More
 
-[`apply()`](_posts\2023-06-12-javascript-apply.md)
-
-
-[`call()`](_posts\2023-06-12-javascript-call.md)
+[`apply()`](_posts/2023-06-12-javascript-apply.md)
+[`call()`](_posts/2023-06-12-javascript-call.md)
 
 
 
