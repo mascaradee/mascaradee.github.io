@@ -75,4 +75,8 @@ newUpdate({newContent: 'updated'});
 [`call()`](https://mascaradee.github.io/javascript/javascript-call.md)
 
 
+## 결론
+
+기존의 함수에 영향이 가지 않도록 인자의 변화를 주고 싶을 때 사용하면 좋을 것 같다. 
+
 
