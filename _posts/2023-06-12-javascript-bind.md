@@ -13,20 +13,29 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## bind()
+## Function.prototype.bind()
 
-`Function.prototype.bind(대상함수, [인수1, 인수2 ...])`
+기존 함수를 재정의하여 원하는 대상에 추가해 그 대상의 메소드인 것처럼 사용할 수 있다.  
 
-## 설명
 
-`bind()`는 기존의 함수를 재정의하여 새로운 함수를 반환해 준다. 첫 인수(argument)로 재정의할 대상함수를 `this`로 넘겨주고 추가 인수를 선택적으로 넘기면 순서에 맞춰 새 함수의 인자(parameter)로 세팅된다.  
+## 구문
 
-## 함수재정의
+`func.bind(thisArg [, arg1, /* …, */ argN])`  
 
-`update`함수를 `newUpdate`함수로 재정의하여 원하는 인자만 넘길 수 있다. 
+- `func`는 기존 함수.  
+- 첫번째 인수 `thisArg`는 새로운 함수가 추가될 대상이다. 인스턴스를 나타내는 `this`로 보통은 객체인데 함수나 원시타입 값이 될 수도 있다. `null`이나 `undefined`는 전역객체로 원시타입은 객체로 변환된다. 
+- `arg1, /* …, */ argN` 인수들은 새로 만들어질 함수의 파라미터로 사용된다. 순서에 맞춰 새 함수의 인자(parameter)로 세팅된다.   
+- 반환값은 재정의된 함수 자체를 반환해 준다. 
+
+
+## 함수 재정의
+
+`update`함수를 `newUpdate`함수로 재정의하여 사용할 수 있다. 참고로 `bind()`의 2번째 이후 인수가 없지만 자바스크립트 함수는 모든 인수를 `arguments` 로 전달하므로 호출할 때 넘기는 인수를 쓸 수 있다. 
 
 
 ```js
+
+// 부모.js
 let tasks = [
   {seq: '1', checked: false, content:'test1'},
   {seq: '2', checked: false, content:'test2'},
@@ -39,6 +48,9 @@ function update(seq, { newChecked, newContent }) {
   );
 console.log(newTasks);
 }
+
+
+// 자식.js 
 let newUpdate = update.bind(this);
 newUpdate('1', {newChecked: true});
 newUpdate('1', {newContent: 'updated'});
