@@ -11,6 +11,11 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
+## 참고
+
+[call()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+
 ## Function.prototype.call()
 
 기존 함수를 재정의하여 원하는 대상에 추가해 그 대상의 메소드인 것처럼 사용할 수 있다. `apply()`와 동일하지만 2번째 인수의 형태만 다르다.
@@ -30,22 +35,23 @@ tags:
 `printName()`를 `obj`객체의 메소드처럼 사용을 하고 싶다면 `call()`을 이용해서 `obj`를 넘겨준다. 그럼 아래처럼 사용 가능
 
 ```js
-let name = 'mignon';
+var name = 'mignon';
 
-let obj = {
+var obj = {
   name: 'whale'
 }
 
 function printName() {
-  console.log(this.name)
+  return this.name;
 }
 
-printName.call(obj);
+printName.call(obj); // whale
 
+printName.call(); // mignon, call()에 대상을 넣어주지 않으면 전역객체가 대신한다. 이건 var의 범위가 함수 혹는 전역스코프로 블록단위 제한이 되는 let과 달라서 생기는 현상일수도... 
 
 /*
 obj 안에 메서드가 생성된 것처럼 동작하게 된다. 
-let obj = {
+var obj = {
   name: 'whale',
   printName() {
     console.log(this.name)

@@ -6,12 +6,14 @@ categories:
   - javascript
 tags:
   - bind
-  - apply
-  - call
 ---
 
 * Kramdown table of contents
 {:toc .toc}
+
+## 참고
+
+[bind()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
 ## Function.prototype.bind()
 
@@ -30,8 +32,7 @@ tags:
 
 ## 함수 재정의
 
-`update`함수를 `newUpdate`함수로 재정의하여 사용할 수 있다. 참고로 `bind()`의 2번째 이후 인수가 없지만 자바스크립트 함수는 모든 인수를 `arguments` 로 전달하므로 호출할 때 넘기는 인수를 쓸 수 있다. 
-
+`update`함수를 `newUpdate`함수로 재정의하여 사용할 수 있다.
 
 ```js
 
@@ -71,7 +72,7 @@ newUpdate('1', {newContent: 'updated'});
 
 ## 초기값있는 함수 정의
 
-위 예시에서 둘 다 첫번째 요소만 수정을 하고 있다. 호출시 인자를 넘기는 대신, `bind()`에 두번째 인자에 초기값을 세팅하면 반환될 재정의 함수의 인자로 자동으로 세팅이 된다. 
+위 예시에서 둘 다 `tasks`배열의 첫번째 요소만 수정을 하고 있다. 호출 시 인수를 넘기는 대신, `bind()`에 두번째 인수에 초기값을 세팅하면 반환될 재정의 함수의 인자로 자동으로 세팅이 된다. 
 
 ```js
 let newUpdate = update.bind(this, '1');

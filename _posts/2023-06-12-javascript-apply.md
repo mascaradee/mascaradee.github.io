@@ -11,6 +11,12 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+## 참고
+
+[apply()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
+
+
+
 ## Function.prototype.apply()
 
 기존 함수를 재정의하여 원하는 대상에 추가해 그 대상의 메소드인 것처럼 사용할 수 있다.  
