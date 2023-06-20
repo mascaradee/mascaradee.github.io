@@ -13,11 +13,10 @@ tags:
 
 ## 참고 사이트
 
-[https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90)
-
-[https://javascript.info/operators](https://javascript.info/operators)
-[https://javascript.info/comparison](https://javascript.info/comparison)  
-[https://javascript.info/logical-operators](https://javascript.info/logical-operators)
+[표현식과 연산자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators#%EB%B9%84%ED%8A%B8_%EC%97%B0%EC%82%B0%EC%9E%90)
+ [operators](https://javascript.info/operators)  
+[comparison](https://javascript.info/comparison)    
+[logical-operators](https://javascript.info/logical-operators)
 
 
 ## 연산자
