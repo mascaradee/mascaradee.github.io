@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-10-17 09:05:00 +0900
-title: '[javascript] vue form 입력값 바인딩, v-model'
+title: '[vue] form 입력값 바인딩, v-model'
 categories:
   - javascript
 tags:

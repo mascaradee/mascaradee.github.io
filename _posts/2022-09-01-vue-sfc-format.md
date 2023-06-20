@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-09-01 10:05:00 +0900
-title: '[javascript] Vue 포맷 '
+title: '[vue] 포맷 '
 categories:
   - javascript
 tags:

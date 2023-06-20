@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-10-11 09:05:00 +0900
-title: '[javascript] vue conditional rendering'
+title: '[vue] conditional rendering'
 categories:
   - javascript
 tags:

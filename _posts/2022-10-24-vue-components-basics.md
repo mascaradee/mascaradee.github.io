@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-10-24 09:05:00 +0900
-title: '[javascript] vue components basics'
+title: '[vue] components basics'
 categories:
   - javascript
 tags:

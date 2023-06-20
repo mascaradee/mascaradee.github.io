@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-10-05 09:05:00 +0900
-title: '[javascript] vue class and style bindings'
+title: '[vue] class and style bindings'
 categories:
   - javascript
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-04-22 00:00:00 +0900
-title: '[javascript] variable and constant'
+title: '[javascript] var, let, const'
 categories:
   - javascript
 tags:
@@ -17,16 +17,12 @@ tags:
 
 ## 참고
 
-[https://javascript.info/variables](https://javascript.info/variables)
+[변수](https://javascript.info/variables)
+[브라우저 버전에 따른 제약 있음.](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)   
 
-## 변수 종류
+## var (old version)
 
-<br>
-
-### var (old version)
-
-어디에서나 유효하지만 함수 안에서 선언이 된 경우에만 함수블록 내로 제한  
-hoisting 문제로 ES6이후부터는 `let` 으로 대체
+어디에서나 유효하지만 함수 안에서 선언이 된 경우에만 함수블록 내로 제한. `hoisting` 문제로 `ES6`이후부터는 `let` 으로 대체
 
 ```js
 // 값 지정없이 선언 가능
@@ -55,11 +51,9 @@ console.log(ccc); // Uncaught ReferenceError: ccc is not defined - 함수블록�
 console.log(aa); // 'abc'
 ```
 
-### let
+## let
 
-변수가 선언된 `블록`에서만 유효함.  
-[브라우저 버전에 따른 제약 있음.](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)   
-실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음  
+변수가 선언된 `블록`에서만 유효함.  ~~실제 `IE 11(11.836.18362.0)`에서 정의 및 실행되지 않음. IE는 거의 사장되었으니 무시해도?~~
 
 ```js
 // 값 지정없이 선언 가능
@@ -85,23 +79,22 @@ console.log(ee); // Uncaught ReferenceError: ee is not defined -> function 블�
 console.log(d); // abc
 ```
 
-### const
+## const
 
-고정된 값을 사용할때 사용하고 초기화는 필수이며, 재할당도 불가함.  
-변수가 선언된 블록에서만 유효함. 브라우저 버전에 따른 제약 있음.  
-IE는 11이후부터 가능하다고 하나 실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음.
+고정된 값을 사용할때 사용하고 초기화는 필수이며, 재할당도 불가하다. 변수가 선언된 블록에서만 유효함. 브라우저 버전에 따른 제약 있음.  
+~~IE는 11이후부터 가능하다고 하나 실제 IE 11(11.836.18362.0)에서 정의 및 실행되지 않음. IE는 거의 사장되었으니 무시해도?~~
 
 - 일반적인 상수: 값을 예측하지 못하지만 런타임에 계산되는 값
 - 대문자 상수: 실행 전 이미 값을 알고 있고 하드코딩한 값을 사용할때 대문자 상수 이용. 기억하기 용이하고 가독성이 좋고 오타 적다는 장점
 
 ```js
 const pi = 3.14;
-Pi = 1 ; // 재할당 시 에러발생 Uncaught TypeError: Assignment to constant variable.
+pi = 1 ; // 재할당 시 에러발생 Uncaught TypeError: Assignment to constant variable.
 
 const MY_BIRTHDAY = "2020.04.22"
 ```
 
-오브젝트나 배열을 const로 선언하면 값은 수정이나 추가가 가능하지만 재할당은 불가능하다.
+오브젝트나 배열을 `const`로 선언하면 값은 수정이나 추가가 가능하지만 재할당은 불가능하다. 즉, 주소값은 재할당 불가 
 
 ```js
 const obj = {};

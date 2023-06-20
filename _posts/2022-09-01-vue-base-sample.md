@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-09-01 10:05:00 +0900
-title: '[javascript] vuejs 기본 샘플'
+title: '[vue]js 기본 샘플'
 categories:
   - javascript
 tags:

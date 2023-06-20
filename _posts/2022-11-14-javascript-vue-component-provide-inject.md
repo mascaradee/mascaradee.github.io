@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-11-14 09:05:00 +0900
-title: '[javascript] vue component provide and inject'
+title: '[vue] component provide and inject'
 categories:
   - javascript
 tags:

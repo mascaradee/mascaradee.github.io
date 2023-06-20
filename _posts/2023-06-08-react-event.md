@@ -11,7 +11,6 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-# 이벤트 
 
 ## 이벤트 핸들러 명명 규칙
 

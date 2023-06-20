@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-11-16 09:05:00 +0900
-title: '[javascript] vue 비동기 컴포넌트'
+title: '[vue] 비동기 컴포넌트'
 categories:
   - javascript
 tags:

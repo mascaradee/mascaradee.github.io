@@ -80,6 +80,23 @@ case 'tomato':
 (...)
 ```
 
+`switch/case`에는 모든 표현식을 쓸 수 있다. `+`를 문자 앞에 쓰면 숫자로 변환되므로 `+a`는 숫자 1이 된다.
+
+```js
+let a = "1";
+let b = 0;
+
+switch (+a) {
+  case b + 1:
+    alert("this runs, because +a is 1, exactly equals b+1");
+    break;
+
+  default:
+    alert("this doesn't run");
+}
+```
+
+
 ## 조건부연산자 `?`, 삼항연산자
 
 자바스크립트에서 피연산자가 3개인 것은 조건부연산자가 유일.

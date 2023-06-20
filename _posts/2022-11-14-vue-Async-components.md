@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-11-14 09:06:00 +0900
-title: '[javascript] vue Async components'
+title: '[vue] Async components'
 categories:
   - javascript
 tags:

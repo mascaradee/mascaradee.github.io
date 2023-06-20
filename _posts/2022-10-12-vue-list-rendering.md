@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-10-12 09:05:00 +0900
-title: '[javascript] vue list rendering'
+title: '[vue] list rendering'
 categories:
   - javascript
 tags:

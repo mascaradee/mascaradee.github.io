@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-11-04 09:05:00 +0900
-title: '[javascript] vue component fallthrough attributes'
+title: '[vue] component fallthrough attributes'
 categories:
   - javascript
 tags:

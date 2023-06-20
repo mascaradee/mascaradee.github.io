@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-11-02 09:05:00 +0900
-title: '[javascript] vue component events'
+title: '[vue] component events'
 categories:
   - javascript
 tags:
