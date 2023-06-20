@@ -14,7 +14,7 @@ tags:
 
 ## 참조
 
-[오브젝트 참조와 복사](https://javascript.info/object-copy)
+[오브젝트 참조와 복사](https://javascript.info/object-copy)  
 [deep cloning 라이브러리](https://lodash.com/docs#cloneDeep)
 
 

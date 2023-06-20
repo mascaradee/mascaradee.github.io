@@ -34,7 +34,7 @@ tags:
 function printHi() {
   console.log('Hi');
 }
-printHello();
+printHi();
 
 function log(message) {
   console.log(message);
@@ -50,9 +50,9 @@ log('anoter Hi')
 
 `function 함수명 ( 매개변수1, 매개변수2 = 기본값 ) { }`
 
-함수에 매개변수가 존재하고, 매개변수가 중 기본값이 필요한 경우 `매개변수 = 기본값`의 형태로 표기할수 있다.  
+함수에 매개변수가 존재하고, 매개변수 중 기본값이 필요한 경우 `매개변수 = 기본값`의 형태로 표기할수 있다.  
 물론 매개변수 없는 함수도 있으므로 꼭 넣어야 하는 필수 값은 아니다.  
-만약 매개변수가 존재하는데 함수 호출 시, 해당 매개변수를 넘겨주지 않는다면 자바스크립트 엔진은 해다 매개변수의 값을 `undefined`로 세팅해 준다.  
+만약 디폴트값이 없는 매개변수가 존재하는데 함수 호출 시, 해당 매개변수를 넘겨주지 않는다면 자바스크립트 엔진은 해다 매개변수의 값을 `undefined`로 세팅해 준다.  
 
 ```js
 function showMessage(message, from) {

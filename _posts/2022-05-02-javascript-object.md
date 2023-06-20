@@ -245,7 +245,7 @@ alert( "test" in obj ); // true
 
 ### for...in 반복문
 
-` for...in`  반복문으로 오브젝트의 모든 프로퍼티`(key)`를 탐색할 수 있다.
+`for...in`  반복문으로 오브젝트의 모든 프로퍼티`(key)`를 탐색할 수 있다.
 
 ```
 for (key in object) {

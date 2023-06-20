@@ -42,7 +42,7 @@ let func = arg => expression;
 let func = () => expression;
 ```
 
-표현식이 복잡해서 줄바꿈이 일아나며 블록`{}`으로 감싸면 된다. 단, 이때는 `return`이 필수다.
+표현식이 복잡해서 줄바꿈이 일어나며 블록`{}`으로 감싸면 된다. 단, 이때는 `return`이 필수다.
 
 ```
 let func = (arg1, arg2) => {
