@@ -3,9 +3,8 @@ layout: post
 date: 2022-10-14 09:05:00 +0900
 title: '[vue] event handling'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - event
 ---
 

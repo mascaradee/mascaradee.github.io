@@ -3,9 +3,8 @@ layout: post
 date: 2022-09-01 10:05:00 +0900
 title: '[vue] 포맷 '
 categories:
-  - javascript
+  - vue
 tags:
-  - vuejs
   - sfc
 
 ---

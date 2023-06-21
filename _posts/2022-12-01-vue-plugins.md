@@ -1,11 +1,10 @@
 ---
 layout: post
 date: 2022-12-01 09:05:00 +0900
-title: '[javascript] 플러그인'
+title: '[vue] 플러그인'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - plugins
 ---
 

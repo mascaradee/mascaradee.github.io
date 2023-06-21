@@ -3,9 +3,8 @@ layout: post
 date: 2022-10-05 09:05:00 +0900
 title: '[vue] class and style bindings'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - bindings
 ---
 

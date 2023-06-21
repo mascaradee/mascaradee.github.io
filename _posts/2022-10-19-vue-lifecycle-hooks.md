@@ -3,9 +3,8 @@ layout: post
 date: 2022-10-19 09:05:00 +0900
 title: '[vue] Lifecycle Hooks'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - lifecycle
   - hooks
 ---

@@ -3,9 +3,8 @@ layout: post
 date: 2022-10-27 09:05:00 +0900
 title: '[vue] component props'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - props
 ---
 

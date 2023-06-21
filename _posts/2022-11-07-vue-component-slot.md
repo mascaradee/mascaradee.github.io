@@ -3,9 +3,8 @@ layout: post
 date: 2022-11-07 09:05:00 +0900
 title: '[vue] component slots'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - slot
 ---
 

@@ -3,9 +3,8 @@ layout: post
 date: 2022-10-21 09:05:00 +0900
 title: '[vue] template refs'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - template
   - refs
 ---

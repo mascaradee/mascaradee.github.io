@@ -1,11 +1,10 @@
 ---
 layout: post
 date: 2022-11-28 09:05:00 +0900
-title: '[javascript] 커스텀 지시어'
+title: '[vue] 커스텀 지시어'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - directives
 ---
 

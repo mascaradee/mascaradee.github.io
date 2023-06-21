@@ -1,11 +1,10 @@
 ---
 layout: post
 date: 2022-12-02 09:05:00 +0900
-title: '[javascript] Transition'
+title: '[vue] Transition'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - transition
 ---
 

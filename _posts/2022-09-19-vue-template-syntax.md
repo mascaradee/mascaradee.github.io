@@ -3,9 +3,8 @@ layout: post
 date: 2022-09-15 09:05:00 +0900
 title: '[vue] template 문법'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - template
   - mustache
   - v-html

@@ -3,9 +3,8 @@ layout: post
 date: 2022-10-20 09:05:00 +0900
 title: '[vue] watchers'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - watchers
 ---
 

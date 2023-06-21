@@ -3,9 +3,8 @@ layout: post
 date: 2022-10-12 09:05:00 +0900
 title: '[vue] list rendering'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - list
   - rendering
 ---

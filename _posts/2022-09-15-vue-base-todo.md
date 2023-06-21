@@ -3,9 +3,8 @@ layout: post
 date: 2022-09-15 09:05:00 +0900
 title: '[vue] base todo'
 categories:
-  - javascript
-tags:
   - vue
+tags:
   - tutorial
 ---
 
