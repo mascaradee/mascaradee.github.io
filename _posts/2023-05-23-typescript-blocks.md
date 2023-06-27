@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-# 블로체인 만들기
+# 블록체인 만들기
 
 
 - 모듈 추가 시 에러 나면 정의파일이 있는 확인하기 
