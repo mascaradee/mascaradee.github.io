@@ -35,7 +35,12 @@ createApp(App).mount('#app')
 타입스크립트가 `App.vue`의 타입을 알수 없어 생기는 문제
 
 
-## 해결
+## 해결1
+
+`TypeScript Vue Plugin (Volar)` 플러그인을 깔면 `ts` 파일에서 `.vue`를 인식할 수 있다. 
+
+
+## 해결2
 
 `.vue` 모듈에 대한 타입을 정의하는 파일을 생성해주면 해결된다. `src` 아래 `shims-vue.d.ts` 파일명으로 생성한다. 
 `shims-vue.d.ts` 파일은 `Vue.js`와 `TypeScript`를 함께 사용할 때 타입 정의 파일을 선언하기 위한 관례적인 이름이다. 
